@@ -1,7 +1,7 @@
 {
-  "name": "Praxis — Math & Physics",
+  "name": "Praxis — Math, Physics & Control",
   "short_name": "Praxis",
-  "description": "Learn math and physics from basic to graduate level through worked examples, diagrams, glossaries, and interactive practice — all offline-capable.",
+  "description": "Learn math, physics, and control systems engineering from basic to graduate level through worked examples, diagrams, glossaries, and interactive practice — all offline-capable.",
   "id": "/praxis-math-physics",
   "lang": "en",
   "dir": "ltr",
@@ -30,6 +30,12 @@
       "short_name": "Physics",
       "description": "Open the physics topics list",
       "url": "./index.html#physics"
+    },
+    {
+      "name": "Control Systems",
+      "short_name": "Control",
+      "description": "Open the control systems topics list",
+      "url": "./index.html#control"
     }
   ]
 }

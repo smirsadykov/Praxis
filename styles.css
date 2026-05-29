@@ -8,6 +8,7 @@
   --accent-2: #b48cff;
   --math: #5eead4;
   --physics: #fca57a;
+  --control: #f8b4d9;
   --border: #2a335a;
   --good: #4ade80;
   --shadow: 0 8px 30px rgba(0,0,0,0.35);
@@ -167,6 +168,10 @@ main {
   background: linear-gradient(135deg, rgba(252,165,122,0.18), rgba(180,140,255,0.12));
   border-color: rgba(252,165,122,0.5);
 }
+.tab.active.control {
+  background: linear-gradient(135deg, rgba(248,180,217,0.18), rgba(110,168,255,0.12));
+  border-color: rgba(248,180,217,0.5);
+}
 
 /* Topic grid */
 .grid {
@@ -200,6 +205,7 @@ main {
 }
 .card .level.intermediate { background: rgba(180,140,255,0.12); color: var(--accent-2); border-color: rgba(180,140,255,0.25); }
 .card .level.advanced { background: rgba(252,165,122,0.14); color: var(--physics); border-color: rgba(252,165,122,0.3); }
+.card .level.graduate { background: rgba(248,180,217,0.14); color: var(--control); border-color: rgba(248,180,217,0.3); }
 
 .card h3 { margin: 0 0 6px; font-size: 16px; }
 .card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
@@ -211,6 +217,7 @@ main {
 }
 .card.math .stripe { background: linear-gradient(90deg, var(--math), var(--accent)); }
 .card.physics .stripe { background: linear-gradient(90deg, var(--physics), var(--accent-2)); }
+.card.control .stripe { background: linear-gradient(90deg, var(--control), var(--accent)); }
 
 /* Topic view */
 .topic-head {

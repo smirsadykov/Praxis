@@ -118,7 +118,11 @@
       el("button", {
         class: `tab physics ${state.subject === "physics" ? "active" : ""}`,
         onclick: () => { state.subject = "physics"; renderHome(); }
-      }, "Physics")
+      }, "Physics"),
+      el("button", {
+        class: `tab control ${state.subject === "control" ? "active" : ""}`,
+        onclick: () => { state.subject = "control"; renderHome(); }
+      }, "Control Systems")
     ]);
 
     const grid = el("div", { class: "grid" });
@@ -152,8 +156,21 @@
     renderTopic();
   }
 
+  function findTopic(topicId) {
+    for (const subj of Object.keys(CONTENT)) {
+      const t = CONTENT[subj].find(x => x.id === topicId);
+      if (t) return { subj, topic: t };
+    }
+    return null;
+  }
+
   function renderTopic() {
-    const topic = CONTENT[state.subject].find(t => t.id === state.topicId);
+    let topic = CONTENT[state.subject].find(t => t.id === state.topicId);
+    if (!topic) {
+      // Topic might live in a different subject (e.g., follow a Connection link).
+      const found = findTopic(state.topicId);
+      if (found) { state.subject = found.subj; topic = found.topic; }
+    }
     if (!topic) { state.view = "home"; renderHome(); return; }
 
     recordVisit(topic.id);
@@ -377,12 +394,13 @@
         if (s.items) {
           const list = el("div", { class: "conn-links" });
           s.items.forEach((id) => {
-            const t = [...(CONTENT.math || []), ...(CONTENT.physics || [])].find(x => x.id === id);
-            if (!t) return;
+            const found = findTopic(id);
+            if (!found) return;
+            const t = found.topic;
             const link = el("button", {
               class: "conn-link",
               onclick: () => {
-                state.subject = (CONTENT.math || []).some(x => x.id === t.id) ? "math" : "physics";
+                state.subject = found.subj;
                 openTopic(t.id);
                 window.scrollTo(0, 0);
               }
@@ -489,9 +507,9 @@
     });
   }
 
-  // Honor #math or #physics hash from shortcut launchers.
+  // Honor #math, #physics, or #control hash from shortcut launchers.
   const hash = window.location.hash.replace("#", "");
-  if (hash === "math" || hash === "physics") {
+  if (hash === "math" || hash === "physics" || hash === "control") {
     state.subject = hash;
     renderHome();
   }
