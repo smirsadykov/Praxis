@@ -5,6 +5,70 @@
 
   let state = { view: "home", subject: "math", topicId: null };
 
+  // === Progress tracking (localStorage) ===
+  const PROGRESS_KEY = "praxis-progress-v1";
+  function loadProgress() {
+    try { return JSON.parse(localStorage.getItem(PROGRESS_KEY) || "{}"); }
+    catch (e) { return {}; }
+  }
+  function saveProgress(p) {
+    try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); } catch (e) {}
+  }
+  let progress = loadProgress();
+
+  function recordVisit(topicId) {
+    progress[topicId] = progress[topicId] || { visits: 0, attempted: {}, correct: {} };
+    progress[topicId].visits = (progress[topicId].visits || 0) + 1;
+    progress[topicId].lastVisit = Date.now();
+    saveProgress(progress);
+  }
+  function recordAttempt(topicId, idx, isCorrect) {
+    progress[topicId] = progress[topicId] || { visits: 0, attempted: {}, correct: {} };
+    progress[topicId].attempted[idx] = true;
+    if (isCorrect) progress[topicId].correct[idx] = true;
+    saveProgress(progress);
+  }
+  function topicMastery(topicId) {
+    const p = progress[topicId];
+    if (!p) return { state: "none", attempted: 0, correct: 0 };
+    const attempted = Object.keys(p.attempted || {}).length;
+    const correct = Object.keys(p.correct || {}).length;
+    let s = "started";
+    if (correct >= 8) s = "mastered";
+    else if (correct >= 4) s = "practicing";
+    return { state: s, attempted, correct };
+  }
+
+  // Normalize answers for fuzzy comparison
+  function normalize(s) {
+    if (s == null) return "";
+    return String(s)
+      .toLowerCase()
+      .replace(/\$/g, "")
+      .replace(/\\dfrac/g, "\\frac")
+      .replace(/\\tfrac/g, "\\frac")
+      .replace(/\\left|\\right/g, "")
+      .replace(/\s+/g, "")
+      .replace(/[≈]/g, "~")
+      .replace(/—|–/g, "-")
+      .replace(/×/g, "*")
+      .replace(/·/g, "*");
+  }
+  function answersMatch(userInput, answer) {
+    const u = normalize(userInput);
+    const a = normalize(answer);
+    if (!u) return false;
+    if (u === a) return true;
+    // Try matching as a number
+    const un = parseFloat(u);
+    const an = parseFloat(a);
+    if (!isNaN(un) && !isNaN(an) && Math.abs(un - an) < 1e-4 * Math.max(1, Math.abs(an))) return true;
+    // Substring (for short answers like "yes", "no", "5", "circle")
+    if (a.length <= 12 && u.includes(a)) return true;
+    if (u.length <= 12 && a.includes(u)) return true;
+    return false;
+  }
+
   function renderMath(root) {
     if (window.renderMathInElement) {
       window.renderMathInElement(root, {
@@ -59,15 +123,21 @@
 
     const grid = el("div", { class: "grid" });
     for (const topic of CONTENT[state.subject]) {
-      const card = el("div", {
-        class: `card ${state.subject}`,
-        onclick: () => openTopic(topic.id)
-      }, [
+      const m = topicMastery(topic.id);
+      const badgeText = m.state === "mastered" ? "✓ mastered" :
+                       m.state === "practicing" ? `${m.correct}/10 solved` :
+                       m.state === "started" ? "started" : "";
+      const cardChildren = [
         el("div", { class: "stripe" }),
         el("span", { class: `level ${topic.level}` }, topic.level),
         el("h3", {}, topic.title),
         el("p", {}, topic.summary)
-      ]);
+      ];
+      if (badgeText) cardChildren.push(el("div", { class: `mastery-badge ${m.state}` }, badgeText));
+      const card = el("div", {
+        class: `card ${state.subject}`,
+        onclick: () => openTopic(topic.id)
+      }, cardChildren);
       grid.appendChild(card);
     }
 
@@ -85,6 +155,8 @@
   function renderTopic() {
     const topic = CONTENT[state.subject].find(t => t.id === state.topicId);
     if (!topic) { state.view = "home"; renderHome(); return; }
+
+    recordVisit(topic.id);
 
     backBtn.hidden = false;
     title.textContent = topic.title;
@@ -194,30 +266,120 @@
 
     if (topic.tasks && topic.tasks.length) {
       app.appendChild(el("h3", { class: "section-head" }, "Practice Problems"));
+      app.appendChild(el("p", { class: "section-sub" }, "Try first — type your guess, then check. Attempting before reading the answer dramatically improves retention."));
       const taskExplain = (window.TASK_EXPLAIN || {})[topic.id] || [];
       topic.tasks.forEach((task, i) => {
+        const alreadyCorrect = progress[topic.id]?.correct?.[i];
+        const alreadyAttempted = progress[topic.id]?.attempted?.[i];
+
+        const feedbackDiv = el("div", { class: "task-feedback" });
+        feedbackDiv.hidden = true;
         const answerDiv = el("div", { class: "task-answer", html: task.a });
         answerDiv.hidden = true;
         const explainText = taskExplain[i];
         const explainDiv = explainText ? el("div", { class: "task-explain", html: explainText }) : null;
         if (explainDiv) explainDiv.hidden = true;
-        const btn = el("button", { class: "show-answer-btn" }, "Show answer");
-        btn.addEventListener("click", () => {
-          const showing = !answerDiv.hidden;
-          answerDiv.hidden = showing;
-          if (explainDiv) explainDiv.hidden = showing;
-          btn.textContent = showing ? "Show answer" : "Hide answer";
+
+        const input = el("input", {
+          class: "task-input",
+          type: "text",
+          placeholder: "Your answer…",
+          autocomplete: "off",
+          spellcheck: "false"
         });
+        const checkBtn = el("button", { class: "task-check-btn" }, "Check");
+        const revealBtn = el("button", { class: "show-answer-btn task-reveal-btn" }, "Show answer");
+
+        const showAnswerAndExplain = () => {
+          answerDiv.hidden = false;
+          if (explainDiv) explainDiv.hidden = false;
+          revealBtn.textContent = "Hide answer";
+        };
+        const hideAnswerAndExplain = () => {
+          answerDiv.hidden = true;
+          if (explainDiv) explainDiv.hidden = true;
+          revealBtn.textContent = "Show answer";
+        };
+
+        const doCheck = () => {
+          const v = input.value;
+          if (!v.trim()) return;
+          const ok = answersMatch(v, task.a);
+          recordAttempt(topic.id, i, ok);
+          feedbackDiv.hidden = false;
+          if (ok) {
+            feedbackDiv.className = "task-feedback correct";
+            feedbackDiv.innerHTML = "✓ Correct!";
+            showAnswerAndExplain();
+          } else {
+            feedbackDiv.className = "task-feedback wrong";
+            feedbackDiv.innerHTML = "✗ Not quite. Try again, or click <em>Show answer</em>.";
+          }
+        };
+        checkBtn.addEventListener("click", doCheck);
+        input.addEventListener("keydown", (e) => { if (e.key === "Enter") doCheck(); });
+
+        revealBtn.addEventListener("click", () => {
+          if (answerDiv.hidden) showAnswerAndExplain();
+          else hideAnswerAndExplain();
+        });
+
+        const inputRow = el("div", { class: "task-input-row" }, [input, checkBtn, revealBtn]);
+
+        const taskClass = alreadyCorrect ? "task task-solved" : alreadyAttempted ? "task task-tried" : "task";
         const children = [
-          el("div", { class: "task-num" }, "Problem " + (i + 1)),
+          el("div", { class: "task-num" }, "Problem " + (i + 1) + (alreadyCorrect ? " · ✓ solved" : alreadyAttempted ? " · attempted" : "")),
           el("div", { class: "task-q", html: task.q }),
-          btn,
+          inputRow,
+          feedbackDiv,
           answerDiv
         ];
         if (explainDiv) children.push(explainDiv);
-        const taskDiv = el("div", { class: "task" }, children);
+        const taskDiv = el("div", { class: taskClass }, children);
         app.appendChild(taskDiv);
       });
+    }
+
+    // Connections — render at the end
+    const conn = (window.CONNECTIONS || {})[topic.id];
+    if (conn) {
+      app.appendChild(el("h3", { class: "section-head" }, "Connections"));
+      const card = el("div", { class: "connections-card" });
+      const sections = [];
+      if (conn.prereq && conn.prereq.length) {
+        sections.push({ label: "You should already know", color: "muted", items: conn.prereq });
+      }
+      if (conn.next && conn.next.length) {
+        sections.push({ label: "Now you can learn", color: "accent", items: conn.next });
+      }
+      if (conn.realWorld) {
+        sections.push({ label: "Where you'll meet this", color: "physics", text: conn.realWorld });
+      }
+      sections.forEach((s) => {
+        const block = el("div", { class: "conn-block" });
+        block.appendChild(el("div", { class: "conn-label" }, s.label));
+        if (s.items) {
+          const list = el("div", { class: "conn-links" });
+          s.items.forEach((id) => {
+            const t = [...(CONTENT.math || []), ...(CONTENT.physics || [])].find(x => x.id === id);
+            if (!t) return;
+            const link = el("button", {
+              class: "conn-link",
+              onclick: () => {
+                state.subject = (CONTENT.math || []).some(x => x.id === t.id) ? "math" : "physics";
+                openTopic(t.id);
+                window.scrollTo(0, 0);
+              }
+            }, t.title);
+            list.appendChild(link);
+          });
+          block.appendChild(list);
+        } else if (s.text) {
+          block.appendChild(el("p", { class: "conn-text", html: s.text }));
+        }
+        card.appendChild(block);
+      });
+      app.appendChild(card);
     }
 
     renderMath(app);
