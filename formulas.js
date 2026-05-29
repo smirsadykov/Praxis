@@ -354,13 +354,13 @@ window.FORMULAS = {
   ],
 
   "graph-theory": [
-    { f: "$\\sum_v \\deg(v) = 2|E|$", n: "Handshake lemma." },
-    { f: "Tree: connected, $|E| = |V| - 1$", n: "No cycles." },
-    { f: "$K_n$ has $\\binom{n}{2}$ edges", n: "Complete graph." },
-    { f: "Eulerian circuit iff all degrees even", n: "Connected graph." },
-    { f: "Hamiltonian: visits every vertex once", n: "NP-hard in general." },
-    { f: "Bipartite iff no odd cycle", n: "Two-colorable." },
-    { f: "Four-color theorem: planar $\\Rightarrow \\chi \\leq 4$", n: "Famous result." }
+    { f: "$\\sum_v \\deg(v) = 2|E|$", n: "Handshake lemma. $\\deg(v)$ is the number of edges meeting at vertex $v$; $|E|$ is the total number of edges. Sum all the vertex degrees and you get TWICE the edge count — because each edge has two ends, contributing $1$ to each of its two endpoints' degrees. Consequence: the total degree is always even, so the number of ODD-degree vertices must also be even." },
+    { f: "Tree: connected, $|E| = |V| - 1$", n: "A TREE is a connected graph (every vertex reachable from every other) with NO cycles. Crucially, it always has exactly $|V| - 1$ edges. Why? With fewer, it'd be disconnected; with more, you'd have to revisit a vertex, creating a cycle. Trees are the 'minimum spanning' structure — branching diagrams, file systems, decision trees, evolutionary trees." },
+    { f: "$K_n$ has $\\binom{n}{2}$ edges", n: "$K_n$ is the COMPLETE GRAPH on $n$ vertices — every pair of distinct vertices is connected by an edge. Since each edge corresponds to a pair of vertices, the count is $\\binom{n}{2} = n(n-1)/2$. So $K_5$ has 10 edges, $K_{10}$ has 45." },
+    { f: "Eulerian circuit iff all degrees even", n: "An EULERIAN circuit traverses every EDGE exactly once and returns to start. It exists if and only if the graph is connected AND every vertex has even degree. Why? You enter a vertex via one edge and leave via another, using two edges per visit. If any vertex has odd degree, you'll get stuck there. This was Euler's solution to the Königsberg bridges puzzle in 1736 — and the birth of graph theory." },
+    { f: "Hamiltonian: visits every vertex once", n: "A HAMILTONIAN circuit visits every VERTEX exactly once (compare: Eulerian visits every EDGE). Sounds similar but is MUCH harder — there's no simple characterization. Deciding whether a Hamiltonian circuit exists is NP-hard: the only known algorithms take exponential time in the worst case, and most computer scientists believe a polynomial-time algorithm doesn't exist. The Traveling Salesman Problem is a famous variant." },
+    { f: "Bipartite iff no odd cycle", n: "A graph is BIPARTITE if its vertices can be split into two groups with edges ONLY between groups (never within). Equivalent: the graph can be properly colored with just 2 colors. A graph is bipartite iff it contains NO ODD CYCLE — because an odd cycle forces a coloring clash (start red-blue-red-blue... and odd-length brings you back the wrong color). Bipartite graphs model matching problems (jobs to applicants, hospitals to residents)." },
+    { f: "Four-color theorem: planar $\\Rightarrow \\chi \\leq 4$", n: "A graph is PLANAR if you can draw it on paper with no edges crossing. $\\chi$ (chromatic number) is the minimum number of colors needed to color the vertices so neighbors differ. The four-color theorem says: every planar graph is 4-colorable. Conjectured 1852, proved 1976 — controversial because the proof relied on computer verification of thousands of cases. Practical meaning: any political map can be colored with just 4 colors so that no neighboring countries share a color." }
   ],
 
   "recurrence-generating": [
@@ -476,13 +476,13 @@ window.FORMULAS = {
   ],
 
   "random-variables": [
-    { f: "$E[X] = \\int x f(x)\\,dx$ (continuous) or $\\sum x_i P_i$ (discrete)", n: "Expectation." },
-    { f: "$\\text{Var}(X) = E[X^2] - E[X]^2$", n: "Variance." },
-    { f: "Binomial: $E = np, \\text{Var} = np(1-p)$", n: "$n$ trials, success prob $p$." },
-    { f: "Poisson: $P(X=k) = e^{-\\lambda}\\lambda^k/k!, E = \\text{Var} = \\lambda$", n: "Rare events." },
-    { f: "Normal: $f = \\dfrac{1}{\\sigma\\sqrt{2\\pi}} e^{-(x-\\mu)^2/(2\\sigma^2)}$", n: "Bell curve." },
-    { f: "CLT: $\\sqrt n (\\bar X - \\mu) \\to N(0, \\sigma^2)$", n: "Sample mean is normal." },
-    { f: "Markov: $P(X \\geq a) \\leq E[X]/a$ for $X \\geq 0$", n: "Tail bound." }
+    { f: "$E[X] = \\int x f(x)\\,dx$ (continuous) or $\\sum x_i P_i$ (discrete)", n: "EXPECTATION (or mean) — the long-run average value of a random variable if you sampled it many times. Probability-weighted sum of possible values. Plain English: 'what would I get on average?'" },
+    { f: "$\\text{Var}(X) = E[X^2] - E[X]^2$", n: "VARIANCE measures how spread out a random variable is around its mean. Large variance = wild swings; zero variance = constant. Standard deviation $\\sigma = \\sqrt{\\text{Var}(X)}$ has the same units as $X$, which makes it more interpretable." },
+    { f: "Binomial: $E = np, \\text{Var} = np(1-p)$", n: "BINOMIAL distribution counts successes in $n$ independent Bernoulli trials with success probability $p$. Mean: $np$ (intuitive — expected fraction). Variance: $np(1-p)$, maximized at $p = 1/2$ (most uncertain). Models: coin flips, survey responses, defective items in a batch." },
+    { f: "Poisson: $P(X=k) = e^{-\\lambda}\\lambda^k/k!, E = \\text{Var} = \\lambda$", n: "POISSON distribution models rare-event counts when each event happens independently at average rate $\\lambda$. Distinctive: mean = variance = $\\lambda$. Examples: emails per hour, decay events per second, customers per minute. Derived as the limit of binomial when $n \\to \\infty$ and $p \\to 0$ with $np = \\lambda$." },
+    { f: "Normal: $f = \\dfrac{1}{\\sigma\\sqrt{2\\pi}} e^{-(x-\\mu)^2/(2\\sigma^2)}$", n: "The NORMAL (Gaussian) distribution — the famous bell curve. Parameters: mean $\\mu$ and standard deviation $\\sigma$. Sums of many independent small random effects always tend toward normal (Central Limit Theorem). Heights, measurement errors, test scores, IQs all approximately follow it." },
+    { f: "CLT: $\\sqrt n (\\bar X - \\mu) \\to N(0, \\sigma^2)$", n: "CENTRAL LIMIT THEOREM — perhaps the most remarkable theorem in probability. Take any reasonable distribution, sample $n$ values, compute the mean. As $n$ grows, the distribution of sample means converges to a NORMAL distribution — regardless of the underlying shape. This is why normal distributions appear everywhere and why $\\sqrt n$ is the typical statistical precision scaling." },
+    { f: "Markov: $P(X \\geq a) \\leq E[X]/a$ for $X \\geq 0$", n: "MARKOV'S INEQUALITY: an absurdly simple but useful tail bound. For any non-negative random variable, the probability of being more than $a$ above zero is at most $E[X]/a$. No assumption about distribution shape. Extension (Chebyshev): $P(|X - \\mu| > k\\sigma) \\leq 1/k^2$." }
   ],
 
   "stochastic-processes": [
@@ -897,14 +897,14 @@ window.FORMULAS = {
   ],
 
   "continuum-elasticity": [
-    { f: "$\\sigma = F/A$", n: "Stress." },
-    { f: "$\\varepsilon = \\Delta L/L$", n: "Strain." },
-    { f: "$\\sigma = E\\varepsilon$", n: "Hooke's law (uniaxial)." },
-    { f: "Steel: $E \\approx 200$ GPa", n: "Typical Young's modulus." },
-    { f: "Poisson's ratio: $-\\varepsilon_{\\text{trans}}/\\varepsilon_{\\text{axial}}$", n: "Range $-1$ to $1/2$." },
-    { f: "$K = -V\\dfrac{\\partial P}{\\partial V}$", n: "Bulk modulus." },
-    { f: "Wave speed: $v = \\sqrt{E/\\rho}$", n: "Longitudinal in thin rod." },
-    { f: "Euler buckling: $P_{cr} = \\pi^2 EI/L^2$", n: "Critical compressive load." }
+    { f: "$\\sigma = F/A$", n: "Stress. Force per unit area. Units: pascals (N/m²). Tells you how concentrated the load is — the same 100 N applied to a thumbtack vs. an elephant foot creates wildly different stresses." },
+    { f: "$\\varepsilon = \\Delta L/L$", n: "Strain. Fractional deformation — change in length over original length. Dimensionless. A 1-meter rod stretched by 1 mm has strain $10^{-3}$." },
+    { f: "$\\sigma = E\\varepsilon$", n: "Hooke's law for solids. Stress is proportional to strain in the elastic regime — the material behaves like a spring. The proportionality constant $E$ is YOUNG'S MODULUS, the material's stiffness." },
+    { f: "Steel: $E \\approx 200$ GPa", n: "Steel's Young's modulus. For comparison: aluminum ~70 GPa, wood ~10 GPa, rubber ~0.01 GPa. Big $E$ means stiff: takes a lot of stress to produce noticeable strain." },
+    { f: "Poisson's ratio: $-\\varepsilon_{\\text{trans}}/\\varepsilon_{\\text{axial}}$", n: "When you stretch a material in one direction, it usually shrinks perpendicular. POISSON'S RATIO is the ratio of transverse contraction to axial extension. Typical values: $\\sim 0.3$ for most metals, $0.5$ for incompressible rubber, can be negative for exotic auxetic materials." },
+    { f: "$K = -V\\dfrac{\\partial P}{\\partial V}$", n: "Bulk modulus. Measures resistance to UNIFORM COMPRESSION (squeezing from all sides). The minus sign is because increasing pressure DECREASES volume. Big $K$ ⇒ hard to compress (steel, diamond). Small $K$ ⇒ easily compressed (gases)." },
+    { f: "Wave speed: $v = \\sqrt{E/\\rho}$", n: "Longitudinal wave (sound) speed in a thin rod: stiffness over density. Stiffer or lighter materials carry waves faster. Steel: ~5000 m/s. Air: ~343 m/s. The same formula type recurs across physics: wave speed ~ $\\sqrt{\\text{restoring}/\\text{inertia}}$." },
+    { f: "Euler buckling: $P_{cr} = \\pi^2 EI/L^2$", n: "Critical compressive load above which a slender column buckles instead of just compressing. $I$ is the cross-section's moment of inertia, $L$ is the column length. The $1/L^2$ dependence explains why long thin pillars buckle while short stubby ones just crush. Essential for building design." }
   ],
 
   "central-force": [
@@ -947,12 +947,12 @@ window.FORMULAS = {
   ],
 
   "perturbation-theory": [
-    { f: "$H = H_0 + \\lambda H'$", n: "Setup." },
-    { f: "$E_n^{(1)} = \\langle n | H' | n \\rangle$", n: "First-order energy." },
-    { f: "$|n^{(1)}\\rangle = \\sum_{m \\neq n} \\dfrac{\\langle m | H' | n \\rangle}{E_n - E_m} |m\\rangle$", n: "First-order state." },
-    { f: "$E_n^{(2)} = \\sum_{m \\neq n} \\dfrac{|H'_{mn}|^2}{E_n - E_m}$", n: "Second-order energy." },
-    { f: "Fermi golden rule: $\\Gamma_{i \\to f} = \\dfrac{2\\pi}{\\hbar}|\\langle f | H' | i \\rangle|^2 \\rho(E_f)$", n: "Transition rate." },
-    { f: "Degenerate: diagonalize $H'$ in degenerate subspace first", n: "Special procedure." }
+    { f: "$H = H_0 + \\lambda H'$", n: "PERTURBATION setup. $H_0$ is a Hamiltonian you can solve EXACTLY (free particle, harmonic oscillator, hydrogen atom...). $\\lambda H'$ is a small extra term ($\\lambda$ tracks 'order of smallness'). The hope: expand the answer as a power series in $\\lambda$, computing the first few terms." },
+    { f: "$E_n^{(1)} = \\langle n | H' | n \\rangle$", n: "First-order energy correction: average value of the perturbation in the unperturbed state $|n\\rangle$. Remarkably easy formula — just compute one matrix element. Often gives a respectable estimate without much work." },
+    { f: "$|n^{(1)}\\rangle = \\sum_{m \\neq n} \\dfrac{\\langle m | H' | n \\rangle}{E_n - E_m} |m\\rangle$", n: "First-order STATE correction: the perturbation slightly mixes other unperturbed states $|m\\rangle$ into $|n\\rangle$, with weights determined by matrix elements divided by energy gaps. States near in energy mix most; far-away states contribute little." },
+    { f: "$E_n^{(2)} = \\sum_{m \\neq n} \\dfrac{|H'_{mn}|^2}{E_n - E_m}$", n: "Second-order energy correction. Note: always pushes the ground state DOWN (denominators negative for the ground state). Sum over all other states. Often needed when first-order vanishes by symmetry (e.g., Stark effect on hydrogen ground state)." },
+    { f: "Fermi golden rule: $\\Gamma_{i \\to f} = \\dfrac{2\\pi}{\\hbar}|\\langle f | H' | i \\rangle|^2 \\rho(E_f)$", n: "Transition rate from initial state $|i\\rangle$ to final state $|f\\rangle$ under a perturbation. Used for atomic transitions, nuclear decays, scattering cross sections — the rate at which the system jumps between quantum states. $\\rho(E_f)$ is the density of final states." },
+    { f: "Degenerate: diagonalize $H'$ in degenerate subspace first", n: "When unperturbed states share the same energy (degeneracy), the basic formulas blow up (zero in the denominator). The fix: within each degenerate subspace, first DIAGONALIZE the perturbation matrix; that picks out the right basis in which standard perturbation theory works." }
   ],
 
   "identical-particles": [
@@ -994,14 +994,14 @@ window.FORMULAS = {
   ],
 
   "quantum-information": [
-    { f: "$|\\psi\\rangle = \\alpha|0\\rangle + \\beta|1\\rangle, \\; |\\alpha|^2 + |\\beta|^2 = 1$", n: "Qubit." },
-    { f: "Bloch sphere: $|\\psi\\rangle = \\cos(\\theta/2)|0\\rangle + e^{i\\phi}\\sin(\\theta/2)|1\\rangle$", n: "Geometric view." },
-    { f: "Bell: $|\\Phi^\\pm\\rangle, |\\Psi^\\pm\\rangle$", n: "Four maximally entangled states." },
-    { f: "Hadamard: $H|0\\rangle = (|0\\rangle + |1\\rangle)/\\sqrt 2$", n: "Creates superposition." },
-    { f: "CNOT: $|c\\rangle|t\\rangle \\to |c\\rangle|t \\oplus c\\rangle$", n: "Two-qubit gate." },
-    { f: "No-cloning: $\\nexists U : U|\\psi\\rangle|0\\rangle = |\\psi\\rangle|\\psi\\rangle$", n: "Unknown states can't be copied." },
-    { f: "Shor's algorithm: polynomial factoring", n: "On a quantum computer." },
-    { f: "Grover: $O(\\sqrt N)$ search", n: "Quadratic speedup." }
+    { f: "$|\\psi\\rangle = \\alpha|0\\rangle + \\beta|1\\rangle, \\; |\\alpha|^2 + |\\beta|^2 = 1$", n: "A QUBIT is a 2-state quantum system. Unlike a classical bit (definitely 0 or 1), a qubit is a SUPERPOSITION — both at once, weighted by complex amplitudes $\\alpha$ and $\\beta$. The probabilities $|\\alpha|^2$ and $|\\beta|^2$ of measuring 0 or 1 must sum to 1." },
+    { f: "Bloch sphere: $|\\psi\\rangle = \\cos(\\theta/2)|0\\rangle + e^{i\\phi}\\sin(\\theta/2)|1\\rangle$", n: "Geometric picture of a qubit: every pure state corresponds to a point on the surface of a sphere. North pole = $|0\\rangle$, south pole = $|1\\rangle$, equator = equal superpositions. Lets you visualize qubit operations as rotations." },
+    { f: "Bell: $|\\Phi^\\pm\\rangle, |\\Psi^\\pm\\rangle$", n: "Four BELL STATES — the maximally entangled two-qubit states. Example: $|\\Phi^+\\rangle = (|00\\rangle + |11\\rangle)/\\sqrt 2$ — measuring either qubit guarantees the same result on the other, instantly, no matter how far apart. The phenomenon Einstein called 'spooky action at a distance.'" },
+    { f: "Hadamard: $H|0\\rangle = (|0\\rangle + |1\\rangle)/\\sqrt 2$", n: "The HADAMARD gate creates a uniform superposition from $|0\\rangle$ — the most basic 'quantum-ifying' operation. Applied to all qubits at the start of an algorithm, it puts the computer into a superposition over ALL possible inputs simultaneously. This is where quantum parallelism begins." },
+    { f: "CNOT: $|c\\rangle|t\\rangle \\to |c\\rangle|t \\oplus c\\rangle$", n: "Controlled-NOT gate. If the CONTROL qubit $c$ is 1, FLIP the target qubit $t$; otherwise leave it. Combined with single-qubit gates, CNOT is universal — any quantum computation can be built from these pieces. Also entangles qubits when control is in superposition." },
+    { f: "No-cloning: $\\nexists U : U|\\psi\\rangle|0\\rangle = |\\psi\\rangle|\\psi\\rangle$", n: "NO-CLONING THEOREM: no quantum operation can take an arbitrary unknown state and produce two copies of it. Provable directly from linearity of QM. Means quantum information is fundamentally different from classical — and it's why quantum cryptography (BB84) can detect eavesdropping." },
+    { f: "Shor's algorithm: polynomial factoring", n: "On a quantum computer, Shor's algorithm factors $N$-digit numbers in $O((\\log N)^3)$ time — polynomial in the number of digits. The best classical algorithm requires exponential time. If a large quantum computer is built, RSA cryptography (which assumes factoring is hard) is broken. This is the most famous quantum-speedup result." },
+    { f: "Grover: $O(\\sqrt N)$ search", n: "Grover's algorithm searches an unstructured database of $N$ items in $O(\\sqrt N)$ steps, vs. $O(N)$ classically. Quadratic speedup — less dramatic than Shor's exponential one, but applies to a much wider class of problems. The square-root is provably optimal for unstructured search." }
   ],
 
   "symmetries-noether": [
