@@ -117,6 +117,20 @@
       app.appendChild(introCard);
     }
 
+    const formulas = (window.FORMULAS || {})[topic.id];
+    if (formulas && formulas.length) {
+      app.appendChild(el("h3", { class: "section-head" }, "Key Formulas & Results"));
+      const card = el("div", { class: "formulas" });
+      formulas.forEach((row) => {
+        const r = el("div", { class: "formula-row" }, [
+          el("div", { class: "formula-f", html: row.f }),
+          el("div", { class: "formula-n", html: row.n })
+        ]);
+        card.appendChild(r);
+      });
+      app.appendChild(card);
+    }
+
     if (topic.examples && topic.examples.length) {
       app.appendChild(el("h3", { class: "section-head" }, "Worked Examples"));
       const explainMap = (window.EXPLAIN || {})[topic.id] || [];
