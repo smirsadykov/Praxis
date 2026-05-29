@@ -119,10 +119,15 @@
 
     if (topic.examples && topic.examples.length) {
       app.appendChild(el("h3", { class: "section-head" }, "Worked Examples"));
-      for (const ex of topic.examples) {
+      const explainMap = (window.EXPLAIN || {})[topic.id] || [];
+      topic.examples.forEach((ex, exIdx) => {
         const exDiv = el("div", { class: "example" });
         exDiv.appendChild(el("h4", {}, ex.title));
         exDiv.appendChild(el("p", { class: "prompt", html: ex.prompt }));
+        const explainText = explainMap[exIdx];
+        if (explainText) {
+          exDiv.appendChild(el("div", { class: "explain", html: explainText }));
+        }
         for (const step of ex.steps) {
           const stepDiv = el("div", { class: "step" }, [
             el("div", { class: "label" }, step.label),
@@ -132,7 +137,7 @@
         }
         exDiv.appendChild(el("div", { class: "answer", html: ex.answer }));
         app.appendChild(exDiv);
-      }
+      });
     }
 
     if (topic.tasks && topic.tasks.length) {
