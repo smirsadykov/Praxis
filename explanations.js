@@ -33,10 +33,10 @@ window.EXPLAIN = {
   ],
 
   "linear-equations": [
-    "Think of the equation as a balance scale. The unknown ($x$) is buried under '+5' and '×3'. To free it, undo those operations in reverse order: first subtract 5 from both sides, then divide both by 3.",
-    "When $x$ appears on both sides, herd all the $x$'s onto one side and all the numbers onto the other. Then it's the same as a basic linear equation.",
-    "Fractions in equations are annoying. The trick: multiply EVERY term by the lowest common denominator. The fractions vanish, leaving a normal equation.",
-    "Turning words into math is half the battle. 'Costs $\\$3.50$ plus $\\$2$ per mile' becomes 'fare $= 3.50 + 2m$'. Now solve for the miles ($m$) that make the fare equal $\\$15.50$."
+    "We need to solve $3x + 5 = 20$ for $x$. Think of an equation as a BALANCE SCALE — whatever you do to one side, do to the other. The $x$ is buried under '$+5$' and '$\\times 3$'. Undo them in REVERSE order: first subtract $5$ from both sides ($3x = 15$), then divide both by $3$ ($x = 5$).",
+    "We need to solve $4x - 7 = 2x + 9$ where $x$ appears on BOTH sides. Move all $x$-terms to one side and all constants to the other. Subtract $2x$ from both sides: $2x - 7 = 9$. Add $7$: $2x = 16$. Divide by $2$: $x = 8$.",
+    "We need to solve $x/3 + 1/2 = 5/6$. Fractions are awkward — clear them by multiplying every term by the LCD ($6$). This gives $2x + 3 = 5$. Now it's a standard linear equation: subtract $3$ ($2x = 2$), divide by $2$ ($x = 1$).",
+    "WORD PROBLEM: 'A taxi charges $\\$3.50$ plus $\\$2$ per mile. For what number of miles is the fare $\\$15.50$?' Translate to algebra: let $m$ = miles. Equation: $3.50 + 2m = 15.50$. Subtract $3.50$: $2m = 12$. Divide by $2$: $m = 6$ miles."
   ],
 
   "inequalities": [
@@ -82,10 +82,10 @@ window.EXPLAIN = {
   ],
 
   "quadratic-equations": [
-    "Some quadratics factor neatly: find two numbers whose product is the constant and whose sum is the middle coefficient. $-2$ and $-3$ multiply to $6$ and add to $-5$. Done.",
-    "When factoring doesn't jump out, the quadratic formula always works. It comes from completing the square applied to the general $ax^2 + bx + c$. The discriminant ($b^2 - 4ac$) tells you whether the roots are real, repeated, or complex.",
-    "Completing the square turns $x^2 + 6x - 7$ into $(x+3)^2 = 16$ by adding the right constant. Then taking square roots is easy. This is how the quadratic formula was discovered.",
-    "A parabola's tip (vertex) is where the projectile peaks or the parabolic bowl sits lowest. The $x$-coordinate is $-b/(2a)$. Plug it back in to get the max or min height."
+    "We need to solve $x^2 - 5x + 6 = 0$. FACTORING: find two numbers that multiply to $6$ (the constant) and add to $-5$ (the middle coefficient). Try $-2$ and $-3$: product is $6$ ✓, sum is $-5$ ✓. So $(x - 2)(x - 3) = 0$. Zero-product rule: a product is zero only if one factor is zero. So $x = 2$ or $x = 3$.",
+    "We need to solve $2x^2 + 3x - 2 = 0$. Factoring isn't obvious, so use the QUADRATIC FORMULA $x = (-b \\pm \\sqrt{b^2 - 4ac})/(2a)$ with $a = 2, b = 3, c = -2$. Compute discriminant: $\\Delta = 9 + 16 = 25$. So $x = (-3 \\pm 5)/4$. Two solutions: $x = 2/4 = 1/2$ and $x = -8/4 = -2$.",
+    "We need to solve $x^2 + 6x - 7 = 0$ by COMPLETING THE SQUARE. Move the constant: $x^2 + 6x = 7$. Take half the coefficient of $x$ ($6/2 = 3$), square it ($9$), and add to BOTH sides: $x^2 + 6x + 9 = 16$. The left side is now a perfect square: $(x + 3)^2 = 16$. Take square roots: $x + 3 = \\pm 4$. So $x = 1$ or $x = -7$.",
+    "We need the maximum of $h(t) = -5t^2 + 20t + 1$. Since $a = -5 < 0$, the parabola opens downward — the VERTEX is the maximum. The vertex $t$-coordinate is $-b/(2a) = -20/(-10) = 2$. Plug back: $h(2) = -5(4) + 20(2) + 1 = -20 + 40 + 1 = 21$. Max height is $21$ meters at $t = 2$ seconds."
   ],
 
   "polynomials-rational": [
@@ -117,10 +117,10 @@ window.EXPLAIN = {
   ],
 
   "trigonometry": [
-    "$\\sin\\theta$ is the ratio of the opposite side to the hypotenuse — fixed for each angle. With hypotenuse $10$ and angle $30^\\circ$ (where $\\sin = 1/2$), the opposite side must be half: $5$.",
-    "$\\sin^2 + \\cos^2 = 1$ is the Pythagorean theorem in disguise (sides squared add to hypotenuse squared, scaled to a unit circle). Knowing one ratio, you get the other.",
-    "$\\sin\\theta = 1/2$ has two solutions in one rotation: one in the first quadrant ($\\pi/6$), one in the second ($5\\pi/6$). The unit circle has reflection symmetry.",
-    "When you don't have a right angle, the regular sine/cosine don't apply directly. Law of cosines generalizes Pythagoras: $c^2 = a^2 + b^2 - 2ab\\cos C$. When $C = 90^\\circ$, the cosine term vanishes and Pythagoras returns."
+    "A right triangle has hypotenuse $10$ and an angle of $30^\\circ$. We want the side OPPOSITE the $30^\\circ$ angle. The right ratio is sine: $\\sin\\theta = \\text{opp}/\\text{hyp}$. Rearrange: opp = hyp $\\times \\sin\\theta = 10 \\times \\sin 30^\\circ = 10 \\times 1/2 = 5$.",
+    "We're told $\\sin\\theta = 3/5$ and $\\theta$ is acute. We want $\\cos\\theta$. The PYTHAGOREAN IDENTITY $\\sin^2\\theta + \\cos^2\\theta = 1$ links them. So $\\cos^2\\theta = 1 - (3/5)^2 = 1 - 9/25 = 16/25$. Take the positive root (acute angle ⇒ positive cosine): $\\cos\\theta = 4/5$.",
+    "We need to solve $2\\sin\\theta - 1 = 0$ on $[0, 2\\pi)$. Isolate $\\sin$: $\\sin\\theta = 1/2$. From the unit circle, $\\sin = 1/2$ at the reference angle $\\pi/6$. By symmetry of $\\sin$ across the $y$-axis, there are TWO solutions in one revolution: $\\theta = \\pi/6$ (quadrant 1) and $\\theta = 5\\pi/6$ (quadrant 2).",
+    "A triangle has sides $a = 7$, $b = 9$, and included angle $C = 60^\\circ$. We want side $c$. Pythagoras doesn't apply (no right angle), but the LAW OF COSINES does: $c^2 = a^2 + b^2 - 2ab\\cos C = 49 + 81 - 2(7)(9)(0.5) = 130 - 63 = 67$. So $c = \\sqrt{67} \\approx 8.19$."
   ],
 
   "probability": [
@@ -159,24 +159,24 @@ window.EXPLAIN = {
   ],
 
   "limits": [
-    "Polynomials are continuous everywhere, so the limit is just the value. No tricks needed: substitute and compute.",
-    "$0/0$ is undefined, but the limit might still exist. Factor the top and cancel the troublesome $(x-2)$. Once it cancels, you can substitute safely.",
-    "For large $x$, the highest-degree terms dominate; everything else is a rounding error. Divide top and bottom by $x^2$ to see what survives — here, the ratio of leading coefficients.",
-    "L'Hôpital's rule: when you get $0/0$ or $\\infty/\\infty$, take the derivative of top and bottom separately, then try again. Famous result: $\\lim \\sin x / x = 1$ at $0$."
+    "We need $\\lim_{x \\to 3}(x^2 + 2x - 1)$. This is a polynomial, which is continuous everywhere — so the limit equals the function value. Just substitute $x = 3$: $9 + 6 - 1 = 14$. Done. No fancy tricks needed when the function is continuous.",
+    "We need $\\lim_{x \\to 2}(x^2 - 4)/(x - 2)$. Direct substitution gives $0/0$ — INDETERMINATE. The limit might still exist. Factor the numerator: $x^2 - 4 = (x-2)(x+2)$. The $(x-2)$ cancels with the denominator, leaving $x + 2$ for all $x \\neq 2$. Now substitute: $2 + 2 = 4$.",
+    "We need $\\lim_{x \\to \\infty}(3x^2 - 5)/(2x^2 + x + 1)$. For large $x$, low-order terms become negligible. Divide every term by $x^2$ (the highest power in the denominator): $(3 - 5/x^2)/(2 + 1/x + 1/x^2)$. As $x \\to \\infty$, each $1/x^k \\to 0$. Only the ratio of LEADING coefficients survives: $3/2$.",
+    "We need $\\lim_{x \\to 0} \\sin x/x$. Substitution gives $0/0$ — indeterminate. Apply L'HÔPITAL'S RULE: take derivative of numerator and denominator SEPARATELY. Derivative of $\\sin x$ is $\\cos x$; derivative of $x$ is $1$. New expression: $\\cos x/1 = \\cos x$. Substitute $x = 0$: $\\cos 0 = 1$."
   ],
 
   "derivatives": [
-    "Power rule: bring the exponent down as a coefficient, then subtract 1 from the exponent. Apply to each term separately. Constants disappear because their slope is zero.",
-    "Chain rule: when one function is wrapped inside another, differentiate the outer (keeping the inside intact) and multiply by the derivative of the inside. 'Outside times inside.'",
-    "Product rule: derivative of $fg$ is (derivative of $f$) times $g$ + $f$ times (derivative of $g$). Both pieces, each one differentiated in turn, added together.",
-    "Quotient rule: $(u/v)' = (u'v - uv')/v^2$. Memory hook: 'low d-high minus high d-low, over low squared.' Watch the sign — the order matters."
+    "We have the polynomial $f(x) = 3x^4 - 2x^2 + 7$ and need its derivative. Apply the POWER RULE to each term: bring the exponent down as a coefficient, then reduce the exponent by 1. So $3x^4 \\to 4 \\cdot 3 x^3 = 12x^3$, and $-2x^2 \\to -4x$. The constant $7$ has zero slope and disappears. Combine to get $f'(x) = 12x^3 - 4x$.",
+    "$g(x) = \\sin(3x^2)$ is a function ($\\sin$) WRAPPED around another function ($3x^2$). That's the signature of CHAIN RULE: differentiate the outer keeping the inside intact ($\\cos(3x^2)$), then multiply by the derivative of the inside ($6x$). Result: $g'(x) = 6x \\cos(3x^2)$. The order matters — outer first, then inner.",
+    "$h(x) = x^2 \\sin x$ is a PRODUCT of two functions ($x^2$ and $\\sin x$). That's the signature of PRODUCT RULE: derivative of first times second, plus first times derivative of second. Differentiate $x^2$ keeping $\\sin x$: $2x \\sin x$. Then keep $x^2$ and differentiate $\\sin x$: $x^2 \\cos x$. Add them: $2x \\sin x + x^2 \\cos x$.",
+    "$f(x) = x/(x^2 + 1)$ is a QUOTIENT — one function divided by another. Apply quotient rule $(u/v)' = (u'v - uv')/v^2$ with $u = x, v = x^2 + 1$. Numerator: $(1)(x^2 + 1) - x(2x) = x^2 + 1 - 2x^2 = 1 - x^2$. Denominator: $(x^2 + 1)^2$. Result: $(1 - x^2)/(x^2 + 1)^2$."
   ],
 
   "integrals": [
-    "Integration reverses differentiation. If derivative of $x^4$ is $4x^3$, then integral of $4x^3$ is $x^4$. Add $+C$ because any constant has derivative zero — so we don't know which constant it was.",
-    "Definite integrals give the actual area (or accumulated change). Find the antiderivative, plug in the upper and lower limits, subtract. The Fundamental Theorem of Calculus.",
-    "When you see a function and its derivative both present, $u$-substitution works. Let $u = x^2$, then $du = 2x\\,dx$ — exactly what's in the integral. Rewrite, integrate, swap back.",
-    "Integration by parts: when you can't $u$-sub but you see a product like $x \\cdot e^x$, IBP lets you trade one integral for an easier one. Choose $u$ to simplify on differentiation; $dv$ should be easy to integrate."
+    "We need $\\int (4x^3 - 6x)\\,dx$. Apply the POWER RULE in reverse: increase exponent by 1, divide by the new exponent. So $4x^3 \\to 4 \\cdot x^4/4 = x^4$, and $-6x \\to -6 \\cdot x^2/2 = -3x^2$. Add the constant of integration $+C$ because we lost any constant when differentiating. Result: $x^4 - 3x^2 + C$.",
+    "We need $\\int_0^2 3x^2\\,dx$ — a DEFINITE integral. By the Fundamental Theorem of Calculus, find an antiderivative, then evaluate at top minus bottom. Antiderivative of $3x^2$ is $x^3$. Top: $2^3 = 8$. Bottom: $0^3 = 0$. Subtract: $8 - 0 = 8$.",
+    "We need $\\int 2x \\cos(x^2)\\,dx$. Notice $2x$ is the derivative of $x^2$ — that's the cue for $u$-SUBSTITUTION. Let $u = x^2$, so $du = 2x\\,dx$. The integral becomes $\\int \\cos u\\,du = \\sin u + C$. Substitute back to get $\\sin(x^2) + C$.",
+    "We need $\\int x e^x\\,dx$. The integrand is a PRODUCT, and neither factor is the derivative of the other — so we use INTEGRATION BY PARTS: $\\int u\\,dv = uv - \\int v\\,du$. Pick $u = x$ (simplifies on differentiation, $du = dx$) and $dv = e^x\\,dx$ ($v = e^x$). Then $\\int x e^x\\,dx = xe^x - \\int e^x\\,dx = xe^x - e^x + C = (x-1)e^x + C$."
   ],
 
   "multivariable-calculus": [
@@ -259,38 +259,38 @@ window.EXPLAIN = {
   ],
 
   "kinematics": [
-    "Average speed = total distance / total time. The simplest possible measurement. $150$ km in $2.5$ h = $60$ km/h.",
-    "In free fall (no air resistance), every object gains $9.8$ m/s of speed per second. After $3$ seconds, that's $9.8 \\times 3 = 29.4$ m/s — regardless of weight (Galileo's insight).",
-    "A horizontally launched projectile has TWO motions at once: constant horizontal speed AND vertical free fall. They are independent. The time to hit the ground is set by the falling, not the launching.",
-    "When you have initial speed, final speed, and distance (but not time), use $v^2 = v_0^2 + 2ax$. Avoids having to find time as an intermediate step."
+    "A car travels $150$ km in $2.5$ h. We want AVERAGE SPEED. Definition: speed = distance/time. So $\\bar v = 150/2.5 = 60$ km/h. Simple application of the definition — no formula manipulation needed.",
+    "An object is dropped from rest. We want its speed after $3$ s. 'Dropped' means initial velocity $v_0 = 0$. Under free fall, acceleration is $g = 9.8$ m/s². Apply $v = v_0 + gt$: $v = 0 + 9.8 \\times 3 = 29.4$ m/s. Mass irrelevant — Galileo's discovery.",
+    "A ball is thrown horizontally from a $20$ m cliff at $15$ m/s. We want the horizontal landing distance. Key insight: HORIZONTAL and VERTICAL motions are INDEPENDENT. Time to fall depends only on the height: $h = \\tfrac{1}{2} g t^2$ gives $t = \\sqrt{2h/g} = \\sqrt{40/9.8} \\approx 2.02$ s. Horizontal distance: $x = v_x t = 15 \\times 2.02 \\approx 30.3$ m.",
+    "A car accelerates from $10$ to $30$ m/s over $100$ m. We want the acceleration. We don't know the time — but the TIME-FREE kinematic equation $v^2 = v_0^2 + 2ax$ doesn't need it. Plug in: $30^2 = 10^2 + 2a(100)$, so $900 = 100 + 200a$, giving $a = 4$ m/s²."
   ],
 
   "vectors-physics": [
-    "A boat moving east and a current pushing north combine into a single arrow pointing northeast. The resultant length is the hypotenuse: $\\sqrt{4^2 + 3^2} = 5$ m/s.",
-    "Any tilted force splits into horizontal and vertical pieces. $F\\cos\\theta$ pulls along the ground, $F\\sin\\theta$ lifts up. Sine and cosine come from right-triangle definitions.",
-    "To find the direction of $\\langle 4, 3 \\rangle$, take the inverse tangent of $3/4$. About $36.9°$ — close to but not exactly halfway between east and north (north would require equal components).",
-    "Adding vectors is adding their components separately: x with x, y with y. Like adding two trips' east-west movements and two trips' north-south movements independently."
+    "A boat moves east at $4$ m/s and the river flows north at $3$ m/s. These vectors are PERPENDICULAR. The resultant is the hypotenuse of a right triangle: $|\\vec v| = \\sqrt{4^2 + 3^2} = \\sqrt{25} = 5$ m/s.",
+    "A $50$ N force acts at $30°$ above horizontal. Components come from right-triangle trig: HORIZONTAL = $F\\cos\\theta = 50\\cos 30° \\approx 43.3$ N. VERTICAL = $F\\sin\\theta = 50\\sin 30° = 25$ N. Cosine for the angle-adjacent direction, sine for opposite.",
+    "We want the direction of the resultant from example 1 (4 east, 3 north). Angle from east axis: $\\theta = \\arctan(\\text{opposite}/\\text{adjacent}) = \\arctan(3/4) \\approx 36.9°$ north of east. Not 45° because the components aren't equal.",
+    "We want $\\vec A + \\vec B$ where $\\vec A = \\langle 5, 2 \\rangle$ and $\\vec B = \\langle -2, 4 \\rangle$. Vector addition is component-wise: $\\vec A + \\vec B = \\langle 5 + (-2), 2 + 4 \\rangle = \\langle 3, 6 \\rangle$. Add x with x, y with y."
   ],
 
   "newtons-laws": [
-    "Newton's second law: net force = mass × acceleration. Push a 5-kg block with whatever force makes it speed up at $2$ m/s². That force is $5 \\times 2 = 10$ N.",
-    "Same law backward: given the force and mass, the acceleration is determined. $20$ N on a $4$-kg block gives $5$ m/s². Heavier = harder to accelerate.",
-    "When a box hangs from a rope at rest, the rope must pull up exactly as hard as gravity pulls down. So tension = weight = $mg = 10 \\times 9.8 = 98$ N.",
-    "Friction opposes motion and depends on how hard the surfaces press together (the normal force). On flat ground, normal = weight. Multiply by friction coefficient: $0.3 \\times 196 = 58.8$ N."
+    "A $5$ kg block accelerates at $2$ m/s². We want the net force. Direct application of Newton's 2nd law: $F = ma = 5 \\times 2 = 10$ N. Force, mass, and acceleration are locked together by this equation.",
+    "A $20$ N force is applied to a $4$ kg block. We want the acceleration. Newton's 2nd, rearranged: $a = F/m = 20/4 = 5$ m/s². Heavier objects need more force for the same acceleration; here, $a$ falls out directly.",
+    "A $10$ kg box hangs from a rope at rest. We want the rope's tension. 'At rest' means EQUILIBRIUM — net force is zero. Gravity pulls down with $mg = 10 \\times 9.8 = 98$ N. So tension must pull up with the same magnitude: $T = 98$ N.",
+    "A $20$ kg crate slides on a floor with kinetic friction coefficient $\\mu_k = 0.3$. We want the friction force. On a horizontal floor, normal force $N = mg = 20 \\times 9.8 = 196$ N. Kinetic friction: $f_k = \\mu_k N = 0.3 \\times 196 = 58.8$ N, opposite to motion."
   ],
 
   "momentum-impulse": [
-    "Momentum measures 'how hard to stop'. A 2-kg ball at 5 m/s has $10$ kg·m/s of momentum. Heavier or faster things have more.",
-    "Force × time = change in momentum. A tennis ball going from $0$ to $40$ m/s in just $0.01$ s requires a HUGE force ($200$ N) — that's why short impacts feel so violent.",
-    "When two objects collide and stick, total momentum is conserved. Add momentum before, divide by combined mass to get final velocity. The kinetic energy is NOT conserved (heat, sound, deformation absorb some).",
-    "When equal masses collide elastically in 1D, they swap velocities. Newton's cradle works exactly this way: one ball hits the end, the other end launches off."
+    "A $2$ kg ball moves at $5$ m/s. We want its momentum. Definition: $p = mv = 2 \\times 5 = 10$ kg·m/s. Momentum measures 'how hard to stop' — heavier or faster objects have more.",
+    "A $0.05$ kg tennis ball goes from $0$ to $40$ m/s in $0.01$ s. We want the average force. First, change in momentum (impulse): $\\Delta p = m\\Delta v = 0.05 \\times 40 = 2$ kg·m/s. Then $F = \\Delta p/\\Delta t = 2/0.01 = 200$ N. Short impacts feel violent because the force is huge.",
+    "A $3$ kg object at $4$ m/s collides with a stationary $2$ kg object. They STICK. We want the final velocity. Apply conservation of momentum (no external forces during collision): $m_1 v_1 + m_2 v_2 = (m_1 + m_2) v_f$. So $3 \\times 4 + 0 = 5 v_f$, giving $v_f = 12/5 = 2.4$ m/s. KE is NOT conserved here (heat + deformation).",
+    "A $1$ kg ball at $3$ m/s elastically collides with a $1$ kg ball at rest. We want both final velocities. Special case: EQUAL MASSES in 1D ELASTIC collisions — velocities swap. So $v_1' = 0$ and $v_2' = 3$ m/s. Newton's cradle works exactly this way."
   ],
 
   "energy-work": [
-    "Kinetic energy is $\\tfrac{1}{2} m v^2$. Doubling speed quadruples energy — which is why crashes get violent fast as you speed up.",
-    "When something falls, gravitational potential energy converts to kinetic energy. Setting them equal gives $v = \\sqrt{2gh}$. Drop something from $10$ m, it lands at $14$ m/s. Mass doesn't matter (ignoring air).",
-    "Work is force × distance, when they point the same way. Push a box $10$ m with $50$ N: $500$ J of work done — and that energy now lives in the box as motion or heat.",
-    "Power is how fast you do work (energy per time). Lifting $200$ kg by $5$ m takes $9800$ J. Doing it in $4$ s requires $2.45$ kW of power — about 3 horsepower."
+    "A $1500$ kg car moves at $20$ m/s. We want its kinetic energy. $KE = \\tfrac{1}{2} m v^2 = \\tfrac{1}{2}(1500)(20^2) = \\tfrac{1}{2}(1500)(400) = 300{,}000$ J. Note the $v^2$ — doubling speed quadruples KE, which is why high-speed crashes are so much worse.",
+    "A $0.5$ kg ball is dropped from $10$ m. We want its impact speed. CONSERVATION OF ENERGY: starting PE becomes ending KE. $mgh = \\tfrac{1}{2} m v^2$. Mass cancels: $v = \\sqrt{2gh} = \\sqrt{2 \\times 9.8 \\times 10} = \\sqrt{196} = 14$ m/s. Mass-independent fall, as Galileo showed.",
+    "A horizontal $50$ N force pushes a box $10$ m. We want the work done. WORK = force × distance × $\\cos\\theta$ where $\\theta$ is the angle between force and motion. Here they're aligned ($\\theta = 0$, $\\cos 0 = 1$): $W = 50 \\times 10 = 500$ J. That energy now lives in the box as motion or heat.",
+    "A motor lifts $200$ kg by $5$ m in $4$ s. We want the power output. WORK done = $mgh = 200 \\times 9.8 \\times 5 = 9800$ J. POWER = work/time = $9800/4 = 2450$ W $\\approx 2.45$ kW. About 3 horsepower."
   ],
 
   "circular-gravitation": [
