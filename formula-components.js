@@ -1907,4 +1907,388 @@
     "$E_F$ = Fermi energy. Energy of the highest filled state at $T = 0$. $k_F$ = Fermi momentum. $n$ = electron density.");
   W("solid-state", "Band gap silicon",
     "Si: $E_g \\approx 1.12$ eV at 300 K. Determines whether material is metal, semiconductor, or insulator (roughly $E_g \\gtrsim 3$ eV for insulators).");
+
+  // ============================================================
+  // BATCH 4 — define what each symbol IS plus worked example
+  // ============================================================
+
+  // ----- FUNCTIONS-GRAPHS -----
+  W("functions-graphs", "Vertical line test",
+    "A graph in the plane represents a function $f: x \\mapsto y$ if and only if every vertical line crosses the graph at most once. WHY: a function assigns each input one output, so two points above the same $x$ would mean two outputs. WORKED EXAMPLE: the parabola $y = x^2$ passes (any vertical line crosses once). The circle $x^2 + y^2 = 1$ fails (vertical line $x = 0$ crosses at $y = 1$ and $y = -1$).");
+  W("functions-graphs", "Domain:",
+    "$f$ = a function. <em>Domain</em> = the set of all inputs $x$ for which $f(x)$ is defined. <em>Range</em> = the set of outputs actually produced. WORKED EXAMPLE: $f(x) = \\sqrt x$ has domain $x \\geq 0$ (can't take root of negative reals) and range $f \\geq 0$. $f(x) = 1/x$ has domain $x \\neq 0$.");
+  W("functions-graphs", "$(f \\circ g)(x)",
+    "$f, g$ = two functions. $(f \\circ g)$ = the composition: apply $g$ first, then $f$ to the result. Read 'f composed with g' or 'f circle g'. ORDER matters — $f \\circ g$ is usually different from $g \\circ f$. WORKED EXAMPLE: let $f(x) = x^2$ and $g(x) = x + 3$. Then $(f \\circ g)(x) = f(g(x)) = f(x+3) = (x+3)^2$. By contrast $(g \\circ f)(x) = g(f(x)) = g(x^2) = x^2 + 3$. Different!");
+  W("functions-graphs", "$f^{-1}",
+    "$f$ = a one-to-one (bijective) function. $f^{-1}$ = its <em>inverse function</em>, which 'undoes' $f$: $f^{-1}(f(x)) = x$ and $f(f^{-1}(y)) = y$. GEOMETRIC view: the graph of $f^{-1}$ is the reflection of the graph of $f$ across the line $y = x$. WORKED EXAMPLE: if $f(x) = 2x + 5$, solve $y = 2x + 5$ for $x$: $x = (y - 5)/2$. So $f^{-1}(y) = (y - 5)/2$. Check: $f(f^{-1}(7)) = f(1) = 7$ ✓.");
+  W("functions-graphs", "$y = a f",
+    "Generic transformation of $y = f(x)$. $a$ = vertical stretch factor ($|a| > 1$ stretches, $0 < |a| < 1$ compresses, $a < 0$ reflects in x-axis). $b$ = horizontal stretch factor (inverted: $|b| > 1$ COMPRESSES, $|b| < 1$ stretches). $h$ = horizontal shift to the right. $k$ = vertical shift upward. WORKED EXAMPLE: starting from $y = x^2$, the function $y = 2(x-3)^2 + 1$ has $a=2, b=1, h=3, k=1$: parabola stretched vertically by 2, shifted right 3 and up 1.");
+  W("functions-graphs", "Even:",
+    "$f$ = a function. <em>Even</em>: $f(-x) = f(x)$ — graph is symmetric across the y-axis (e.g., $x^2, \\cos x, |x|$). <em>Odd</em>: $f(-x) = -f(x)$ — graph is symmetric through the origin (e.g., $x^3, \\sin x, \\tan x$). MOST functions are neither. WORKED EXAMPLE: $f(x) = x^3 - x$: $f(-x) = (-x)^3 - (-x) = -x^3 + x = -(x^3 - x) = -f(x)$, so odd.");
+
+  // ----- SET-LOGIC -----
+  W("set-logic", "$|A \\cup B|",
+    "$A, B$ = finite sets. $|S|$ = number of elements (cardinality) of set $S$. $A \\cup B$ = union (elements in either). $A \\cap B$ = intersection (elements in both). Subtract the overlap so we don't count it twice. WORKED EXAMPLE: $A = \\{1, 2, 3, 4\\}$, $B = \\{3, 4, 5, 6\\}$. $|A| = 4$, $|B| = 4$, $|A \\cap B| = 2$. So $|A \\cup B| = 4 + 4 - 2 = 6$. Check: $A \\cup B = \\{1, 2, 3, 4, 5, 6\\}$, which has 6 elements. ✓");
+  W("set-logic", "$|\\mathcal{P}(A)|",
+    "$A$ = any set. $\\mathcal P(A)$ = <em>power set</em> = the set of all subsets of $A$. For a finite set with $n$ elements: $2^n$ subsets (each element is in or out — 2 choices, $n$ elements). WORKED EXAMPLE: $A = \\{a, b, c\\}$ (3 elements). Subsets: $\\emptyset, \\{a\\}, \\{b\\}, \\{c\\}, \\{a,b\\}, \\{a,c\\}, \\{b,c\\}, \\{a,b,c\\}$ — that's $2^3 = 8$.");
+  W("set-logic", "$\\neg(p \\land q)",
+    "$p, q$ = logical propositions (each either true or false). $\\neg$ = negation (NOT). $\\land$ = conjunction (AND). $\\lor$ = disjunction (OR). $\\equiv$ = logically equivalent. DE MORGAN's law: 'NOT (P and Q)' is the same as 'NOT P or NOT Q'. WORKED EXAMPLE: $p = $ 'it's raining', $q = $ 'it's cold'. $\\neg(p \\land q) = $ 'it's not (raining AND cold)' = 'it's not raining OR it's not cold' = $\\neg p \\lor \\neg q$.");
+  W("set-logic", "$p \\Rightarrow q",
+    "$p, q$ = propositions. The <em>contrapositive</em> $\\neg q \\Rightarrow \\neg p$ has the same truth value as $p \\Rightarrow q$. PROOFS often easier in contrapositive form. WORKED EXAMPLE: 'if $n^2$ is even then $n$ is even' is equivalent to 'if $n$ is odd then $n^2$ is odd', which is straightforward to prove: $n = 2k+1 \\Rightarrow n^2 = 4k^2 + 4k + 1$ (odd).");
+  W("set-logic", "$\\neg(\\forall x",
+    "$\\forall x$ = 'for all $x$'. $\\exists x$ = 'there exists an $x$'. $P(x)$ = some statement about $x$. NEGATING a universal makes an existential of the negation. WORKED EXAMPLE: 'all swans are white' = $\\forall x (\\text{swan}(x) \\Rightarrow \\text{white}(x))$. Negation: 'there exists a non-white swan' = $\\exists x(\\text{swan}(x) \\land \\neg\\text{white}(x))$.");
+
+  // ----- LOGARITHMS -----
+  W("logarithms", "$\\log_b(xy)",
+    "$b$ = base of the logarithm ($b > 0, b \\neq 1$). $x, y$ = positive arguments. PRODUCT rule: log of a product is the sum of logs. WORKED EXAMPLE: $\\log_{10}(20) = \\log_{10}(4 \\cdot 5) = \\log_{10}(4) + \\log_{10}(5) \\approx 0.602 + 0.699 = 1.301$. Check: $10^{1.301} \\approx 20$ ✓. This is why logarithms turn multiplication into addition — basis of slide rules.");
+  W("logarithms", "$\\log_b(x/y)",
+    "$b$ = base. $x, y$ = positive numbers. QUOTIENT rule: log of a quotient is the difference. WORKED EXAMPLE: $\\log_2(8/3) = \\log_2(8) - \\log_2(3) = 3 - 1.585 = 1.415$.");
+  W("logarithms", "$\\log_b(x^p)",
+    "$b$ = base. $x > 0$. $p$ = any real exponent. POWER rule: log brings the exponent down. WORKED EXAMPLE: $\\log_{10}(1000^5) = 5\\log_{10}(1000) = 5 \\cdot 3 = 15$. Useful for solving exponential equations like $2^x = 1000$: take log → $x\\log 2 = \\log 1000 = 3$, so $x = 3/\\log 2 \\approx 9.97$.");
+  W("logarithms", "$\\log_b a",
+    "$a, b$ = positive numbers (bases). $\\ln$ = natural log (base $e$). CHANGE-of-base formula lets you compute any log using only $\\ln$ (or $\\log_{10}$) on a calculator. WORKED EXAMPLE: compute $\\log_2 7$. Answer: $\\ln 7 / \\ln 2 = 1.9459/0.6931 \\approx 2.807$. Check: $2^{2.807} \\approx 7$ ✓.");
+  W("logarithms", "$b^{\\log_b x}",
+    "$b$ = base. $x > 0$. The exponential and logarithm with the same base are INVERSE operations — they undo each other. SIMILARLY, $\\log_b(b^x) = x$. WORKED EXAMPLE: $10^{\\log_{10} 50} = 50$. $\\ln(e^{17}) = 17$.");
+
+  // ----- LINEAR EQUATIONS -----
+  W("linear-equations", "$ax + b = c",
+    "$x$ = unknown. $a, b, c$ = known constants with $a \\neq 0$. Solve by subtracting $b$ from both sides, then dividing by $a$. WORKED EXAMPLE: solve $3x + 7 = 16$. Subtract 7: $3x = 9$. Divide by 3: $x = 3$. Check: $3(3) + 7 = 16$ ✓.");
+  W("linear-equations", "$y = mx + b$",
+    "$y, x$ = coordinates of a point on the line. $m$ = slope (rise over run; how much $y$ changes per unit change in $x$). $b$ = y-intercept (value of $y$ when $x = 0$). WORKED EXAMPLE: $y = 2x + 5$ has slope 2 and y-intercept 5. At $x = 3$: $y = 11$. At $x = 0$: $y = 5$. As $x$ increases by 1, $y$ increases by 2.");
+  W("linear-equations", "$y - y_1",
+    "$(x_1, y_1)$ = a specific known point on the line. $m$ = slope. $(x, y)$ = variable point. POINT-SLOPE form is the easiest way to write a line through a given point with a given slope. WORKED EXAMPLE: line through $(2, 7)$ with slope $-3$: $y - 7 = -3(x - 2)$, expand: $y = -3x + 13$.");
+  W("linear-equations", "Do same",
+    "Whatever you do to one side of an equation, do to the other. EXAMPLES of valid operations: add a number, subtract a number, multiply by a NONZERO number, divide by a NONZERO number. Preserves the solution set. INVALID: multiplying by 0 (loses information), dividing by an expression that might be zero.");
+
+  // ----- QUADRATIC EQUATIONS -----
+  W("quadratic-equations", "$x = \\dfrac{-b",
+    "$a, b, c$ = coefficients of the quadratic $ax^2 + bx + c = 0$, with $a \\neq 0$. $x$ = unknown. The ± gives TWO solutions in general. WORKED EXAMPLE: solve $2x^2 - 7x + 3 = 0$. Here $a = 2, b = -7, c = 3$. $x = (7 \\pm \\sqrt{49 - 24})/4 = (7 \\pm 5)/4$. So $x = 3$ or $x = 1/2$. Check: $2(3)^2 - 7(3) + 3 = 18 - 21 + 3 = 0$ ✓.");
+  W("quadratic-equations", "$\\Delta",
+    "$\\Delta$ = discriminant. $a, b, c$ = quadratic coefficients. CLASSIFIES the nature of roots without computing them. WORKED EXAMPLE: $x^2 - 4x + 4$ has $\\Delta = 16 - 16 = 0$ → one repeated root ($x = 2$). $x^2 + 1$ has $\\Delta = 0 - 4 = -4 < 0$ → complex conjugate roots ($\\pm i$). $x^2 - 3x + 2$ has $\\Delta = 9 - 8 = 1 > 0$ → two real roots ($x = 1, 2$).");
+  W("quadratic-equations", "$x_1 + x_2",
+    "$x_1, x_2$ = the two roots of $ax^2 + bx + c = 0$. VIETA's formulas relate sum and product of roots to the coefficients. WORKED EXAMPLE: roots of $x^2 - 5x + 6$? By Vieta, sum = 5, product = 6. So roots are 2 and 3 (numbers summing to 5 and multiplying to 6). No solving needed.");
+  W("quadratic-equations", "Vertex",
+    "VERTEX of parabola $y = ax^2 + bx + c$ has $x$-coordinate $-b/(2a)$ and $y$-coordinate is the corresponding value. MAXIMUM if $a < 0$, MINIMUM if $a > 0$. WORKED EXAMPLE: $y = x^2 - 6x + 11$ has vertex at $x = 6/2 = 3$, $y = 9 - 18 + 11 = 2$. Vertex $(3, 2)$ — minimum value of $y$ is 2.");
+  W("quadratic-equations", "Complete the square",
+    "$b$ = coefficient of $x$. ADD and SUBTRACT $(b/2)^2$ to make a perfect square. WORKED EXAMPLE: $x^2 + 6x + 5$. Half of 6 is 3. Add and subtract 9: $x^2 + 6x + 9 - 9 + 5 = (x + 3)^2 - 4$. Now the minimum is obvious: $-4$ at $x = -3$. Same technique derives the quadratic formula.");
+
+  // ----- POLYNOMIALS-RATIONAL -----
+  W("polynomials-rational", "$p(x) = q(x)",
+    "$p(x)$ = dividend polynomial. $d(x)$ = divisor polynomial. $q(x)$ = quotient. $r(x)$ = remainder with degree less than $\\deg d$. WORKED EXAMPLE: divide $p(x) = x^3 - 2x^2 + 3x - 5$ by $d(x) = x - 2$. Result: $q(x) = x^2 + 3$, $r(x) = 1$. Check: $(x-2)(x^2 + 3) + 1 = x^3 + 3x - 2x^2 - 6 + 1 = x^3 - 2x^2 + 3x - 5$ ✓.");
+  W("polynomials-rational", "$p(a) = 0",
+    "$p$ = polynomial. $a$ = constant. FACTOR theorem: $a$ is a root of $p$ if and only if $(x - a)$ is a factor of $p(x)$. WORKED EXAMPLE: $p(x) = x^3 - 6x^2 + 11x - 6$. Try $x = 1$: $1 - 6 + 11 - 6 = 0$. So $(x - 1)$ is a factor: $p(x) = (x-1)(x^2 - 5x + 6) = (x-1)(x-2)(x-3)$.");
+  W("polynomials-rational", "Remainder of",
+    "$p$ = polynomial. $a$ = constant. SHORT cut: to find the remainder when $p(x)$ is divided by $x - a$, just evaluate $p(a)$. WORKED EXAMPLE: remainder of $p(x) = x^4 + 2x - 3$ divided by $x - 2$ = $p(2) = 16 + 4 - 3 = 17$. No division needed.");
+  W("polynomials-rational", "Vertical asymptote",
+    "$p(x)/q(x)$ = rational function. $x_0$ = a real number. VERTICAL asymptote at $x = x_0$ when the denominator vanishes but the numerator doesn't. WORKED EXAMPLE: $f(x) = (x + 1)/((x - 3)(x + 5))$ has vertical asymptotes at $x = 3$ and $x = -5$. As $x$ approaches these values, $|f| \\to \\infty$.");
+  W("polynomials-rational", "Horizontal asymptote",
+    "For $p(x)/q(x)$. When $\\deg p = \\deg q$, the horizontal asymptote $y = $ (leading coefficient of $p$) / (leading coefficient of $q$). When $\\deg p < \\deg q$: asymptote $y = 0$. When $\\deg p > \\deg q$: no horizontal asymptote (may have oblique). WORKED EXAMPLE: $f(x) = (3x^2 + 1)/(x^2 - 4)$ has horizontal asymptote $y = 3/1 = 3$.");
+
+  // ----- SEQUENCES-SERIES -----
+  W("sequences-series", "Arithmetic:",
+    "$a_n$ = $n$-th term. $a_1$ = first term. $d$ = constant common difference between successive terms ($d = a_{n+1} - a_n$). $n$ = position in sequence (1, 2, 3, ...). WORKED EXAMPLE: $5, 8, 11, 14, \\ldots$ has $a_1 = 5, d = 3$. So $a_n = 5 + 3(n-1)$. The 10th term: $a_{10} = 5 + 27 = 32$.");
+  W("sequences-series", "$S_n = \\dfrac{n",
+    "$S_n$ = sum of the first $n$ terms of an arithmetic sequence. $a_1, a_n$ = first and $n$-th terms. INTUITION: average of first and last, times count. WORKED EXAMPLE: sum of $1 + 2 + \\ldots + 100$. Here $a_1 = 1, a_{100} = 100, n = 100$. $S = 100 \\cdot (1 + 100)/2 = 5050$ — Gauss's elementary-school trick.");
+  W("sequences-series", "Geometric:",
+    "$a_n$ = $n$-th term of geometric sequence. $a_1$ = first term. $r$ = common ratio ($r = a_{n+1}/a_n$). WORKED EXAMPLE: $3, 6, 12, 24, \\ldots$ has $a_1 = 3, r = 2$. So $a_n = 3 \\cdot 2^{n-1}$. The 7th term: $a_7 = 3 \\cdot 64 = 192$.");
+  W("sequences-series", "$S_n = a_1 \\dfrac",
+    "$S_n$ = sum of first $n$ terms of geometric sequence with $r \\neq 1$. $a_1$ = first term. $r$ = ratio. WORKED EXAMPLE: sum of $1 + 2 + 4 + \\ldots + 1024$ (powers of 2 up to $2^{10}$). $a_1 = 1, r = 2, n = 11$. $S = (1 - 2^{11})/(1 - 2) = 2047$.");
+  W("sequences-series", "$S_\\infty",
+    "$S_\\infty$ = infinite-series sum. $a_1$ = first term. $r$ = common ratio. ONLY converges when $|r| < 1$. WORKED EXAMPLE: $1 + 1/2 + 1/4 + 1/8 + \\ldots = 1/(1 - 1/2) = 2$. The Zeno-style series sums to a finite number.");
+  W("sequences-series", "$\\sum_{k=1}^n k",
+    "FAMOUS partial sums. WORKED EXAMPLE: $\\sum_{k=1}^{100} k = 100 \\cdot 101/2 = 5050$. $\\sum_{k=1}^{10} k^2 = 10 \\cdot 11 \\cdot 21/6 = 385$. $\\sum_{k=1}^{5} k^3 = (1+2+3+4+5)^2 = 225$.");
+
+  // ----- PROBABILITY -----
+  W("probability", "$0 \\leq P(A)",
+    "$A$ = an event (subset of the sample space). $P(A)$ = probability of $A$. ALWAYS between 0 (impossible) and 1 (certain). WORKED EXAMPLE: rolling a fair 6-sided die. $P(\\text{1}) = 1/6 \\approx 0.167$. $P(\\text{odd}) = 3/6 = 0.5$.");
+  W("probability", "$P(A \\cup B)",
+    "$A, B$ = two events. $A \\cup B$ = at least one occurs. Subtract the overlap so we don't double-count. WORKED EXAMPLE: draw one card from standard 52-card deck. $P(\\text{heart}) = 13/52 = 0.25$. $P(\\text{king}) = 4/52 \\approx 0.077$. $P(\\text{heart} \\cap \\text{king}) = 1/52$ (king of hearts). $P(\\text{heart} \\cup \\text{king}) = 0.25 + 0.077 - 0.019 = 0.308$.");
+  W("probability", "$P(A \\cap B) =",
+    "$A, B$ = INDEPENDENT events (one doesn't affect the other's probability). For independent events: probability of both = product of individual probabilities. WORKED EXAMPLE: flip two fair coins. $P(\\text{HH}) = (1/2)(1/2) = 1/4$. For NON-independent events, use conditional probability instead.");
+  W("probability", "$P(A \\mid B)",
+    "$P(A | B)$ = <em>conditional probability</em> of $A$ given $B$ has occurred. WORKED EXAMPLE: draw a card from 52. $P(\\text{ace}) = 4/52$. Given that the card is a face card (J, Q, K), $P(\\text{ace} | \\text{face}) = 0$ — no ace is a face card. Given that it's a black card, $P(\\text{ace} | \\text{black}) = 2/26 = 1/13$.");
+  W("probability", "$P(A \\mid B) = \\dfrac{P(B",
+    "BAYES' theorem. Inverts conditional probabilities. $P(A)$ = prior probability. $P(B|A)$ = likelihood. $P(B)$ = normalizing constant. $P(A|B)$ = posterior. WORKED EXAMPLE: disease affects 1% of population. Test has 99% true positive rate, 5% false positive rate. You test positive: $P(\\text{disease} | +) = (0.99)(0.01) / [(0.99)(0.01) + (0.05)(0.99)] \\approx 0.167$. Only 16.7%, not 99% — the famous counterintuitive result.");
+  W("probability", "$E[X] = \\sum",
+    "$X$ = random variable taking values $x_1, x_2, \\ldots$ with probabilities $P(X = x_i)$. $E[X]$ = expected value (population mean). WORKED EXAMPLE: roll a fair 6-sided die. $E[X] = (1+2+3+4+5+6)/6 = 3.5$. Note the expected value need not be an actual possible outcome.");
+
+  // ----- STATISTICS -----
+  W("statistics", "$\\bar x = ",
+    "$\\bar x$ = sample mean (sample average). $x_i$ = individual data points. $n$ = sample size. ESTIMATOR of true population mean $\\mu$. WORKED EXAMPLE: data $\\{2, 5, 7, 8, 13\\}$. $\\bar x = 35/5 = 7$.");
+  W("statistics", "$s^2 = ",
+    "$s^2$ = sample variance. $x_i$ = data. $\\bar x$ = sample mean. $n - 1$ (NOT $n$) makes this unbiased (Bessel's correction). WORKED EXAMPLE: data $\\{2, 4, 4, 4, 5, 5, 7, 9\\}$, $\\bar x = 5$. Deviations: $-3, -1, -1, -1, 0, 0, 2, 4$, squared: $9, 1, 1, 1, 0, 0, 4, 16$, sum $32$. $s^2 = 32/7 \\approx 4.57$. $s \\approx 2.14$.");
+  W("statistics", "$z = \\dfrac{x",
+    "$z$ = z-score (standardized value, dimensionless). $x$ = data point. $\\mu$ = population mean. $\\sigma$ = population standard deviation. MEASURES how many standard deviations $x$ lies from the mean. WORKED EXAMPLE: IQ scores $\\mu = 100, \\sigma = 15$. A person with IQ 130 has $z = (130-100)/15 = 2$ — two standard deviations above mean, top ~2.5%.");
+  W("statistics", "CI:",
+    "$\\bar x$ = sample mean. $z^*$ = critical value (1.96 for 95% CI). $\\sigma$ = population standard deviation (or $s$ if unknown, use t-distribution). $n$ = sample size. WORKED EXAMPLE: $\\bar x = 50, \\sigma = 10, n = 100$. 95% CI: $50 \\pm 1.96 \\cdot 10/\\sqrt{100} = 50 \\pm 1.96$, i.e., $(48.04, 51.96)$.");
+  W("statistics", "$z^*",
+    "Critical $z$-values for standard normal confidence intervals. 90% CI: $z^* = 1.645$. 95%: 1.96. 99%: 2.576. WORKED EXAMPLE: a poll says 'margin of error 3 percentage points at 95% confidence' — that 3% IS the $1.96 \\sigma/\\sqrt n$ part of the CI formula.");
+  W("statistics", "$r =",
+    "$r$ = Pearson correlation coefficient. $x_i, y_i$ = paired data. $\\bar x, \\bar y$ = sample means. RANGES from $-1$ (perfect negative) to $+1$ (perfect positive); 0 means no linear correlation. WORKED EXAMPLE: data $(1,2),(2,4),(3,6)$. Perfectly linearly related: $y = 2x$, so $r = 1$.");
+
+  // ----- VECTOR-ALGEBRA -----
+  W("vector-algebra", "$|\\vec v|",
+    "$\\vec v = (v_x, v_y, v_z)$ = vector with three real components. $|\\vec v|$ = magnitude (length). PYTHAGORAS in 3D. WORKED EXAMPLE: $\\vec v = (3, 4, 12)$. $|\\vec v| = \\sqrt{9 + 16 + 144} = \\sqrt{169} = 13$.");
+  W("vector-algebra", "$\\vec a \\cdot \\vec b = a_x",
+    "$\\vec a, \\vec b$ = vectors in $\\mathbb R^3$. Dot product is a SCALAR (number). COMPUTE: multiply corresponding components and add. WORKED EXAMPLE: $\\vec a = (1, 2, 3), \\vec b = (4, -1, 2)$. $\\vec a \\cdot \\vec b = 4 - 2 + 6 = 8$.");
+  W("vector-algebra", "$\\vec a \\cdot \\vec b = |\\vec a|",
+    "$\\theta$ = angle between $\\vec a$ and $\\vec b$. GEOMETRIC formula for dot product. POSITIVE for acute angle, ZERO for perpendicular, NEGATIVE for obtuse. WORKED EXAMPLE: $\\vec a = (1, 0)$, $\\vec b = (0, 1)$. Both have length 1, angle 90°. $\\vec a \\cdot \\vec b = 0$ ✓ (perpendicular).");
+  W("vector-algebra", "$\\vec a \\times \\vec b",
+    "$\\vec a, \\vec b$ = vectors in $\\mathbb R^3$. Cross product gives a VECTOR perpendicular to both, with magnitude $|\\vec a||\\vec b|\\sin\\theta$ (area of parallelogram). $\\hat i, \\hat j, \\hat k$ = unit vectors along x, y, z axes. WORKED EXAMPLE: $\\hat i \\times \\hat j = \\hat k$ (right-hand rule). $(1, 0, 0) \\times (0, 1, 0) = (0, 0, 1)$.");
+  W("vector-algebra", "$|\\vec a \\times \\vec b|",
+    "MAGNITUDE of cross product = area of the parallelogram spanned by $\\vec a$ and $\\vec b$. ZERO for parallel vectors. WORKED EXAMPLE: $\\vec a = (2, 0, 0), \\vec b = (0, 3, 0)$. $|\\vec a \\times \\vec b| = 2 \\cdot 3 \\cdot \\sin 90° = 6$ — area of the $2 \\times 3$ rectangle.");
+  W("vector-algebra", "$\\text{proj}",
+    "PROJECTION of $\\vec a$ onto $\\vec b$. Resulting vector is parallel to $\\vec b$, with length equal to $\\vec a$'s component along $\\vec b$. WORKED EXAMPLE: $\\vec a = (3, 4), \\vec b = (1, 0)$. $\\vec a \\cdot \\vec b = 3$, $|\\vec b|^2 = 1$. Projection $= 3 \\cdot (1, 0) = (3, 0)$ — the x-component of $\\vec a$.");
+
+  // ----- LINEAR-ALGEBRA -----
+  W("linear-algebra", "$(AB)_{ij}",
+    "$A$ = $m \\times k$ matrix. $B$ = $k \\times n$ matrix. INNER dimension $k$ must match. Result $AB$ is $m \\times n$. ENTRY $(i, j)$ of $AB$ = dot product of row $i$ of $A$ with column $j$ of $B$. WORKED EXAMPLE: $A = \\begin{pmatrix}1 & 2\\\\3 & 4\\end{pmatrix}, B = \\begin{pmatrix}5 & 6\\\\7 & 8\\end{pmatrix}$. $(AB)_{11} = 1\\cdot 5 + 2\\cdot 7 = 19$. Full result: $\\begin{pmatrix}19 & 22\\\\43 & 50\\end{pmatrix}$.");
+  W("linear-algebra", "$\\det \\begin{pmatrix} a",
+    "$a, b, c, d$ = entries of a $2 \\times 2$ matrix. Determinant is a SCALAR. POSITIVE: orientation-preserving. NEGATIVE: orientation-flipping. ZERO: singular (non-invertible). WORKED EXAMPLE: $\\det\\begin{pmatrix}3 & 1\\\\2 & 4\\end{pmatrix} = 12 - 2 = 10$. $\\det\\begin{pmatrix}1 & 2\\\\2 & 4\\end{pmatrix} = 4 - 4 = 0$ (rows are proportional → singular).");
+  W("linear-algebra", "$A^{-1}",
+    "$A$ = invertible square matrix ($\\det A \\neq 0$). $\\text{adj}(A)$ = adjugate (transpose of cofactor matrix). $A^{-1}$ satisfies $A A^{-1} = I$. WORKED EXAMPLE for $2 \\times 2$: $A = \\begin{pmatrix}3 & 1\\\\2 & 4\\end{pmatrix}$, $\\det = 10$. $A^{-1} = (1/10)\\begin{pmatrix}4 & -1\\\\-2 & 3\\end{pmatrix}$. Check: $AA^{-1} = I$ ✓.");
+  W("linear-algebra", "$A\\vec v = \\lambda",
+    "$A$ = $n \\times n$ matrix. $\\vec v$ = nonzero vector (the <em>eigenvector</em>). $\\lambda$ = scalar (the <em>eigenvalue</em>). $A$ stretches $\\vec v$ by factor $\\lambda$ without rotating. WORKED EXAMPLE: $A = \\begin{pmatrix}2 & 0\\\\0 & 3\\end{pmatrix}$. $\\vec v_1 = (1, 0)$ is an eigenvector with eigenvalue 2. $\\vec v_2 = (0, 1)$ has eigenvalue 3.");
+  W("linear-algebra", "$\\det(A - \\lambda I)",
+    "$A$ = matrix. $\\lambda$ = unknown eigenvalue. $I$ = identity matrix. SOLVE this CHARACTERISTIC equation to find all eigenvalues. WORKED EXAMPLE: $A = \\begin{pmatrix}4 & 1\\\\2 & 3\\end{pmatrix}$. $\\det(A - \\lambda I) = (4-\\lambda)(3-\\lambda) - 2 = \\lambda^2 - 7\\lambda + 10 = (\\lambda - 2)(\\lambda - 5)$. Eigenvalues: 2 and 5.");
+  W("linear-algebra", "$\\text{rank}",
+    "$\\text{rank}(A)$ = dimension of column space (= row space). $\\text{nullity}(A)$ = dimension of null space (vectors $\\vec v$ with $A\\vec v = 0$). $n$ = number of columns. RANK-NULLITY theorem. WORKED EXAMPLE: $A = \\begin{pmatrix}1 & 2\\\\2 & 4\\end{pmatrix}$. Rank 1 (rows proportional). $n = 2$. Nullity $= 1$.");
+  W("linear-algebra", "$\\text{tr}(A)",
+    "$\\lambda_i$ = eigenvalues (with multiplicity). $\\text{tr}(A)$ = trace = sum of diagonal entries. $\\det(A)$ = product of eigenvalues. POWERFUL: lets you find $\\text{tr}$ and $\\det$ from eigenvalues without knowing $A$ explicitly. WORKED EXAMPLE: matrix with eigenvalues 2, 3, 5. $\\text{tr} = 10$, $\\det = 30$.");
+
+  // ----- LIMITS -----
+  W("limits", "$\\lim_{x \\to a}",
+    "$f$ = a function. $a$ = point (possibly $\\pm\\infty$). $L$ = limit value. MEANS: as $x$ gets close to $a$, $f(x)$ gets close to $L$. Need NOT have $f(a) = L$ (or even $f(a)$ defined). WORKED EXAMPLE: $\\lim_{x \\to 2} (x^2 - 4)/(x - 2)$. At $x = 2$: $0/0$, undefined. But factor: $(x-2)(x+2)/(x-2) = x + 2$ for $x \\neq 2$. Limit is $4$.");
+  W("limits", "$\\lim_{x \\to 0} \\dfrac{\\sin x",
+    "$x$ in radians. INDETERMINATE form $0/0$. The limit equals exactly 1. PROOF: squeeze theorem with geometric inequalities. CONSEQUENCE: $\\sin x \\approx x$ for small $x$. WORKED EXAMPLE: $\\sin(0.1) \\approx 0.0998$ — very close to 0.1.");
+  W("limits", "$\\lim_{x \\to 0} \\dfrac{1",
+    "$x$ in radians. ANOTHER famous indeterminate-form limit. CONSEQUENCE: $\\cos x \\approx 1 - x^2/2$ for small $x$. Used in deriving Taylor series and in QM small-angle calculations.");
+  W("limits", "$\\lim_{x \\to \\infty}",
+    "DEFINITION of Euler's number $e \\approx 2.71828$. $e$ is irrational and transcendental. APPEARS everywhere in compound interest, exponential growth, calculus. WORKED EXAMPLE: $(1 + 1/100)^{100} \\approx 2.7048$, getting close to $e$.");
+  W("limits", "L'Hôpital",
+    "$f, g$ = differentiable functions. INDETERMINATE form $0/0$ or $\\infty/\\infty$. Replace numerator and denominator with their derivatives. ITERATE if still indeterminate. WORKED EXAMPLE: $\\lim_{x \\to 0}\\sin x/x = \\lim_{x \\to 0}\\cos x/1 = 1$. (Be careful: this is circular if used to PROVE the sin/x limit — that's done by squeeze theorem.)");
+  W("limits", "Squeeze:",
+    "$f, g, h$ = functions with $g(x) \\leq f(x) \\leq h(x)$ near $a$. If $g, h$ both have limit $L$ at $a$, then so does $f$. USEFUL when you can bound a tricky expression. WORKED EXAMPLE: $\\lim_{x \\to 0} x^2 \\sin(1/x)$. Note $-x^2 \\leq x^2\\sin(1/x) \\leq x^2$, and both bounds → 0. So limit is 0, despite the oscillation.");
+
+  // ----- VECTOR CALCULUS -----
+  W("vector-calculus", "$\\nabla \\cdot \\vec F",
+    "$\\vec F = (F_x, F_y, F_z)$ = vector field. $\\nabla \\cdot \\vec F$ = divergence (a SCALAR field). Measures net outflow per unit volume. WORKED EXAMPLE: $\\vec F = (x, y, z)$ (radially outward field). $\\nabla \\cdot \\vec F = 1 + 1 + 1 = 3$. The field 'spreads' uniformly.");
+  W("vector-calculus", "$\\nabla \\times \\vec F$",
+    "$\\vec F$ = vector field. $\\nabla \\times \\vec F$ = curl (a VECTOR field). Measures local rotation; direction along axis (right-hand rule). WORKED EXAMPLE: $\\vec F = (-y, x, 0)$ (counterclockwise rotation). $\\nabla \\times \\vec F = (0, 0, 2)$ — points along z-axis, magnitude 2 (twice the rotation rate).");
+  W("vector-calculus", "$\\nabla \\times (\\nabla f)",
+    "$f$ = scalar function. CURL of any gradient is identically zero. INTERPRETATION: gradient fields are 'conservative' — irrotational, hence path-independent.");
+  W("vector-calculus", "$\\nabla \\cdot (\\nabla \\times \\vec F)",
+    "$\\vec F$ = any vector field. DIVERGENCE of any curl is identically zero. INTERPRETATION: curls are 'divergence-free' — no sources or sinks.");
+  W("vector-calculus", "Green:",
+    "$C$ = closed plane curve oriented counterclockwise. $R$ = region enclosed. $\\vec F = (P, Q)$ = 2D vector field. CONNECTS line integral around boundary with double integral inside. WORKED EXAMPLE: compute area of region $R$ by $\\tfrac{1}{2}\\oint_C(-y\\,dx + x\\,dy)$.");
+  W("vector-calculus", "Stokes:",
+    "$C$ = closed curve in 3D bounding surface $S$. $\\vec F$ = vector field. $d\\vec S$ = oriented area element. WORKED EXAMPLE: line integral of $\\vec F$ around a loop equals flux of curl $\\vec F$ through any surface bounded by that loop. Faraday's law of induction is Stokes applied to electric field.");
+  W("vector-calculus", "Divergence:",
+    "$V$ = volume bounded by closed surface $S$. $\\vec F$ = vector field. FLUX through closed surface = volume integral of divergence inside. WORKED EXAMPLE: Gauss's law in EM is divergence theorem applied to electric field — total flux equals enclosed charge / $\\epsilon_0$.");
+
+  // ----- ODE -----
+  W("ode", "$\\dfrac{dy}{dx}",
+    "$y(x)$ = unknown function. $k$ = constant rate. $C$ = constant of integration determined by initial condition $y(0) = C$. SOLUTION is exponential. WORKED EXAMPLE: bacterial population doubling every hour: $dy/dt = (\\ln 2)y$, so $y(t) = y_0 \\cdot 2^t$. Radioactive decay: $dy/dt = -\\lambda y$, $y(t) = y_0 e^{-\\lambda t}$.");
+  W("ode", "$y' + p(x) y",
+    "$y(x)$ = unknown. $p(x), q(x)$ = given functions. LINEAR first-order ODE. Solve via integrating factor $\\mu = e^{\\int p\\,dx}$. WORKED EXAMPLE: $y' + 2y = e^x$. $\\mu = e^{2x}$. Multiply: $(e^{2x}y)' = e^{3x}$. Integrate: $e^{2x}y = e^{3x}/3 + C$, so $y = e^x/3 + Ce^{-2x}$.");
+  W("ode", "$a y'' + b y' + c y = 0",
+    "$y(x)$ = unknown. $a, b, c$ = constants. HOMOGENEOUS linear 2nd-order ODE. Solution depends on roots of characteristic equation. WORKED EXAMPLE: $y'' - 5y' + 6y = 0$. Char eq: $r^2 - 5r + 6 = (r-2)(r-3)$, roots 2, 3. Solution: $y = Ae^{2x} + Be^{3x}$.");
+  W("ode", "Characteristic:",
+    "$a, b, c$ = ODE coefficients. $r$ = unknown root. CASES: real distinct ($Ae^{r_1 x} + Be^{r_2 x}$), repeated ($(A + Bx)e^{rx}$), complex pair $\\alpha \\pm i\\beta$ ($e^{\\alpha x}(A\\cos\\beta x + B\\sin\\beta x)$). WORKED EXAMPLE: $y'' + 6y' + 9y = 0$. Char: $(r+3)^2 = 0$, repeated $r = -3$. Solution: $(A + Bx)e^{-3x}$.");
+  W("ode", "$y'' + \\omega^2 y = 0",
+    "$y(t)$ = unknown. $\\omega$ = angular frequency. SOLUTION is sinusoidal — the equation of simple harmonic motion. $A, B$ = constants from initial conditions. WORKED EXAMPLE: pendulum (small angles) $\\ddot\\theta + (g/L)\\theta = 0$ has $\\omega = \\sqrt{g/L}$, solution $\\theta(t) = A\\cos\\omega t + B\\sin\\omega t$.");
+  W("ode", "Wronskian:",
+    "$y_1, y_2$ = two solutions of a 2nd-order linear ODE. $W$ = Wronskian. NONZERO $W$ means $y_1, y_2$ are linearly independent — they form a basis for the solution space. WORKED EXAMPLE: $y_1 = e^x, y_2 = e^{-x}$. $W = e^x(-e^{-x}) - e^x \\cdot e^{-x} = -2 \\neq 0$. Linearly independent.");
+
+  // ----- PDE -----
+  W("pde", "Heat:",
+    "$u(x, t)$ = temperature at position $x$, time $t$. $\\alpha$ = thermal diffusivity (m²/s). $u_t = \\partial u/\\partial t$, $u_{xx} = \\partial^2 u/\\partial x^2$. PARABOLIC PDE. WORKED EXAMPLE: copper has $\\alpha \\approx 1.1 \\times 10^{-4}$ m²/s. A point heated locally spreads as a Gaussian, width growing as $\\sqrt{4\\alpha t}$.");
+  W("pde", "Wave:",
+    "$u(x, t)$ = displacement (string height, pressure, electric field). $c$ = wave speed (m/s). HYPERBOLIC PDE. SOLUTIONS travel as $f(x \\pm ct)$. WORKED EXAMPLE: guitar string: $c = \\sqrt{T/\\mu}$ where $T$ is tension (N), $\\mu$ is linear mass density (kg/m). Typical $c \\sim 300$ m/s.");
+  W("pde", "Laplace:",
+    "$u(\\vec r)$ = steady-state scalar field. $\\nabla^2 u$ = Laplacian. ELLIPTIC PDE. SOLUTIONS are 'harmonic' — averaged over any sphere, equal the central value. WORKED EXAMPLE: electrostatic potential in vacuum, steady-state temperature, irrotational fluid potential — all obey Laplace's equation.");
+  W("pde", "D'Alembert:",
+    "$f$ = arbitrary twice-differentiable function. $c$ = wave speed. GENERAL solution of 1D wave equation: left-moving wave $f(x + ct)$ plus right-moving wave $f(x - ct)$. WORKED EXAMPLE: initial pulse $f(x) = e^{-x^2}$ on a string: it splits into two pulses traveling in opposite directions.");
+  W("pde", "Heat fundamental:",
+    "$G(x, t)$ = heat-equation fundamental solution (Green's function). $\\alpha$ = diffusivity. RESPONSE to a unit point source at origin. WORKED EXAMPLE: drop a hot droplet at $x = 0$; after time $t$, temperature is a Gaussian with width $\\sqrt{4\\alpha t}$. After $t = 1$ s in copper: width $\\sim 0.02$ m = 2 cm.");
+  W("pde", "Separation:",
+    "$u(x, t)$ = unknown solution. ANSATZ: write as a product. SUBSTITUTE into the PDE; if the equation separates, each side equals a constant, giving ODEs. WORKED EXAMPLE: heat equation with $u = X(x)T(t)$: $XT' = \\alpha X''T$, divide by $\\alpha XT$: $T'/(\\alpha T) = X''/X = -\\lambda$. Two ODEs.");
+
+  // ----- REAL-ANALYSIS -----
+  W("real-analysis", "$\\forall \\varepsilon",
+    "RIGOROUS definition of sequence convergence. $a_n$ = $n$-th term of sequence. $L$ = limit. SAYS: for any tolerance $\\varepsilon > 0$ (no matter how small), there's a threshold $N$ after which ALL terms are within $\\varepsilon$ of $L$. WORKED EXAMPLE: prove $1/n \\to 0$. Given $\\varepsilon > 0$, choose $N > 1/\\varepsilon$. Then $n > N \\Rightarrow 1/n < 1/N < \\varepsilon$. ✓");
+  W("real-analysis", "Cauchy:",
+    "$a_n$ = sequence. CAUCHY: terms get arbitrarily close to EACH OTHER (not to a specific limit). In $\\mathbb R$: Cauchy ⟺ convergent (completeness). WORKED EXAMPLE: $a_n = \\sum_{k=1}^n 1/k!$. $|a_m - a_n| \\to 0$ since the tail $\\sum 1/k!$ is small. So $a_n$ converges (to $e - 1$, in fact).");
+  W("real-analysis", "MVT:",
+    "$f$ = continuous on $[a, b]$, differentiable on $(a, b)$. AT LEAST one $c$ in $(a, b)$ where instantaneous rate of change equals the average rate. WORKED EXAMPLE: $f(x) = x^2$ on $[1, 3]$. Average slope $= (9 - 1)/(3 - 1) = 4$. $f'(c) = 2c = 4 \\Rightarrow c = 2$, which is in $(1, 3)$ ✓.");
+  W("real-analysis", "Bolzano-Weierstrass",
+    "Every bounded sequence in $\\mathbb R$ (or $\\mathbb R^n$) has a convergent subsequence. WORKED EXAMPLE: $a_n = \\sin n$ is bounded in $[-1, 1]$, so it has a convergent subsequence (in fact infinitely many — $\\sin n$ comes close to any value in $[-1, 1]$).");
+  W("real-analysis", "Heine-Borel",
+    "In $\\mathbb R^n$: a subset is COMPACT (every open cover has a finite subcover) ⟺ it's CLOSED AND BOUNDED. WORKED EXAMPLE: $[0, 1]$ is closed and bounded → compact. $(0, 1)$ is bounded but NOT closed → not compact. $\\mathbb R$ is closed but not bounded → not compact.");
+  W("real-analysis", "Riemann sum:",
+    "$f$ = function on $[a, b]$. $\\Delta x_i$ = width of $i$-th subinterval. $\\xi_i$ = sample point in that subinterval. LIMIT (as partition gets finer) is the Riemann integral if it exists. WORKED EXAMPLE: $\\int_0^1 x\\,dx$ via right endpoints: $\\sum_{i=1}^n (i/n)(1/n) = (1/n^2)\\sum i = (n+1)/(2n) \\to 1/2$. ✓");
+
+  // ----- COMPLEX-ANALYSIS -----
+  W("complex-analysis", "Cauchy-Riemann:",
+    "$f(z) = u(x, y) + iv(x, y)$ where $z = x + iy$ and $u, v$ are real-valued. CR equations are NECESSARY (and locally sufficient with continuity) for $f$ to be holomorphic. WORKED EXAMPLE: $f(z) = z^2 = (x^2 - y^2) + 2ixy$. $u = x^2 - y^2$, $v = 2xy$. $u_x = 2x = v_y$ ✓. $u_y = -2y = -v_x$ ✓. Holomorphic.");
+  W("complex-analysis", "$\\oint_\\gamma f(z)",
+    "$f$ = holomorphic function on a simply-connected domain. $\\gamma$ = closed contour. CAUCHY-Goursat: integral around any closed contour is zero. WORKED EXAMPLE: $\\oint_{|z|=1} z\\,dz = 0$ (since $z$ is entire).");
+  W("complex-analysis", "$f(z_0)",
+    "Cauchy integral formula. $f$ = holomorphic inside and on contour $\\gamma$. $z_0$ = point inside $\\gamma$. INTERIOR values are determined by boundary values. WORKED EXAMPLE: $\\oint_{|z|=1} (e^z/z)\\,dz = 2\\pi i \\cdot e^0 = 2\\pi i$ (residue is $e^0 = 1$).");
+  W("complex-analysis", "$\\oint f\\,dz",
+    "RESIDUE theorem. $\\text{Res}$ = residue at a pole inside $\\gamma$. SUM over all poles enclosed by $\\gamma$. WORKED EXAMPLE: $\\oint_{|z|=2}(1/(z^2-1))\\,dz$. Poles at $\\pm 1$, both inside. $\\text{Res}_{z=1} = 1/2$, $\\text{Res}_{z=-1} = -1/2$. Sum $= 0$. Integral $= 0$.");
+  W("complex-analysis", "Liouville",
+    "$f$ = entire (holomorphic on all of $\\mathbb C$) AND bounded. CONCLUSION: $f$ is constant. WORKED EXAMPLE: nontrivial entire functions like $e^z$, $\\sin z$ are UNBOUNDED. The only bounded ones are constants.");
+  W("complex-analysis", "Max modulus",
+    "$f$ = holomorphic on a closed bounded domain. The maximum of $|f|$ is attained on the BOUNDARY (unless $f$ is constant). WORKED EXAMPLE: on the unit disk, $f(z) = z$ has $|z| \\leq 1$ with maximum on the unit circle (boundary), not in the interior.");
+
+  // ----- FOURIER-ANALYSIS -----
+  W("fourier-analysis", "$f(x) = \\sum (a_n",
+    "$f(x)$ = $2\\pi$-periodic function. $a_n, b_n$ = Fourier coefficients. EVERY (sufficiently regular) periodic function decomposes into sines and cosines. WORKED EXAMPLE: square wave $f(x) = $ sign$(\\sin x)$ has Fourier series $\\frac{4}{\\pi}(\\sin x + \\sin 3x/3 + \\sin 5x/5 + \\ldots)$.");
+  W("fourier-analysis", "$a_n = \\dfrac{1}{\\pi}",
+    "$a_n$ = Fourier cosine coefficient. ORTHOGONALITY of cosines makes this projection work. SIMILARLY $b_n = (1/\\pi)\\int f\\sin(nx)\\,dx$. WORKED EXAMPLE: even function on $[-\\pi, \\pi]$ has all $b_n = 0$ (odd integrand); odd function has all $a_n = 0$.");
+  W("fourier-analysis", "$\\hat f(k)",
+    "$\\hat f(k)$ = Fourier transform of $f$ at frequency $k$. $f(x)$ = original signal in space (or time). EXTENDS the Fourier-series idea to non-periodic functions. WORKED EXAMPLE: $f(x) = e^{-x^2/2}$ (Gaussian) has $\\hat f(k) = \\sqrt{2\\pi}e^{-k^2/2}$ — another Gaussian!");
+  W("fourier-analysis", "$f(x) = \\dfrac{1}{2\\pi}",
+    "INVERSE Fourier transform. Reconstructs $f$ from $\\hat f$. WHY this normalization: different conventions; this one's symmetric in a sense.");
+  W("fourier-analysis", "$\\widehat{f \\ast g}",
+    "Convolution $(f \\ast g)(x) = \\int f(t)g(x - t)\\,dt$. CONVOLUTION theorem: Fourier transform of convolution is the product. WORKED EXAMPLE: blurring an image is convolution with a kernel. In frequency domain, blurring is just multiplying the spectrum by the kernel's transform — FAST.");
+  W("fourier-analysis", "Parseval:",
+    "ENERGY is preserved under Fourier transform. $\\int |f|^2$ = $L^2$ norm squared (signal energy). WORKED EXAMPLE: a signal with most energy in low frequencies has most $|\\hat f(k)|^2$ concentrated near $k = 0$. Useful for filtering and compression.");
+  W("fourier-analysis", "$\\sigma_x \\sigma_k",
+    "$\\sigma_x$ = spatial standard deviation. $\\sigma_k$ = frequency standard deviation. UNCERTAINTY principle in signal processing: a signal can't be simultaneously narrow in space and narrow in frequency. WORKED EXAMPLE: pure sinusoid is infinitely extended in time but has one delta in frequency. Short pulses (small $\\sigma_x$) have broad spectra (large $\\sigma_k$).");
+
+  // ----- ABSTRACT-ALGEBRA -----
+  W("abstract-algebra", "Group axioms",
+    "A GROUP is a set $G$ with a binary operation satisfying four axioms: <em>closure</em> (operation stays in $G$), <em>associativity</em>, <em>identity</em> element $e$ with $eg = ge = g$, and each $g$ has an <em>inverse</em> $g^{-1}$ with $gg^{-1} = e$. WORKED EXAMPLE: integers under addition. Identity 0, inverse of $n$ is $-n$. Multiplication isn't a group on $\\mathbb Z$ — no inverses for most elements.");
+  W("abstract-algebra", "Lagrange",
+    "$G$ = finite group. $H$ = subgroup of $G$. $|G|, |H|$ = orders (number of elements). LAGRANGE: subgroup order divides group order. WORKED EXAMPLE: $S_3$ has order 6. Possible subgroup orders: 1, 2, 3, 6. NOT 4 or 5.");
+  W("abstract-algebra", "$|G/H|",
+    "$G/H$ = quotient group (when $H$ is normal). INDEX = number of distinct cosets = group order / subgroup order. WORKED EXAMPLE: $\\mathbb Z/3\\mathbb Z$ has $|G| = \\infty$... but $\\mathbb Z/3\\mathbb Z = \\{0, 1, 2\\}$ has $|G/H| = 3$. For finite groups: $|G/H| = |G|/|H|$.");
+  W("abstract-algebra", "First isomorphism",
+    "$\\phi: G \\to H$ = group homomorphism. $\\ker \\phi$ = elements mapping to identity. $\\text{im}\\,\\phi$ = image. THEOREM: $G/\\ker\\phi \\cong \\text{im}\\,\\phi$. WORKED EXAMPLE: $\\phi: \\mathbb Z \\to \\mathbb Z/n\\mathbb Z$, $\\phi(k) = k \\bmod n$. $\\ker\\phi = n\\mathbb Z$. $\\text{im}\\,\\phi = \\mathbb Z/n\\mathbb Z$. So $\\mathbb Z/n\\mathbb Z \\cong \\mathbb Z/n\\mathbb Z$ — confirmed.");
+  W("abstract-algebra", "Cauchy:",
+    "$G$ = finite group. $p$ = prime dividing $|G|$. CAUCHY: $G$ contains an element of order exactly $p$. WORKED EXAMPLE: $S_4$ has order 24. Primes dividing 24: 2 and 3. So $S_4$ has elements of order 2 (e.g., transpositions like (12)) and of order 3 (e.g., 3-cycles like (123)).");
+  W("abstract-algebra", "$\\mathbb{Z}/p\\mathbb{Z}",
+    "$p$ = a prime number. $\\mathbb Z/p\\mathbb Z$ = integers mod $p$. UNIQUE field of $p$ elements. WORKED EXAMPLE: $\\mathbb Z/5\\mathbb Z = \\{0, 1, 2, 3, 4\\}$. $2 \\cdot 3 = 6 \\equiv 1$, so $3$ is the inverse of $2$. Every nonzero element has an inverse — that's what makes it a field. For composite $n$ (e.g., $n = 6$), $\\mathbb Z/n\\mathbb Z$ is NOT a field — $2 \\cdot 3 = 0$ is a zero divisor.");
+
+  // ----- RANDOM-VARIABLES -----
+  W("random-variables", "$E[X]",
+    "$X$ = random variable. $f(x)$ = probability density (continuous) or $P_i$ = probability mass (discrete). EXPECTED value = population mean. WORKED EXAMPLE: $X$ uniform on $[0, 1]$, $f(x) = 1$. $E[X] = \\int_0^1 x\\,dx = 1/2$. Roll a die: $E[X] = (1+2+\\ldots+6)/6 = 3.5$.");
+  W("random-variables", "$\\text{Var}(X)",
+    "$X$ = random variable. $E[X^2]$ = expectation of square. $E[X]^2$ = square of expectation. VARIANCE measures spread. WORKED EXAMPLE: $X$ takes values $-1, 0, 1$ each with probability $1/3$. $E[X] = 0$. $E[X^2] = 2/3$. $\\text{Var}(X) = 2/3$. $\\sigma = \\sqrt{2/3} \\approx 0.816$.");
+  W("random-variables", "Binomial:",
+    "$n$ = number of independent trials. $p$ = probability of success per trial. $X$ = number of successes. EXPECTED successes: $np$. VARIANCE: $np(1-p)$, maximum at $p = 1/2$. WORKED EXAMPLE: 100 fair coin flips. $E = 50$, $\\text{Var} = 25$, $\\sigma = 5$. Typical range $50 \\pm 10$ (within 2σ).");
+  W("random-variables", "Poisson:",
+    "$\\lambda$ = rate parameter (average events per unit time/space). $X$ = number of events. $k$ = nonnegative integer outcome. KEY property: mean = variance = $\\lambda$. WORKED EXAMPLE: a call center gets 3 calls/minute on average. Probability of exactly 5 calls in a minute: $e^{-3} 3^5/5! \\approx 0.101$.");
+  W("random-variables", "Normal:",
+    "$X$ = normally distributed random variable. $\\mu$ = mean. $\\sigma$ = standard deviation. BELL CURVE. CENTRAL LIMIT THEOREM: sums of many random variables approach normal. WORKED EXAMPLE: human heights $\\mu \\approx 170$ cm, $\\sigma \\approx 8$ cm (adult). Probability of height between 162 and 178 cm: 68% (within 1σ).");
+  W("random-variables", "CLT:",
+    "$\\bar X$ = sample mean of $n$ i.i.d. random variables. $\\mu$ = true mean. $\\sigma^2$ = true variance. AS $n \\to \\infty$: sample mean is approximately normal, REGARDLESS of underlying distribution. WORKED EXAMPLE: 100 dice rolls. Each $\\mu = 3.5, \\sigma^2 = 35/12$. Sample mean $\\bar X$ is approximately normal with $\\sigma_{\\bar X} \\approx \\sqrt{35/(12 \\cdot 100)} \\approx 0.17$.");
+  W("random-variables", "Markov:",
+    "$X$ = nonnegative random variable. $a > 0$. MARKOV inequality: probability of being at least $a$ is bounded by mean over $a$. CRUDE but universal. WORKED EXAMPLE: if income mean is $\\$50{,}000$, then at most $50{,}000/200{,}000 = 25\\%$ of people earn at least $\\$200{,}000$.");
+
+  // ----- NUMBER-THEORY -----
+  W("number-theory", "$a = bq",
+    "$a, b$ = integers with $b > 0$. $q$ = quotient. $r$ = remainder. DIVISION algorithm: unique $q, r$ exist. WORKED EXAMPLE: $a = 17, b = 5$: $17 = 5 \\cdot 3 + 2$, so $q = 3, r = 2$.");
+  W("number-theory", "$\\gcd(a,b)",
+    "$\\gcd$ = greatest common divisor. $a \\bmod b$ = remainder when $a$ is divided by $b$. EUCLIDEAN ALGORITHM: replace larger by remainder until reaching 0. WORKED EXAMPLE: $\\gcd(48, 18)$. $48 = 2 \\cdot 18 + 12$. $\\gcd(18, 12)$. $18 = 1 \\cdot 12 + 6$. $\\gcd(12, 6) = 6$ (since $12 = 2\\cdot 6 + 0$).");
+  W("number-theory", "$a^{\\varphi(n)}",
+    "EULER's theorem. $\\varphi(n)$ = Euler totient (count of integers in $\\{1, \\ldots, n\\}$ coprime to $n$). $a, n$ coprime. WORKED EXAMPLE: $n = 10$, $\\varphi(10) = 4$ (the numbers 1, 3, 7, 9). $3^4 = 81 \\equiv 1 \\pmod{10}$ ✓. Basis of RSA cryptography.");
+  W("number-theory", "$a^{p-1}",
+    "FERMAT's little theorem (special case of Euler with $n = p$ prime). $p$ = prime. $a$ NOT divisible by $p$. WORKED EXAMPLE: $5^{6} \\bmod 7$. $5^6 = 15625 = 2232 \\cdot 7 + 1$, so $\\equiv 1$ ✓. By Fermat: $5^6 \\equiv 1 \\pmod 7$.");
+  W("number-theory", "$ax + by",
+    "BEZOUT's identity. $a, b$ = integers, not both zero. $x, y$ = integers found by EXTENDED Euclidean algorithm. WORKED EXAMPLE: $\\gcd(48, 18) = 6$. Find $x, y$: $6 = 18 - 12 = 18 - (48 - 2\\cdot 18) = 3\\cdot 18 - 48$. So $x = -1, y = 3$.");
+  W("number-theory", "CRT",
+    "CHINESE remainder theorem. $m_1, m_2, \\ldots, m_k$ = pairwise coprime moduli. $a_1, \\ldots, a_k$ = arbitrary residues. UNIQUE solution mod $m_1 \\cdots m_k$. WORKED EXAMPLE: find $x$ with $x \\equiv 2 \\pmod 3, x \\equiv 3 \\pmod 5, x \\equiv 2 \\pmod 7$. Answer: $x = 23$ (and $x \\equiv 23 \\pmod{105}$).");
+
+  // ----- FUNCTIONAL ANALYSIS -----
+  W("functional-analysis", "Banach:",
+    "BANACH space = complete normed vector space. 'Complete' means every Cauchy sequence converges (to a point in the space). NORM gives lengths but not necessarily angles. WORKED EXAMPLE: $\\ell^1$ = absolutely summable sequences, $\\|x\\|_1 = \\sum |x_n|$. Complete — Banach. $C[0,1]$ with $\\|f\\|_\\infty = \\max |f|$ — Banach.");
+  W("functional-analysis", "Hilbert:",
+    "HILBERT space = complete inner product space. The inner product gives angles and orthogonality. EXAMPLE: $\\ell^2 = \\{(x_n) : \\sum |x_n|^2 < \\infty\\}$ with $\\langle x, y\\rangle = \\sum x_n \\bar y_n$. Quantum mechanics lives in Hilbert spaces.");
+  W("functional-analysis", "$\\|T\\|",
+    "$T$ = bounded linear operator. The OPERATOR norm measures the max amplification factor. WORKED EXAMPLE: $T: \\mathbb R^2 \\to \\mathbb R^2$ with matrix $\\text{diag}(3, 5)$. $\\|T\\| = 5$ — the largest singular value. Operator norm is the natural norm on the Banach algebra of bounded operators.");
+  W("functional-analysis", "Riesz representation",
+    "$H$ = Hilbert space. $\\phi$ = bounded linear functional on $H$. UNIQUE vector $y \\in H$ with $\\phi(x) = \\langle x, y\\rangle$ for all $x$. Dual of $H$ is isomorphic to $H$ itself. WORKED EXAMPLE: on $L^2[0,1]$, every bounded functional is $\\phi(f) = \\int_0^1 f(x)\\overline{g(x)}\\,dx$ for some $g \\in L^2$.");
+  W("functional-analysis", "Hahn-Banach",
+    "$X$ = vector space. $Y$ = subspace. $\\phi$ = bounded linear functional on $Y$. EXTENDS to a functional on all of $X$ with same norm. CONSEQUENCES: enough functionals to separate points; convex sets separable by hyperplanes (basis of convex optimization).");
+  W("functional-analysis", "Open mapping",
+    "BANACH spaces $X, Y$. $T: X \\to Y$ = bounded linear surjection. $T$ takes open sets to open sets. CONSEQUENCE: closed graph theorem (linear operator with closed graph is bounded).");
+  W("functional-analysis", "Spectral theorem",
+    "$T$ = compact self-adjoint operator on Hilbert space. EXISTS orthonormal basis of eigenvectors with REAL eigenvalues approaching zero. WORKED EXAMPLE: integral operator with continuous symmetric kernel has discrete spectrum — foundation of Sturm-Liouville theory.");
+
+  // ----- CALCULUS OF VARIATIONS -----
+  W("calculus-of-variations", "Euler-Lagrange:",
+    "$y(x)$ = unknown function to be found. $L(x, y, y')$ = Lagrangian. SOLVES variational problem: extremize $\\int L\\,dx$. WORKED EXAMPLE: shortest curve between two points. $L = \\sqrt{1 + y'^2}$. EL: $d/dx(y'/\\sqrt{1+y'^2}) = 0$, so $y' = $ constant, so $y = mx + b$ — straight line.");
+  W("calculus-of-variations", "$S = \\int L",
+    "$S$ = action functional. $L$ = Lagrangian = $T - V$ (kinetic minus potential). UNITS: J·s (same as $\\hbar$). WORKED EXAMPLE: free particle $L = \\tfrac{1}{2}mv^2$. Action of straight path from $0$ to $T$: $S = \\tfrac{1}{2}mv^2 T$.");
+  W("calculus-of-variations", "Principle of least action:",
+    "$\\delta S = 0$ — physical paths extremize the action. NEEDN'T be a minimum; saddle points work too. UNDERLIES classical mechanics, GR, QM (Feynman path integral). WORKED EXAMPLE: pendulum motion is the path through phase space that extremizes the action with $L = T - V$.");
+  W("calculus-of-variations", "Brachistochrone:",
+    "BEAD sliding under gravity from $A$ to $B$. $y$ = height. $y' = dy/dx$. $g$ = gravity. SOLUTION: cycloid. ORIGIN: Johann Bernoulli's 1696 challenge; Newton solved it overnight. WORKED EXAMPLE: bead reaches bottom faster on cycloid than on straight line, despite cycloid being longer.");
+  W("calculus-of-variations", "Soap film:",
+    "$y$ = profile of surface of revolution. $y'$ = derivative. SURFACE area of revolution. MINIMIZER: catenoid (surface of revolution of $\\cosh$). WORKED EXAMPLE: dip two parallel rings in soap solution; film forms a catenoid if rings are close enough.");
+  W("calculus-of-variations", "Noether:",
+    "EVERY continuous symmetry of the action yields a conserved current. EXAMPLES: time translation → energy; space translation → momentum; rotation → angular momentum; gauge symmetry → charge. PROVED by Emmy Noether (1918).");
+
+  // ----- GAME THEORY -----
+  W("game-theory", "Nash:",
+    "$s_i^*$ = equilibrium strategy of player $i$. $s_{-i}^*$ = strategies of all OTHER players at equilibrium. $u_i$ = utility (payoff) function for player $i$. CONDITION: no player can improve by unilaterally changing strategy. WORKED EXAMPLE: Prisoner's Dilemma. Both confess is the unique Nash, even though both staying silent gives higher joint payoff.");
+  W("game-theory", "Minimax:",
+    "$s, t$ = strategies of two players in a zero-sum game. $u(s, t)$ = payoff to player 1 (negative of player 2's). VON NEUMANN's theorem: max-min = min-max = VALUE of the game. WORKED EXAMPLE: rock-paper-scissors. Value is 0 (symmetric). Optimal strategy: uniform random.");
+  W("game-theory", "Mixed strategy:",
+    "Player randomizes among pure strategies with specific probabilities. NECESSARY when no pure-strategy equilibrium exists. WORKED EXAMPLE: matching pennies has unique mixed equilibrium $(1/2, 1/2)$ for both players. ANY deviation invites exploitation.");
+  W("game-theory", "Shapley value:",
+    "$v(S)$ = value created by coalition $S$. $n$ = total number of players. $\\phi_i$ = Shapley value (fair share) for player $i$. WORKED EXAMPLE: profit-sharing in a coalition: each player's Shapley value = average marginal contribution across all orderings of joining. USED in attribution methods like SHAP for machine learning.");
+  W("game-theory", "Subgame perfect:",
+    "REFINEMENT of Nash: every subgame must be a Nash equilibrium. COMPUTED via BACKWARD induction in finite-horizon games. ELIMINATES non-credible threats. WORKED EXAMPLE: centipede game — backward induction predicts immediate stopping, even though human players often cooperate longer.");
+  W("game-theory", "Stable matching",
+    "GALE-SHAPLEY (1962) algorithm. PRODUCES a matching where no two participants prefer each other to their assigned partners. USED IN: medical residency (NRMP), school choice, kidney exchange. NOBEL Prize 2012 to Shapley and Roth.");
+
+  // ----- OPTIMIZATION -----
+  W("optimization", "$\\min f(x)",
+    "$f(x)$ = objective function (to minimize). $g_i(x) \\leq 0$ = inequality constraints. $h_j(x) = 0$ = equality constraints. $x$ = decision variable (vector). GENERAL form of a constrained optimization problem. WORKED EXAMPLE: minimize $x^2 + y^2$ subject to $x + y \\geq 1$. Solution: $x = y = 1/2$, min value $1/2$.");
+  W("optimization", "$\\mathcal{L}",
+    "LAGRANGIAN function. $\\lambda_i$ = Lagrange multipliers for inequalities ($\\lambda_i \\geq 0$). $\\mu_j$ = multipliers for equalities (any sign). KEY tool for constrained optimization. WORKED EXAMPLE: minimize $x^2 + y^2$ s.t. $x + y = 1$. $\\mathcal L = x^2 + y^2 + \\mu(x + y - 1)$. Set $\\nabla_x \\mathcal L = 0$: $2x + \\mu = 0, 2y + \\mu = 0$, plus constraint. Solve: $x = y = 1/2$.");
+  W("optimization", "KKT:",
+    "KKT (Karush-Kuhn-Tucker) conditions = necessary for optimality with inequality constraints. STATIONARITY: gradient of Lagrangian is zero. DUAL feasibility: $\\lambda_i \\geq 0$. COMPLEMENTARY slackness: $\\lambda_i g_i = 0$ (either constraint is active or multiplier is zero).");
+  W("optimization", "Convex:",
+    "$f$ is CONVEX iff any chord lies above the function. $\\theta \\in [0, 1]$ = interpolation parameter. WORKED EXAMPLE: $f(x) = x^2$ is convex. Check at $x = 0, y = 1, \\theta = 1/2$: $f(0.5) = 0.25 \\leq 0.5(0) + 0.5(1) = 0.5$ ✓. For convex optimization: every local min is a global min.");
+  W("optimization", "Gradient descent:",
+    "$x_n$ = current iterate. $\\eta$ = step size (learning rate). $\\nabla f$ = gradient. MOVE in direction of steepest decrease. WORKED EXAMPLE: minimize $f(x) = (x - 5)^2$. $\\nabla f = 2(x - 5)$. From $x_0 = 0$ with $\\eta = 0.1$: $x_1 = 0 + 1 = 1$, $x_2 = 1 + 0.8 = 1.8$, etc., converging to $x = 5$.");
+  W("optimization", "Newton's:",
+    "$H$ = Hessian (matrix of second partials). $\\nabla f$ = gradient. USES second-order info. QUADRATIC convergence near regular minimum. EXPENSIVE per iteration (must form and invert $H$).");
+  W("optimization", "LP duality:",
+    "LP = linear program. PRIMAL: maximize $c^T x$ subject to $Ax \\leq b, x \\geq 0$. DUAL: minimize $b^T y$ subject to $A^T y \\geq c, y \\geq 0$. STRONG duality: optimal primal value equals optimal dual value (under standard assumptions).");
+
+  // ----- INFORMATION THEORY -----
+  W("information-theory", "$H(X)",
+    "$X$ = discrete random variable. $p_i$ = probability of outcome $i$. $H(X)$ = SHANNON entropy in bits (when log base 2). MEASURES average information per symbol. WORKED EXAMPLE: fair coin: $H = -2 \\cdot (1/2)\\log_2(1/2) = 1$ bit. Biased coin $p = 0.9$: $H = -0.9\\log_2(0.9) - 0.1\\log_2(0.1) \\approx 0.469$ bits.");
+  W("information-theory", "$H(X, Y)",
+    "$H(X, Y)$ = joint entropy. SUBADDITIVITY: $H(X, Y) \\leq H(X) + H(Y)$. EQUALITY iff $X, Y$ independent. WORKED EXAMPLE: two independent coin flips have $H(X, Y) = 2$ bits (= $H(X) + H(Y) = 1 + 1$).");
+  W("information-theory", "$I(X; Y)",
+    "$I(X; Y)$ = MUTUAL information between $X$ and $Y$. MEASURES information $X$ provides about $Y$. SYMMETRIC: $I(X; Y) = I(Y; X)$. ZERO iff independent. WORKED EXAMPLE: $Y = X$ (perfectly correlated): $I = H(X)$ (all info shared). $X, Y$ independent: $I = 0$.");
+  W("information-theory", "$D(p \\| q)",
+    "$D_{KL}$ = Kullback-Leibler divergence. $p, q$ = two probability distributions. NOT symmetric. ALWAYS non-negative; zero iff $p = q$. MEASURES 'cost' of using $q$ to model true distribution $p$. WORKED EXAMPLE: $p = (0.5, 0.5)$ (fair coin), $q = (0.9, 0.1)$ (biased model). $D(p\\|q) = 0.5\\log(0.5/0.9) + 0.5\\log(0.5/0.1) \\approx 0.737$ bits — significant penalty.");
+  W("information-theory", "Channel capacity:",
+    "$C$ = MAXIMUM rate (bits per channel use) for reliable communication. MAX taken over input distributions $P(X)$. SHANNON's theorem: at any rate $R < C$, error probability can be made arbitrarily small with long codes.");
+  W("information-theory", "BSC capacity:",
+    "BSC = Binary Symmetric Channel: each bit independently flipped with probability $p$. $H(p)$ = binary entropy. WORKED EXAMPLE: $p = 0.1$ (10% error): $H(0.1) \\approx 0.469$. Capacity $C \\approx 0.531$ bits/use. So you need at least ~2 channel uses per intended bit.");
+  W("information-theory", "Differential entropy of",
+    "$\\sigma^2$ = variance. Differential entropy of Gaussian = $\\tfrac{1}{2}\\log(2\\pi e\\sigma^2)$. MAXIMUM entropy among continuous distributions with given variance — that's why Gaussians appear so often.");
+
+  // ----- EXPONENTS-ROOTS -----
+  W("exponents-roots", "$x^a \\cdot x^b",
+    "$x$ = base (any nonzero real, or positive for real $a, b$). $a, b$ = real exponents. MULTIPLYING powers of the same base — ADD the exponents. WORKED EXAMPLE: $2^3 \\cdot 2^4 = 2^7 = 128$. Check: $8 \\cdot 16 = 128$ ✓.");
+  W("exponents-roots", "$\\dfrac{x^a}{x^b}",
+    "$x$ = base ($x \\neq 0$). DIVIDING powers — SUBTRACT exponents. WORKED EXAMPLE: $5^{10}/5^7 = 5^3 = 125$.");
+  W("exponents-roots", "$(x^a)^b",
+    "RAISING a power to a power — MULTIPLY exponents. WORKED EXAMPLE: $(2^3)^4 = 2^{12} = 4096$. Check: $8^4 = 4096$ ✓.");
+  W("exponents-roots", "$x^{-n}",
+    "$n$ = positive integer (or any positive real). NEGATIVE exponent flips to the denominator. CONSISTENT with the exponent laws: $x^{-n} \\cdot x^n = x^0 = 1$. WORKED EXAMPLE: $3^{-2} = 1/9$.");
+  W("exponents-roots", "$x^{1/n}",
+    "$n$ = positive integer. $\\sqrt[n]{x}$ = the $n$-th root of $x$. CONSISTENT with exponent laws: $(x^{1/n})^n = x$. WORKED EXAMPLE: $8^{1/3} = \\sqrt[3]{8} = 2$. $16^{1/4} = 2$.");
+  W("exponents-roots", "$\\sqrt{ab}",
+    "$a, b \\geq 0$. SQUARE ROOT distributes over multiplication. WARNING: does NOT distribute over addition ($\\sqrt{a + b} \\neq \\sqrt a + \\sqrt b$). WORKED EXAMPLE: $\\sqrt{72} = \\sqrt{36 \\cdot 2} = 6\\sqrt 2$ — standard surd simplification.");
 })();
