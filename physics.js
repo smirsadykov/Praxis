@@ -57,7 +57,7 @@ window.CONTENT.physics = [
     ],
     tasks: [
       { q: "Object at rest accelerates $3$ m/s² for $4$ s. Final speed?", a: "$12$ m/s" },
-      { q: "Distance covered in Q1?", a: "$24$ m" },
+      { q: "Same object as above (rest → $3$ m/s² for $4$ s) — total distance covered?", a: "$24$ m" },
       { q: "$v = 20$ m/s decelerates at $5$ m/s² to rest. Distance?", a: "$40$ m" },
       { q: "Free-fall distance in $2$ s?", a: "$19.6$ m" },
       { q: "Horizontal projectile lands in $3$ s. Vertical drop?", a: "$44.1$ m" },
@@ -92,7 +92,7 @@ window.CONTENT.physics = [
       { q: "Angle of $\\langle 1, 1 \\rangle$ from x-axis?", a: "$45^\\circ$" },
       { q: "Component of $20$ N at $60^\\circ$ horizontally?", a: "$10$ N" },
       { q: "Sum $\\langle 1, 0 \\rangle + \\langle 0, 1 \\rangle$?", a: "$\\langle 1, 1 \\rangle$" },
-      { q: "Magnitude of sum from Q4?", a: "$\\sqrt 2$" },
+      { q: "Magnitude of $\\langle 1, 1 \\rangle$ (the sum from the previous problem)?", a: "$\\sqrt 2$" },
       { q: "Unit vector along $\\langle 3, 4 \\rangle$?", a: "$\\langle 0.6, 0.8 \\rangle$" },
       { q: "$\\vec A - \\vec B$ if $\\vec A = \\langle 5, 1 \\rangle$, $\\vec B = \\langle 2, -3 \\rangle$?", a: "$\\langle 3, 4 \\rangle$" },
       { q: "Equilibrium net force?", a: "$\\vec 0$" },
@@ -433,9 +433,11 @@ window.CONTENT.physics = [
       { title: "Example 2 — Lens", prompt: "$f = 10$ cm, $d_o = 30$ cm.", steps: [
         { label: "Apply", body: "$d_i = 15$ cm." }
       ], answer: "$15$ cm (real)" },
-      { title: "Example 3 — Magnification", prompt: "From Ex 2.", steps: [
-        { label: "Compute", body: "$m = -0.5$." }
-      ], answer: "$-0.5$" },
+      { title: "Example 3 — Magnification", prompt: "For the lens in Example 2 ($f = 10$ cm, object $30$ cm out, image at $d_i = 15$ cm), find the magnification.", steps: [
+        { label: "Formula", body: "Magnification $m = -d_i/d_o$." },
+        { label: "Compute", body: "$m = -15/30 = -0.5$." },
+        { label: "Interpret", body: "Negative ⇒ inverted. $|m| = 0.5 < 1$ ⇒ half the size." }
+      ], answer: "$-0.5$ (inverted, half-size)" },
       { title: "Example 4 — Critical angle", prompt: "Water-air, $n = 1.33$.", steps: [
         { label: "Apply", body: "$\\theta_c \\approx 48.8^\\circ$." }
       ], answer: "$\\approx 48.8^\\circ$" }

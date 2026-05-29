@@ -1261,7 +1261,7 @@ window.CONTENT.math = [
       { q: "Eccentricity of circle?", a: "$0$" },
       { q: "Eccentricity of parabola?", a: "$1$" },
       { q: "Ellipse $x^2/9 + y^2/4 = 1$. Foci on?", a: "x-axis" },
-      { q: "Foci distance for above?", a: "$\\sqrt 5$" },
+      { q: "For the same ellipse ($x^2/9 + y^2/4 = 1$), distance from center to each focus?", a: "$\\sqrt 5$" },
       { q: "Hyperbola $x^2 - y^2 = 1$ asymptotes?", a: "$y = \\pm x$" },
       { q: "Conic $4x^2 + 9y^2 = 36$ type?", a: "Ellipse" },
       { q: "Conic $xy = 1$ type?", a: "Hyperbola" },
