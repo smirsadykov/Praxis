@@ -468,6 +468,43 @@ main {
   .miscon-row { grid-template-columns: 1fr; gap: 4px; }
 }
 
+/* Recommended Reading */
+.books-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 4px 16px;
+  margin: 6px 0 12px;
+}
+.book-row {
+  padding: 14px 0;
+  border-top: 1px dashed var(--border);
+}
+.book-row:first-child { border-top: none; }
+.book-title {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 4px;
+  line-height: 1.45;
+}
+.book-title em { color: var(--accent); font-style: italic; }
+.book-note {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* Textbook Problem cards: subtle tint to distinguish from practice */
+.task-textbook {
+  border-left: 3px solid var(--accent-2);
+}
+.task-source {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+}
+
 .formulas {
   background: var(--surface);
   border: 1px solid var(--border);

@@ -297,6 +297,22 @@
       });
     }
 
+    // Recommended Reading — render before practice problems
+    const books = (window.BOOKS || {})[topic.id];
+    if (books && books.length) {
+      app.appendChild(el("h3", { class: "section-head" }, "Recommended Reading"));
+      app.appendChild(el("p", { class: "section-sub" }, "Canonical textbooks for going deeper. The textbook problems below are drawn from these sources."));
+      const card = el("div", { class: "books-card" });
+      books.forEach((b) => {
+        const row = el("div", { class: "book-row" }, [
+          el("div", { class: "book-title", html: "<strong>" + b.author + "</strong> — <em>" + b.title + "</em>" + (b.where ? " (" + b.where + ")" : "") }),
+          el("div", { class: "book-note", html: b.note })
+        ]);
+        card.appendChild(row);
+      });
+      app.appendChild(card);
+    }
+
     if (topic.tasks && topic.tasks.length) {
       app.appendChild(el("h3", { class: "section-head" }, "Practice Problems"));
       app.appendChild(el("p", { class: "section-sub" }, "Try first — type your guess, then check. Attempting before reading the answer dramatically improves retention."));
@@ -369,6 +385,70 @@
         ];
         if (explainDiv) children.push(explainDiv);
         const taskDiv = el("div", { class: taskClass }, children);
+        app.appendChild(taskDiv);
+      });
+    }
+
+    // Textbook Problems — additional problems drawn from canonical books
+    const tbProblems = (window.TEXTBOOK_PROBLEMS || {})[topic.id];
+    if (tbProblems && tbProblems.length) {
+      app.appendChild(el("h3", { class: "section-head" }, "Textbook Problems"));
+      app.appendChild(el("p", { class: "section-sub" }, "Classic problems drawn from the books listed in Recommended Reading. Same rules — try first, then check."));
+      tbProblems.forEach((tp, i) => {
+        const tbIdx = "tb-" + i;  // distinct progress index
+        const alreadyCorrect = progress[topic.id]?.correct?.[tbIdx];
+        const alreadyAttempted = progress[topic.id]?.attempted?.[tbIdx];
+
+        const feedbackDiv = el("div", { class: "task-feedback" });
+        feedbackDiv.hidden = true;
+        const answerDiv = el("div", { class: "task-answer", html: tp.a });
+        answerDiv.hidden = true;
+        const sourceDiv = el("div", { class: "task-source", html: "Source: " + tp.source });
+
+        const input = el("input", {
+          class: "task-input",
+          type: "text",
+          placeholder: "Your answer…",
+          autocomplete: "off",
+          spellcheck: "false"
+        });
+        const checkBtn = el("button", { class: "task-check-btn" }, "Check");
+        const revealBtn = el("button", { class: "show-answer-btn task-reveal-btn" }, "Show answer");
+
+        const showAns = () => { answerDiv.hidden = false; revealBtn.textContent = "Hide answer"; };
+        const hideAns = () => { answerDiv.hidden = true; revealBtn.textContent = "Show answer"; };
+
+        const doCheck = () => {
+          const v = input.value;
+          if (!v.trim()) return;
+          const ok = answersMatch(v, tp.a);
+          recordAttempt(topic.id, tbIdx, ok);
+          feedbackDiv.hidden = false;
+          if (ok) {
+            feedbackDiv.className = "task-feedback correct";
+            feedbackDiv.innerHTML = "✓ Correct!";
+            showAns();
+          } else {
+            feedbackDiv.className = "task-feedback wrong";
+            feedbackDiv.innerHTML = "✗ Not quite. Try again, or click <em>Show answer</em>.";
+          }
+        };
+        checkBtn.addEventListener("click", doCheck);
+        input.addEventListener("keydown", (e) => { if (e.key === "Enter") doCheck(); });
+        revealBtn.addEventListener("click", () => answerDiv.hidden ? showAns() : hideAns());
+
+        const inputRow = el("div", { class: "task-input-row" }, [input, checkBtn, revealBtn]);
+        const taskClass = alreadyCorrect ? "task task-textbook task-solved"
+                       : alreadyAttempted ? "task task-textbook task-tried"
+                       : "task task-textbook";
+        const taskDiv = el("div", { class: taskClass }, [
+          el("div", { class: "task-num" }, "Textbook Problem " + (i + 1) + (alreadyCorrect ? " · ✓ solved" : alreadyAttempted ? " · attempted" : "")),
+          el("div", { class: "task-q", html: tp.q }),
+          inputRow,
+          feedbackDiv,
+          answerDiv,
+          sourceDiv
+        ]);
         app.appendChild(taskDiv);
       });
     }
