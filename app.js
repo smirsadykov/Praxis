@@ -156,21 +156,28 @@
 
     if (topic.tasks && topic.tasks.length) {
       app.appendChild(el("h3", { class: "section-head" }, "Practice Problems"));
+      const taskExplain = (window.TASK_EXPLAIN || {})[topic.id] || [];
       topic.tasks.forEach((task, i) => {
         const answerDiv = el("div", { class: "task-answer", html: task.a });
         answerDiv.hidden = true;
+        const explainText = taskExplain[i];
+        const explainDiv = explainText ? el("div", { class: "task-explain", html: explainText }) : null;
+        if (explainDiv) explainDiv.hidden = true;
         const btn = el("button", { class: "show-answer-btn" }, "Show answer");
         btn.addEventListener("click", () => {
           const showing = !answerDiv.hidden;
           answerDiv.hidden = showing;
+          if (explainDiv) explainDiv.hidden = showing;
           btn.textContent = showing ? "Show answer" : "Hide answer";
         });
-        const taskDiv = el("div", { class: "task" }, [
+        const children = [
           el("div", { class: "task-num" }, "Problem " + (i + 1)),
           el("div", { class: "task-q", html: task.q }),
           btn,
           answerDiv
-        ]);
+        ];
+        if (explainDiv) children.push(explainDiv);
+        const taskDiv = el("div", { class: "task" }, children);
         app.appendChild(taskDiv);
       });
     }

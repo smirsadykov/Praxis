@@ -1,4 +1,4 @@
-const CACHE = "praxis-v5";
+const CACHE = "praxis-v6";
 const ASSETS = [
   "./",
   "./index.html",
@@ -9,6 +9,7 @@ const ASSETS = [
   "./intros.js",
   "./explanations.js",
   "./formulas.js",
+  "./task-explanations.js",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
