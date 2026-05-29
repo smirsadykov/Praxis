@@ -117,6 +117,20 @@
       app.appendChild(introCard);
     }
 
+    const glossary = (window.GLOSSARY || {})[topic.id];
+    if (glossary && glossary.length) {
+      app.appendChild(el("h3", { class: "section-head" }, "Words You'll See"));
+      const card = el("div", { class: "glossary-card" });
+      glossary.forEach((g) => {
+        const row = el("div", { class: "gloss-row" }, [
+          el("div", { class: "gloss-term", html: g.term }),
+          el("div", { class: "gloss-def", html: g.def })
+        ]);
+        card.appendChild(row);
+      });
+      app.appendChild(card);
+    }
+
     const diagram = (window.DIAGRAMS || {})[topic.id];
     if (diagram) {
       app.appendChild(el("h3", { class: "section-head" }, "Visualize"));
