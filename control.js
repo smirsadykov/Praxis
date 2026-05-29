@@ -69,21 +69,22 @@ window.CONTENT.control = [
         title: "Example 1 — Transform of a step input",
         prompt: "Find the Laplace transform of $u(t) = A$ for $t \\geq 0$.",
         steps: [
-          { label: "Definition", body: "$\\mathcal{L}\\{f(t)\\} = \\int_0^\\infty f(t) e^{-st}\\,dt$." },
-          { label: "Plug in", body: "$\\int_0^\\infty A e^{-st}\\,dt = A \\cdot \\left[ -\\frac{e^{-st}}{s} \\right]_0^\\infty = \\frac{A}{s}$ (for $\\operatorname{Re}(s) > 0$)." }
+          { label: "Definition", body: "The Laplace transform of any function $f(t)$ defined for $t \\geq 0$ is $\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st}\\,dt$. The new variable $s$ is complex: $s = \\sigma + j\\omega$. We integrate over all positive time, multiplying our function by the decaying exponential $e^{-st}$." },
+          { label: "Substitute $f(t) = A$ (constant)", body: "Plug $f(t) = A$ into the integral: $F(s) = \\int_0^\\infty A e^{-st}\\,dt$. Since $A$ is a constant, pull it outside: $F(s) = A \\int_0^\\infty e^{-st}\\,dt$." },
+          { label: "Evaluate the integral", body: "The antiderivative of $e^{-st}$ (with respect to $t$) is $-e^{-st}/s$. So $F(s) = A \\cdot \\left[ -\\frac{e^{-st}}{s} \\right]_0^\\infty$. At $t = \\infty$: $e^{-st} \\to 0$ (assuming $\\operatorname{Re}(s) > 0$). At $t = 0$: $e^{0} = 1$. Subtracting: $F(s) = A \\cdot (0 - (-1/s)) = A/s$." }
         ],
-        answer: "$\\mathcal{L}\\{A\\} = A/s$. The unit step becomes $1/s$."
+        answer: "$\\mathcal{L}\\{A\\} = A/s$. The unit step ($A = 1$) becomes $1/s$ — the most important Laplace pair in control."
       },
       {
         title: "Example 2 — Solve $\\dot y + 3y = 6$, $y(0)=0$",
-        prompt: "Use Laplace to solve this first-order ODE.",
+        prompt: "Use Laplace to solve this first-order ODE. Notice that with Laplace, we'll never have to find a 'general solution' or 'particular solution' separately — one algebraic equation gives everything.",
         steps: [
-          { label: "Transform both sides", body: "$sY(s) - y(0) + 3Y(s) = 6/s$. With $y(0)=0$: $(s+3)Y(s) = 6/s$." },
-          { label: "Solve algebraically", body: "$Y(s) = \\dfrac{6}{s(s+3)}$." },
-          { label: "Partial fractions", body: "$\\dfrac{6}{s(s+3)} = \\dfrac{A}{s} + \\dfrac{B}{s+3}$. Cover-up: $A = 6/3 = 2$, $B = 6/(-3) = -2$." },
-          { label: "Inverse transform", body: "$y(t) = 2 - 2e^{-3t}$. Exponential approach to steady-state 2." }
+          { label: "Transform both sides", body: "Apply $\\mathcal{L}$ to each term. From the derivative rule, $\\mathcal{L}\\{\\dot y\\} = sY(s) - y(0)$. By linearity, $\\mathcal{L}\\{3y\\} = 3Y(s)$. And $\\mathcal{L}\\{6\\} = 6/s$ (constant times Laplace of 1). So: $sY(s) - y(0) + 3Y(s) = 6/s$. Plug in $y(0) = 0$: $(s + 3)Y(s) = 6/s$." },
+          { label: "Solve algebraically", body: "This is now ordinary algebra, not calculus. Divide both sides by $(s+3)$: $Y(s) = \\dfrac{6}{s(s + 3)}$. That's the Laplace transform of the answer." },
+          { label: "Partial fractions", body: "To invert, we break the rational function into pieces we recognize. Write $\\dfrac{6}{s(s+3)} = \\dfrac{A}{s} + \\dfrac{B}{s+3}$. The 'cover-up' shortcut: to find $A$, cover the $s$ factor in the original and substitute $s = 0$ in what remains: $A = 6/(0 + 3) = 2$. For $B$, cover $(s+3)$ and substitute $s = -3$: $B = 6/(-3) = -2$. Check: $\\dfrac{2}{s} - \\dfrac{2}{s+3} = \\dfrac{2(s+3) - 2s}{s(s+3)} = \\dfrac{6}{s(s+3)}$ ✓." },
+          { label: "Inverse Laplace", body: "From the table: $1/s \\leftrightarrow 1$ and $1/(s + a) \\leftrightarrow e^{-at}$. So $2/s \\leftrightarrow 2$ and $-2/(s+3) \\leftrightarrow -2 e^{-3t}$. Linearity says we add: $y(t) = 2 - 2 e^{-3t}$." }
         ],
-        answer: "$y(t) = 2(1 - e^{-3t})$. Time constant $\\tau = 1/3$ s."
+        answer: "$y(t) = 2(1 - e^{-3t})$. Verify: $\\dot y = 6 e^{-3t}$, $3y = 6 - 6 e^{-3t}$, sum $= 6$ ✓. Steady state $y(\\infty) = 2$. Time constant $\\tau = 1/3$ s."
       },
       {
         title: "Example 3 — Final-value theorem",
@@ -267,22 +268,24 @@ window.CONTENT.control = [
     examples: [
       {
         title: "Example 1 — From ODE to state space",
-        prompt: "$\\ddot y + 3\\dot y + 2y = u$. Choose states $x_1 = y$, $x_2 = \\dot y$. Find $A, B, C, D$.",
+        prompt: "$\\ddot y + 3\\dot y + 2y = u$. Choose states $x_1 = y$, $x_2 = \\dot y$. Find the matrices $A, B, C, D$.",
         steps: [
-          { label: "Derivatives", body: "$\\dot x_1 = x_2$;  $\\dot x_2 = \\ddot y = u - 3\\dot y - 2y = -2x_1 - 3x_2 + u$." },
-          { label: "Matrix form", body: "$A = \\begin{pmatrix} 0 & 1 \\\\ -2 & -3 \\end{pmatrix}$, $B = \\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}$, $C = (1\\ 0)$, $D = 0$." }
+          { label: "Why two states", body: "This is a 2nd-order ODE — it needs TWO initial conditions ($y(0)$ and $\\dot y(0)$) to fully predict the future. So we need two state variables: one to track $y$, one to track $\\dot y$. Call them $x_1 = y$ and $x_2 = \\dot y$. Think of the state vector $\\mathbf x = (x_1, x_2)^T$ as 'everything the system needs to remember.'" },
+          { label: "Compute derivatives of each state", body: "We need $\\dot x_1$ and $\\dot x_2$ in terms of $\\mathbf x$ and $u$. First: $\\dot x_1 = \\dot y$. But $\\dot y = x_2$ (by definition). So $\\dot x_1 = x_2$. Second: $\\dot x_2 = \\ddot y$. Solve the original ODE for $\\ddot y$: $\\ddot y = u - 3\\dot y - 2y = -2 x_1 - 3 x_2 + u$." },
+          { label: "Read off the matrix entries", body: "Write the two equations in matrix form: $\\begin{pmatrix}\\dot x_1\\\\\\dot x_2\\end{pmatrix} = \\begin{pmatrix}0 & 1\\\\-2 & -3\\end{pmatrix}\\begin{pmatrix}x_1\\\\x_2\\end{pmatrix} + \\begin{pmatrix}0\\\\1\\end{pmatrix} u$. So $A = \\begin{pmatrix}0 & 1\\\\-2 & -3\\end{pmatrix}$, $B = \\begin{pmatrix}0\\\\1\\end{pmatrix}$. For the output: we measure $y = x_1$, so $C = (1\\ 0)$. No direct feedthrough, so $D = 0$." }
         ],
-        answer: "Standard controllable canonical form. Eigenvalues of $A$ = poles of $G(s)$ = $-1, -2$."
+        answer: "$A = \\begin{pmatrix}0 & 1\\\\-2 & -3\\end{pmatrix}$, $B = \\begin{pmatrix}0\\\\1\\end{pmatrix}$, $C = (1\\ 0)$, $D = 0$. This is 'controllable canonical form.' Eigenvalues of $A$ are the roots of $s^2 + 3s + 2 = (s+1)(s+2) = 0$, namely $-1, -2$ — these are also the poles of the transfer function $G(s)$."
       },
       {
         title: "Example 2 — State space to transfer function",
         prompt: "Given $A = \\begin{pmatrix} 0 & 1 \\\\ -6 & -5 \\end{pmatrix}$, $B = \\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}$, $C = (1\\ 0)$, $D = 0$. Find $G(s)$.",
         steps: [
-          { label: "Formula", body: "$G(s) = C(sI - A)^{-1} B + D$." },
-          { label: "Compute $sI - A$", body: "$\\begin{pmatrix} s & -1 \\\\ 6 & s+5 \\end{pmatrix}$. Determinant: $s(s+5) + 6 = s^2 + 5s + 6$." },
-          { label: "Inverse and multiply", body: "$(sI-A)^{-1} = \\dfrac{1}{s^2+5s+6}\\begin{pmatrix} s+5 & 1 \\\\ -6 & s \\end{pmatrix}$. Then $CC(sI-A)^{-1}B = \\dfrac{1}{s^2+5s+6}$." }
+          { label: "Formula", body: "Take Laplace of $\\dot{\\mathbf x} = A\\mathbf x + B u$ assuming $\\mathbf x(0) = 0$: $s\\mathbf X = A\\mathbf X + B U$, so $\\mathbf X = (sI - A)^{-1} B U$. Then $Y = C\\mathbf X + DU = [C(sI - A)^{-1}B + D] U$. So $G(s) = C(sI - A)^{-1} B + D$." },
+          { label: "Compute $sI - A$", body: "$sI = \\begin{pmatrix} s & 0 \\\\ 0 & s \\end{pmatrix}$. Subtract $A$: $sI - A = \\begin{pmatrix} s - 0 & 0 - 1 \\\\ 0 - (-6) & s - (-5) \\end{pmatrix} = \\begin{pmatrix} s & -1 \\\\ 6 & s+5 \\end{pmatrix}$. Its determinant: $\\det(sI - A) = s(s+5) - (-1)(6) = s^2 + 5s + 6$ — this WILL be the denominator of $G(s)$." },
+          { label: "Invert via adjugate formula", body: "For a 2×2 matrix $\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$, inverse is $\\frac{1}{ad-bc}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}$. So $(sI-A)^{-1} = \\dfrac{1}{s^2 + 5s + 6}\\begin{pmatrix} s+5 & 1 \\\\ -6 & s \\end{pmatrix}$." },
+          { label: "Multiply $C \\cdot (sI-A)^{-1} \\cdot B$", body: "First $(sI-A)^{-1} B = \\dfrac{1}{s^2+5s+6} \\begin{pmatrix} s+5 & 1 \\\\ -6 & s \\end{pmatrix} \\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix} = \\dfrac{1}{s^2+5s+6} \\begin{pmatrix} 1 \\\\ s \\end{pmatrix}$. Then $C \\cdot (\\ldots) = (1\\ 0) \\cdot \\dfrac{1}{s^2+5s+6}\\begin{pmatrix} 1 \\\\ s \\end{pmatrix} = \\dfrac{1}{s^2+5s+6}$. Adding $D = 0$ gives the final answer." }
         ],
-        answer: "$G(s) = \\dfrac{1}{s^2 + 5s + 6}$."
+        answer: "$G(s) = \\dfrac{1}{s^2 + 5s + 6} = \\dfrac{1}{(s+2)(s+3)}$. Poles at $-2, -3$ — exactly the eigenvalues of $A$, as expected."
       },
       {
         title: "Example 3 — Eigenvalues = poles",
@@ -518,14 +521,15 @@ window.CONTENT.control = [
     examples: [
       {
         title: "Example 1 — Build a Routh array",
-        prompt: "$s^4 + 3s^3 + 3s^2 + 2s + 1 = 0$. Is the system stable?",
+        prompt: "$s^4 + 3s^3 + 3s^2 + 2s + 1 = 0$. Is the system stable? We'll build the array column by column and read off the answer at the end.",
         steps: [
-          { label: "Rows $s^4, s^3$", body: "$s^4$: 1, 3, 1.  $s^3$: 3, 2, 0." },
-          { label: "Row $s^2$", body: "First element: $(3\\cdot 3 - 1\\cdot 2)/3 = 7/3$. Second: $(3\\cdot 1 - 1\\cdot 0)/3 = 1$." },
-          { label: "Row $s^1$", body: "$(7/3 \\cdot 2 - 3 \\cdot 1)/(7/3) = (14/3 - 3)/(7/3) = (5/3)/(7/3) = 5/7$." },
-          { label: "Row $s^0$", body: "1." }
+          { label: "Top two rows: split the coefficients", body: "Take the polynomial coefficients in order: 1, 3, 3, 2, 1. Put EVEN-power coefficients (degrees 4, 2, 0) in the $s^4$ row: <strong>1, 3, 1</strong>. Put ODD-power coefficients (degrees 3, 1) in the $s^3$ row: <strong>3, 2</strong>. (Pad with 0 if needed to align columns.) These two rows are given — no computation needed." },
+          { label: "Row $s^2$: cross-multiplication formula", body: "Each new entry is a 2×2 determinant divided by the leading entry of the row above. For position 1 of $s^2$: take the 2×2 block from the first two columns of $s^4, s^3$ rows: $\\begin{vmatrix} 1 & 3 \\\\ 3 & 2 \\end{vmatrix} = (1)(2) - (3)(3) = -7$. Then NEGATE and divide by the leader (3) of the row above: $-(-7)/3 = 7/3$. For position 2: $\\begin{vmatrix} 1 & 1 \\\\ 3 & 0 \\end{vmatrix} = 0 - 3 = -3$. Negate, divide by 3: $-(-3)/3 = 1$. So $s^2$ row: <strong>7/3, 1</strong>." },
+          { label: "Row $s^1$: same rule, applied to rows $s^3$ and $s^2$", body: "Position 1: $\\begin{vmatrix} 3 & 2 \\\\ 7/3 & 1 \\end{vmatrix} = 3 - 14/3 = -5/3$. Negate, divide by $7/3$: $(5/3)/(7/3) = 5/7$. So $s^1$ row: <strong>5/7</strong>." },
+          { label: "Row $s^0$: final entry", body: "Same procedure with $s^2$ and $s^1$ rows: $\\begin{vmatrix} 7/3 & 1 \\\\ 5/7 & 0 \\end{vmatrix} = 0 - 5/7 = -5/7$. Negate, divide by $5/7$: $1$. So $s^0$ row: <strong>1</strong>." },
+          { label: "Read the verdict", body: "First column from top to bottom: <strong>1, 3, 7/3, 5/7, 1</strong>. All positive — zero sign changes — so zero RHP poles. System is stable." }
         ],
-        answer: "First column: 1, 3, 7/3, 5/7, 1 — all positive. Zero sign changes → stable."
+        answer: "First column: 1, 3, 7/3, 5/7, 1 — all positive. Zero sign changes → 0 RHP poles → system is stable."
       },
       {
         title: "Example 2 — Find the range of $K$ for stability",
