@@ -1,15 +1,35 @@
 {
   "name": "Praxis — Math & Physics",
   "short_name": "Praxis",
-  "description": "Learn math and physics from basic to graduate level through worked examples and practice problems.",
+  "description": "Learn math and physics from basic to graduate level through worked examples, diagrams, glossaries, and interactive practice — all offline-capable.",
+  "id": "/praxis-math-physics",
+  "lang": "en",
+  "dir": "ltr",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui", "browser"],
+  "orientation": "any",
   "background_color": "#0b1020",
   "theme_color": "#0b1020",
-  "orientation": "portrait",
+  "categories": ["education", "books", "reference", "productivity"],
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Mathematics",
+      "short_name": "Math",
+      "description": "Open the math topics list",
+      "url": "./index.html#math"
+    },
+    {
+      "name": "Physics",
+      "short_name": "Physics",
+      "description": "Open the physics topics list",
+      "url": "./index.html#physics"
+    }
   ]
 }

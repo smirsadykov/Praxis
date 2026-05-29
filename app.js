@@ -410,10 +410,89 @@
   // Initial render. Wait for KaTeX auto-render to be ready for home (no math), still safe.
   renderHome();
 
-  // Register service worker for offline support.
+  // === PWA: install prompt, service worker, update detection ===
+  let deferredInstallPrompt = null;
+  let installBtn = null;
+  let updateToast = null;
+
+  function showInstallButton() {
+    if (installBtn || !deferredInstallPrompt) return;
+    installBtn = el("button", {
+      class: "pwa-install-btn",
+      onclick: async () => {
+        if (!deferredInstallPrompt) return;
+        installBtn.disabled = true;
+        deferredInstallPrompt.prompt();
+        try {
+          await deferredInstallPrompt.userChoice;
+        } catch (e) {}
+        deferredInstallPrompt = null;
+        installBtn.remove();
+        installBtn = null;
+      }
+    }, "Install");
+    document.querySelector(".topbar")?.appendChild(installBtn);
+  }
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    showInstallButton();
+  });
+
+  window.addEventListener("appinstalled", () => {
+    deferredInstallPrompt = null;
+    if (installBtn) { installBtn.remove(); installBtn = null; }
+  });
+
+  function showUpdateToast(reg) {
+    if (updateToast) return;
+    updateToast = el("div", { class: "pwa-update-toast" });
+    updateToast.appendChild(el("span", {}, "A new version of Praxis is available."));
+    const btn = el("button", { class: "pwa-update-btn" }, "Reload");
+    btn.addEventListener("click", () => {
+      if (reg.waiting) reg.waiting.postMessage({ type: "SKIP_WAITING" });
+    });
+    updateToast.appendChild(btn);
+    document.body.appendChild(updateToast);
+  }
+
+  function watchForUpdates(reg) {
+    if (!reg) return;
+    if (reg.waiting) showUpdateToast(reg);
+    reg.addEventListener("updatefound", () => {
+      const sw = reg.installing;
+      if (!sw) return;
+      sw.addEventListener("statechange", () => {
+        if (sw.state === "installed" && navigator.serviceWorker.controller) {
+          showUpdateToast(reg);
+        }
+      });
+    });
+  }
+
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
-      navigator.serviceWorker.register("service-worker.js").catch(() => {});
+      navigator.serviceWorker.register("service-worker.js").then((reg) => {
+        watchForUpdates(reg);
+        // Check for updates periodically (every 60 min) while open.
+        setInterval(() => reg.update().catch(() => {}), 60 * 60 * 1000);
+      }).catch(() => {});
+
+      // When the new SW takes control, reload once to use it.
+      let reloading = false;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (reloading) return;
+        reloading = true;
+        window.location.reload();
+      });
     });
+  }
+
+  // Honor #math or #physics hash from shortcut launchers.
+  const hash = window.location.hash.replace("#", "");
+  if (hash === "math" || hash === "physics") {
+    state.subject = hash;
+    renderHome();
   }
 })();
