@@ -874,6 +874,18 @@
   E("soft-matter-biophysics", "ATP hydrolysis:",
     "Currency of cellular energy: ATP → ADP + Pi releases ≈ 20 $k_BT$ ≈ 0.5 eV ≈ 30 kJ/mol. ENOUGH to power ~5 pN over 1 nm with reasonable efficiency. CELL uses ~$10^{20}$ ATP/second — a human body recycles its body weight in ATP daily.");
 
+  // Final cleanup of last few short notes
+  E("logarithms", "$\\log_b 1 = 0",
+    "Two anchor values from the definition. $\\log_b 1 = 0$ because $b^0 = 1$ for any base. $\\log_b b = 1$ because $b^1 = b$. These come up constantly as sanity checks and as endpoints when sketching log graphs. WORKED EXAMPLE: $\\log_{10}(100) = 2$, $\\log_{10}(0.01) = -2$ — symmetric around $\\log_{10}(1) = 0$.");
+  E("galois-theory", "Abel-Ruffini",
+    "Abel (1824) and Ruffini (1799) proved that the general quintic polynomial $ax^5 + bx^4 + cx^3 + dx^2 + ex + f = 0$ has no solution in radicals — no formula using only $+, -, \\times, \\div, \\sqrt[n]{\\cdot}$ on the coefficients. ORIGIN: the Galois group of the generic quintic is $S_5$, which is not solvable (its only non-trivial normal subgroup is $A_5$, which is simple). Specific quintics may still be solvable (e.g., $x^5 - 1 = 0$), but no universal formula exists.");
+  E("functional-analysis", "Riesz representation",
+    "Every bounded linear functional $\\phi$ on a Hilbert space $H$ has a unique representation $\\phi(x) = \\langle x, y\\rangle$ for some $y \\in H$. ORIGIN: Frigyes Riesz (1907). CONSEQUENCE: Hilbert spaces are isometrically isomorphic to their duals — there's no distinction between vectors and covectors. CONTRAST with general Banach spaces, where the dual is genuinely different. The basis of bra-ket notation in quantum mechanics: $\\langle\\phi|$ is just the functional $\\langle\\phi, \\cdot\\rangle$.");
+  E("lasers", "$A_{21}, B_{12}",
+    "Einstein's coefficients (1916) relate spontaneous emission ($A_{21}$), stimulated absorption ($B_{12}$), and stimulated emission ($B_{21}$). DERIVATION: detailed balance in a thermal radiation field gives $A_{21}/B_{21} = 8\\pi h\\nu^3/c^3$ and $g_1 B_{12} = g_2 B_{21}$ (degeneracy-weighted symmetry). PROFOUND: the existence of stimulated emission, predicted before any laser existed, is the entire foundation of laser physics. Einstein didn't realize the technological revolution he'd enabled.");
+  E("state-observers", "Observability matrix",
+    "Observability matrix $\\mathcal{O} = [C^T\\ (CA)^T\\ (CA^2)^T\\ \\ldots\\ (CA^{n-1})^T]^T$. Stack $C, CA, CA^2, \\ldots, CA^{n-1}$ as rows (or equivalently transpose powers as columns). ORIGIN: Kalman (1960), as the dual of controllability. THEOREM: $(A, C)$ observable $\\iff \\mathcal O$ has full rank $n$. CONSEQUENCE: if observable, the initial state $\\mathbf x(0)$ can be uniquely reconstructed from output measurements $\\mathbf y(t)$ over any finite interval. Observability is what makes observer design possible — without it, some modes are invisible from the output and can't be estimated.");
+
   // ============================================================
   // BODE PLOTS (one last)
   // ============================================================

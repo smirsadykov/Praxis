@@ -9,7 +9,7 @@
 //   - CDN assets (KaTeX): cache-first — they're versioned URLs and
 //     never change for a given version.
 
-const CACHE = "praxis-v36";
+const CACHE = "praxis-v37";
 
 const PRECACHE_ASSETS = [
   "./",
@@ -110,8 +110,25 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Strategy: stale-while-revalidate for same-origin static assets.
+  // Strategy: network-first for same-origin .js, .css, .json (content
+  // files that I keep updating). Falls back to cache if offline.
+  // For other same-origin assets (images): stale-while-revalidate.
   if (url.origin === self.location.origin) {
+    const isContentFile = /\.(js|css|json)$/.test(url.pathname);
+    if (isContentFile) {
+      event.respondWith(
+        fetch(req)
+          .then((res) => {
+            if (res && res.status === 200) {
+              const copy = res.clone();
+              caches.open(CACHE).then((cache) => cache.put(req, copy)).catch(() => {});
+            }
+            return res;
+          })
+          .catch(() => caches.match(req))
+      );
+      return;
+    }
     event.respondWith(
       caches.match(req).then((cached) => {
         const networkFetch = fetch(req)
