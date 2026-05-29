@@ -318,13 +318,13 @@ window.FORMULAS = {
   ],
 
   "coordinate-geometry": [
-    { f: "$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$", n: "Distance between two points." },
-    { f: "$M = \\left(\\dfrac{x_1 + x_2}{2}, \\dfrac{y_1 + y_2}{2}\\right)$", n: "Midpoint." },
-    { f: "$m = \\dfrac{y_2 - y_1}{x_2 - x_1}$", n: "Slope of line through two points." },
-    { f: "$y - y_1 = m(x - x_1)$", n: "Point-slope form." },
-    { f: "$y = mx + b$", n: "Slope-intercept form." },
-    { f: "$Ax + By + C = 0$", n: "General form." },
-    { f: "Parallel: $m_1 = m_2$; Perpendicular: $m_1 m_2 = -1$", n: "Line relations." }
+    { f: "$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$", n: "DISTANCE FORMULA between two points $(x_1, y_1)$ and $(x_2, y_2)$. Just the Pythagorean theorem applied to the differences in $x$ and $y$ coordinates — they're the legs of a right triangle, the distance is the hypotenuse. Generalizes to any dimension: square the differences, sum, square root." },
+    { f: "$M = \\left(\\dfrac{x_1 + x_2}{2}, \\dfrac{y_1 + y_2}{2}\\right)$", n: "MIDPOINT of two points — just the average of their coordinates, taken component-wise. Geometrically obvious; algebraically clean. Used constantly for bisecting lines, finding centroids, in geometric proofs." },
+    { f: "$m = \\dfrac{y_2 - y_1}{x_2 - x_1}$", n: "SLOPE of a line through two points. Rise over run — how much $y$ changes per unit $x$. Positive slope: line goes up left-to-right. Negative: goes down. Zero: horizontal. Undefined (division by zero): vertical line." },
+    { f: "$y - y_1 = m(x - x_1)$", n: "POINT-SLOPE FORM of a line. If you know one point $(x_1, y_1)$ and the slope $m$, this gives the equation directly. Most useful starting point — easy to remember, and you can convert to slope-intercept or general form as needed." },
+    { f: "$y = mx + b$", n: "SLOPE-INTERCEPT FORM. $m$ is the slope; $b$ is the $y$-intercept (where the line crosses the $y$-axis, when $x = 0$). The form you'd graph from instantly: start at $(0, b)$, climb $m$ units for every step right." },
+    { f: "$Ax + By + C = 0$", n: "GENERAL FORM of a line. Useful when the line is vertical ($B = 0$, so $x = -C/A$) — slope-intercept can't handle vertical lines. Also nice for finding parallel/perpendicular lines: parallel lines have the same $A, B$; perpendicular ones swap and negate." },
+    { f: "Parallel: $m_1 = m_2$; Perpendicular: $m_1 m_2 = -1$", n: "Two lines are PARALLEL iff they have the same slope (never meet). They're PERPENDICULAR iff the product of their slopes is $-1$ (slopes are 'negative reciprocals'). Special case: a horizontal line ($m = 0$) is perpendicular to a vertical line (slope undefined), which the formula doesn't capture — handle separately." }
   ],
 
   "solid-geometry": [
@@ -506,23 +506,23 @@ window.FORMULAS = {
   ],
 
   "optimization": [
-    { f: "$\\min f(x)$ s.t. $g_i(x) \\leq 0, h_j(x) = 0$", n: "General problem." },
-    { f: "$\\mathcal{L} = f + \\sum \\lambda_i g_i + \\sum \\mu_j h_j$", n: "Lagrangian." },
-    { f: "KKT: $\\nabla \\mathcal{L} = 0, \\lambda_i \\geq 0, \\lambda_i g_i = 0$", n: "First-order conditions." },
-    { f: "Convex: $f(\\theta x + (1-\\theta) y) \\leq \\theta f(x) + (1-\\theta) f(y)$", n: "Definition." },
-    { f: "Gradient descent: $x_{n+1} = x_n - \\eta \\nabla f$", n: "Update rule." },
-    { f: "Newton's: $x_{n+1} = x_n - H^{-1} \\nabla f$", n: "Uses Hessian." },
-    { f: "LP duality: $\\max c^T x = \\min b^T y$", n: "Primal = dual at optimum." }
+    { f: "$\\min f(x)$ s.t. $g_i(x) \\leq 0, h_j(x) = 0$", n: "STANDARD OPTIMIZATION PROBLEM. Minimize an OBJECTIVE function $f(x)$ subject to INEQUALITY constraints $g_i(x) \\leq 0$ and EQUALITY constraints $h_j(x) = 0$. Almost every real optimization (logistics, ML training, engineering design) fits this template. Maximization is just minimization of $-f$." },
+    { f: "$\\mathcal{L} = f + \\sum \\lambda_i g_i + \\sum \\mu_j h_j$", n: "LAGRANGIAN. Encodes the constrained problem into a single function by adding the constraints multiplied by 'Lagrange multipliers' $\\lambda_i, \\mu_j$. At an optimum, the gradient of the Lagrangian is zero. Turns constrained problems into unconstrained ones, a fundamental trick." },
+    { f: "KKT: $\\nabla \\mathcal{L} = 0, \\lambda_i \\geq 0, \\lambda_i g_i = 0$", n: "KARUSH-KUHN-TUCKER conditions — first-order necessary conditions for an optimum with inequality constraints. (1) Lagrangian gradient zero. (2) Multipliers non-negative. (3) COMPLEMENTARY SLACKNESS: either the constraint is active ($g_i = 0$) or its multiplier is zero. Generalizes 'derivative = 0' from calculus." },
+    { f: "Convex: $f(\\theta x + (1-\\theta) y) \\leq \\theta f(x) + (1-\\theta) f(y)$", n: "CONVEXITY definition. The function lies BELOW (or on) any chord connecting two of its points. Equivalently, any line segment between two points on the graph stays above the graph. A convex function looks like a bowl — every local minimum is a GLOBAL minimum. Convex problems are tractable; non-convex ones can have many local minima trapping algorithms." },
+    { f: "Gradient descent: $x_{n+1} = x_n - \\eta \\nabla f$", n: "GRADIENT DESCENT update rule. Step in the direction OPPOSITE the gradient (downhill) by a learning rate $\\eta$. Simple and universal — the workhorse of machine learning. Repeated application moves you toward a minimum. Step too big and you overshoot; too small and you crawl. Choosing $\\eta$ is the art." },
+    { f: "Newton's: $x_{n+1} = x_n - H^{-1} \\nabla f$", n: "NEWTON'S METHOD for optimization. Uses the HESSIAN matrix $H$ (matrix of second derivatives) to scale the step intelligently. Converges QUADRATICALLY near a minimum (much faster than gradient descent) — but computing $H^{-1}$ is expensive in high dimensions. Quasi-Newton methods (L-BFGS) approximate $H^{-1}$ cheaply." },
+    { f: "LP duality: $\\max c^T x = \\min b^T y$", n: "LINEAR PROGRAMMING DUALITY. Every LP has a 'dual' LP, and at the optimum both have the same value. Practical use: a feasible solution to the dual gives an UPPER BOUND on the primal optimum, certifying near-optimality without solving the primal exactly. Foundational result in operations research." }
   ],
 
   "information-theory": [
-    { f: "$H(X) = -\\sum p_i \\log_2 p_i$", n: "Shannon entropy (bits)." },
-    { f: "$H(X, Y) \\leq H(X) + H(Y)$", n: "Joint ≤ sum." },
-    { f: "$I(X; Y) = H(X) - H(X | Y)$", n: "Mutual information." },
-    { f: "$D(p \\| q) = \\sum p_i \\log(p_i / q_i)$", n: "KL divergence." },
-    { f: "Channel capacity: $C = \\max I(X; Y)$", n: "Shannon's theorem." },
-    { f: "BSC capacity: $C = 1 - H(p)$", n: "Binary symmetric channel." },
-    { f: "Differential entropy of $N(0,\\sigma^2)$: $\\tfrac{1}{2}\\log(2\\pi e \\sigma^2)$", n: "Continuous case." }
+    { f: "$H(X) = -\\sum p_i \\log_2 p_i$", n: "SHANNON ENTROPY of a random variable $X$, in BITS (base-2 log). Measures the average information content per outcome — how UNCERTAIN you are about $X$ before seeing it. Fair coin: $H = 1$ bit (max uncertainty for 2 outcomes). Always-heads coin: $H = 0$ bits (no uncertainty). The negative sign cancels the negative logs of probabilities (which are ≤ 1)." },
+    { f: "$H(X, Y) \\leq H(X) + H(Y)$", n: "JOINT entropy of two variables can't exceed the sum of their individual entropies. Equality holds iff $X$ and $Y$ are independent. If they're correlated, knowing $X$ tells you something about $Y$, so the joint uncertainty is LESS than the sum." },
+    { f: "$I(X; Y) = H(X) - H(X | Y)$", n: "MUTUAL INFORMATION — how much knowing $Y$ reduces your uncertainty about $X$. Equals zero iff $X$ and $Y$ are independent. The amount of 'information shared' between two random variables. Symmetric: $I(X;Y) = I(Y;X)$." },
+    { f: "$D(p \\| q) = \\sum p_i \\log(p_i / q_i)$", n: "KULLBACK-LEIBLER (KL) DIVERGENCE — how much the distribution $p$ differs from $q$. Asymmetric (NOT a distance metric): $D(p\\|q) \\neq D(q\\|p)$ in general. Used in machine learning everywhere — the cross-entropy loss in classification is essentially KL divergence." },
+    { f: "Channel capacity: $C = \\max I(X; Y)$", n: "SHANNON'S CHANNEL CODING THEOREM. The capacity of any noisy communication channel is the maximum mutual information between input $X$ and output $Y$, over all input distributions. Shannon proved you can transmit at any rate BELOW $C$ with arbitrarily low error, but rates ABOVE $C$ are impossible. The fundamental speed limit of communication." },
+    { f: "BSC capacity: $C = 1 - H(p)$", n: "Capacity of a BINARY SYMMETRIC CHANNEL — one that flips each bit independently with probability $p$. $H(p)$ is the binary entropy. At $p = 0$ (perfect channel) capacity = 1 bit per use; at $p = 1/2$ (pure noise) capacity = 0. The channel is most informative when bits are reliably 0 or 1." },
+    { f: "Differential entropy of $N(0,\\sigma^2)$: $\\tfrac{1}{2}\\log(2\\pi e \\sigma^2)$", n: "Continuous version of entropy. For a Gaussian distribution with variance $\\sigma^2$, the differential entropy depends only on $\\sigma$. Among all distributions with given variance, the GAUSSIAN MAXIMIZES entropy — this is why noise often looks Gaussian (max-entropy distributions emerge from many tiny independent perturbations)." }
   ],
 
   "game-theory": [
@@ -545,13 +545,13 @@ window.FORMULAS = {
   ],
 
   "cryptography": [
-    { f: "RSA: $c = m^e \\bmod n, \\; m = c^d \\bmod n$", n: "Public/private keys." },
-    { f: "$ed \\equiv 1 \\pmod{\\varphi(n)}$", n: "Key relationship." },
-    { f: "DH: shared key $g^{ab} \\bmod p$", n: "Diffie-Hellman exchange." },
-    { f: "AES: 128-bit blocks, 128/192/256-bit keys", n: "Symmetric standard." },
-    { f: "Hash: collision-resistant, preimage-resistant", n: "Security properties." },
-    { f: "Birthday bound: $\\sim 2^{n/2}$", n: "Collisions after this many tries." },
-    { f: "Perfect secrecy: $H(M | C) = H(M)$", n: "OTP achieves." }
+    { f: "RSA: $c = m^e \\bmod n, \\; m = c^d \\bmod n$", n: "RSA public-key encryption. $m$ is the plaintext message, $c$ is the ciphertext, $n$ is the public modulus, $e$ is the public exponent, $d$ is the private exponent. To ENCRYPT: raise the message to the public power $e$ modulo $n$. To DECRYPT: raise the ciphertext to the private power $d$ modulo $n$. Anyone can encrypt (public key $(n, e)$), but only the holder of $d$ can decrypt." },
+    { f: "$ed \\equiv 1 \\pmod{\\varphi(n)}$", n: "The relationship that makes RSA work. $\\varphi(n)$ is Euler's totient (count of integers coprime to $n$); for $n = pq$ with $p, q$ prime, $\\varphi(n) = (p-1)(q-1)$. We pick $e$ first, then compute $d$ as the modular inverse. This ensures $(m^e)^d = m^{ed} = m \\pmod n$ — encryption and decryption invert each other. Security collapses if someone factors $n$ into $p, q$, since that reveals $\\varphi(n)$ and hence $d$." },
+    { f: "DH: shared key $g^{ab} \\bmod p$", n: "DIFFIE-HELLMAN key exchange. Alice and Bob agree publicly on a prime $p$ and a generator $g$. Alice picks a secret $a$, sends $g^a \\bmod p$ to Bob. Bob picks a secret $b$, sends $g^b \\bmod p$ to Alice. Each then raises the other's value to their own secret: both end up with $g^{ab} \\bmod p$, a SHARED SECRET, without ever transmitting $a$ or $b$. Security relies on the discrete-log problem: knowing $g$ and $g^a \\bmod p$, finding $a$ is computationally hard." },
+    { f: "AES: 128-bit blocks, 128/192/256-bit keys", n: "Advanced Encryption Standard — the global standard for symmetric encryption (both parties share the same key). Encrypts data in 128-bit blocks using a key of 128, 192, or 256 bits. Replaces older DES. Symmetric ciphers are MUCH faster than asymmetric (RSA) — typically used to encrypt actual data, while RSA is used to share the AES key. The 'TLS' protecting your HTTPS connection uses both." },
+    { f: "Hash: collision-resistant, preimage-resistant", n: "A cryptographic hash function takes arbitrary-length input and produces a fixed-length 'fingerprint' (e.g., 256 bits for SHA-256). Two security properties matter: COLLISION-RESISTANT (hard to find two different inputs giving the same hash) and PREIMAGE-RESISTANT (given a hash, hard to find an input that produces it). Used for password storage, digital signatures, blockchain, integrity checks." },
+    { f: "Birthday bound: $\\sim 2^{n/2}$", n: "Named after the birthday paradox (in a room of 23 people, two share a birthday with $>50\\%$ probability). For an $n$-bit hash, you only need about $2^{n/2}$ random hashes before a collision becomes likely — much faster than the $2^n$ you might naively expect. This is why hash output sizes must be DOUBLE the security level you want: SHA-256 (256-bit output) provides only 128 bits of collision security." },
+    { f: "Perfect secrecy: $H(M | C) = H(M)$", n: "Shannon's INFORMATION-THEORETIC definition of perfect secrecy: knowing the ciphertext $C$ gives you ZERO information about the plaintext $M$. Equivalently, the conditional entropy of $M$ given $C$ equals the entropy of $M$ alone — the ciphertext didn't help an attacker at all. The ONE-TIME PAD (OTP) achieves this if the key is truly random and as long as the message. Impractical in general (key distribution), but cryptographically unbreakable." }
   ],
 
   // ===== PHYSICS =====
@@ -927,13 +927,13 @@ window.FORMULAS = {
   ],
 
   "angular-momentum-spin": [
-    { f: "$[L_i, L_j] = i\\hbar\\epsilon_{ijk} L_k$", n: "Angular momentum algebra." },
-    { f: "$L^2 |\\ell, m\\rangle = \\hbar^2 \\ell(\\ell+1)|\\ell, m\\rangle$", n: "Eigenvalue of $L^2$." },
-    { f: "$L_z |\\ell, m\\rangle = \\hbar m |\\ell, m\\rangle$", n: "Eigenvalue of $L_z$." },
-    { f: "$m = -\\ell, \\ldots, \\ell$ ($2\\ell + 1$ values)", n: "Multiplicity." },
-    { f: "$L_\\pm |\\ell, m\\rangle = \\hbar\\sqrt{\\ell(\\ell+1) - m(m\\pm 1)}|\\ell, m\\pm 1\\rangle$", n: "Ladder operators." },
-    { f: "Pauli: $\\sigma_x, \\sigma_y, \\sigma_z$", n: "Spin-1/2 operators." },
-    { f: "Spin-1/2 ⊗ Spin-1/2 = singlet ⊕ triplet", n: "Addition of two spin-1/2." }
+    { f: "$[L_i, L_j] = i\\hbar\\epsilon_{ijk} L_k$", n: "ANGULAR MOMENTUM ALGEBRA. The three components $L_x, L_y, L_z$ DO NOT COMMUTE — measuring one disturbs the others. The commutator of any two yields $i\\hbar$ times the third (with Levi-Civita symbol $\\epsilon_{ijk}$ tracking signs). This non-commutativity is the entire reason angular momentum is quantized: it forces eigenvalues to come in discrete steps." },
+    { f: "$L^2 |\\ell, m\\rangle = \\hbar^2 \\ell(\\ell+1)|\\ell, m\\rangle$", n: "Eigenvalue of the TOTAL angular momentum squared. State $|\\ell, m\\rangle$ has $L^2$ eigenvalue $\\hbar^2 \\ell(\\ell+1)$, where $\\ell = 0, 1, 2, \\ldots$ The $\\ell(\\ell+1)$ rather than $\\ell^2$ is a quantum surprise — comes from the algebra. The QUANTUM NUMBER $\\ell$ labels which 'shell' of angular momentum you're in." },
+    { f: "$L_z |\\ell, m\\rangle = \\hbar m |\\ell, m\\rangle$", n: "Eigenvalue of $L_z$ (z-component of angular momentum). Quantum number $m$ takes integer values from $-\\ell$ to $\\ell$. Tells you the projection of the angular-momentum vector onto the z-axis. The fact that only certain projections are allowed is space quantization — observed in the Stern-Gerlach experiment." },
+    { f: "$m = -\\ell, \\ldots, \\ell$ ($2\\ell + 1$ values)", n: "For each shell $\\ell$, there are $2\\ell + 1$ allowed values of $m$ (the magnetic quantum number). So $\\ell = 0$: 1 state (s-orbital). $\\ell = 1$: 3 states (p-orbitals). $\\ell = 2$: 5 states (d-orbitals). This explains the structure of the periodic table." },
+    { f: "$L_\\pm |\\ell, m\\rangle = \\hbar\\sqrt{\\ell(\\ell+1) - m(m\\pm 1)}|\\ell, m\\pm 1\\rangle$", n: "LADDER OPERATORS $L_+ = L_x + iL_y$ and $L_- = L_x - iL_y$. They raise or lower the $m$ quantum number by 1, climbing or descending the ladder of states. The square-root coefficient ensures the resulting state is properly normalized. Repeatedly applying $L_+$ eventually annihilates the state (you reach $m = \\ell$)." },
+    { f: "Pauli: $\\sigma_x, \\sigma_y, \\sigma_z$", n: "PAULI MATRICES — the three $2 \\times 2$ matrices that represent SPIN-1/2 operators (spin in the x, y, z directions). Anti-commuting and traceless. They generate all quantum-mechanical descriptions of two-level systems — every qubit is described with Pauli matrices. The spin operator is $\\vec S = \\tfrac{\\hbar}{2} \\vec\\sigma$." },
+    { f: "Spin-1/2 ⊗ Spin-1/2 = singlet ⊕ triplet", n: "ADDITION of two spin-1/2 angular momenta. Combine them: you get a SINGLET (total spin 0, antisymmetric, one state) and a TRIPLET (total spin 1, symmetric, three states $m = -1, 0, +1$). Four states total = $2 \\times 2$. This decomposition is crucial in atomic physics (Pauli exclusion + spin combinations) and chemistry (singlet vs. triplet states of molecules)." }
   ],
 
   "qm-3d-hydrogen": [
@@ -1114,14 +1114,14 @@ window.FORMULAS = {
   ],
 
   "superconductivity": [
-    { f: "$T_c$: critical temperature", n: "Below it, SC behavior." },
-    { f: "Meissner: $\\vec B = 0$ inside", n: "Perfect diamagnetism." },
-    { f: "$\\lambda_L$: penetration depth", n: "$B$ falloff scale." },
-    { f: "$\\xi$: coherence length", n: "Cooper pair size." },
-    { f: "$2\\Delta(0) \\approx 3.5\\, k_B T_c$", n: "BCS gap." },
-    { f: "Cooper pair charge: $2e$", n: "Bound electron pair." },
-    { f: "Josephson AC: $\\omega = 2eV/\\hbar$", n: "Frequency from DC voltage." },
-    { f: "Flux quantum: $\\Phi_0 = h/(2e)$", n: "Vortex flux." }
+    { f: "$T_c$: critical temperature", n: "CRITICAL TEMPERATURE — the threshold below which a material becomes superconducting (zero electrical resistance, expulsion of magnetic fields). Typical values: conventional SC like aluminum: ~1 K. High-$T_c$ cuprates: ~100 K (above liquid nitrogen!). Room-temperature superconductors remain the holy grail of materials science." },
+    { f: "Meissner: $\\vec B = 0$ inside", n: "MEISSNER EFFECT. A superconductor doesn't just resist magnetic field penetration — it EXPELS magnetic fields completely from its interior. This is what makes magnetic levitation possible: a superconductor floating above a magnet (or vice versa). Distinguishes SC from a 'perfect conductor' — perfect conductors trap whatever field was inside; superconductors push it out." },
+    { f: "$\\lambda_L$: penetration depth", n: "LONDON PENETRATION DEPTH — distance over which an external magnetic field decays exponentially into the superconductor before being fully expelled. Typically ~100 nm. Small penetration depth = strong field expulsion. Goes to infinity at $T_c$ (where the SC phase ends)." },
+    { f: "$\\xi$: coherence length", n: "COHERENCE LENGTH — the spatial extent of a Cooper pair. Roughly 'how big' the bound electron pair is. Conventional SCs: ~100 nm. High-$T_c$ cuprates: ~1 nm (much smaller). The ratio $\\lambda_L/\\xi$ determines whether a superconductor is Type I (expels fields completely) or Type II (allows quantized magnetic flux through as vortices)." },
+    { f: "$2\\Delta(0) \\approx 3.5\\, k_B T_c$", n: "BCS energy GAP. The minimum energy required to break a Cooper pair (split it back into two electrons). $\\Delta(0)$ is the gap at zero temperature; the ratio $2\\Delta/k_B T_c \\approx 3.5$ is a universal prediction of BCS theory. The energy gap is what protects superconductivity from thermal fluctuations — until you heat enough to bridge it." },
+    { f: "Cooper pair charge: $2e$", n: "Two electrons in a superconductor BIND together (via phonon exchange) into a COOPER PAIR with total charge $2e$. These pairs behave as bosons (integer total spin) and condense into a single quantum ground state — that's what enables zero-resistance flow. Quantum mechanics at macroscopic scales." },
+    { f: "Josephson AC: $\\omega = 2eV/\\hbar$", n: "AC JOSEPHSON EFFECT. Apply a DC voltage $V$ across a thin barrier between two superconductors, and you get an alternating supercurrent at frequency $\\omega = 2eV/\\hbar$. The factor of $2e$ comes from Cooper pair tunneling. Used as a voltage standard: measure the frequency, you know the voltage to extraordinary precision." },
+    { f: "Flux quantum: $\\Phi_0 = h/(2e)$", n: "MAGNETIC FLUX QUANTUM. In a superconductor, magnetic flux can only exist in discrete multiples of $\\Phi_0 = h/(2e) \\approx 2 \\times 10^{-15}$ Wb. The $2e$ again signals Cooper pair charge. SQUIDs (Superconducting Quantum Interference Devices) exploit this quantization for ultra-sensitive magnetic field measurements." }
   ],
 
   "quantum-hall-topological": [
