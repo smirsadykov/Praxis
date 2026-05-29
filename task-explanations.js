@@ -57,16 +57,16 @@ window.TASK_EXPLAIN = {
   ],
 
   "linear-equations": [
-    "Subtract $7$: $2x = 14$. Divide by $2$: $x = 7$.",
-    "Collect: $2x = 12$, so $x = 6$.",
-    "Subtract $7$, divide by $-2$: $x = 3$. (Or rearrange first: $-2x = -6$.)",
-    "Multiply both sides by $4$: $x = 36$.",
-    "Multiply by $3$: $x + 1 = 6$. So $x = 5$.",
-    "Distribute: $3x - 6 = 12$, then $3x = 18$, $x = 6$.",
-    "Distribute: $10x + 5 = 35$, then $10x = 30$, $x = 3$.",
-    "Common denominator $6$: $3x + 2x = 30$. So $5x = 30$, $x = 6$.",
-    "Sub $x = 2$: $6 + 2y = 12$, so $y = 3$.",
-    "Let $n$ be number. $n + 3n = 4n = 40$, so $n = 10$."
+    "Goal: get $x$ alone. Subtract $7$ from BOTH sides (whatever you do to one side, do to the other): $2x + 7 - 7 = 21 - 7$ gives $2x = 14$. Now divide both sides by $2$: $x = 7$. Check: $2(7) + 7 = 21$. ✓",
+    "Move all $x$'s to one side. Subtract $3x$ from both sides: $5x - 3x = 3x + 12 - 3x$ gives $2x = 12$. Divide by $2$: $x = 6$. Check: $5(6) = 30$, $3(6) + 12 = 30$. ✓",
+    "Subtract $7$ from both sides: $-2x = -6$. Divide both sides by $-2$ (yes, dividing by a negative is fine — sign flips on each side): $x = 3$. Check: $-2(3) + 7 = 1$. ✓",
+    "Fractional equations: clear the fraction first. Multiply BOTH sides by $4$: $4 \\cdot (x/4) = 4 \\cdot 9$. The $4$'s cancel on the left, leaving $x = 36$. ✓",
+    "Multiply both sides by $3$ to clear the fraction: $x + 1 = 18/3 = 6$. Wait — check: $3 \\cdot 2 = 6$, not $18$. Re-read: $(x+1)/3 = 2$, so multiply by $3$: $x + 1 = 6$. Then subtract $1$: $x = 5$. ✓",
+    "Distribute first to remove the parentheses: $3 \\cdot x - 3 \\cdot 2 = 12$, so $3x - 6 = 12$. Add $6$: $3x = 18$. Divide by $3$: $x = 6$. ✓",
+    "Distribute: $5 \\cdot 2x + 5 \\cdot 1 = 10x + 5$. So $10x + 5 = 35$. Subtract $5$: $10x = 30$. Divide by $10$: $x = 3$. ✓",
+    "Two fractions added — find a common denominator. $2$ and $3$ share denominator $6$: rewrite as $3x/6 + 2x/6 = 5x/6 = 5$. Multiply both sides by $6$: $5x = 30$. Divide by $5$: $x = 6$. ✓",
+    "Substitution: take the known value $x = 2$ and plug it into the other equation. $3(2) + 2y = 12$, so $6 + 2y = 12$. Subtract $6$: $2y = 6$. Divide by $2$: $y = 3$. ✓",
+    "Set up the equation from the word problem. Let $n$ = the number. \"Sum of a number and three times itself\" = $n + 3n$. That equals $40$. Combine like terms: $4n = 40$. Divide by $4$: $n = 10$. ✓"
   ],
 
   "inequalities": [
@@ -294,11 +294,11 @@ window.TASK_EXPLAIN = {
     "Polynomial, continuous everywhere. Substitute: $0 + 3 = 3$.",
     "Factor: $\\frac{(x-1)(x+1)}{x-1} = x + 1$. Limit at $1$ is $2$.",
     "As $x$ grows, $1/x$ shrinks to zero.",
-    "Taylor: $\\cos x \\approx 1 - x^2/2$, so numerator $\\approx x^2/2$, giving $1/2$.",
-    "Taylor: $e^x = 1 + x + x^2/2 + \\ldots$, so $(e^x - 1)/x \\to 1$.",
-    "Compound-interest limit: defining property of $e$.",
-    "L'Hôpital or substitute $u = \\ln x$: integrand vanishes.",
-    "$\\ln x$ grows much slower than $x$. L'Hôpital: $\\to 1/1 \\cdot 1/x = 0$.",
+    "Both top and bottom give $0$ at $x = 0$ — indeterminate $0/0$. Trick: $\\cos x$ for tiny $x$ is approximately $1 - x^2/2$ (this is the first two terms of its Taylor series, which you'll see properly in calculus — for now, just trust it). So $1 - \\cos x \\approx x^2/2$, and dividing by $x^2$ gives $1/2$.",
+    "Both top and bottom give $0$ at $x = 0$ — indeterminate $0/0$. For tiny $x$, $e^x$ is approximately $1 + x$ (linear part of its expansion). So $e^x - 1 \\approx x$, and $(e^x - 1)/x \\to 1$.",
+    "Defining property of $e$: as you compound interest more and more frequently, the limit is exactly $e$. This is where the number $e \\approx 2.718$ first comes from.",
+    "As $x \\to 0^+$, $\\ln x \\to -\\infty$ but $x \\to 0$, giving the indeterminate form $0 \\cdot \\infty$. Rewrite as $\\ln x / (1/x)$ to get $-\\infty/\\infty$, then apply L'Hôpital — derivatives are $(1/x)/(-1/x^2) = -x \\to 0$.",
+    "Indeterminate $\\infty/\\infty$. Apply L'Hôpital: derivative of $\\ln x$ over derivative of $x$ = $(1/x)/1 = 1/x \\to 0$ as $x \\to \\infty$. So $\\ln x$ grows much slower than $x$.",
     "$|x|$ is continuous everywhere; the only issue is differentiability at $0$.",
     "Blows up at $x = 0$ — not defined there, not continuous."
   ],
