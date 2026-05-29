@@ -117,6 +117,30 @@
       app.appendChild(introCard);
     }
 
+    const diagram = (window.DIAGRAMS || {})[topic.id];
+    if (diagram) {
+      app.appendChild(el("h3", { class: "section-head" }, "Visualize"));
+      const figure = el("div", { class: "diagram", html: diagram.svg });
+      if (diagram.caption) {
+        figure.appendChild(el("div", { class: "diagram-caption", html: diagram.caption }));
+      }
+      app.appendChild(figure);
+    }
+
+    const miscon = (window.MISCONCEPTIONS || {})[topic.id];
+    if (miscon && miscon.length) {
+      app.appendChild(el("h3", { class: "section-head" }, "Common Misconceptions"));
+      const card = el("div", { class: "miscon-card" });
+      miscon.forEach((m) => {
+        const row = el("div", { class: "miscon-row" }, [
+          el("div", { class: "miscon-wrong" }, m.wrong),
+          el("div", { class: "miscon-right", html: m.right })
+        ]);
+        card.appendChild(row);
+      });
+      app.appendChild(card);
+    }
+
     const formulas = (window.FORMULAS || {})[topic.id];
     if (formulas && formulas.length) {
       app.appendChild(el("h3", { class: "section-head" }, "Key Formulas & Results"));
