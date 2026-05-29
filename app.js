@@ -244,6 +244,7 @@
     if (topic.examples && topic.examples.length) {
       app.appendChild(el("h3", { class: "section-head" }, "Worked Examples"));
       const explainMap = (window.EXPLAIN || {})[topic.id] || [];
+      const stepWhys = (window.STEP_WHYS || {})[topic.id] || [];
       topic.examples.forEach((ex, exIdx) => {
         const exDiv = el("div", { class: "example" });
         exDiv.appendChild(el("h4", {}, ex.title));
@@ -252,13 +253,28 @@
         if (explainText) {
           exDiv.appendChild(el("div", { class: "explain", html: explainText }));
         }
-        for (const step of ex.steps) {
-          const stepDiv = el("div", { class: "step" }, [
+        const exStepWhys = stepWhys[exIdx] || [];
+        ex.steps.forEach((step, stepIdx) => {
+          const why = exStepWhys[stepIdx];
+          const stepChildren = [
             el("div", { class: "label" }, step.label),
             el("div", { class: "body", html: step.body })
-          ]);
+          ];
+          if (why) {
+            const whyDiv = el("div", { class: "step-why", html: why });
+            whyDiv.hidden = true;
+            const whyBtn = el("button", { class: "step-why-btn" }, "Why?");
+            whyBtn.addEventListener("click", () => {
+              const showing = !whyDiv.hidden;
+              whyDiv.hidden = showing;
+              whyBtn.textContent = showing ? "Why?" : "Hide";
+            });
+            stepChildren.push(whyBtn);
+            stepChildren.push(whyDiv);
+          }
+          const stepDiv = el("div", { class: "step" }, stepChildren);
           exDiv.appendChild(stepDiv);
-        }
+        });
         exDiv.appendChild(el("div", { class: "answer", html: ex.answer }));
         app.appendChild(exDiv);
       });
