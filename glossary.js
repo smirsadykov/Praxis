@@ -615,7 +615,10 @@ window.GLOSSARY = {
     { term: "Component", def: "A vector's projection along a coordinate axis." },
     { term: "Magnitude", def: "The size (length) of a vector." },
     { term: "Resultant", def: "The vector you get from adding two or more vectors together." },
-    { term: "Resolve (a vector)", def: "Break a vector into components along chosen axes." }
+    { term: "Resolve (a vector)", def: "Break a vector into components along chosen axes." },
+    { term: "Force", def: "A push or pull, treated as a vector with magnitude and direction. Units: newtons (N). (You'll study forces formally in the NEXT topic, Newton's Laws — for now, just 'a push or pull' that adds as a vector.)" },
+    { term: "Equilibrium", def: "Zero NET force. The vector sum of all forces is the zero vector. Object stays at rest or moves at constant velocity (Newton's 1st law)." },
+    { term: "Resultant force", def: "The single vector you get by adding all force vectors. If it's zero, you're in equilibrium." }
   ],
 
   "newtons-laws": [

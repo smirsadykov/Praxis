@@ -97,7 +97,7 @@ window.FORMULAS = {
 
   "quadratic-equations": [
     { f: "$x = \\dfrac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$", n: "Quadratic formula. Solves any $ax^2 + bx + c = 0$. Derived by completing the square once and for all." },
-    { f: "$\\Delta = b^2 - 4ac$", n: "Discriminant. $\\Delta > 0$: two distinct real roots. $\\Delta = 0$: one repeated root. $\\Delta < 0$: complex conjugate pair." },
+    { f: "$\\Delta = b^2 - 4ac$", n: "Discriminant. $\\Delta > 0$: two distinct real roots. $\\Delta = 0$: one repeated root. $\\Delta < 0$: no real roots (the parabola never touches the x-axis). The roots in that case use complex numbers, which you'll meet later." },
     { f: "$x_1 + x_2 = -\\dfrac{b}{a}, \\; x_1 x_2 = \\dfrac{c}{a}$", n: "Vieta's formulas. Sum and product of roots are read directly off the coefficients — handy for checking factorizations." },
     { f: "Vertex $\\left(-\\dfrac{b}{2a}, \\; c - \\dfrac{b^2}{4a}\\right)$", n: "Maximum or minimum of the parabola, located at $x = -b/(2a)$. Sign of $a$ tells you which: $a > 0$ opens up (min), $a < 0$ opens down (max)." },
     { f: "Complete the square: $x^2 + bx = (x + \\tfrac{b}{2})^2 - \\tfrac{b^2}{4}$", n: "Algebraic identity for rewriting any quadratic as a perfect square plus/minus a constant. Source of the quadratic formula and a key tool throughout math." }
