@@ -802,11 +802,11 @@ window.TASK_EXPLAIN = {
   "kinematics": [
     "Use $v = v_0 + at$. Starting at rest, $v_0 = 0$. So $v = 0 + 3 \\cdot 4 = 12$ m/s.",
     "COMMON TRAP: thinking distance $= 12 \\times 4 = 48$ m. WRONG — the object isn't moving at $12$ m/s the whole time! It starts at $0$ and ends at $12$. Use AVERAGE speed: $(0 + 12)/2 = 6$ m/s, times $4$ s = $24$ m. Or use $x = \\tfrac{1}{2}at^2 = \\tfrac{1}{2}(3)(16) = 24$ m — both methods agree.",
-    "Same trap: distance $\\neq 20 \\times t$ because the car DECELERATES. Average speed: $(20 + 0)/2 = 10$ m/s. Or use $v^2 = v_0^2 + 2ax$: $0 = 400 - 10x$, giving $x = 40$ m.",
+    "Where does $v^2 = v_0^2 + 2ax$ come from? Take $v = v_0 + at$ (definition of constant acceleration), solve for $t$, and substitute into $x = v_0 t + \\tfrac{1}{2} a t^2$. The $t$ disappears, leaving $v^2 - v_0^2 = 2ax$. So it's the TIME-FREE kinematic equation. The formula is ALWAYS $+2ax$; the sign goes INSIDE $a$. 'Decelerating at $5$ m/s²' means $a = -5$ m/s² (acceleration opposite to motion). Plug in: $0 = 400 + 2(-5)x = 400 - 10x$, so $x = 40$ m. Or cross-check with average speed: $(20 + 0)/2 = 10$ m/s × time $4$ s = $40$ m.",
     "Free fall from rest: $h = \\tfrac{1}{2}gt^2$. NOT $g \\times t$ — the speed isn't constant. Average speed is $(0 + g \\cdot 2)/2 = 9.8$ m/s, times $2$ s $= 19.6$ m. Or directly: $\\tfrac{1}{2}(9.8)(4) = 19.6$ m.",
     "Horizontal motion doesn't affect vertical free fall. Time in air = $3$ s. Vertical drop = $\\tfrac{1}{2}gt^2 = \\tfrac{1}{2}(9.8)(9) = 44.1$ m. NOT $g \\times t$ (speed grows from 0 to $g \\cdot 3$).",
-    "Thrown up, gravity decelerates. At max height $v = 0$. Use $v^2 = v_0^2 - 2gh$: $0 = 400 - 19.6h$, so $h = 400/19.6 \\approx 20.4$ m.",
-    "Time to reach the top: starting at $v_0 = 20$ m/s, decelerating at $g$, $v$ reaches zero when $0 = 20 - gt$, so $t = 20/9.8 \\approx 2.04$ s.",
+    "Thrown up at $20$ m/s, gravity acts downward (opposite to motion), so $a = -g = -9.8$ m/s². At max height $v = 0$. Use the time-free equation $v^2 = v_0^2 + 2ah$: $0 = 400 + 2(-9.8)h$, giving $h = 400/19.6 \\approx 20.4$ m. The minus on $g$ is what makes the height come out positive — same formula as before, just with $a < 0$.",
+    "Time to reach the top: same setup as above, $a = -g$. Use $v = v_0 + at$: $0 = 20 + (-9.8)t$, so $t = 20/9.8 \\approx 2.04$ s. (Notice: this is the EXACT time to peak — coming back down takes the same time, total flight $\\approx 4.08$ s.)",
     "Range formula for a projectile landing at launch height: $R = v_0^2 \\sin(2\\theta)/g$. At $\\theta = 45°$, $\\sin 90° = 1$ (max). $R = 400/9.8 \\approx 40.8$ m.",
     "Different speeds for equal time intervals — average is just the arithmetic mean: $(60 + 20)/2 = 40$ m/s. (For unequal times, weight by time spent at each speed.)",
     "Acceleration is the RATE OF CHANGE of velocity. Constant velocity = velocity not changing = zero acceleration. Newton's 1st law in math form."
