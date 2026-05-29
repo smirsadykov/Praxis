@@ -2761,4 +2761,224 @@
   // ----- MEASURE THEORY (further) -----
   W("measure-theory", "Fatou",
     "FATOU's lemma. $f_n$ = sequence of non-negative measurable functions. $\\liminf$ = limit inferior (always exists). ONE-SIDED inequality: liminf goes inside integral. NO assumption of monotonicity or dominating function — the most general convergence inequality.");
+
+  // ============================================================
+  // BATCH 6 — sweep through remaining topics
+  // ============================================================
+
+  // ----- AC CIRCUITS -----
+  W("ac-circuits", "$V_{rms}",
+    "$V_\\text{RMS}$ = root-mean-square voltage. $V_0$ = peak amplitude. RMS is the equivalent DC value that delivers same average power. WORKED EXAMPLE: US mains $V_0 = 170$ V peak → $V_\\text{RMS} = 120$ V. Europe $V_0 = 325$ V peak → 230 V RMS.");
+  W("ac-circuits", "$\\tan\\phi",
+    "$\\phi$ = phase angle between voltage and current. $X_L = \\omega L$ = inductive reactance. $X_C = 1/(\\omega C)$ = capacitive reactance. $R$ = resistance. POSITIVE $\\phi$: voltage leads current (inductive). NEGATIVE: lagging (capacitive). WORKED EXAMPLE: pure inductor: $X_C = R = 0$, $\\tan\\phi \\to \\infty$, $\\phi = 90°$.");
+  W("ac-circuits", "$P_{\\text{real}}",
+    "$P_\\text{real}$ = average real power (W). $V_\\text{RMS}, I_\\text{RMS}$ = RMS voltage and current. $\\cos\\phi$ = POWER FACTOR. WORKED EXAMPLE: motor draws 10 A RMS at 230 V RMS with PF = 0.8 → 1840 W real power (only 80% of apparent power 2300 VA is useful work).");
+  W("ac-circuits", "Transformer:",
+    "$V_1, V_2$ = primary and secondary RMS voltages. $N_1, N_2$ = turns of primary and secondary windings. IDEAL transformer (no loss). $N_1 < N_2$ = step-up; $N_1 > N_2$ = step-down. WORKED EXAMPLE: power transmission: step up to 100 kV → low current → low I²R losses. Step down to 240 V for homes.");
+
+  // ----- ARITHMETIC FOUNDATIONS -----
+  W("arithmetic-foundations", "$-(-a)",
+    "$a$ = any real number. NEGATIVE of negative gives back the original. EQUIVALENT: subtracting a negative is adding. WORKED EXAMPLE: $-(-5) = 5$. $7 - (-3) = 7 + 3 = 10$.");
+  W("arithmetic-foundations", "$|x|",
+    "$x$ = real number. $|x|$ = absolute value (distance from 0). PIECEWISE definition. ALWAYS non-negative. WORKED EXAMPLES: $|7| = 7$, $|-7| = 7$, $|0| = 0$. $|x - 3|$ = distance from 3.");
+  W("arithmetic-foundations", "$\\gcd(a, b)",
+    "$a, b$ = positive integers. $\\gcd$ = greatest common divisor. $\\operatorname{lcm}$ = least common multiple. PRODUCT relation: $\\gcd \\cdot \\operatorname{lcm} = ab$. WORKED EXAMPLE: $a = 12, b = 18$. $\\gcd = 6, \\operatorname{lcm} = 36$. Check: $6 \\cdot 36 = 216 = 12 \\cdot 18$ ✓.");
+  W("arithmetic-foundations", "$n = p_1",
+    "$n$ = positive integer $> 1$. $p_1, p_2, \\ldots, p_k$ = distinct primes. $a_1, \\ldots, a_k$ = positive integer exponents. UNIQUE up to ordering (Fundamental Theorem of Arithmetic). WORKED EXAMPLE: $504 = 2^3 \\cdot 3^2 \\cdot 7$. Confirm: $8 \\cdot 9 \\cdot 7 = 504$ ✓.");
+
+  // ----- ASTROPHYSICS-COSMOLOGY -----
+  W("astrophysics-cosmology", "$L = 4\\pi R^2",
+    "$L$ = luminosity (W). $R$ = stellar radius (m). $\\sigma \\approx 5.67 \\times 10^{-8}$ W/(m²·K⁴) = Stefan-Boltzmann constant. $T$ = effective surface temperature (K). STEFAN-Boltzmann law for blackbody radiation. WORKED EXAMPLE: Sun has $R \\approx 7 \\times 10^8$ m, $T \\approx 5780$ K → $L \\approx 3.8 \\times 10^{26}$ W.");
+  W("astrophysics-cosmology", "$\\lambda_{\\max} T",
+    "WIEN's displacement law. $\\lambda_\\max$ = peak emission wavelength (m). $T$ = absolute temperature (K). WORKED EXAMPLES: Sun (5780 K): $\\lambda_\\max \\approx 500$ nm (green-yellow visible). Human body (310 K): $\\lambda_\\max \\approx 9$ μm (far infrared). CMB (2.725 K): $\\lambda_\\max \\approx 1$ mm (microwave).");
+  W("astrophysics-cosmology", "$v = H_0 d",
+    "HUBBLE law. $v$ = recession velocity (km/s). $H_0 \\approx 70$ km/s/Mpc = Hubble constant. $d$ = distance (Mpc). WORKED EXAMPLE: galaxy at $d = 100$ Mpc recedes at $\\sim 7000$ km/s. Note: not literal velocity through space — it's expansion of space itself.");
+  W("astrophysics-cosmology", "Universe age:",
+    "Current best estimate $\\approx 13.8$ Gyr based on Planck CMB measurements. APPROXIMATELY equals Hubble time $1/H_0$ — coincidence in $\\Lambda$CDM. WORKED EXAMPLE: Sun's age (4.6 Gyr) is about 1/3 the universe's age. Earliest galaxies form $\\sim 0.5$ Gyr after Big Bang.");
+  W("astrophysics-cosmology", "$T_{\\text{CMB}}",
+    "$T_\\text{CMB} \\approx 2.725$ K today. PERFECT blackbody — FIRAS instrument on COBE measured deviation < 50 ppm. SETS scale for cosmology. CONNECTION: CMB photon density $n_\\gamma \\sim 4 \\times 10^8$ /m³ (vs baryons $\\sim 0.25$ /m³ — photon/baryon ratio ~ $10^9$).");
+  W("astrophysics-cosmology", "$\\Omega_m",
+    "$\\Omega_m$ = matter density parameter (fraction of critical density that is matter). $\\Omega_\\Lambda$ = dark energy density parameter. PLANCK 2018 values. $\\Omega_m \\approx 0.32$ (of which $\\sim 5\\%$ baryons, $\\sim 27\\%$ dark matter). $\\Omega_\\Lambda \\approx 0.68$. SUM $\\approx 1$ (flat universe).");
+
+  // ----- ATOMIC PHYSICS -----
+  W("atomic-physics", "$a_0",
+    "$a_0$ = Bohr radius (m). $\\epsilon_0$ = vacuum permittivity. $\\hbar$ = reduced Planck. $m_e$ = electron mass. $e$ = electron charge. ATOMIC length scale. WORKED EXAMPLE: typical atomic diameter is a few $a_0 \\sim 1$ Å.");
+  W("atomic-physics", "$E_n = -13.6/n^2",
+    "$E_n$ = energy of $n$-th level of hydrogen (eV). $n = 1, 2, 3, \\ldots$ = principal quantum number. NEGATIVE because bound. WORKED EXAMPLE: $E_1 = -13.6$ eV (ground). $E_2 = -3.4$ eV. Ionization energy of hydrogen: 13.6 eV (energy to remove electron from $n=1$ to infinity).");
+  W("atomic-physics", "$1/\\lambda = R",
+    "RYDBERG formula. $\\lambda$ = emitted/absorbed wavelength. $R \\approx 1.097 \\times 10^7$ /m = Rydberg constant. $n_1 < n_2$ = lower and upper quantum numbers. WORKED EXAMPLE: $n_1 = 2, n_2 = 3$ (Balmer H-alpha): $\\lambda = 656$ nm (visible red). $n_1 = 1, n_2 = \\infty$: $\\lambda = 91.2$ nm (Lyman limit, UV).");
+  W("atomic-physics", "Quantum numbers:",
+    "FOUR quantum numbers labeling hydrogen states. $n = 1, 2, 3, \\ldots$ (principal — sets energy). $\\ell = 0, \\ldots, n-1$ (orbital — sets angular momentum magnitude). $m = -\\ell, \\ldots, +\\ell$ (magnetic — sets $L_z$). $m_s = \\pm 1/2$ (spin projection). $2n^2$ states per shell including spin.");
+  W("atomic-physics", "$\\ell = 0",
+    "ORBITAL angular momentum quantum number. RANGE depends on $n$. $\\ell = 0$ (s), 1 (p), 2 (d), 3 (f) — spectroscopic notation. WORKED EXAMPLE: $n = 3$ allows $\\ell = 0, 1, 2$: 3s, 3p, 3d orbitals.");
+  W("atomic-physics", "Spin:",
+    "$s = 1/2$ = electron's intrinsic spin quantum number. UNIVERSAL (not derived from a wavefunction). Spin angular momentum: $|\\vec S| = \\hbar\\sqrt{s(s+1)} = \\hbar\\sqrt{3}/2$. $S_z$ takes values $\\pm\\hbar/2$. PROTON and NEUTRON also have $s = 1/2$.");
+
+  // ----- BAYESIAN STATISTICS -----
+  W("bayesian-statistics", "$P(\\theta | D)",
+    "BAYES' rule. $\\theta$ = unknown parameter. $D$ = observed data. $P(\\theta)$ = PRIOR (belief before data). $P(D|\\theta)$ = LIKELIHOOD (probability of observing $D$ given $\\theta$). $P(D)$ = MARGINAL likelihood (normalizing constant). $P(\\theta|D)$ = POSTERIOR (updated belief). WORKED EXAMPLE: medical test — given positive result $D$, posterior $P(\\text{disease} | +)$ depends on prior $P(\\text{disease})$.");
+  W("bayesian-statistics", "$P(D) =",
+    "MARGINAL likelihood. ALSO called 'evidence.' INTEGRATED over the prior. ROLE: normalizing constant in Bayes' rule. HARD to compute in high dimensions — entire methods (MCMC, variational inference) exist to circumvent it.");
+  W("bayesian-statistics", "Beta-Binomial:",
+    "BETA-Binomial conjugacy. Prior Beta($\\alpha, \\beta$) + binomial likelihood with $k$ successes in $n$ trials → posterior Beta($\\alpha + k, \\beta + n - k$). WORKED EXAMPLE: uniform prior Beta(1,1), observe 7 heads in 10 flips → posterior Beta(8, 4). Posterior mean = 8/12 = 2/3.");
+  W("bayesian-statistics", "Normal mean (known",
+    "NORMAL-Normal conjugacy. Known $\\sigma$. Prior $N(\\mu_0, \\sigma_0^2)$. POSTERIOR is normal with mean = precision-weighted average. WORKED EXAMPLE: prior $N(0, 1)$ + observation $x = 2$ with $\\sigma = 1$ → posterior $N(1, 1/2)$ (mean shifted halfway, variance halved).");
+
+  // ----- BLOCK DIAGRAMS -----
+  W("block-diagrams", "Moving a summing",
+    "BLOCK diagram algebra: a summing junction can be moved past a block $G$ by inserting a COPY of $G$ on the bypass path. PRESERVES input-output behavior. USED to reduce complex diagrams to standard forms (single loop) for analysis.");
+  W("block-diagrams", "Splitting a pickoff",
+    "Move a pickoff point past a block $G$ by inserting $1/G$ on the new downstream branch. PRESERVES signals. USED in the same kind of reduction as moving summing junctions.");
+
+  // ----- BODE PLOTS -----
+  W("bode-plots", "Octave vs decade",
+    "OCTAVE = factor of 2 in frequency. DECADE = factor of 10. SLOPES: $-20$ dB/dec = $-6$ dB/octave. WORKED EXAMPLE: a single pole's magnitude drops 20 dB for each 10× increase in frequency above its corner — or equivalently 6 dB per doubling.");
+  W("bode-plots", "Asymptotic phase",
+    "PHASE rules: each pole contributes phase from 0 to $-90°$, with most of the change in one decade centered on the pole. AT the corner exactly: $-45°$. WORKED EXAMPLE: pole at $\\omega = 10$ rad/s — phase is $-5.7°$ at $\\omega = 1$, $-45°$ at $\\omega = 10$, $-84°$ at $\\omega = 100$.");
+  W("bode-plots", "Bode magnitude-phase",
+    "BODE's GAIN-PHASE relation: for MINIMUM-PHASE systems, the phase at any frequency is uniquely determined by the slope of the magnitude plot at that frequency. CONSEQUENCE: $-20$ dB/dec slope corresponds asymptotically to $-90°$ phase. EXPLAINS why Bode plots of pure magnitude implicitly encode all phase info.");
+
+  // ----- CENTRAL FORCE (remaining) -----
+  W("central-force", "$dA/dt",
+    "KEPLER's 2nd law. $A$ = swept area. $L$ = magnitude of orbital angular momentum (kg·m²/s). $m$ = orbiting mass. $dA/dt$ is CONSTANT (consequence of $L$ conservation). WORKED EXAMPLE: comet moves fastest near perihelion (small $r$, large $v$), slowest at aphelion — but sweeps equal areas in equal times.");
+  W("central-force", "Eccentricity:",
+    "ORBITAL eccentricity $e$ (dimensionless). $E$ = total energy. $L$ = angular momentum magnitude. $G, M, m$ = constants and masses. WORKED EXAMPLE: $e = 0$: circular. $0 < e < 1$: ellipse (bound). $e = 1$: parabola (escape). $e > 1$: hyperbola (unbound). Earth: $e \\approx 0.0167$.");
+  W("central-force", "Inverse-square",
+    "BERTRAND's theorem (1873): only $1/r$ (gravity, Coulomb) and $r$ (Hooke) potentials give CLOSED bound orbits for ALL initial conditions. For any other power law: orbits precess (rosette patterns). WORKED EXAMPLE: Mercury's perihelion precesses by 43 arcsec/century — a tiny departure from $1/r$ explained by GR.");
+  W("central-force", "Virial:",
+    "VIRIAL theorem for $1/r$ potential. Time-averaged KE = $-1/2$ × time-averaged PE. WORKED EXAMPLE: circular orbit of speed $v$ at radius $r$ around mass $M$: $KE = mv^2/2 = GMm/(2r)$. $PE = -GMm/r$. $\\langle T\\rangle = -\\langle V\\rangle/2$ ✓.");
+
+  // ----- CIRCULAR-GRAVITATION -----
+  W("circular-gravitation", "$a_c",
+    "$a_c$ = centripetal (radial) acceleration directed toward center (m/s²). $v$ = speed along circle (m/s). $\\omega = v/r$ = angular velocity (rad/s). $r$ = radius (m). WORKED EXAMPLE: car on 50 m curve at 20 m/s. $a_c = 400/50 = 8$ m/s² — close to $g$.");
+  W("circular-gravitation", "$F_c",
+    "$F_c$ = centripetal force needed for circular motion (N). $m, v, r$ as above. SUPPLIED by tension, friction, gravity, normal force, etc. WORKED EXAMPLE: 1500 kg car at 20 m/s on 50 m curve needs $F_c = 1500 \\cdot 8 = 12000$ N. Provided by static friction with road.");
+  W("circular-gravitation", "$F_g",
+    "NEWTON's gravitational force. $F_g$ = magnitude (N). $G = 6.67\\times10^{-11}$ Nm²/kg² (Newton's constant). $m_1, m_2$ = masses (kg). $r$ = separation between centers (m). WORKED EXAMPLE: Earth ($M = 6\\times10^{24}$ kg) and Moon ($m = 7.35\\times10^{22}$ kg), $r = 384{,}000$ km: $F_g \\approx 1.99\\times10^{20}$ N.");
+  W("circular-gravitation", "$g = GM/r^2",
+    "$g$ = gravitational field strength (m/s²) = acceleration of free-falling object. $G$ = Newton's constant. $M$ = mass of attractor. $r$ = distance to center. WORKED EXAMPLE: Earth surface $r = 6.37\\times10^6$ m → $g = 9.81$ m/s². Moon surface: $g = 1.62$ m/s². ISS orbit (400 km up): $g = 8.7$ m/s² (still strong — astronauts are in free fall, not gravity-free).");
+  W("circular-gravitation", "Orbital:",
+    "$v$ = orbital speed for circular orbit at radius $r$ around mass $M$ (m/s). $G$ = Newton's constant. DERIVED from $mv^2/r = GMm/r^2$. WORKED EXAMPLE: low Earth orbit at $r = 6700$ km: $v \\approx 7.8$ km/s. Period $\\sim 90$ minutes. Geostationary at $r = 42{,}200$ km: $v \\approx 3.1$ km/s, period 24 hours.");
+
+  // ----- COMBINATORICS -----
+  W("combinatorics", "$n!",
+    "$n!$ = $n$ factorial. $n = $ nonnegative integer. CONVENTION: $0! = 1$. COUNTS permutations of $n$ distinct objects. WORKED EXAMPLES: $0! = 1, 1! = 1, 5! = 120, 10! = 3{,}628{,}800$. GROWS FAST: $20! > 10^{18}$.");
+  W("combinatorics", "$P(n,k)",
+    "PERMUTATIONS. $n$ = total items. $k$ = items chosen, ORDER matters. WORKED EXAMPLE: arranging 3 out of 5 books on shelf: $P(5, 3) = 60$. Compare to $C(5, 3) = 10$ — without order.");
+  W("combinatorics", "$(x+y)^n",
+    "BINOMIAL theorem. $\\binom{n}{k}$ = binomial coefficient. EXPANDS power of binomial as sum. WORKED EXAMPLE: $(x + y)^3 = x^3 + 3x^2 y + 3xy^2 + y^3$. Coefficients form Pascal's triangle row.");
+  W("combinatorics", "$\\binom{n}{k}",
+    "PASCAL's rule. Recursive identity defining Pascal's triangle. EACH entry is sum of two above it. WORKED EXAMPLE: $\\binom{5}{2} = \\binom{4}{1} + \\binom{4}{2} = 4 + 6 = 10$.");
+  W("combinatorics", "Stars-and-bars:",
+    "$n$ = identical items. $k$ = distinguishable bins. COUNTS ways to distribute. WORKED EXAMPLE: $n = 5$ apples among $k = 3$ kids: $\\binom{5 + 3 - 1}{3 - 1} = \\binom{7}{2} = 21$ distributions.");
+
+  // ----- COMPLEX NUMBERS (remaining) -----
+  W("complex-numbers", "$z = r e^",
+    "POLAR form of complex number. $r = |z|$ = modulus (distance from origin). $\\theta = \\arg z$ = argument (angle from positive real axis, in radians). EULER's formula links to $\\cos\\theta + i\\sin\\theta$. WORKED EXAMPLE: $z = 1 + i$ → $r = \\sqrt 2, \\theta = \\pi/4$. So $z = \\sqrt 2 e^{i\\pi/4}$.");
+
+  // ----- COMPUTABILITY -----
+  W("computability", "P:",
+    "P = class of decision problems solvable in POLYNOMIAL time by a deterministic Turing machine. CONSIDERED 'tractable.' WORKED EXAMPLES: shortest path ($O(V^2)$ Dijkstra), sorting ($O(n \\log n)$), primality (AKS, $O(\\log^6 n)$). NOT in P (as far as we know): factoring integers, graph isomorphism (status open).");
+  W("computability", "NP:",
+    "NP = decision problems where a YES answer has a polynomial-size CERTIFICATE that can be VERIFIED in polynomial time. WORKED EXAMPLES: SAT (certificate = satisfying assignment), Hamilton cycle (certificate = the cycle). P vs NP = most famous open problem in CS.");
+  W("computability", "Rice's theorem",
+    "RICE's theorem (1953). Any NON-TRIVIAL semantic property of programs is undecidable. WORKED EXAMPLE: 'does this program ever output 7?' is undecidable. 'does it compute the factorial function?' is undecidable. Code-level (syntactic) properties — 'does this code use a goto statement?' — are decidable.");
+
+  // ----- COMPUTATIONAL PHYSICS -----
+  W("computational-physics", "MC integration error:",
+    "MONTE CARLO integration error. $\\sigma$ = standard deviation of integrand. $N$ = number of samples. ERROR scales as $1/\\sqrt N$ — INDEPENDENT of dimension. WORKED EXAMPLE: doubling accuracy requires $4\\times$ more samples. For 10D integrals, MC beats grid methods (which need $N \\sim 10^{10}$ for similar accuracy).");
+
+  // ----- CONIC SECTIONS -----
+  W("conic-sections", "Parabola:",
+    "$(h, k)$ = vertex. $a$ = shape parameter ($a > 0$: opens up; $a < 0$: opens down). Focus at $(h, k + 1/(4a))$. Directrix is the line $y = k - 1/(4a)$. WORKED EXAMPLE: $y = 2(x - 1)^2 + 3$: vertex $(1, 3)$, opens upward; focus at $(1, 3 + 1/8) = (1, 3.125)$.");
+  W("conic-sections", "Ellipse:",
+    "$(h, k)$ = center. $a, b$ = semi-axes (length from center to edge along x and y directions). For $a > b$: $a$ is semi-major; foci at $(h \\pm c, k)$ where $c = \\sqrt{a^2 - b^2}$. WORKED EXAMPLE: Earth's orbit: $a \\approx 1$ AU, $c \\approx 0.0167$ AU. So $e = c/a \\approx 0.0167$ — nearly circular.");
+  W("conic-sections", "Hyperbola:",
+    "$(h, k)$ = center. $a, b$ = semi-axes determining the rectangle. ASYMPTOTES $y - k = \\pm(b/a)(x - h)$. Foci at $(h \\pm c, k)$ with $c = \\sqrt{a^2 + b^2}$. WORKED EXAMPLE: $x^2/9 - y^2/16 = 1$: $a = 3, b = 4$. Asymptotes $y = \\pm 4x/3$.");
+  W("conic-sections", "Circle:",
+    "$(h, k)$ = center. $r$ = radius. SPECIAL case of ellipse with $a = b = r$. ECCENTRICITY 0. WORKED EXAMPLE: $(x - 3)^2 + (y + 1)^2 = 25$: center $(3, -1)$, radius 5.");
+
+  // ----- CONTINUUM ELASTICITY -----
+  W("continuum-elasticity", "$\\sigma = F/A",
+    "$\\sigma$ = stress (Pa = N/m²). $F$ = applied force (N). $A$ = cross-sectional area (m²). WORKED EXAMPLE: 1000 N tension on 1 mm² wire → $\\sigma = 10^9$ Pa = 1 GPa. Compare to steel yield strength $\\sim 250$ MPa → wire about to fail.");
+  W("continuum-elasticity", "$\\varepsilon = \\Delta L/L",
+    "$\\varepsilon$ = strain (dimensionless). $\\Delta L$ = change in length. $L$ = original length. WORKED EXAMPLE: rod elongates from 1 m to 1.001 m → $\\varepsilon = 10^{-3} = 0.1\\%$.");
+  W("continuum-elasticity", "$\\sigma = E\\varepsilon",
+    "HOOKE's law in 1D. $\\sigma$ = stress. $E$ = Young's modulus (Pa). $\\varepsilon$ = strain. LINEAR regime — fails at yield point. WORKED EXAMPLE: aluminum $E = 70$ GPa. Strain $\\varepsilon = 10^{-3}$ → stress $\\sigma = 70$ MPa.");
+  W("continuum-elasticity", "Steel:",
+    "$E_\\text{steel} \\approx 200$ GPa = Young's modulus of steel. CONCRETE: $\\sim 30$ GPa. Aluminum: $\\sim 70$ GPa. RUBBER: $\\sim 0.01$ GPa. Diamond: $\\sim 1200$ GPa (stiffest known).");
+  W("continuum-elasticity", "$K =",
+    "$K$ = bulk modulus (Pa). $V$ = volume. $P$ = pressure. MEASURES resistance to uniform compression. WORKED EXAMPLE: water $K \\approx 2.2$ GPa — only 0.1% volume change under 2.2 MPa hydrostatic pressure (a few hundred meters underwater).");
+  W("continuum-elasticity", "Wave speed:",
+    "$v$ = speed of longitudinal sound waves in solid (m/s). $E$ = Young's modulus. $\\rho$ = density. WORKED EXAMPLE: steel $E = 200$ GPa, $\\rho = 7900$ kg/m³ → $v \\approx 5000$ m/s — much faster than sound in air (343 m/s).");
+
+  // ----- COORDINATE-GEOMETRY -----
+  W("coordinate-geometry", "$d =",
+    "DISTANCE formula. $d$ = Euclidean distance between two points. $(x_1, y_1), (x_2, y_2)$ = two points. PYTHAGORAS applied to right triangle. WORKED EXAMPLE: distance from $(1, 2)$ to $(4, 6)$ = $\\sqrt{9 + 16} = 5$.");
+  W("coordinate-geometry", "$M =",
+    "MIDPOINT formula. $M$ = midpoint of segment. AVERAGE the coordinates. WORKED EXAMPLE: midpoint of $(2, -3)$ and $(8, 5)$ = $(5, 1)$.");
+  W("coordinate-geometry", "$m =",
+    "SLOPE of line through two points. RISE OVER RUN. $m > 0$: line rising. $m < 0$: falling. $m = 0$: horizontal. Undefined: vertical. WORKED EXAMPLE: line through $(1, 1)$ and $(3, 7)$: $m = 6/2 = 3$.");
+  W("coordinate-geometry", "$y - y_1",
+    "POINT-SLOPE form of a line. $(x_1, y_1)$ = a known point. $m$ = slope. CONVENIENT when you know a point and slope. WORKED EXAMPLE: line through $(2, -1)$ with slope $3$: $y - (-1) = 3(x - 2)$, simplifies to $y = 3x - 7$.");
+  W("coordinate-geometry", "$y = mx + b",
+    "SLOPE-INTERCEPT form. $m$ = slope. $b$ = y-intercept. WORKED EXAMPLE: $y = 2x + 3$: slope 2, y-intercept 3. At $x = 0$: $y = 3$. At $x = 5$: $y = 13$.");
+  W("coordinate-geometry", "$Ax + By",
+    "GENERAL (standard) form of a line. $A, B, C$ = constants ($A, B$ not both zero). HANDLES vertical lines (set $B = 0$). WORKED EXAMPLE: $3x + 4y = 12$. Slope: $-A/B = -3/4$. x-intercept: $C/A = 4$. y-intercept: $C/B = 3$.");
+
+  // ----- CRYPTOGRAPHY -----
+  W("cryptography", "$ed",
+    "RSA key generation. $e$ = public exponent. $d$ = private exponent. $\\varphi(n) = (p-1)(q-1)$ = Euler totient of $n = pq$. $d$ is computed by extended Euclidean algorithm. WORKED EXAMPLE: $p = 3, q = 11, n = 33, \\varphi = 20$. Pick $e = 7$. Find $d$: $7d \\equiv 1 \\pmod{20}$, so $d = 3$.");
+  W("cryptography", "DH:",
+    "DIFFIE-HELLMAN key exchange. $g$ = generator. $p$ = large prime. $a, b$ = private random integers. SHARED secret $g^{ab} \\bmod p$. SECURITY: eavesdropper must solve discrete logarithm.");
+  W("cryptography", "Hash:",
+    "CRYPTOGRAPHIC hash function (SHA-256, SHA-3). PROPERTIES needed: PREIMAGE resistance (given hash, can't find input), SECOND-PREIMAGE resistance (given input, can't find different input with same hash), COLLISION resistance (can't find any two inputs with same hash). USED in digital signatures, password storage, blockchain.");
+  W("cryptography", "Birthday bound:",
+    "BIRTHDAY paradox. For $n$-bit hash function: a COLLISION can be found in $\\sim 2^{n/2}$ tries (vs $2^n$ for preimage). WORKED EXAMPLE: SHA-1 ($n = 160$) has effective collision security $\\sim 2^{80}$ — broken in 2017 by Google. Modern hashes use $n \\geq 256$.");
+  W("cryptography", "Perfect secrecy:",
+    "SHANNON's perfect secrecy. $H(M | C) = H(M)$: knowing ciphertext gives no information about message. ACHIEVABLE by one-time pad ONLY: key must be as long as message, uniformly random, used once. PRACTICAL crypto (AES, RSA) has 'computational' rather than 'perfect' secrecy.");
+
+  // ----- DIFFERENTIAL GEOMETRY -----
+  W("differential-geometry", "Torsion:",
+    "$\\tau$ = torsion of a 3D curve (1/m). MEASURES how much the curve twists out of its osculating plane. ZERO for planar curves. WORKED EXAMPLE: helix $\\vec r = (a\\cos t, a\\sin t, bt)$ has constant $\\tau = b/(a^2 + b^2)$. Bigger pitch $b$ → more torsion.");
+  W("differential-geometry", "Theorema Egregium",
+    "GAUSS's Theorema Egregium (1827, 'remarkable theorem'). GAUSSIAN curvature is INTRINSIC — depends only on the metric, not on how the surface sits in 3D. CONSEQUENCE: a sphere cannot be flattened onto a plane without stretching (different $K$). EXPLAINS why all flat world maps distort.");
+
+  // ----- DIGITAL CONTROL -----
+  W("digital-control", "$z = e^{sT}",
+    "$s$ = continuous Laplace variable. $T$ = sampling period (s). $z$ = corresponding $z$-transform variable. MAPS continuous LHP to inside unit disk. WORKED EXAMPLE: stable continuous pole at $s = -2$ with $T = 0.1$ → $z = e^{-0.2} \\approx 0.819$, inside unit circle ✓.");
+  W("digital-control", "Stability:",
+    "DISCRETE stability condition: all closed-loop poles $|z| < 1$ (inside unit circle in $z$-plane). EQUIVALENT to LHP for continuous systems. WORKED EXAMPLE: $z = 0.5$ inside → stable. $z = 1.1$ outside → unstable. $z = 1$ on circle → marginally stable.");
+  W("digital-control", "Bilinear (Tustin)",
+    "BILINEAR (Tustin) transform. $s, z$ as before. $T$ = sampling period. MAPS LHP exactly to unit disk → preserves stability. USED for continuous-to-discrete controller conversion. WORKED EXAMPLE: continuous PI $C(s) = K(s + a)/s$ → discrete $C(z) = K(2(z-1)/T(z+1) + a)/(2(z-1)/T(z+1))$.");
+
+  // ----- DYNAMICAL SYSTEMS -----
+  W("dynamical-systems", "$\\dot{\\vec x}",
+    "$\\vec x$ = state vector. $\\vec f$ = vector field on state space. AUTONOMOUS: right-hand side doesn't depend explicitly on $t$. WORKED EXAMPLE: pendulum $\\dot{\\vec x} = (x_2, -\\sin x_1)$ where $x_1 = \\theta, x_2 = \\dot\\theta$. State space = cylinder (angle is periodic).");
+  W("dynamical-systems", "Linearization:",
+    "$D\\vec f$ = Jacobian matrix of $\\vec f$. $\\vec x^*$ = fixed point. EVALUATE at the fixed point; EIGENVALUES classify the equilibrium. WORKED EXAMPLE: $\\dot x = -x + x^2$ has fixed points 0 and 1. At $x^* = 0$: $D\\vec f = -1 < 0$ — stable. At $x^* = 1$: $D\\vec f = +1 > 0$ — unstable.");
+
+  // ----- ELECTRICAL MODELING CONTROL -----
+  W("electrical-modeling-control", "$Z_R = R",
+    "$s$-domain impedances. $R$ = resistance (Ω). $L$ = inductance (H). $C$ = capacitance (F). $s$ = Laplace variable (1/s). REASON: $V_L = L\\,di/dt \\to V_L = LsI$ in s-domain.");
+  W("electrical-modeling-control", "Op-amp integrator",
+    "OP-AMP integrator. $V_i, V_o$ = input and output voltages. $R$ = input resistor. $C$ = feedback capacitor. POLE at $s = 0$ (pure integrator). NEGATIVE SIGN from inverting topology. WORKED EXAMPLE: 1 V DC input gives ramp output $-t/(RC)$ V (until op-amp saturates).");
+  W("electrical-modeling-control", "Op-amp PID",
+    "OP-AMP realization of PID. $K_p, K_i, K_d$ = proportional, integral, derivative gains. BUILD by paralleling: P (gain), I (integrator), D (differentiator + filter). USED in analog process control.");
+  W("electrical-modeling-control", "Network impedance",
+    "IMPEDANCES combine like resistors but with complex/Laplace values. Series: add. Parallel: $Z_1 Z_2/(Z_1 + Z_2)$. WORKED EXAMPLE: 1 Ω in series with capacitor $1/(s)$ → $Z = 1 + 1/s = (s+1)/s$. Low-pass response.");
+
+  // ----- ENERGY-WORK -----
+  W("energy-work", "$PE_g",
+    "$PE_g$ = gravitational potential energy near Earth (J). $m$ = mass (kg). $g \\approx 9.8$ m/s². $h$ = height above some chosen reference level (m). REFERENCE is arbitrary; only differences matter. WORKED EXAMPLE: 1 kg lifted 5 m: $PE_g = 49$ J.");
+  W("energy-work", "$PE_s",
+    "$PE_s$ = spring elastic PE (J). $k$ = spring constant (N/m). $x$ = displacement from natural length. ALWAYS positive (compressed or stretched). WORKED EXAMPLE: $k = 200$ N/m, $x = 0.1$ m → $PE_s = 1$ J.");
+  W("energy-work", "$W_{\\text{net}}",
+    "WORK-energy theorem. $W_\\text{net}$ = net work done on object. $\\Delta KE$ = change in kinetic energy. EQUIVALENT to Newton's 2nd law in energy form. WORKED EXAMPLE: net force 10 N pushes 2 kg over 5 m: $W = 50$ J. KE changes by 50 J → speed changes from 0 to $\\sqrt{50}$ = 7.07 m/s.");
+  W("energy-work", "$E_{\\text{total}}",
+    "CONSERVATION of mechanical energy. $E$ = total mechanical energy (J). $KE$ = kinetic. $PE$ = potential. CONSTANT for conservative forces only (no friction, no air drag). WORKED EXAMPLE: ball dropped from height $h$ — at top all PE, at bottom all KE. $mgh = mv^2/2$ → $v = \\sqrt{2gh}$.");
+
+  // ----- FIRST-ORDER -----
+  W("first-order-response", "$y(t)",
+    "FIRST-order step response. $y(t)$ = output. $\\tau$ = time constant (s). $y_\\infty$ = final steady-state value. RISE smoothly from 0 to $y_\\infty$. WORKED EXAMPLE: $\\tau = 0.5$ s. At $t = \\tau$: $y = 0.632 y_\\infty$. At $t = 4\\tau = 2$ s: $y = 0.982 y_\\infty$ (2% settling).");
 })();
