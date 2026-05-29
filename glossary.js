@@ -635,15 +635,16 @@ window.GLOSSARY = {
   ],
 
   "momentum-impulse": [
-    { term: "Momentum", def: "Mass times velocity: $\\vec p = m\\vec v$. Measures 'how hard to stop.'" },
-    { term: "Impulse", def: "Change in momentum, equal to force times time over which it acts." },
+    { term: "Momentum", def: "Mass times velocity: $\\vec p = m\\vec v$. Measures 'how hard to stop.' A vector — direction matters." },
+    { term: "Impulse", def: "Change in momentum, equal to force times time over which it acts. $\\vec J = \\vec F \\cdot \\Delta t = \\Delta \\vec p$." },
+    { term: "Kinetic energy (KE)", def: "Energy associated with motion: $KE = \\tfrac{1}{2} m v^2$. Bigger mass or higher speed = more KE. Note: speed is SQUARED, so doubling speed quadruples KE. (You'll study energy in depth in the next topic — for now, just 'energy of motion.')" },
     { term: "Isolated system", def: "A system with NO external forces acting on it — the parts can push each other, but nothing outside pushes in. In an isolated system, total momentum is conserved." },
     { term: "Closed system", def: "A system that doesn't exchange matter with its surroundings. Often used interchangeably with 'isolated' in mechanics." },
     { term: "External force", def: "A force from OUTSIDE the system (like gravity from the Earth on a ball in flight). Internal forces (objects pushing each other) don't change total momentum." },
     { term: "Conservation", def: "A quantity that doesn't change over time. Momentum is conserved when no external force acts." },
-    { term: "Elastic collision", def: "Collision where kinetic energy is also conserved (bouncy)." },
-    { term: "Inelastic collision", def: "Collision where some KE is lost to heat, sound, deformation." },
-    { term: "Perfectly inelastic", def: "Objects stick together after collision." },
+    { term: "Elastic collision", def: "A 'bouncy' collision where the objects rebound and KE is also conserved (no energy lost to heat, sound, or deformation). Billiard balls and atomic collisions are nearly elastic." },
+    { term: "Inelastic collision", def: "A collision where some KE is lost — turned into heat, sound, or permanent deformation of the objects. Momentum is still conserved; energy isn't." },
+    { term: "Perfectly inelastic", def: "The extreme inelastic case: objects stick together after the collision. Maximum possible KE lost." },
     { term: "Center of mass", def: "Mass-weighted average position of all parts. Moves smoothly even when individual parts collide. In an isolated system, moves at CONSTANT velocity." }
   ],
 
