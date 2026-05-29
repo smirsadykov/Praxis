@@ -413,5 +413,375 @@ window.INTROS = {
     whyExists: "Static fluids (pressure, buoyancy) are tractable. But moving fluids are notoriously hard — the Navier-Stokes equations describe flow, but solving them exactly is one of the great unsolved problems of mathematics.",
     whyImportant: "Weather, climate, oceans, blood flow, airplanes, rockets, ships, pipelines, racing cars, wind turbines, sediment transport. Turbulence — the chaotic regime of fluid flow — is everywhere and barely understood.",
     intuition: "Reynolds number compares inertia to viscosity. Low Reynolds: smooth, predictable laminar flow. High Reynolds: chaotic turbulence with energy cascading down to smaller and smaller eddies. Most real flows are turbulent."
+  },
+
+  // ===== NEW MATH =====
+
+  "coordinate-geometry": {
+    whyExists: "Descartes had a great idea: glue numbers onto geometry by giving each point coordinates. Now lines, circles, and curves all become equations, and geometry becomes algebra you can compute.",
+    whyImportant: "Every map, every graph, every game's 3D engine, every GPS calculation. Without coordinates, you can't draw a graph on a screen or tell a robot where to go.",
+    intuition: "A point is just a pair (x, y). The distance formula is the Pythagorean theorem applied to coordinates. Slope is rise over run. Lines, circles, and parabolas each become specific equations you can manipulate."
+  },
+
+  "solid-geometry": {
+    whyExists: "Plane geometry handles flat shapes. The world isn't flat. Solid geometry computes volumes and surface areas of 3D objects — essential for anything you can hold.",
+    whyImportant: "Packaging, container sizes, fuel tanks, water reservoirs, medicine dosing by body volume, 3D printing, architecture. Knowing volume formulas is basic numeracy.",
+    intuition: "Volume scales as length cubed; surface area as length squared. So big objects have lots of volume per surface — that's why elephants overheat and ice cubes melt faster in chips."
+  },
+
+  "conic-sections": {
+    whyExists: "Slice a cone with a plane and you get a circle, ellipse, parabola, or hyperbola — depending on the angle. The same curves keep appearing in nature, so it pays to study them in detail.",
+    whyImportant: "Planetary orbits (ellipses), satellite dishes (parabolas), shockwaves (hyperbolas), comets (parabolic/hyperbolic), telescope mirrors. Conics are everywhere physics requires 'focusing'.",
+    intuition: "Each conic has a 'focus' — a special point. Light or signals bouncing inside parabolic, elliptical, or hyperbolic shapes obey predictable rules. Eccentricity (0 = circle, ∞ = degenerate) parameterizes them all."
+  },
+
+  "mathematical-logic": {
+    whyExists: "Math claims things are true forever. Why should we believe it? Proof is the answer — a rigorous chain of deduction from axioms. Without proofs, math is just plausible-sounding guesses.",
+    whyImportant: "All of math, computer science verification, formal methods in software, theorem provers, philosophy of math. Anyone who builds correct systems thinks in terms of proof.",
+    intuition: "Three big techniques: direct proof (chain forward), contradiction (assume the opposite, derive nonsense), and induction (prove for n=1, then prove n implies n+1). Contrapositive sometimes turns a hard statement into an easy one."
+  },
+
+  "graph-theory": {
+    whyExists: "Many problems boil down to 'who's connected to whom?' — friends in a social network, cities by roads, atoms by bonds, components in a circuit. Graphs strip away everything else and study the connection structure itself.",
+    whyImportant: "Google's PageRank, GPS routing, scheduling, chip design, epidemic modeling, social networks, neural networks, every database. Without graph theory, modern computing barely works.",
+    intuition: "A graph is just dots (vertices) connected by lines (edges). Most questions reduce to: is there a path? What's the shortest one? Can I color the dots so neighbors are different colors? How many edges can I have without making a cycle?"
+  },
+
+  "recurrence-generating": {
+    whyExists: "Some sequences are best defined by 'each term comes from the previous': Fibonacci, factorials, compound interest. Solving the recurrence means finding a closed-form formula. Generating functions encode the whole sequence as the coefficients of a power series — and turn problems about sequences into problems about functions.",
+    whyImportant: "Algorithms (analyzing time complexity), combinatorics (counting structures), finance, biology (population models), error-correcting codes. Generating functions are a master tool in discrete math.",
+    intuition: "Linear recurrences have exponential solutions. Find the right exponential base and you crack the recurrence. Generating functions treat $\\sum a_n x^n$ as one object — operations on the function correspond to operations on the sequence."
+  },
+
+  "computability": {
+    whyExists: "Some problems can't be solved by any algorithm — ever. Turing proved the halting problem (deciding if an arbitrary program halts) is undecidable in the 1930s. Computability theory maps the boundary between what can and can't be computed.",
+    whyImportant: "Foundation of computer science. Tells us hard limits on what software can do, regardless of how clever we get. Complexity theory (P vs NP) tells us which problems are tractable in practice.",
+    intuition: "A Turing machine is the simplest universal model of computation. Everything you can compute, it can compute (Church-Turing thesis). Some problems require infinite time even for it — those are undecidable."
+  },
+
+  "galois-theory": {
+    whyExists: "Why can you solve quadratics with a formula but not quintics? Galois figured out the answer at age 19: it depends on the symmetry of the equation's roots. He linked polynomial-solvability to group theory and died in a duel at 20.",
+    whyImportant: "Resolved centuries-old problems (cubics, quintics, ruler-and-compass constructions). Foundation of modern algebra. Used in coding theory, cryptography, and beyond.",
+    intuition: "Permuting the roots of a polynomial gives a symmetry group (the Galois group). If this group is 'solvable' (can be broken down into nice pieces), so is the polynomial. Quintics' group $S_5$ is not solvable — game over."
+  },
+
+  "lie-groups": {
+    whyExists: "Discrete symmetries (like flipping or rotating by fixed angles) form finite groups. Continuous symmetries (like rotations by any angle, or smooth scalings) form Lie groups — and these turn out to govern most of physics.",
+    whyImportant: "Standard Model of particle physics is built from Lie groups (SU(3), SU(2), U(1)). General relativity uses the Lorentz group. Quantum mechanics' angular momentum uses SU(2). Robotics uses SO(3) and SE(3).",
+    intuition: "A Lie group is a smooth manifold that's also a group. Near the identity, multiplication looks like vector addition — that's the Lie algebra. Almost everything about the group is encoded in this algebra, which is just a vector space with a bracket."
+  },
+
+  "differential-geometry": {
+    whyExists: "Curves and surfaces live in a world where lengths, angles, and curvatures depend on where you are. Differential geometry uses calculus to study these intrinsic geometric properties — without needing the surrounding space.",
+    whyImportant: "General relativity (spacetime is a curved manifold). Computer graphics (smooth surfaces). Robotics (configuration spaces). Mechanical engineering (gears, cams). Modern data analysis (manifold learning).",
+    intuition: "On a curve, curvature measures how sharply it bends. On a surface, you also have torsion (out-of-plane twisting) and Gaussian curvature (intrinsic bending — flat paper has 0, sphere has positive, saddle has negative). Curvature is the invariant you keep when you bend without stretching."
+  },
+
+  "tensor-calculus": {
+    whyExists: "Vectors capture quantities with magnitude and direction. Tensors generalize: they capture quantities that change in well-defined ways under coordinate changes. Without them, you can't write physical laws that hold in every coordinate system.",
+    whyImportant: "General relativity is unwritable without tensors. Continuum mechanics (stress and strain are tensors). Anisotropic materials. Machine learning ('tensor' there is data, but mathematically it's the same idea).",
+    intuition: "A tensor has indices: upstairs (contravariant) and downstairs (covariant). Einstein summation says repeated indices are summed. The metric tensor raises and lowers indices. Christoffel symbols handle how vectors change when coordinates curve."
+  },
+
+  "algebraic-topology": {
+    whyExists: "Point-set topology defines continuity. But how do you tell if two shapes are 'really' different — like a coffee cup vs a doughnut vs a sphere? Algebraic topology assigns groups, numbers, and other algebra to spaces, capturing their shape in a calculable way.",
+    whyImportant: "Modern data analysis (topological data analysis). Robotics (configuration spaces). Theoretical physics (string theory, topological phases of matter). Theorem proving by reducing to algebra.",
+    intuition: "The fundamental group $\\pi_1$ counts loops up to deformation. The Euler characteristic $\\chi = V - E + F$ is a single integer that tells you the topology of a surface. Homology groups count holes of various dimensions. These invariants don't change under continuous deformation."
+  },
+
+  "riemannian-geometry": {
+    whyExists: "Differential geometry handles smooth surfaces; Riemannian geometry adds a notion of distance ('metric'). With a metric, you can measure lengths, angles, curvature, and find geodesics (shortest paths).",
+    whyImportant: "General relativity is exactly Riemannian (well, Lorentzian) geometry. Optimization on manifolds. Statistical inference. Robotics. Modern ML uses these tools on weight spaces of neural networks.",
+    intuition: "A metric is an inner product on each tangent space. Geodesics are 'straight' in the curved space. Sectional curvature generalizes Gaussian curvature. Ricci curvature averages it. Einstein manifolds are special: Ricci is proportional to the metric — the geometry that appears in GR."
+  },
+
+  "measure-theory": {
+    whyExists: "Riemann integration breaks for many useful functions (e.g., the indicator of the rationals). Lebesgue's idea: measure SETS, not just intervals, and integrate by partitioning the RANGE of the function instead of the domain. The result is far more powerful.",
+    whyImportant: "Foundation of modern probability and analysis. Functional analysis. Stochastic calculus. Mathematical finance. Without it, probability theory is hand-wavy.",
+    intuition: "A measure assigns sizes to (suitable) subsets. Lebesgue measure extends 'length' to weird sets. A null set has measure zero — like the rationals in $\\mathbb{R}$. Convergence theorems (monotone, dominated, Fatou) let you swap limits and integrals safely."
+  },
+
+  "functional-analysis": {
+    whyExists: "Once you start working with infinite-dimensional spaces of functions, intuition from finite dimensions can fail. Functional analysis develops Banach and Hilbert spaces — the right framework for linear algebra in infinite dimensions.",
+    whyImportant: "Quantum mechanics lives in Hilbert space. PDEs use Sobolev spaces. Signal processing uses Fourier on $L^2$. Modern optimization in infinite dimensions. Operator algebras and C*-algebras.",
+    intuition: "A Banach space is a complete normed space. A Hilbert space adds an inner product. Bounded linear operators are the morphisms. The spectrum generalizes eigenvalues. Major theorems (Hahn-Banach, open mapping, Riesz representation) are the workhorses."
+  },
+
+  "calculus-of-variations": {
+    whyExists: "Sometimes you don't want to find the minimum of a function — you want to find the function that minimizes a quantity. What's the shortest path? The shape a hanging rope makes? The fastest descent curve? Calculus of variations answers these.",
+    whyImportant: "All of physics: principle of least action gives every equation of motion. Geodesics on curved spaces (GR). Optimal control. Image processing (active contours). Even modern deep learning uses variational principles.",
+    intuition: "Instead of $f'(x) = 0$, the analog is the Euler-Lagrange equation — a differential equation that the optimizer must satisfy. Constraints get Lagrange multipliers, just like in finite-dimensional optimization."
+  },
+
+  "function-sequences": {
+    whyExists: "When a sequence of functions converges, does the limit inherit nice properties (continuity, integrability)? Sometimes yes, sometimes no. Distinguishing pointwise from uniform convergence is the key, and underpins all of analysis.",
+    whyImportant: "Power series, Fourier series, Taylor expansions, numerical approximations, function approximation in ML. The 'continuous in the limit' question shows up everywhere.",
+    intuition: "Pointwise: $f_n(x) \\to f(x)$ for each $x$, possibly at different rates. Uniform: same rate for ALL $x$ at once. Uniform convergence preserves continuity, allows you to swap limits and integrals, and is what you usually want. The M-test gives an easy criterion."
+  },
+
+  "random-variables": {
+    whyExists: "Probability needs an object to apply to: a random variable. It takes a random outcome and maps it to a number you can analyze. Then distributions, expectations, and variances all make sense.",
+    whyImportant: "Statistics, finance, insurance, machine learning, physics (statistical mechanics), engineering (reliability), medicine. Anything where outcomes are uncertain.",
+    intuition: "Different shapes of uncertainty get different distributions: binomial (count of successes), Poisson (rare events), normal (sums of many small effects via CLT), exponential (waiting times). Expectation is the long-run average; variance is the spread."
+  },
+
+  "stochastic-processes": {
+    whyExists: "Many systems evolve randomly over time — stock prices, particle positions in a fluid, queues at a checkout, epidemics. Stochastic processes model these.",
+    whyImportant: "Finance (Black-Scholes is a stochastic PDE). Physics (Brownian motion, Langevin equation). Biology (population dynamics). Queueing theory. Machine learning (SGD is a stochastic process).",
+    intuition: "A Markov chain forgets its history — only the current state matters. Random walks generalize to Brownian motion in continuous time. Poisson processes model arrivals at a constant rate. Martingales are 'fair games' where expected future equals present."
+  },
+
+  "bayesian-statistics": {
+    whyExists: "Frequentist statistics treats parameters as fixed (but unknown) and data as random. Bayesian statistics treats parameters as random too, with a prior distribution that updates as data arrives. It's how rational agents update beliefs.",
+    whyImportant: "Machine learning (variational inference, Bayesian neural networks). Medical diagnosis. Forecasting. A/B testing. Robotics (sensor fusion). Any time you need to update beliefs from data.",
+    intuition: "Bayes' rule: posterior ∝ prior × likelihood. Conjugate priors keep the math clean (Beta-Binomial, Normal-Normal, Gamma-Poisson). MCMC samples from messy posteriors when conjugacy fails."
+  },
+
+  "optimization": {
+    whyExists: "Almost every decision problem reduces to: find the input that minimizes (or maximizes) an objective, subject to constraints. Optimization is the systematic theory.",
+    whyImportant: "Operations research, machine learning (training is optimization), portfolio finance, engineering design, logistics, every algorithm that tunes parameters. Modern ML works because gradient descent works.",
+    intuition: "For convex problems, local minimum = global minimum, and reliable algorithms exist. For non-convex, you might get stuck in local minima but heuristics often work. KKT conditions generalize 'gradient zero' to inequality-constrained problems."
+  },
+
+  "information-theory": {
+    whyExists: "What is the minimum size to losslessly compress a message? What's the maximum reliable rate over a noisy channel? Shannon answered both in 1948 with a single concept: entropy.",
+    whyImportant: "Data compression (ZIP, MP3, JPEG). Error-correcting codes (every disk drive, every wireless link). Cryptography. Machine learning (cross-entropy loss). Communication theory.",
+    intuition: "Entropy measures uncertainty in bits. A fair coin is 1 bit. A biased coin (one outcome certain) is 0 bits. Mutual information measures shared uncertainty between two random variables. Channel capacity is the highest rate at which information can flow reliably."
+  },
+
+  "game-theory": {
+    whyExists: "When several agents make decisions that affect each other, you need a framework richer than single-agent optimization. Game theory studies what rational agents do in conflict and cooperation.",
+    whyImportant: "Economics, auction design (Google ads), politics (voting), evolutionary biology, mechanism design, multi-agent AI, military strategy, animal behavior, network protocols.",
+    intuition: "A Nash equilibrium is a stable point: no player can improve by changing only their own strategy. Mixed strategies (random choices) often appear when pure strategies have no equilibrium. Cooperative games study how groups split joint payoffs."
+  },
+
+  "dynamical-systems": {
+    whyExists: "Most differential equations can't be solved in closed form, but their long-term behavior — fixed points, periodic orbits, attractors — can still be classified geometrically. That's dynamical systems theory.",
+    whyImportant: "Weather and climate, ecology, epidemiology, neuroscience (neural dynamics), economics, control theory. The framework for understanding any system that evolves in time.",
+    intuition: "Fixed points are where motion stops. Stability is set by eigenvalues of the linearization. Bifurcations are where the system suddenly changes qualitatively as a parameter shifts. Chaos is sensitive dependence on initial conditions — small changes blow up exponentially."
+  },
+
+  "cryptography": {
+    whyExists: "How do you send a secret message that no eavesdropper can read, even if they intercept every bit? How do you sign a document so no one can forge your signature? Cryptography solves these with hard math.",
+    whyImportant: "Online banking, secure messaging, HTTPS, cryptocurrency, two-factor auth, military communications. Without modern crypto, no e-commerce, no privacy.",
+    intuition: "Symmetric ciphers (AES) use a shared key for fast encryption. Asymmetric ciphers (RSA, ECC) use a math problem easy one way, hard the other. Hash functions compress data to a fingerprint. Quantum computers threaten some schemes — hence post-quantum cryptography."
+  },
+
+  // ===== NEW PHYSICS =====
+
+  "continuum-elasticity": {
+    whyExists: "Solid objects aren't perfectly rigid — push on them and they deform. Beyond a limit, they break. Continuum mechanics treats matter as continuous and describes deformation via stress and strain.",
+    whyImportant: "Civil and mechanical engineering. Buildings, bridges, vehicles, dams, prosthetics. Material science. Earthquake engineering. The reason your phone screen doesn't crack (until it does).",
+    intuition: "Stress is force per unit area. Strain is fractional deformation. Young's modulus relates them in the linear (elastic) regime. Beyond the elastic limit, materials yield (plastic deformation) or fracture."
+  },
+
+  "central-force": {
+    whyExists: "Many fundamental forces (gravity, Coulomb) act along the line between two objects. The math becomes tractable: angular momentum is conserved, motion is in a plane, and the problem reduces to one dimension.",
+    whyImportant: "Planetary orbits, Rutherford scattering, atomic physics (Coulomb attraction of nucleus), satellite dynamics, comet trajectories. The most important solved problem in classical mechanics.",
+    intuition: "Effective potential combines actual potential with the centrifugal barrier. Stable circular orbits exist where it's minimum. Inverse-square forces give closed orbits (ellipses, Kepler's laws); other power laws don't (precessing orbits)."
+  },
+
+  "nonlinear-chaos-physics": {
+    whyExists: "Linear systems behave nicely — small inputs give small outputs. But the real world is mostly nonlinear, and tiny initial differences can blow up exponentially. That's chaos.",
+    whyImportant: "Weather prediction limits (Lorenz). Plasma turbulence. Cardiac arrhythmias. Population dynamics. Coupled oscillators in lasers. Population biology. Chemical reactions. Astronomy (Solar System long-term).",
+    intuition: "A positive Lyapunov exponent means nearby trajectories diverge exponentially. Strange attractors are bounded but never repeat. Period-doubling cascades route to chaos universally. Sensitive dependence ≠ randomness — chaos is deterministic but unpredictable in practice."
+  },
+
+  "angular-momentum-spin": {
+    whyExists: "In quantum mechanics, angular momentum is quantized — both its magnitude and one component (usually $L_z$). Electrons also carry intrinsic spin angular momentum, which has no classical analog. Together they shape atoms, magnetism, and particle physics.",
+    whyImportant: "Atomic structure (Pauli exclusion → periodic table). MRI (nuclear spin). Magnetism. Quantum computing (qubits are spins). Particle physics classification by spin.",
+    intuition: "$L^2$ and $L_z$ commute, so you can measure both. Eigenstates are $|\\ell, m\\rangle$. Spin-1/2 has only two states ('up', 'down') and obeys Pauli matrix algebra. Adding angular momenta uses Clebsch-Gordan rules."
+  },
+
+  "qm-3d-hydrogen": {
+    whyExists: "Real atoms live in 3D, and their Schrödinger equations are usually unsolvable except for one — hydrogen. Solving it exactly explains the structure of atoms and seeded everything that followed.",
+    whyImportant: "Foundation of chemistry, atomic spectra, lasers, semiconductor physics. The 'orbital' shapes you learned in chemistry come from this solution. Hydrogen is the only fully solvable many-body atom.",
+    intuition: "Separate the wavefunction into radial and angular parts. The angular part gives spherical harmonics $Y_\\ell^m$. The radial part gives Laguerre polynomials and the famous $E_n = -13.6/n^2$ eV energies."
+  },
+
+  "perturbation-theory": {
+    whyExists: "Exact solutions are rare. Perturbation theory asks: if a problem has a small parameter, can I write the solution as the simple case plus tiny corrections? Yes — and often the first few corrections are enough.",
+    whyImportant: "Quantum mechanics (Stark, Zeeman, fine structure). QED's stunning accuracy. Celestial mechanics (planetary corrections). Almost every realistic physics calculation is perturbative.",
+    intuition: "First-order energy correction: average the perturbation in the unperturbed state. First-order state correction: mix in other states weighted by matrix elements over energy differences. Fermi's golden rule extends to time-dependent perturbations and transition rates."
+  },
+
+  "identical-particles": {
+    whyExists: "Quantum particles of the same kind are truly indistinguishable — there's no way to track which is which. This forces wavefunctions to be either symmetric (bosons) or antisymmetric (fermions) under particle exchange.",
+    whyImportant: "Pauli exclusion gives the periodic table, electron shells, and the stability of matter. Bose-Einstein condensation. Lasers (bosons love the same state). White dwarf and neutron-star structure (Fermi pressure).",
+    intuition: "Spin-statistics theorem ties spin to symmetry. Integer spin = bosons (any number per state). Half-integer = fermions (max one per state). Slater determinants automatically enforce antisymmetry for many fermions."
+  },
+
+  "scattering-theory": {
+    whyExists: "How do you learn about a particle, a nucleus, a crystal, or even space itself? Shoot stuff at it and watch how things bounce off. Scattering theory tells you what the bounces mean.",
+    whyImportant: "All of experimental particle physics. X-ray crystallography (DNA was discovered this way). Nuclear physics. Solid-state experiments. Quantum chemistry. Medical imaging.",
+    intuition: "Differential cross section $d\\sigma/d\\Omega$ tells how much scattering goes into each direction. The Born approximation works for weak potentials. Partial-wave expansion separates contributions by angular momentum. Resonances show up as rapid phase-shift changes."
+  },
+
+  "density-matrices": {
+    whyExists: "Pure states $|\\psi\\rangle$ describe full quantum information. But in practice, you often have classical uncertainty on top of quantum — a 50/50 mix of states. Density matrices describe these 'mixed' states.",
+    whyImportant: "Decoherence and quantum error correction. Open quantum systems. Quantum information theory. Atomic clocks. Quantum cryptography. Anything where you trace out an environment.",
+    intuition: "A density matrix $\\rho$ is positive semi-definite with trace 1. Pure states have $\\rho^2 = \\rho$. Mixed states don't. Partial trace over a subsystem gives the reduced density matrix — capturing what local observers can know."
+  },
+
+  "path-integrals": {
+    whyExists: "Schrödinger and Heisenberg each gave a quantum mechanics formulation. Feynman gave a third: a particle takes every possible path, weighted by $e^{iS/\\hbar}$, and the amplitude sums them all. Strange but enormously powerful.",
+    whyImportant: "Standard formulation of QFT. Lattice QCD. Quantum gravity research. Connects QM to thermodynamics via Wick rotation. Beautiful unifying picture across physics.",
+    intuition: "When the action is large compared to $\\hbar$, nearby paths interfere destructively except near the stationary path — that's classical mechanics emerging from quantum. Feynman diagrams are perturbative expansions of the path integral."
+  },
+
+  "quantum-information": {
+    whyExists: "Classical information is bits — 0 or 1. Quantum information is qubits — superpositions of 0 and 1 plus entanglement. The result is a fundamentally different and more powerful theory of information.",
+    whyImportant: "Quantum computers (factoring, search, simulation). Quantum cryptography (provably secure key distribution). Quantum sensing (precision metrology beyond classical limits). Foundations of quantum mechanics.",
+    intuition: "Entanglement is the resource: two qubits can be correlated more strongly than any classical system. No-cloning prevents you from copying. Teleportation moves a state using entanglement and 2 classical bits. Bell inequalities show quantum correlations beat any local theory."
+  },
+
+  "symmetries-noether": {
+    whyExists: "Every conservation law in physics — energy, momentum, charge — is mysterious until you realize it comes from a symmetry. Noether proved it in 1918: every continuous symmetry of the action implies a conserved quantity.",
+    whyImportant: "Bedrock principle of modern physics. Drives the structure of the Standard Model. Explains why energy is conserved (time-translation symmetry). Guides theory construction in QFT.",
+    intuition: "Spatial translation symmetry → momentum conservation. Rotational symmetry → angular momentum. Time-translation symmetry → energy. Internal U(1) → charge. The symmetry must be a continuous transformation of the dynamics."
+  },
+
+  "classical-field-theory": {
+    whyExists: "Mechanics deals with particles (finite degrees of freedom). Field theory generalizes: replace finite particles with continuous fields that have infinitely many degrees of freedom — one per spacetime point.",
+    whyImportant: "Electromagnetism, fluid dynamics, elasticity, general relativity — all field theories. Bridge to QFT. Modern condensed matter uses effective field theories everywhere.",
+    intuition: "Generalize the Lagrangian to a Lagrangian density $\\mathcal{L}(\\phi, \\partial_\\mu \\phi)$. Euler-Lagrange becomes a PDE. Scalar fields (Klein-Gordon), spinors (Dirac), vector fields (electromagnetism) — each with characteristic equations."
+  },
+
+  "qft": {
+    whyExists: "Quantum mechanics plus special relativity plus classical field theory equals QFT — the framework where particles are excitations of underlying fields. It's the most accurate physics theory ever (QED predictions match experiment to 12 decimals).",
+    whyImportant: "Standard Model of particle physics. High-energy collider physics. Condensed matter (quasiparticles are field excitations). Early universe cosmology. Even some financial models use QFT-like techniques.",
+    intuition: "Quantize the modes of a field. The vacuum has fluctuations. Creation operators add particles; annihilation operators remove them. Interactions appear as vertices in Feynman diagrams, computed via perturbative expansion."
+  },
+
+  "renormalization": {
+    whyExists: "Naively computing loop diagrams in QFT gives infinity. Renormalization is the systematic procedure that absorbs the infinities into redefined parameters, leaving finite physical predictions. Mysterious but well-defined.",
+    whyImportant: "Every realistic QFT calculation. The running coupling explains why electroweak and strong forces unify at high energy. Critical phenomena in condensed matter use the same machinery (Wilson's RG).",
+    intuition: "Couplings depend on energy scale — they 'run'. QED's $\\alpha$ grows logarithmically at high energy. QCD's runs the other way (asymptotic freedom — makes quarks free at high energy, confined at low). The RG flow organizes which theories are equivalent at long distance."
+  },
+
+  "radiation-theory": {
+    whyExists: "Accelerating charges radiate electromagnetic energy. Understanding when, how much, and in what pattern is essential — antennas, lasers, sky scattering, stellar emission all depend on it.",
+    whyImportant: "Every wireless device. Radar. Astronomy (synchrotron, bremsstrahlung, dipole emission from stars). Lighting. Photonic devices. Quantum optics. Climate (atmospheric radiation).",
+    intuition: "Larmor: $P \\propto a^2$. Higher frequency (faster oscillation) radiates more efficiently. Multipole expansion: dipole dominates (1/r decay of field), quadrupole and higher fall off faster. Retarded potentials enforce causality."
+  },
+
+  "em-waves-matter": {
+    whyExists: "In vacuum, EM waves travel at $c$ with simple dispersion. In matter (dielectric, magnetic, plasma), the medium responds, and waves slow down, bend, get absorbed, or change polarization. Understanding this opens up optics.",
+    whyImportant: "Lenses, prisms, fiber optics, antireflective coatings, metamaterials, holography, photonic crystals, plasmonic devices. The reason refraction happens.",
+    intuition: "Refractive index $n = \\sqrt{\\varepsilon_r \\mu_r}$ measures slowdown. Dispersion ($n$ depends on $\\omega$) causes prisms to make rainbows. Anomalous dispersion can have $v_g > c$ (but no information). Kramers-Kronig links real (refraction) and imaginary (absorption) parts of response."
+  },
+
+  "lasers": {
+    whyExists: "Ordinary light is incoherent — random photons going every direction. A laser produces coherent, monochromatic, directional light by exploiting stimulated emission. Einstein predicted this in 1917; the first laser was built in 1960.",
+    whyImportant: "Optical fiber communications, surgery, manufacturing (cutting, welding, 3D printing), barcode scanners, CD/DVD, laser cooling, quantum optics, fundamental physics measurements (LIGO).",
+    intuition: "Need three ingredients: population inversion (more atoms in excited state than ground), a cavity (mirrors providing feedback), and gain exceeding losses. Stimulated emission means one photon triggers an identical photon — that's how amplification works."
+  },
+
+  "quantum-optics": {
+    whyExists: "Treating light quantum-mechanically reveals features classical EM misses: photon counting, antibunching, squeezing, entanglement. These are the basis of modern quantum technology.",
+    whyImportant: "Quantum cryptography, quantum computing with photons, LIGO sensitivity beyond the standard quantum limit, atomic clocks, precision spectroscopy, fundamental tests of QM.",
+    intuition: "Coherent states are 'most classical' quantum light. Number states $|n\\rangle$ have definite photon count but undefined phase. Squeezed states reduce noise in one quadrature at the cost of the other. Antibunched light has fewer simultaneous photons than classical."
+  },
+
+  "amo": {
+    whyExists: "Atomic, molecular, and optical physics studies precision-controlled atoms and light. Laser cooling brings atoms to nanokelvin temperatures, opening up Bose-Einstein condensates and degenerate Fermi gases.",
+    whyImportant: "Atomic clocks (the SI second), GPS, BEC, optical lattices for quantum simulation, precision tests of fundamental physics, quantum sensors, ultracold chemistry.",
+    intuition: "Doppler cooling: red-detuned counter-propagating lasers cool moving atoms via Doppler shift. Magnetic gradients trap them. At sufficiently low temperature, bosons condense into a single state — a macroscopic quantum object you can image directly."
+  },
+
+  "phase-transitions": {
+    whyExists: "Water boils suddenly at 100°C. Iron loses its magnetism above 770°C. Superconductors lose resistance below $T_c$. Phase transitions are abrupt changes in matter's properties — and they have remarkable mathematical universality.",
+    whyImportant: "Condensed matter physics. Materials engineering. Cosmology (electroweak transition in the early universe). Black hole thermodynamics. Even social systems (opinion dynamics) show phase-transition-like behavior.",
+    intuition: "Order parameter (magnetization, density, etc.) changes character at $T_c$. Landau theory expands free energy in this parameter. Critical exponents describe how things scale near $T_c$ — and they depend only on dimension and symmetry, not on microscopic details. This is universality."
+  },
+
+  "nonequilibrium-statmech": {
+    whyExists: "Equilibrium stat mech describes systems that have settled down. But the world is mostly out of equilibrium: heat flowing, currents, fluids moving. Non-equilibrium stat mech tackles these.",
+    whyImportant: "Heat transfer, electrical conductivity, transport in semiconductors, traffic flow, plasma kinetics, biological systems, climate. Anything where things are flowing.",
+    intuition: "Boltzmann equation tracks how distribution functions evolve via streaming + collisions. Linear response: small perturbations give simple relations (Onsager reciprocity, fluctuation-dissipation). The arrow of time emerges from H-theorem: entropy doesn't decrease."
+  },
+
+  "superconductivity": {
+    whyExists: "Below a critical temperature, certain materials lose all electrical resistance. They expel magnetic fields (Meissner effect). It took 50 years from discovery to explanation (BCS theory, 1957). Still drives intense research today.",
+    whyImportant: "MRI magnets, particle accelerators (LHC), maglev trains, quantum computing (transmon qubits), SQUID magnetometers, lossless power transmission, fusion reactor magnets.",
+    intuition: "Electrons near the Fermi surface bind into Cooper pairs via phonon-mediated attraction. Pairs act as bosons and condense into a coherent ground state. An energy gap protects this state from low-energy excitations. Type II superconductors allow magnetic flux through as quantized vortices."
+  },
+
+  "quantum-hall-topological": {
+    whyExists: "In strong magnetic fields, 2D electron gases show resistance plateaus at precisely quantized values — the quantum Hall effect. The quantization is robust against impurities, hinting at deep topological reasons.",
+    whyImportant: "Defines the SI ohm. Anyons (FQHE) are candidates for topological quantum computing. Topological insulators are a major modern materials class. Topological phases hint at new physics.",
+    intuition: "Hall conductance $\\sigma_{xy} = \\nu e^2/h$ with $\\nu$ an integer (IQHE) or rational fraction (FQHE). The Chern number is a topological invariant — an integer that can't change under small perturbations. Edge states carry current ballistically without resistance."
+  },
+
+  "phonons": {
+    whyExists: "Atoms in a solid aren't fixed — they vibrate around their equilibrium positions. Quantizing these collective vibrations gives phonons: the 'particles' of sound in a crystal. They carry heat, scatter electrons, and pair Cooper pairs.",
+    whyImportant: "Heat capacity of solids. Thermal conductivity. Electrical resistance from electron-phonon scattering. BCS superconductivity. Acoustic devices. Raman spectroscopy. Neutron scattering measurements.",
+    intuition: "Dispersion relation $\\omega(k)$ tells how vibrational modes vary with wavelength. Long wavelengths = sound waves (linear dispersion). Two atoms per unit cell give optical and acoustic branches. Debye model captures low-T heat capacity ($\\propto T^3$). Phonons obey Bose-Einstein statistics."
+  },
+
+  "stellar-evolution": {
+    whyExists: "Stars aren't static — they're born, evolve, and die over millions to billions of years. Understanding why stars do what they do is the core of astrophysics.",
+    whyImportant: "Origin of elements (all elements heavier than helium were made in stars). The galactic ecosystem. Climate (the Sun's evolution determines Earth's habitability). Cosmology (stellar populations trace galaxy ages).",
+    intuition: "Stars balance gravity against thermal pressure from nuclear fusion. Run out of one fuel, contract until the next ignites. Low-mass stars end as white dwarfs; high-mass stars explode as supernovae and leave neutron stars or black holes. The HR diagram is the evolutionary map."
+  },
+
+  "stellar-nucleosynthesis": {
+    whyExists: "Where did the atoms in your body come from? Hydrogen and helium were made in the Big Bang. Everything else (carbon, oxygen, iron, gold) was forged in stars. Stellar nucleosynthesis explains this chemical history.",
+    whyImportant: "We are literally made of star stuff. Cosmochemistry. Understanding supernovae and gamma-ray bursts. Cosmochronology. Gold rush triggered by neutron-star mergers (GW170817).",
+    intuition: "p-p chain and CNO cycle make helium from hydrogen. Triple-alpha makes carbon. Successive alpha captures and silicon burning build up to iron. Heavier elements require neutron captures (s-process in giant stars, r-process in mergers/supernovae)."
+  },
+
+  "compact-objects": {
+    whyExists: "After a star dies, it can collapse to a state where quantum mechanics (white dwarfs, neutron stars) or general relativity (black holes) governs the physics. These extreme objects test our theories at limits.",
+    whyImportant: "GW170817 was the first electromagnetic-and-gravitational-wave multi-messenger event. Black hole imaging (Event Horizon Telescope). Pulsars as precision clocks. Neutron-star equation of state probes dense nuclear matter.",
+    intuition: "White dwarfs: held up by electron degeneracy pressure (max ~1.4 $M_\\odot$). Neutron stars: neutron degeneracy + strong force (max ~2-3 $M_\\odot$). Black holes: nothing holds them up. Hawking radiation gives black holes thermodynamic properties — temperature, entropy."
+  },
+
+  "galactic-dynamics": {
+    whyExists: "Galaxies are gravitationally bound collections of $10^{10}$+ stars. Understanding their structure (spiral arms, disks, halos), motions, and evolution requires a mix of gravitation, gas dynamics, and dark matter.",
+    whyImportant: "Cosmology (galaxies trace large-scale structure). Dark matter's existence inferred from rotation curves. Hubble sequence. Galaxy mergers. Origin of star formation across cosmic history.",
+    intuition: "Outer rotation curves stay flat instead of falling off — indicating a massive dark matter halo. Spiral arms are density waves, not material structures. The virial theorem gives mass estimates from velocity dispersion. Most galaxies host a supermassive black hole at their center."
+  },
+
+  "bbn-cmb-inflation": {
+    whyExists: "What was the universe like in the first second? The first three minutes? Big Bang nucleosynthesis predicts the primordial light-element ratios. The CMB is the leftover radiation from when the universe became transparent. Inflation explains the initial conditions.",
+    whyImportant: "Pillars of modern cosmology. CMB anisotropies map matter distribution at age 380,000 years. BBN predictions match observations to ~1%. Inflation predicts (and the CMB confirms) scale-invariant Gaussian density fluctuations.",
+    intuition: "BBN: cosmic furnace at $T \\sim 10^9$ K fused H to He. CMB: thermal blackbody at 2.725 K, anisotropic by $\\sim 10^{-5}$, with acoustic peaks. Inflation: exponential expansion for ~60 e-folds in $\\sim 10^{-32}$ s flattens the universe and seeds structure from quantum fluctuations."
+  },
+
+  "gravitational-waves": {
+    whyExists: "Einstein predicted in 1916 that accelerating masses radiate gravitational waves — ripples in spacetime. It took 100 years to directly detect them (LIGO, GW150914 in 2015). Now we have a new way to observe the universe.",
+    whyImportant: "Multi-messenger astronomy (GW + EM + neutrinos). Direct probe of GR in strong-field regime. Black hole binary populations. Neutron-star equation of state. Cosmology (standard sirens). Future detection of inflation-era waves.",
+    intuition: "Strain $h \\sim \\Delta L/L$ from a passing wave is fantastically small (~$10^{-21}$). LIGO uses kilometer-scale Michelson interferometers. The quadrupole formula predicts power. Inspirals 'chirp' — frequency rises before merger. We've now observed ~100 events."
+  },
+
+  "high-energy-astrophysics": {
+    whyExists: "The most extreme energies in the universe come from astrophysical sources: AGN jets accelerating particles to $10^{20}$ eV, gamma-ray bursts releasing supernova-scale energy in seconds, cosmic rays from unknown sources. Studying them requires every tool we have.",
+    whyImportant: "Tests fundamental physics in regimes no lab can match. Origin of cosmic rays. Particle acceleration mechanisms. Black-hole accretion physics. Multimessenger astronomy. Neutrino astronomy (IceCube).",
+    intuition: "AGN are accreting supermassive black holes. Jets shoot particles to relativistic speeds. GRBs come from collapsars (long) or compact mergers (short). Synchrotron and inverse Compton dominate radiation mechanisms. The TeV gamma-ray sky is full of surprises."
+  },
+
+  "math-methods-physics": {
+    whyExists: "Physics is full of equations that won't yield to brute force. Special functions, Green's functions, contour integration, and asymptotic methods are the toolkit that turns intractable problems into solvable ones.",
+    whyImportant: "Every theoretical physics course. Used in QM (special functions), electromagnetism (Green's functions), QFT (contour integrals, asymptotic methods), GR (variational methods). Modern computational physics relies on these techniques even when running numerics.",
+    intuition: "Special functions (Bessel, Legendre, Hermite, Laguerre) solve common PDEs in particular geometries. Green's functions are response to point sources — convolve with arbitrary sources to get solutions. Contour integration computes real integrals via complex residues."
+  },
+
+  "group-theory-physics": {
+    whyExists: "Symmetries are conserved quantities (Noether) and they constrain physical theories. Group theory is the mathematics of symmetry. Every physicist needs it eventually.",
+    whyImportant: "Standard Model is built from gauge groups. Crystallography classifies solids by symmetry. Selection rules in spectroscopy come from group theory. Particle classification (isospin, flavor) uses SU(N) representations.",
+    intuition: "Continuous symmetries (Lie groups) like rotations and Lorentz boosts. Discrete symmetries (point groups, space groups) of molecules and crystals. Representations tell how objects transform. Characters distinguish irreducible reps and decompose products."
+  },
+
+  "computational-physics": {
+    whyExists: "Real physics problems usually can't be solved on paper. Computers can simulate them — but doing it well requires understanding numerical algorithms and their pitfalls. Computational physics is the art.",
+    whyImportant: "Climate models, drug design, materials discovery, lattice QCD, plasma simulation, astrophysical simulation, condensed matter prediction. Modern physics often depends on simulation as much as on experiment.",
+    intuition: "Monte Carlo: sample randomly to estimate averages. Molecular dynamics: integrate Newton's equations for many particles. Lattice methods: discretize spacetime. Symplectic integrators preserve phase volume. Convergence and stability are non-trivial concerns."
+  },
+
+  "soft-matter-biophysics": {
+    whyExists: "Hard matter (metals, crystals) is well understood. Soft matter (polymers, gels, foams, colloids) lives between solid and liquid — and behaves richly. Biological matter is even softer and more complex. These fields apply physics to messy systems.",
+    whyImportant: "Drug delivery, plastics, food science, paints, biological function (proteins, membranes, motors), origin of life questions, active matter (self-driven systems).",
+    intuition: "Polymers behave like random walks at long scales (entropy dominates). Membranes have curvature energy. Molecular motors convert ATP to directed motion via Brownian ratchet mechanisms. Living systems are out-of-equilibrium and use energy to maintain structure."
   }
 };

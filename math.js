@@ -1171,5 +1171,815 @@ window.CONTENT.math = [
       { q: "LU decomposition speeds up?", a: "Repeated solves $Ax = b$" },
       { q: "Lagrange interpolation through $n+1$ points yields degree?", a: "$\\leq n$" }
     ]
+  },
+  {
+    id: "coordinate-geometry",
+    title: "Coordinate Geometry",
+    level: "basic",
+    summary: "Lines on the plane, distance, midpoint, slope, line equations.",
+    examples: [
+      { title: "Example 1 — Distance", prompt: "Distance from $(1,2)$ to $(4,6)$.", steps: [
+        { label: "Apply", body: "$d = \\sqrt{(4-1)^2 + (6-2)^2} = \\sqrt{9 + 16} = 5$." }
+      ], answer: "$5$" },
+      { title: "Example 2 — Midpoint", prompt: "Midpoint of $(1,2)$ and $(5,8)$.", steps: [
+        { label: "Average", body: "$(\\tfrac{1+5}{2}, \\tfrac{2+8}{2}) = (3, 5)$." }
+      ], answer: "$(3, 5)$" },
+      { title: "Example 3 — Slope", prompt: "Slope through $(2,3)$ and $(5,11)$.", steps: [
+        { label: "Rise / run", body: "$m = (11-3)/(5-2) = 8/3$." }
+      ], answer: "$8/3$" },
+      { title: "Example 4 — Line equation", prompt: "Line through $(1,2)$ with slope $3$.", steps: [
+        { label: "Point-slope", body: "$y - 2 = 3(x - 1)$ → $y = 3x - 1$." }
+      ], answer: "$y = 3x - 1$" }
+    ],
+    tasks: [
+      { q: "Distance from $(0,0)$ to $(3,4)$?", a: "$5$" },
+      { q: "Midpoint of $(0,0)$ and $(10,6)$?", a: "$(5,3)$" },
+      { q: "Slope of $y = -2x + 7$?", a: "$-2$" },
+      { q: "$y$-intercept of $y = 4x - 3$?", a: "$-3$" },
+      { q: "Slope through $(1,1)$ and $(3,7)$?", a: "$3$" },
+      { q: "Is $(2,5)$ on $y = 2x + 1$?", a: "Yes" },
+      { q: "Equation of horizontal line through $(2,7)$?", a: "$y = 7$" },
+      { q: "Equation of vertical line through $(4,1)$?", a: "$x = 4$" },
+      { q: "Parallel lines have same?", a: "Slope" },
+      { q: "Perpendicular slopes multiply to?", a: "$-1$" }
+    ]
+  },
+  {
+    id: "solid-geometry",
+    title: "Solid Geometry",
+    level: "basic",
+    summary: "Volumes and surface areas of cubes, prisms, cylinders, cones, spheres.",
+    examples: [
+      { title: "Example 1 — Cube volume", prompt: "Side $4$.", steps: [
+        { label: "Apply", body: "$V = s^3 = 64$." }
+      ], answer: "$64$" },
+      { title: "Example 2 — Cylinder", prompt: "$r = 3$, $h = 10$.", steps: [
+        { label: "Apply", body: "$V = \\pi r^2 h = 90\\pi$." }
+      ], answer: "$90\\pi$" },
+      { title: "Example 3 — Sphere", prompt: "$r = 6$.", steps: [
+        { label: "Apply", body: "$V = \\tfrac{4}{3}\\pi r^3 = 288\\pi$." }
+      ], answer: "$288\\pi$" },
+      { title: "Example 4 — Cone", prompt: "$r = 3$, $h = 4$.", steps: [
+        { label: "Apply", body: "$V = \\tfrac{1}{3}\\pi r^2 h = 12\\pi$." }
+      ], answer: "$12\\pi$" }
+    ],
+    tasks: [
+      { q: "Volume of cube side $5$?", a: "$125$" },
+      { q: "Surface area of cube side $3$?", a: "$54$" },
+      { q: "Cylinder $r=2$, $h=5$ volume?", a: "$20\\pi$" },
+      { q: "Cone $r=6$, $h=4$ volume?", a: "$48\\pi$" },
+      { q: "Sphere $r=3$ volume?", a: "$36\\pi$" },
+      { q: "Surface area of sphere $r=2$?", a: "$16\\pi$" },
+      { q: "Rectangular box $2 \\times 3 \\times 4$ volume?", a: "$24$" },
+      { q: "Pyramid base $36$, height $5$ volume?", a: "$60$" },
+      { q: "Hemisphere $r=3$ volume?", a: "$18\\pi$" },
+      { q: "Volume of unit ball?", a: "$\\tfrac{4\\pi}{3}$" }
+    ]
+  },
+  {
+    id: "conic-sections",
+    title: "Conic Sections",
+    level: "intermediate",
+    summary: "Parabolas, ellipses, hyperbolas — the curves you get by slicing a cone.",
+    examples: [
+      { title: "Example 1 — Parabola vertex", prompt: "$y = x^2 - 4x + 7$.", steps: [
+        { label: "Complete the square", body: "$y = (x-2)^2 + 3$." }
+      ], answer: "Vertex $(2, 3)$" },
+      { title: "Example 2 — Ellipse", prompt: "$\\dfrac{x^2}{25} + \\dfrac{y^2}{9} = 1$.", steps: [
+        { label: "Semi-axes", body: "$a = 5$ (x), $b = 3$ (y)." }
+      ], answer: "Semi-axes $5, 3$" },
+      { title: "Example 3 — Hyperbola", prompt: "$\\dfrac{x^2}{16} - \\dfrac{y^2}{9} = 1$.", steps: [
+        { label: "Asymptotes", body: "$y = \\pm \\tfrac{3}{4} x$." }
+      ], answer: "Asymptotes $y = \\pm \\tfrac{3}{4}x$" },
+      { title: "Example 4 — Identify conic", prompt: "$x^2 + y^2 = 25$.", steps: [
+        { label: "Form", body: "$x^2 + y^2 = r^2$." }
+      ], answer: "Circle, $r = 5$" }
+    ],
+    tasks: [
+      { q: "Focal length of $y = x^2$?", a: "$1/4$" },
+      { q: "Vertex of $y = (x+1)^2 - 4$?", a: "$(-1, -4)$" },
+      { q: "Eccentricity of circle?", a: "$0$" },
+      { q: "Eccentricity of parabola?", a: "$1$" },
+      { q: "Ellipse $x^2/9 + y^2/4 = 1$. Foci on?", a: "x-axis" },
+      { q: "Foci distance for above?", a: "$\\sqrt 5$" },
+      { q: "Hyperbola $x^2 - y^2 = 1$ asymptotes?", a: "$y = \\pm x$" },
+      { q: "Conic $4x^2 + 9y^2 = 36$ type?", a: "Ellipse" },
+      { q: "Conic $xy = 1$ type?", a: "Hyperbola" },
+      { q: "$y^2 = 4x$ opens?", a: "Right" }
+    ]
+  },
+  {
+    id: "mathematical-logic",
+    title: "Mathematical Logic & Proof",
+    level: "intermediate",
+    summary: "Direct proof, contradiction, contrapositive, induction.",
+    examples: [
+      { title: "Example 1 — Direct proof", prompt: "Sum of two even numbers is even.", steps: [
+        { label: "Setup", body: "Let $a = 2m$, $b = 2n$." },
+        { label: "Add", body: "$a + b = 2(m + n)$ — even." }
+      ], answer: "Even ✓" },
+      { title: "Example 2 — Contradiction", prompt: "Prove $\\sqrt 2$ is irrational.", steps: [
+        { label: "Assume", body: "Suppose $\\sqrt 2 = p/q$ in lowest terms." },
+        { label: "Square", body: "$p^2 = 2q^2$, so $p$ even, $p = 2k$." },
+        { label: "Sub back", body: "$4k^2 = 2q^2 \\Rightarrow q^2 = 2k^2$, so $q$ even. Contradicts lowest terms." }
+      ], answer: "Irrational ✓" },
+      { title: "Example 3 — Induction", prompt: "$1 + 2 + \\ldots + n = n(n+1)/2$.", steps: [
+        { label: "Base", body: "$n = 1$: LHS $= 1$, RHS $= 1$ ✓" },
+        { label: "Step", body: "Assume true for $n$. Then $\\sum_{1}^{n+1} = n(n+1)/2 + (n+1) = (n+1)(n+2)/2$ ✓" }
+      ], answer: "Holds for all $n \\geq 1$" },
+      { title: "Example 4 — Contrapositive", prompt: "If $n^2$ is even, then $n$ is even.", steps: [
+        { label: "Contrapositive", body: "If $n$ is odd, then $n^2$ is odd." },
+        { label: "Verify", body: "$(2k+1)^2 = 4k^2 + 4k + 1$ — odd ✓" }
+      ], answer: "Proved ✓" }
+    ],
+    tasks: [
+      { q: "Is induction valid in $\\mathbb{Z}^+$?", a: "Yes (well-ordering)" },
+      { q: "Contradiction proof assumes?", a: "Negation of conclusion" },
+      { q: "$P \\Rightarrow Q$ contrapositive?", a: "$\\neg Q \\Rightarrow \\neg P$" },
+      { q: "$P \\Rightarrow Q$ converse?", a: "$Q \\Rightarrow P$" },
+      { q: "Is converse always equivalent?", a: "No" },
+      { q: "Pigeonhole: $n+1$ items in $n$ boxes ⇒?", a: "At least one box has $\\geq 2$" },
+      { q: "Strong induction differs from weak how?", a: "Assumes all $\\leq n$, not just $n$" },
+      { q: "Is the empty statement true?", a: "Yes (vacuously)" },
+      { q: "Counterexample suffices to disprove?", a: "Universal statement" },
+      { q: "Sum of first $n$ odd numbers?", a: "$n^2$ (by induction)" }
+    ]
+  },
+  {
+    id: "graph-theory",
+    title: "Graph Theory",
+    level: "intermediate",
+    summary: "Graphs, trees, paths, cycles, Eulerian/Hamiltonian, coloring.",
+    examples: [
+      { title: "Example 1 — Degree sum", prompt: "Graph with degrees $1, 2, 3, 4$.", steps: [
+        { label: "Handshake", body: "Sum of degrees $= 2 \\times$ edges." },
+        { label: "Compute", body: "$10 / 2 = 5$ edges." }
+      ], answer: "$5$ edges" },
+      { title: "Example 2 — Tree edges", prompt: "Tree with $n$ vertices has?", steps: [
+        { label: "Result", body: "$n - 1$ edges, always." }
+      ], answer: "$n - 1$" },
+      { title: "Example 3 — Eulerian path", prompt: "When does an Eulerian circuit exist?", steps: [
+        { label: "Theorem", body: "Iff every vertex has even degree (connected graph)." }
+      ], answer: "All degrees even" },
+      { title: "Example 4 — Chromatic number", prompt: "$K_4$ (complete graph 4 vertices).", steps: [
+        { label: "Each pair adjacent", body: "Needs 4 colors." }
+      ], answer: "$\\chi(K_4) = 4$" }
+    ],
+    tasks: [
+      { q: "Edges in $K_n$?", a: "$\\binom{n}{2}$" },
+      { q: "$\\chi$ of bipartite graph?", a: "$2$" },
+      { q: "Number of edges in tree with $10$ vertices?", a: "$9$" },
+      { q: "Cycle $C_5$ chromatic number?", a: "$3$" },
+      { q: "Sum of all degrees = ?", a: "$2 \\cdot |E|$" },
+      { q: "Petersen graph chromatic number?", a: "$3$" },
+      { q: "Bipartite iff no?", a: "Odd cycle" },
+      { q: "Connected graph with $n$ vertices, $n-1$ edges is?", a: "Tree" },
+      { q: "Königsberg bridges: Eulerian?", a: "No" },
+      { q: "Four-color theorem applies to?", a: "Planar graphs" }
+    ]
+  },
+  {
+    id: "recurrence-generating",
+    title: "Recurrences & Generating Functions",
+    level: "advanced",
+    summary: "Solving linear recurrences and using generating functions to extract coefficients.",
+    examples: [
+      { title: "Example 1 — Fibonacci", prompt: "$F_n = F_{n-1} + F_{n-2}$, $F_0 = 0, F_1 = 1$.", steps: [
+        { label: "Characteristic", body: "$x^2 = x + 1 \\Rightarrow x = \\varphi, \\hat\\varphi$." },
+        { label: "Closed form", body: "$F_n = (\\varphi^n - \\hat\\varphi^n)/\\sqrt 5$ (Binet)." }
+      ], answer: "Binet's formula" },
+      { title: "Example 2 — Linear recurrence", prompt: "$a_n = 5a_{n-1} - 6a_{n-2}$.", steps: [
+        { label: "Char eq", body: "$x^2 - 5x + 6 = 0 \\Rightarrow x = 2, 3$." },
+        { label: "General", body: "$a_n = A \\cdot 2^n + B \\cdot 3^n$." }
+      ], answer: "$a_n = A \\cdot 2^n + B \\cdot 3^n$" },
+      { title: "Example 3 — Generating function", prompt: "$\\sum_{n \\geq 0} x^n$.", steps: [
+        { label: "Geometric", body: "$1/(1 - x)$ for $|x| < 1$." }
+      ], answer: "$\\dfrac{1}{1 - x}$" },
+      { title: "Example 4 — Coefficient extraction", prompt: "Coefficient of $x^5$ in $(1+x)^{10}$.", steps: [
+        { label: "Binomial", body: "$\\binom{10}{5} = 252$." }
+      ], answer: "$252$" }
+    ],
+    tasks: [
+      { q: "Fibonacci $F_5$?", a: "$5$" },
+      { q: "$\\varphi$ value?", a: "$\\tfrac{1+\\sqrt 5}{2}$" },
+      { q: "GF for $\\{1,1,1,\\ldots\\}$?", a: "$1/(1-x)$" },
+      { q: "GF for $\\{1,2,3,\\ldots\\}$?", a: "$1/(1-x)^2$" },
+      { q: "Catalan number $C_3$?", a: "$5$" },
+      { q: "Closed form for $a_n = 2a_{n-1}$, $a_0 = 1$?", a: "$2^n$" },
+      { q: "$\\sum_n F_n x^n$ closed form?", a: "$x/(1 - x - x^2)$" },
+      { q: "Order of recurrence $a_n - 3a_{n-2} = 0$?", a: "$2$" },
+      { q: "Coefficient of $x^3$ in $e^x$?", a: "$1/6$" },
+      { q: "Convolution in GFs corresponds to?", a: "Cauchy product" }
+    ]
+  },
+  {
+    id: "computability",
+    title: "Computability & Complexity",
+    level: "advanced",
+    summary: "Turing machines, decidability, P vs NP, halting problem.",
+    examples: [
+      { title: "Example 1 — Halting problem", prompt: "Is the halting problem decidable?", steps: [
+        { label: "Turing's result", body: "No. No algorithm can decide for all programs." }
+      ], answer: "Undecidable" },
+      { title: "Example 2 — Decidable", prompt: "Is 'does this DFA accept any string?' decidable?", steps: [
+        { label: "Reachability", body: "Yes — check if any accepting state is reachable." }
+      ], answer: "Decidable" },
+      { title: "Example 3 — Complexity P", prompt: "Is sorting in P?", steps: [
+        { label: "Polynomial bound", body: "Yes — many algorithms in $O(n \\log n)$." }
+      ], answer: "Yes" },
+      { title: "Example 4 — NP-complete", prompt: "SAT is NP-complete (Cook-Levin).", steps: [
+        { label: "Implication", body: "If SAT $\\in$ P, then P = NP." }
+      ], answer: "Cook-Levin theorem" }
+    ],
+    tasks: [
+      { q: "Church-Turing thesis: equivalent models include?", a: "Lambda calculus, register machines" },
+      { q: "Is $\\{a^n b^n\\}$ regular?", a: "No (not finite-state)" },
+      { q: "Is it context-free?", a: "Yes" },
+      { q: "Class of problems solvable in poly time?", a: "P" },
+      { q: "Class verifiable in poly time?", a: "NP" },
+      { q: "Reduction direction for proving X is NP-hard?", a: "Known NP-hard ≤ X" },
+      { q: "Travel Salesman: NP-hard?", a: "Yes" },
+      { q: "Sorting lower bound (comparisons)?", a: "$\\Omega(n \\log n)$" },
+      { q: "Is graph isomorphism known to be in P?", a: "No (but not NP-complete either)" },
+      { q: "EXPTIME ⊆ ?", a: "EXPSPACE" }
+    ]
+  },
+  {
+    id: "galois-theory",
+    title: "Galois Theory",
+    level: "advanced",
+    summary: "Field extensions, automorphism groups, solvability of polynomials.",
+    examples: [
+      { title: "Example 1 — Extension degree", prompt: "$[\\mathbb{Q}(\\sqrt 2) : \\mathbb{Q}]$?", steps: [
+        { label: "Basis", body: "$\\{1, \\sqrt 2\\}$, dimension $2$." }
+      ], answer: "$2$" },
+      { title: "Example 2 — Galois group", prompt: "$x^2 - 2$ over $\\mathbb{Q}$.", steps: [
+        { label: "Automorphisms", body: "Identity and $\\sqrt 2 \\mapsto -\\sqrt 2$." }
+      ], answer: "$\\mathbb{Z}/2\\mathbb{Z}$" },
+      { title: "Example 3 — Solvable", prompt: "$x^2 + 1$.", steps: [
+        { label: "Group", body: "Galois group $\\mathbb{Z}/2$, abelian → solvable." }
+      ], answer: "Solvable by radicals" },
+      { title: "Example 4 — Quintic", prompt: "$x^5 - 1$ over $\\mathbb{Q}$.", steps: [
+        { label: "Cyclotomic", body: "Galois group $(\\mathbb{Z}/5)^* \\cong \\mathbb{Z}/4$." }
+      ], answer: "Cyclic, order $4$" }
+    ],
+    tasks: [
+      { q: "Galois group of $x^2 - p$ over $\\mathbb{Q}$?", a: "$\\mathbb{Z}/2$" },
+      { q: "Degree of $\\mathbb{Q}(\\sqrt[3]{2}) / \\mathbb{Q}$?", a: "$3$" },
+      { q: "Is general quintic solvable by radicals?", a: "No (Abel-Ruffini)" },
+      { q: "Galois group of general quintic?", a: "$S_5$" },
+      { q: "Is $S_5$ solvable?", a: "No" },
+      { q: "Splitting field of $x^2 - 2$ over $\\mathbb{Q}$?", a: "$\\mathbb{Q}(\\sqrt 2)$" },
+      { q: "Algebraic closure of $\\mathbb{Q}$?", a: "$\\overline{\\mathbb{Q}}$" },
+      { q: "Galois correspondence between?", a: "Subfields ↔ subgroups" },
+      { q: "Galois group of $\\mathbb{F}_{p^n}/\\mathbb{F}_p$?", a: "Cyclic, order $n$" },
+      { q: "Generator of finite-field extension Galois group?", a: "Frobenius" }
+    ]
+  },
+  {
+    id: "lie-groups",
+    title: "Lie Groups & Lie Algebras",
+    level: "advanced",
+    summary: "Continuous symmetry groups and their infinitesimal generators.",
+    examples: [
+      { title: "Example 1 — SO(2)", prompt: "Group of $2 \\times 2$ rotation matrices.", steps: [
+        { label: "Form", body: "$R(\\theta) = \\begin{pmatrix}\\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta\\end{pmatrix}$." }
+      ], answer: "$\\dim = 1$" },
+      { title: "Example 2 — SU(2)", prompt: "Group of $2 \\times 2$ unitary, $\\det = 1$.", steps: [
+        { label: "Dimension", body: "$3$ real parameters, covers SO(3) doubly." }
+      ], answer: "$\\dim = 3$" },
+      { title: "Example 3 — so(3) generators", prompt: "Lie algebra of SO(3).", steps: [
+        { label: "Generators", body: "$L_x, L_y, L_z$ with $[L_x, L_y] = L_z$, cyclic." }
+      ], answer: "$[L_i, L_j] = \\epsilon_{ijk} L_k$" },
+      { title: "Example 4 — Exponential map", prompt: "Get group element from algebra element.", steps: [
+        { label: "Formula", body: "$g = e^{tX}$ where $X$ is in the Lie algebra." }
+      ], answer: "$g = e^{tX}$" }
+    ],
+    tasks: [
+      { q: "$\\dim SO(n)$?", a: "$n(n-1)/2$" },
+      { q: "$\\dim SU(n)$?", a: "$n^2 - 1$" },
+      { q: "$\\dim U(n)$?", a: "$n^2$" },
+      { q: "SO(3) and SU(2) relation?", a: "$SU(2)$ is double cover" },
+      { q: "Generators of $SU(2)$?", a: "Pauli/$2i$" },
+      { q: "Jacobi identity?", a: "$[X,[Y,Z]] + [Y,[Z,X]] + [Z,[X,Y]] = 0$" },
+      { q: "$\\mathfrak{sl}(2,\\mathbb{R})$ dimension?", a: "$3$" },
+      { q: "Is $SL(2,\\mathbb{R})$ compact?", a: "No" },
+      { q: "Lie algebra of $GL(n)$?", a: "$\\mathfrak{gl}(n)$ — all $n \\times n$ matrices" },
+      { q: "Killing form negative definite ⇒?", a: "Compact semisimple group" }
+    ]
+  },
+  {
+    id: "differential-geometry",
+    title: "Differential Geometry",
+    level: "advanced",
+    summary: "Curves, surfaces, manifolds, curvature.",
+    examples: [
+      { title: "Example 1 — Arc length", prompt: "Curve $\\vec r(t) = (\\cos t, \\sin t)$, $t \\in [0, 2\\pi]$.", steps: [
+        { label: "Apply", body: "$L = \\int_0^{2\\pi} |\\vec r'(t)|\\,dt = 2\\pi$." }
+      ], answer: "$2\\pi$" },
+      { title: "Example 2 — Tangent vector", prompt: "$\\vec r(t) = (t, t^2, t^3)$ at $t=1$.", steps: [
+        { label: "Derivative", body: "$\\vec r'(1) = (1, 2, 3)$." }
+      ], answer: "$\\langle 1, 2, 3 \\rangle$" },
+      { title: "Example 3 — Curvature of circle", prompt: "Circle of radius $R$.", steps: [
+        { label: "Result", body: "$\\kappa = 1/R$." }
+      ], answer: "$\\kappa = 1/R$" },
+      { title: "Example 4 — Gaussian curvature of sphere", prompt: "Sphere of radius $R$.", steps: [
+        { label: "Result", body: "$K = 1/R^2$, constant positive." }
+      ], answer: "$K = 1/R^2$" }
+    ],
+    tasks: [
+      { q: "Curvature of straight line?", a: "$0$" },
+      { q: "Gaussian curvature of plane?", a: "$0$" },
+      { q: "Gaussian curvature of saddle?", a: "Negative" },
+      { q: "Manifold of dimension $n$ locally looks like?", a: "$\\mathbb{R}^n$" },
+      { q: "Torsion measures?", a: "Out-of-plane twisting" },
+      { q: "Theorema Egregium: $K$ is intrinsic ⇒?", a: "Bending preserves $K$" },
+      { q: "First fundamental form measures?", a: "Lengths/angles on surface" },
+      { q: "Second fundamental form measures?", a: "Curvature embedded in $\\mathbb{R}^3$" },
+      { q: "Geodesic on flat plane?", a: "Straight line" },
+      { q: "Geodesic on sphere?", a: "Great circle" }
+    ]
+  },
+  {
+    id: "tensor-calculus",
+    title: "Tensor Calculus",
+    level: "advanced",
+    summary: "Tensors, indices, covariant derivatives, Einstein summation.",
+    examples: [
+      { title: "Example 1 — Tensor rank", prompt: "Vector vs scalar vs matrix.", steps: [
+        { label: "Definition", body: "Scalar = rank 0, vector = rank 1, matrix = rank 2." }
+      ], answer: "Rank = number of indices" },
+      { title: "Example 2 — Metric tensor (flat)", prompt: "Minkowski $\\eta_{\\mu\\nu}$.", steps: [
+        { label: "Form", body: "$\\eta = \\text{diag}(-1, 1, 1, 1)$." }
+      ], answer: "$\\eta_{\\mu\\nu} = \\text{diag}(-1,1,1,1)$" },
+      { title: "Example 3 — Raise an index", prompt: "$A^\\mu = g^{\\mu\\nu} A_\\nu$.", steps: [
+        { label: "Apply", body: "Metric raises and lowers indices." }
+      ], answer: "Contract with $g^{\\mu\\nu}$" },
+      { title: "Example 4 — Einstein summation", prompt: "$A_\\mu B^\\mu$ means?", steps: [
+        { label: "Convention", body: "Repeated index summed: $\\sum_\\mu A_\\mu B^\\mu$." }
+      ], answer: "Implicit sum" }
+    ],
+    tasks: [
+      { q: "Kronecker $\\delta^\\mu_\\nu$ value?", a: "$1$ if $\\mu = \\nu$, else $0$" },
+      { q: "Contraction reduces rank by?", a: "$2$" },
+      { q: "Christoffel symbols are tensors?", a: "No" },
+      { q: "Riemann tensor rank?", a: "$4$" },
+      { q: "Number of independent components of Riemann in 4D?", a: "$20$" },
+      { q: "Ricci tensor from Riemann?", a: "$R_{\\mu\\nu} = R^\\alpha{}_{\\mu\\alpha\\nu}$" },
+      { q: "Ricci scalar from Ricci?", a: "$R = g^{\\mu\\nu} R_{\\mu\\nu}$" },
+      { q: "Covariant derivative includes?", a: "Christoffel correction" },
+      { q: "Metric covariant derivative?", a: "$0$" },
+      { q: "Tensor product of two vectors gives?", a: "Rank-$2$ tensor" }
+    ]
+  },
+  {
+    id: "algebraic-topology",
+    title: "Algebraic Topology",
+    level: "advanced",
+    summary: "Fundamental group, homology, simplicial complexes, Euler characteristic.",
+    examples: [
+      { title: "Example 1 — π₁ of circle", prompt: "Fundamental group of $S^1$.", steps: [
+        { label: "Loops counted by winding", body: "$\\pi_1(S^1) = \\mathbb{Z}$." }
+      ], answer: "$\\mathbb{Z}$" },
+      { title: "Example 2 — π₁ of sphere", prompt: "$\\pi_1(S^2)$?", steps: [
+        { label: "Simply connected", body: "Every loop contracts." }
+      ], answer: "Trivial" },
+      { title: "Example 3 — Euler characteristic", prompt: "$\\chi$ of a sphere?", steps: [
+        { label: "$V - E + F$", body: "Tetrahedron: $4 - 6 + 4 = 2$." }
+      ], answer: "$\\chi(S^2) = 2$" },
+      { title: "Example 4 — Homology of point", prompt: "$H_n(\\text{pt})$.", steps: [
+        { label: "Result", body: "$H_0 = \\mathbb{Z}$, $H_n = 0$ for $n > 0$." }
+      ], answer: "Concentrated in degree $0$" }
+    ],
+    tasks: [
+      { q: "$\\chi$ of torus?", a: "$0$" },
+      { q: "$\\chi$ of genus-$g$ surface?", a: "$2 - 2g$" },
+      { q: "$\\pi_1(\\text{torus})$?", a: "$\\mathbb{Z}^2$" },
+      { q: "$\\pi_n(S^n)$?", a: "$\\mathbb{Z}$" },
+      { q: "$H_n(S^n)$?", a: "$\\mathbb{Z}$" },
+      { q: "$H_n$ of contractible space?", a: "$0$ for $n > 0$" },
+      { q: "Homotopy equivalence preserves?", a: "Homology, $\\pi_n$" },
+      { q: "Cell complex of sphere uses how many cells?", a: "$2$ ($e^0, e^n$)" },
+      { q: "Brouwer fixed-point theorem applies to?", a: "Disk (and $D^n$)" },
+      { q: "Borsuk-Ulam: continuous $S^n \\to \\mathbb{R}^n$ ⇒?", a: "Antipodal pair maps to same point" }
+    ]
+  },
+  {
+    id: "riemannian-geometry",
+    title: "Riemannian Geometry",
+    level: "advanced",
+    summary: "Metrics, geodesics, curvature tensors, Einstein manifolds.",
+    examples: [
+      { title: "Example 1 — Metric", prompt: "Euclidean $g_{ij} = \\delta_{ij}$.", steps: [
+        { label: "Form", body: "$ds^2 = dx^2 + dy^2 + dz^2$." }
+      ], answer: "Flat" },
+      { title: "Example 2 — Sphere metric", prompt: "$S^2$, radius $R$.", steps: [
+        { label: "Form", body: "$ds^2 = R^2(d\\theta^2 + \\sin^2\\theta\\,d\\phi^2)$." }
+      ], answer: "Spherical metric" },
+      { title: "Example 3 — Geodesic equation", prompt: "Schematic.", steps: [
+        { label: "Form", body: "$\\ddot x^\\mu + \\Gamma^\\mu_{\\alpha\\beta} \\dot x^\\alpha \\dot x^\\beta = 0$." }
+      ], answer: "Geodesic equation" },
+      { title: "Example 4 — Einstein manifold", prompt: "Condition.", steps: [
+        { label: "Definition", body: "$R_{\\mu\\nu} = \\lambda g_{\\mu\\nu}$." }
+      ], answer: "Ricci proportional to metric" }
+    ],
+    tasks: [
+      { q: "Sectional curvature of unit sphere?", a: "$+1$" },
+      { q: "Sectional curvature of flat torus?", a: "$0$" },
+      { q: "Hyperbolic space curvature?", a: "Negative constant" },
+      { q: "Geodesic minimizes?", a: "Length (locally)" },
+      { q: "Levi-Civita connection unique by?", a: "Torsion-free, metric-compatible" },
+      { q: "Symmetric space example?", a: "Sphere, hyperbolic" },
+      { q: "Killing vector generates?", a: "Isometry" },
+      { q: "Ricci-flat manifolds are?", a: "Einstein with $\\lambda = 0$" },
+      { q: "Calabi-Yau is?", a: "Ricci-flat Kähler" },
+      { q: "Volume of unit ball in hyperbolic 3-space?", a: "Diverges" }
+    ]
+  },
+  {
+    id: "measure-theory",
+    title: "Measure Theory",
+    level: "advanced",
+    summary: "σ-algebras, Lebesgue measure and integration, convergence theorems.",
+    examples: [
+      { title: "Example 1 — σ-algebra", prompt: "Smallest σ-algebra on $\\{a, b\\}$ containing $\\{a\\}$.", steps: [
+        { label: "Complete", body: "$\\{\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}\\}$." }
+      ], answer: "Power set" },
+      { title: "Example 2 — Lebesgue measure", prompt: "$m([0,1])$.", steps: [
+        { label: "Definition", body: "Length: $1$." }
+      ], answer: "$1$" },
+      { title: "Example 3 — Null set", prompt: "$m(\\mathbb{Q} \\cap [0,1])$.", steps: [
+        { label: "Countable", body: "Measure $0$." }
+      ], answer: "$0$" },
+      { title: "Example 4 — Dominated convergence", prompt: "Conditions.", steps: [
+        { label: "Theorem", body: "If $f_n \\to f$ pointwise and $|f_n| \\leq g$ integrable, then $\\int f_n \\to \\int f$." }
+      ], answer: "DCT" }
+    ],
+    tasks: [
+      { q: "$m(\\mathbb{Q})$?", a: "$0$" },
+      { q: "Cantor set measure?", a: "$0$" },
+      { q: "Is Dirichlet function Riemann integrable?", a: "No" },
+      { q: "Lebesgue integrable?", a: "Yes (= 0)" },
+      { q: "MCT requires sequence to be?", a: "Monotone" },
+      { q: "Fatou's lemma direction?", a: "$\\int \\liminf \\leq \\liminf \\int$" },
+      { q: "$L^p$ space norm?", a: "$(\\int |f|^p)^{1/p}$" },
+      { q: "Almost everywhere means?", a: "Except null set" },
+      { q: "Radon-Nikodym needs?", a: "Absolute continuity" },
+      { q: "Lebesgue measure on $\\mathbb{R}^n$ invariant under?", a: "Translation, rotation" }
+    ]
+  },
+  {
+    id: "functional-analysis",
+    title: "Functional Analysis",
+    level: "advanced",
+    summary: "Banach and Hilbert spaces, bounded operators, spectral theory.",
+    examples: [
+      { title: "Example 1 — Banach space", prompt: "$C[0,1]$ with sup norm.", steps: [
+        { label: "Complete normed", body: "Continuous functions, Cauchy → convergent." }
+      ], answer: "Banach" },
+      { title: "Example 2 — Hilbert space", prompt: "$L^2$ with inner product.", steps: [
+        { label: "Inner product", body: "$\\langle f, g \\rangle = \\int f \\bar g$." }
+      ], answer: "Hilbert" },
+      { title: "Example 3 — Bounded operator", prompt: "$T: L^2 \\to L^2$, $Tf = xf$.", steps: [
+        { label: "Norm", body: "$\\|T\\| \\leq \\sup|x| = 1$ on $[0,1]$." }
+      ], answer: "$\\|T\\| = 1$" },
+      { title: "Example 4 — Spectrum", prompt: "Multiplication operator above.", steps: [
+        { label: "Spectrum", body: "$\\sigma(T) = [0, 1]$." }
+      ], answer: "$[0, 1]$" }
+    ],
+    tasks: [
+      { q: "Hahn-Banach extends?", a: "Bounded linear functionals" },
+      { q: "Riesz representation: dual of Hilbert =?", a: "Itself" },
+      { q: "$\\ell^2$ is what kind?", a: "Hilbert space" },
+      { q: "Compact operator on Hilbert: spectrum?", a: "Discrete (accumulating at $0$)" },
+      { q: "Open mapping theorem applies to?", a: "Surjective bounded linear" },
+      { q: "Closed graph theorem: equivalent to?", a: "Boundedness" },
+      { q: "Self-adjoint operator spectrum?", a: "Real" },
+      { q: "Norm of identity?", a: "$1$" },
+      { q: "Schauder basis exists in?", a: "Separable Banach (not all)" },
+      { q: "Banach-Steinhaus principle is?", a: "Uniform boundedness" }
+    ]
+  },
+  {
+    id: "calculus-of-variations",
+    title: "Calculus of Variations",
+    level: "advanced",
+    summary: "Optimizing functionals via the Euler-Lagrange equation.",
+    examples: [
+      { title: "Example 1 — Shortest path", prompt: "Minimize $\\int \\sqrt{1 + y'^2}\\,dx$.", steps: [
+        { label: "Apply EL", body: "$y'' = 0$ → $y$ linear in $x$." }
+      ], answer: "Straight line" },
+      { title: "Example 2 — Brachistochrone", prompt: "Fastest-descent curve.", steps: [
+        { label: "Result", body: "Cycloid." }
+      ], answer: "Cycloid" },
+      { title: "Example 3 — Surface of revolution", prompt: "Minimize lateral area.", steps: [
+        { label: "EL gives", body: "Catenoid: $y = a \\cosh(x/a)$." }
+      ], answer: "Catenoid" },
+      { title: "Example 4 — Geodesic on sphere", prompt: "Minimize arc length on $S^2$.", steps: [
+        { label: "EL gives", body: "Great circle." }
+      ], answer: "Great circle" }
+    ],
+    tasks: [
+      { q: "Euler-Lagrange equation?", a: "$\\partial L/\\partial y - d/dx(\\partial L/\\partial y') = 0$" },
+      { q: "Principle of least action minimizes?", a: "$\\int L\\,dt$" },
+      { q: "Soap film between rings is?", a: "Catenoid" },
+      { q: "Isoperimetric problem solution?", a: "Circle" },
+      { q: "Hamilton's principle is variational?", a: "Yes" },
+      { q: "Noether's theorem ⇒?", a: "Symmetry → conservation" },
+      { q: "Constraint via?", a: "Lagrange multipliers" },
+      { q: "Second variation positive ⇒?", a: "Local minimum" },
+      { q: "Field theory generalization variable?", a: "$\\phi(x, t)$" },
+      { q: "Direct method in CoV uses?", a: "Lower semi-continuity + compactness" }
+    ]
+  },
+  {
+    id: "function-sequences",
+    title: "Sequences & Series of Functions",
+    level: "advanced",
+    summary: "Pointwise vs uniform convergence, Weierstrass M-test, power series.",
+    examples: [
+      { title: "Example 1 — Pointwise convergence", prompt: "$f_n(x) = x^n$ on $[0, 1]$.", steps: [
+        { label: "Limit", body: "$0$ for $x < 1$, $1$ at $x = 1$." }
+      ], answer: "Discontinuous limit" },
+      { title: "Example 2 — Uniform convergence", prompt: "$f_n(x) = x/n$ on $[0,1]$.", steps: [
+        { label: "Sup", body: "$\\sup |f_n| = 1/n \\to 0$ uniformly." }
+      ], answer: "Uniform" },
+      { title: "Example 3 — M-test", prompt: "$\\sum \\sin(nx)/n^2$.", steps: [
+        { label: "Bound", body: "$|\\sin(nx)/n^2| \\leq 1/n^2$, $\\sum 1/n^2 < \\infty$." }
+      ], answer: "Converges uniformly" },
+      { title: "Example 4 — Power series radius", prompt: "$\\sum x^n / n!$.", steps: [
+        { label: "Ratio test", body: "$R = \\lim |a_n/a_{n+1}| = \\infty$." }
+      ], answer: "All $x$" }
+    ],
+    tasks: [
+      { q: "Uniform $\\Rightarrow$ pointwise?", a: "Yes" },
+      { q: "Pointwise $\\Rightarrow$ uniform?", a: "No" },
+      { q: "Uniform limit of continuous is?", a: "Continuous" },
+      { q: "Radius of $\\sum x^n$?", a: "$1$" },
+      { q: "Radius of $\\sum n! x^n$?", a: "$0$" },
+      { q: "Term-by-term differentiation needs?", a: "Uniform conv. of $f_n'$" },
+      { q: "Abel's theorem about?", a: "Behavior at boundary" },
+      { q: "Cauchy criterion for uniform?", a: "$\\sup |f_n - f_m| \\to 0$" },
+      { q: "Dini's theorem: monotone + pointwise + compact ⇒?", a: "Uniform" },
+      { q: "Stone-Weierstrass: polynomials dense in?", a: "$C[a,b]$" }
+    ]
+  },
+  {
+    id: "random-variables",
+    title: "Random Variables & Distributions",
+    level: "advanced",
+    summary: "Common distributions, expectation, variance, and the Central Limit Theorem.",
+    examples: [
+      { title: "Example 1 — Binomial mean", prompt: "$X \\sim \\text{Bin}(n, p)$.", steps: [
+        { label: "Result", body: "$E[X] = np$, $\\text{Var}(X) = np(1-p)$." }
+      ], answer: "$np$" },
+      { title: "Example 2 — Poisson", prompt: "$X \\sim \\text{Poi}(\\lambda)$.", steps: [
+        { label: "PMF", body: "$P(X = k) = e^{-\\lambda} \\lambda^k/k!$." },
+        { label: "Mean", body: "$\\lambda$." }
+      ], answer: "Mean $\\lambda$, Var $\\lambda$" },
+      { title: "Example 3 — Normal", prompt: "$X \\sim N(\\mu, \\sigma^2)$. PDF?", steps: [
+        { label: "PDF", body: "$\\dfrac{1}{\\sigma\\sqrt{2\\pi}} e^{-(x-\\mu)^2/(2\\sigma^2)}$." }
+      ], answer: "Bell curve" },
+      { title: "Example 4 — CLT", prompt: "Sample mean of i.i.d. with mean $\\mu$, var $\\sigma^2$.", steps: [
+        { label: "Statement", body: "$\\sqrt n (\\bar X - \\mu) \\to N(0, \\sigma^2)$." }
+      ], answer: "Asymptotically normal" }
+    ],
+    tasks: [
+      { q: "Var of fair coin?", a: "$1/4$" },
+      { q: "Exponential$(\\lambda)$ mean?", a: "$1/\\lambda$" },
+      { q: "Geometric$(p)$ mean?", a: "$1/p$" },
+      { q: "Uniform$(a,b)$ mean?", a: "$(a+b)/2$" },
+      { q: "Memoryless property held by?", a: "Exponential, Geometric" },
+      { q: "Sum of independent Poissons?", a: "Poisson with sum rates" },
+      { q: "Sum of independent normals?", a: "Normal" },
+      { q: "Markov's inequality: $P(X \\geq a) \\leq$?", a: "$E[X]/a$" },
+      { q: "Chebyshev: $P(|X - \\mu| \\geq k\\sigma) \\leq$?", a: "$1/k^2$" },
+      { q: "Law of large numbers: $\\bar X_n \\to$?", a: "$\\mu$ a.s." }
+    ]
+  },
+  {
+    id: "stochastic-processes",
+    title: "Stochastic Processes",
+    level: "advanced",
+    summary: "Markov chains, random walks, Poisson processes, Brownian motion.",
+    examples: [
+      { title: "Example 1 — Markov chain", prompt: "Two states with transitions.", steps: [
+        { label: "Property", body: "Future depends only on present, not past." }
+      ], answer: "Markov property" },
+      { title: "Example 2 — Stationary distribution", prompt: "$\\pi P = \\pi$.", steps: [
+        { label: "Solve", body: "Left eigenvector of transition matrix with eigenvalue $1$." }
+      ], answer: "$\\pi P = \\pi$" },
+      { title: "Example 3 — Random walk", prompt: "Simple symmetric on $\\mathbb{Z}$.", steps: [
+        { label: "Mean", body: "$0$." },
+        { label: "Variance", body: "$n$ after $n$ steps." }
+      ], answer: "Var $= n$" },
+      { title: "Example 4 — Brownian motion", prompt: "$W(t)$ — Wiener process.", steps: [
+        { label: "Property", body: "$W(t) \\sim N(0, t)$." }
+      ], answer: "Var $= t$" }
+    ],
+    tasks: [
+      { q: "Memorylessness needed for?", a: "Markov property" },
+      { q: "Stationary distribution always exists for irreducible aperiodic finite?", a: "Yes" },
+      { q: "Random walk on $\\mathbb{Z}$: recurrent?", a: "Yes (in 1D, 2D), not 3D+" },
+      { q: "Poisson process: inter-arrival distribution?", a: "Exponential" },
+      { q: "Poisson process: rate $\\lambda$. $N(t)$ distribution?", a: "Poisson$(\\lambda t)$" },
+      { q: "Brownian motion path is?", a: "Continuous but nowhere differentiable" },
+      { q: "Martingale: $E[X_{n+1} | \\mathcal F_n] =$?", a: "$X_n$" },
+      { q: "Stopping time: condition on past?", a: "Decision is measurable" },
+      { q: "Ito calculus: $dW^2 =$?", a: "$dt$" },
+      { q: "Geometric Brownian motion: $dX/X =$?", a: "$\\mu\\,dt + \\sigma\\,dW$" }
+    ]
+  },
+  {
+    id: "bayesian-statistics",
+    title: "Bayesian Statistics",
+    level: "advanced",
+    summary: "Priors, posteriors, conjugate families, credible intervals.",
+    examples: [
+      { title: "Example 1 — Bayes' rule", prompt: "Posterior from prior and likelihood.", steps: [
+        { label: "Formula", body: "$P(\\theta | D) \\propto P(D | \\theta) P(\\theta)$." }
+      ], answer: "Bayes' rule" },
+      { title: "Example 2 — Conjugate (Beta-Binomial)", prompt: "Beta prior + binomial likelihood.", steps: [
+        { label: "Update", body: "Posterior is Beta$(\\alpha + k, \\beta + n - k)$." }
+      ], answer: "Beta posterior" },
+      { title: "Example 3 — Updating", prompt: "Beta(1,1) prior, see $H, H, T$.", steps: [
+        { label: "Posterior", body: "Beta(3, 2)." }
+      ], answer: "Beta(3, 2)" },
+      { title: "Example 4 — Credible interval", prompt: "$95\\%$ Bayesian interval.", steps: [
+        { label: "Definition", body: "Posterior probability $0.95$ inside." }
+      ], answer: "Posterior-based range" }
+    ],
+    tasks: [
+      { q: "Prior reflects?", a: "Prior belief" },
+      { q: "Likelihood depends on?", a: "Data given $\\theta$" },
+      { q: "Marginal likelihood (evidence) integrates over?", a: "$\\theta$" },
+      { q: "Improper prior: integrates to?", a: "Infinity" },
+      { q: "Jeffreys prior is?", a: "$\\sqrt{\\det I(\\theta)}$" },
+      { q: "Conjugate to normal mean (known variance)?", a: "Normal" },
+      { q: "MAP estimator?", a: "Argmax of posterior" },
+      { q: "Posterior predictive averages over?", a: "Posterior" },
+      { q: "MCMC samples?", a: "From posterior" },
+      { q: "Metropolis-Hastings acceptance ratio uses?", a: "Posterior ratios" }
+    ]
+  },
+  {
+    id: "optimization",
+    title: "Optimization",
+    level: "advanced",
+    summary: "Linear programming, convex optimization, KKT, gradient descent.",
+    examples: [
+      { title: "Example 1 — LP standard form", prompt: "Min $c^T x$ s.t. $Ax = b$, $x \\geq 0$.", steps: [
+        { label: "Geometry", body: "Optimum at a vertex of the feasible polytope." }
+      ], answer: "Simplex finds vertex" },
+      { title: "Example 2 — KKT conditions", prompt: "Constrained min.", steps: [
+        { label: "Form", body: "Gradient of Lagrangian zero, complementary slackness, primal/dual feasibility." }
+      ], answer: "KKT conditions" },
+      { title: "Example 3 — Convex", prompt: "$f(x) = x^2$.", steps: [
+        { label: "Test", body: "$f'' = 2 \\geq 0$ everywhere." }
+      ], answer: "Convex" },
+      { title: "Example 4 — Gradient descent", prompt: "Update rule.", steps: [
+        { label: "Rule", body: "$x_{n+1} = x_n - \\eta \\nabla f(x_n)$." }
+      ], answer: "$x \\to x - \\eta\\nabla f$" }
+    ],
+    tasks: [
+      { q: "Convex set: line segment property?", a: "Both endpoints in $\\Rightarrow$ segment in" },
+      { q: "Sum of convex functions is?", a: "Convex" },
+      { q: "Max of convex functions is?", a: "Convex" },
+      { q: "Local min of convex function is?", a: "Global min" },
+      { q: "Quadratic $\\tfrac{1}{2} x^T A x$ convex iff?", a: "$A \\succeq 0$" },
+      { q: "Newton's method for optimization uses?", a: "Hessian" },
+      { q: "LP duality: weak ⇒?", a: "$c^T x \\geq b^T y$" },
+      { q: "Strong duality for convex (Slater)?", a: "Yes" },
+      { q: "Stochastic gradient descent samples?", a: "One example per step" },
+      { q: "Lagrange multipliers ⇒ extension to inequality is?", a: "KKT" }
+    ]
+  },
+  {
+    id: "information-theory",
+    title: "Information Theory",
+    level: "advanced",
+    summary: "Entropy, mutual information, channel capacity, source coding.",
+    examples: [
+      { title: "Example 1 — Entropy fair coin", prompt: "$H(\\tfrac{1}{2}, \\tfrac{1}{2})$.", steps: [
+        { label: "Compute", body: "$1$ bit." }
+      ], answer: "$1$ bit" },
+      { title: "Example 2 — Biased coin", prompt: "$H(0.9, 0.1)$.", steps: [
+        { label: "Compute", body: "$\\approx 0.47$ bits." }
+      ], answer: "$\\approx 0.47$ bits" },
+      { title: "Example 3 — Mutual information", prompt: "$I(X; Y) = H(X) - H(X|Y)$.", steps: [
+        { label: "Meaning", body: "Reduction in uncertainty about $X$ given $Y$." }
+      ], answer: "$\\geq 0$" },
+      { title: "Example 4 — Channel capacity", prompt: "Binary symmetric channel, error $p$.", steps: [
+        { label: "Formula", body: "$C = 1 - H(p)$ bits per use." }
+      ], answer: "$1 - H(p)$" }
+    ],
+    tasks: [
+      { q: "$H(X)$ for uniform on $n$ symbols?", a: "$\\log_2 n$" },
+      { q: "$H(X)$ for deterministic?", a: "$0$" },
+      { q: "Joint entropy: $H(X,Y) \\leq$?", a: "$H(X) + H(Y)$" },
+      { q: "Conditional: $H(X|Y) \\leq$?", a: "$H(X)$" },
+      { q: "KL divergence: symmetric?", a: "No" },
+      { q: "Shannon source coding: lower bound?", a: "$H(X)$ bits per symbol" },
+      { q: "Huffman code is?", a: "Optimal prefix code" },
+      { q: "Mutual information of independent variables?", a: "$0$" },
+      { q: "Differential entropy of $N(0, \\sigma^2)$?", a: "$\\tfrac{1}{2}\\log(2\\pi e \\sigma^2)$" },
+      { q: "Maximum entropy distribution (fixed mean & var)?", a: "Gaussian" }
+    ]
+  },
+  {
+    id: "game-theory",
+    title: "Game Theory",
+    level: "advanced",
+    summary: "Nash equilibrium, zero-sum games, mixed strategies, cooperative games.",
+    examples: [
+      { title: "Example 1 — Prisoner's dilemma", prompt: "Best strategy?", steps: [
+        { label: "Analysis", body: "Both defect is unique Nash equilibrium, even though cooperation gives better payoffs." }
+      ], answer: "Both defect (Nash)" },
+      { title: "Example 2 — Pure Nash", prompt: "Definition.", steps: [
+        { label: "Rule", body: "No player can improve by unilaterally changing strategy." }
+      ], answer: "Stable point" },
+      { title: "Example 3 — Mixed strategy", prompt: "Matching pennies.", steps: [
+        { label: "Each", body: "Random $50/50$ — only equilibrium." }
+      ], answer: "$(1/2, 1/2)$ mixed" },
+      { title: "Example 4 — Battle of the sexes", prompt: "Two pure Nash + a mixed.", steps: [
+        { label: "Outcome", body: "Multiple equilibria, coordination problem." }
+      ], answer: "Multiple Nash" }
+    ],
+    tasks: [
+      { q: "Zero-sum: total payoff?", a: "Constant (often $0$)" },
+      { q: "Minimax theorem applies to?", a: "Two-player zero-sum" },
+      { q: "Nash existence proof relies on?", a: "Fixed-point theorem" },
+      { q: "Cooperative game core: outcomes where?", a: "No coalition gains by deviating" },
+      { q: "Shapley value distributes?", a: "Marginal contributions" },
+      { q: "Subgame perfect equilibrium uses?", a: "Backward induction" },
+      { q: "Evolutionarily stable strategy: resistant to?", a: "Mutant invasions" },
+      { q: "Mechanism design asks?", a: "Design rules to achieve outcome" },
+      { q: "Auction theory: revenue equivalence for?", a: "Risk-neutral with private values" },
+      { q: "Repeated game: cooperation possible by?", a: "Tit-for-tat / trigger strategy" }
+    ]
+  },
+  {
+    id: "dynamical-systems",
+    title: "Dynamical Systems & Chaos",
+    level: "advanced",
+    summary: "Fixed points, bifurcations, attractors, chaos, Lyapunov exponents.",
+    examples: [
+      { title: "Example 1 — Fixed point", prompt: "$\\dot x = r x - x^3$.", steps: [
+        { label: "Set $\\dot x = 0$", body: "$x = 0, \\pm\\sqrt r$ (if $r > 0$)." }
+      ], answer: "Pitchfork bifurcation at $r = 0$" },
+      { title: "Example 2 — Logistic map", prompt: "$x_{n+1} = r x_n (1 - x_n)$.", steps: [
+        { label: "Behavior", body: "Period doubling cascade to chaos as $r \\to 3.57\\ldots$" }
+      ], answer: "Chaos onset $\\approx 3.57$" },
+      { title: "Example 3 — Lyapunov exponent", prompt: "Definition.", steps: [
+        { label: "Formula", body: "$\\lambda = \\lim_n \\tfrac{1}{n} \\sum \\log|f'(x_i)|$." }
+      ], answer: "$\\lambda > 0$ ⇒ chaos" },
+      { title: "Example 4 — Phase portrait", prompt: "Pendulum.", steps: [
+        { label: "Features", body: "Centers (libration), saddles (separatrix), nested ovals." }
+      ], answer: "Saddles + centers" }
+    ],
+    tasks: [
+      { q: "Linear stability: eigenvalue real positive ⇒?", a: "Unstable" },
+      { q: "Imaginary eigenvalues ⇒?", a: "Center (linearly)" },
+      { q: "Hopf bifurcation creates?", a: "Limit cycle" },
+      { q: "Strange attractor example?", a: "Lorenz" },
+      { q: "Sensitivity to initial conditions defines?", a: "Chaos" },
+      { q: "Butterfly effect: physical origin?", a: "Positive Lyapunov" },
+      { q: "Feigenbaum constant $\\delta \\approx$?", a: "$4.669$" },
+      { q: "KAM theorem describes?", a: "Persistence of quasiperiodic orbits" },
+      { q: "Poincaré section reduces?", a: "Continuous flow to discrete map" },
+      { q: "Symplectic map preserves?", a: "Phase-space volume" }
+    ]
+  },
+  {
+    id: "cryptography",
+    title: "Cryptography",
+    level: "advanced",
+    summary: "RSA, AES, hash functions, elliptic-curve crypto, perfect secrecy.",
+    examples: [
+      { title: "Example 1 — RSA setup", prompt: "Schematic.", steps: [
+        { label: "Keys", body: "$n = pq$, public $e$, private $d \\equiv e^{-1} \\pmod{\\varphi(n)}$." }
+      ], answer: "Pub: $(n, e)$; Priv: $d$" },
+      { title: "Example 2 — Modular exponentiation", prompt: "$2^{10} \\bmod 13$.", steps: [
+        { label: "Compute", body: "$2^{10} = 1024 = 78 \\cdot 13 + 10$, so $\\equiv 10$." }
+      ], answer: "$10$" },
+      { title: "Example 3 — One-time pad", prompt: "Why it gives perfect secrecy.", steps: [
+        { label: "Key as long as message", body: "Ciphertext independent of plaintext." }
+      ], answer: "Information-theoretic secure" },
+      { title: "Example 4 — Hash collision", prompt: "Birthday bound.", steps: [
+        { label: "Collisions expected after", body: "$\\sim 2^{n/2}$ random hashes for an $n$-bit output." }
+      ], answer: "$\\sim 2^{n/2}$" }
+    ],
+    tasks: [
+      { q: "RSA security relies on?", a: "Hardness of factoring" },
+      { q: "AES block size?", a: "$128$ bits" },
+      { q: "SHA-256 output length?", a: "$256$ bits" },
+      { q: "Diffie-Hellman key exchange uses?", a: "Discrete log hardness" },
+      { q: "Elliptic curve crypto smaller keys for same security?", a: "Yes" },
+      { q: "Public-key vs symmetric: speed?", a: "Symmetric is faster" },
+      { q: "Digital signature provides?", a: "Authenticity & integrity" },
+      { q: "Quantum threat to RSA?", a: "Shor's algorithm" },
+      { q: "Perfect secrecy requires key length $\\geq$?", a: "Message length" },
+      { q: "Birthday attack exploits?", a: "Collision probability" }
+    ]
   }
 ];

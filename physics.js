@@ -1064,5 +1064,1158 @@ window.CONTENT.physics = [
       { q: "Mach number?", a: "$v/c_s$" },
       { q: "Subsonic vs supersonic boundary?", a: "$M = 1$" }
     ]
+  },
+  {
+    id: "continuum-elasticity",
+    title: "Continuum Mechanics & Elasticity",
+    level: "intermediate",
+    summary: "Stress, strain, Young's modulus, Hooke's law for solids.",
+    examples: [
+      { title: "Example 1 — Stress", prompt: "$10000$ N on $0.01$ m² area.", steps: [
+        { label: "Apply", body: "$\\sigma = F/A = 10^6$ Pa." }
+      ], answer: "$1$ MPa" },
+      { title: "Example 2 — Strain", prompt: "$1$ m rod stretches $0.001$ m.", steps: [
+        { label: "Apply", body: "$\\varepsilon = \\Delta L/L = 10^{-3}$." }
+      ], answer: "$10^{-3}$" },
+      { title: "Example 3 — Young's modulus", prompt: "$\\sigma = 10^6$ Pa gives $\\varepsilon = 5 \\times 10^{-6}$.", steps: [
+        { label: "Apply", body: "$E = \\sigma/\\varepsilon = 2 \\times 10^{11}$ Pa." }
+      ], answer: "$200$ GPa (steel-ish)" },
+      { title: "Example 4 — Bulk modulus", prompt: "Volume strain under pressure.", steps: [
+        { label: "Form", body: "$K = -V \\partial P/\\partial V$." }
+      ], answer: "$K = -V\\partial_V P$" }
+    ],
+    tasks: [
+      { q: "Pascal unit?", a: "N/m²" },
+      { q: "Shear modulus symbol?", a: "$G$" },
+      { q: "Poisson's ratio range?", a: "$-1$ to $0.5$" },
+      { q: "Yield stress: beyond, deformation is?", a: "Plastic" },
+      { q: "Hooke's law: stress $\\propto$?", a: "Strain" },
+      { q: "Tensile vs compressive: opposite sign?", a: "Yes" },
+      { q: "Stress tensor rank?", a: "$2$" },
+      { q: "Plane stress: nonzero components?", a: "In-plane only" },
+      { q: "Wave speed in solid $\\propto$?", a: "$\\sqrt{E/\\rho}$" },
+      { q: "Buckling load: Euler formula uses?", a: "$EI/L^2$" }
+    ]
+  },
+  {
+    id: "central-force",
+    title: "Central Force & Kepler",
+    level: "intermediate",
+    summary: "Orbits under inverse-square force; Kepler's three laws.",
+    examples: [
+      { title: "Example 1 — Angular momentum conserved", prompt: "Central force ⇒?", steps: [
+        { label: "Why", body: "Torque about center is zero." }
+      ], answer: "$\\vec L$ conserved" },
+      { title: "Example 2 — Kepler 2", prompt: "Equal areas in equal times.", steps: [
+        { label: "Reason", body: "Constant $\\vec L$ ⇒ $dA/dt = L/(2m)$." }
+      ], answer: "Areal speed constant" },
+      { title: "Example 3 — Kepler 3", prompt: "$T^2 \\propto a^3$.", steps: [
+        { label: "Derivation", body: "From Newtonian gravity + circular orbit." }
+      ], answer: "$T^2 = (4\\pi^2/GM) a^3$" },
+      { title: "Example 4 — Effective potential", prompt: "Form.", steps: [
+        { label: "Combine radial KE and centrifugal", body: "$V_{eff}(r) = V(r) + L^2/(2mr^2)$." }
+      ], answer: "$V_{eff}$" }
+    ],
+    tasks: [
+      { q: "Kepler 1: orbits are?", a: "Ellipses" },
+      { q: "Eccentricity of circle?", a: "$0$" },
+      { q: "$e > 1$ orbit shape?", a: "Hyperbola" },
+      { q: "Earth's orbital eccentricity?", a: "$\\approx 0.017$" },
+      { q: "$1/r^2$ force closed orbits?", a: "Yes (Bertrand)" },
+      { q: "Perihelion is?", a: "Closest approach" },
+      { q: "Aphelion is?", a: "Farthest distance" },
+      { q: "Precession of Mercury's perihelion (extra)?", a: "GR contribution" },
+      { q: "Effective potential minimum gives?", a: "Circular orbit" },
+      { q: "Virial theorem: $\\langle T \\rangle =$?", a: "$-\\tfrac{1}{2}\\langle V \\rangle$ (for $1/r$)" }
+    ]
+  },
+  {
+    id: "nonlinear-chaos-physics",
+    title: "Nonlinear Dynamics & Chaos",
+    level: "advanced",
+    summary: "Bifurcations, strange attractors, chaos in physical systems.",
+    examples: [
+      { title: "Example 1 — Logistic map", prompt: "$x_{n+1} = r x_n(1-x_n)$.", steps: [
+        { label: "Bifurcations", body: "Period-doubling to chaos at $r \\approx 3.57$." }
+      ], answer: "Onset of chaos" },
+      { title: "Example 2 — Lorenz attractor", prompt: "$\\dot x = \\sigma(y-x)$, etc.", steps: [
+        { label: "Behavior", body: "Bounded chaotic orbits — strange attractor." }
+      ], answer: "Strange attractor" },
+      { title: "Example 3 — Lyapunov exponent", prompt: "Definition.", steps: [
+        { label: "Sign", body: "Positive $\\Rightarrow$ chaos." }
+      ], answer: "$\\lambda > 0 \\Rightarrow$ chaos" },
+      { title: "Example 4 — Driven pendulum", prompt: "Behavior.", steps: [
+        { label: "Regimes", body: "Periodic, quasi-periodic, chaotic depending on drive." }
+      ], answer: "Routes to chaos" }
+    ],
+    tasks: [
+      { q: "Sensitive dependence on initial conditions = ?", a: "Chaos" },
+      { q: "Feigenbaum $\\delta \\approx$?", a: "$4.669$" },
+      { q: "Strange attractor dimension?", a: "Fractal" },
+      { q: "Hamiltonian chaos preserves?", a: "Phase volume" },
+      { q: "Lorenz model came from?", a: "Convection" },
+      { q: "KAM tori: persistence under?", a: "Small perturbations" },
+      { q: "Universal route to chaos through period doubling?", a: "Yes" },
+      { q: "Self-similarity in attractors?", a: "Common" },
+      { q: "Poincaré-Bendixson: 2D continuous, no chaos for?", a: "Smooth flow" },
+      { q: "Weather prediction limit due to?", a: "Lyapunov time" }
+    ]
+  },
+  {
+    id: "angular-momentum-spin",
+    title: "Angular Momentum & Spin",
+    level: "advanced",
+    summary: "$L^2$ and $L_z$ eigenvalues, Pauli matrices, addition of angular momenta.",
+    examples: [
+      { title: "Example 1 — $L_z$ eigenvalues", prompt: "Quantum number $\\ell$.", steps: [
+        { label: "Result", body: "$m = -\\ell, \\ldots, \\ell$, eigenvalues $m\\hbar$." }
+      ], answer: "$2\\ell + 1$ values" },
+      { title: "Example 2 — $L^2$ eigenvalue", prompt: "$L^2$ acts on $|\\ell, m\\rangle$.", steps: [
+        { label: "Result", body: "$\\ell(\\ell+1)\\hbar^2$." }
+      ], answer: "$\\ell(\\ell+1)\\hbar^2$" },
+      { title: "Example 3 — Pauli matrices", prompt: "$\\sigma_z$.", steps: [
+        { label: "Form", body: "$\\sigma_z = \\begin{pmatrix}1 & 0 \\\\ 0 & -1\\end{pmatrix}$." }
+      ], answer: "Spin-$z$ operator" },
+      { title: "Example 4 — Add two spin-$1/2$", prompt: "Total spin.", steps: [
+        { label: "Result", body: "Singlet ($s = 0$) and triplet ($s = 1$)." }
+      ], answer: "$0 \\oplus 1$" }
+    ],
+    tasks: [
+      { q: "Commutator $[L_x, L_y]$?", a: "$i\\hbar L_z$" },
+      { q: "Total angular momentum operator?", a: "$\\vec J = \\vec L + \\vec S$" },
+      { q: "Spin of photon?", a: "$1$" },
+      { q: "Spin of electron?", a: "$1/2$" },
+      { q: "Spherical harmonics solve?", a: "Angular part" },
+      { q: "Ladder operators $L_\\pm$?", a: "$L_x \\pm i L_y$" },
+      { q: "$L_+ |\\ell, m\\rangle$?", a: "$\\hbar\\sqrt{\\ell(\\ell+1) - m(m+1)} |\\ell, m+1\\rangle$" },
+      { q: "Clebsch-Gordan coefficients combine?", a: "Two angular momenta" },
+      { q: "$j$-values from $j_1 \\otimes j_2$?", a: "$|j_1 - j_2| \\ldots j_1 + j_2$" },
+      { q: "Wigner-Eckart isolates?", a: "Geometric vs dynamical parts" }
+    ]
+  },
+  {
+    id: "qm-3d-hydrogen",
+    title: "QM in 3D & Hydrogen Atom",
+    level: "advanced",
+    summary: "Separation of variables in spherical coords; the hydrogen atom solution.",
+    examples: [
+      { title: "Example 1 — Spherical separation", prompt: "$\\psi = R(r) Y(\\theta, \\phi)$.", steps: [
+        { label: "Result", body: "Angular part: $Y_\\ell^m$; radial part: $R_{n\\ell}$." }
+      ], answer: "Separable" },
+      { title: "Example 2 — Hydrogen levels", prompt: "$E_n$.", steps: [
+        { label: "Result", body: "$E_n = -13.6/n^2$ eV." }
+      ], answer: "$-13.6/n^2$ eV" },
+      { title: "Example 3 — Ground state $|100\\rangle$", prompt: "Shape.", steps: [
+        { label: "Form", body: "$\\psi_{100} \\propto e^{-r/a_0}$, spherically symmetric." }
+      ], answer: "$\\propto e^{-r/a_0}$" },
+      { title: "Example 4 — Degeneracy of level $n$", prompt: "Count states.", steps: [
+        { label: "Sum", body: "$\\sum_{\\ell=0}^{n-1} (2\\ell+1) = n^2$." }
+      ], answer: "$n^2$ (or $2n^2$ with spin)" }
+    ],
+    tasks: [
+      { q: "Bohr radius $a_0 \\approx$?", a: "$5.29 \\times 10^{-11}$ m" },
+      { q: "Quantum numbers for hydrogen?", a: "$n, \\ell, m, m_s$" },
+      { q: "$\\ell$ range for given $n$?", a: "$0$ to $n-1$" },
+      { q: "$2s$ vs $2p$ energy in pure hydrogen?", a: "Same" },
+      { q: "Fine structure splits?", a: "$2s$ and $2p$" },
+      { q: "Spin-orbit coupling $\\propto$?", a: "$L \\cdot S$" },
+      { q: "Lamb shift due to?", a: "QED corrections" },
+      { q: "Hyperfine due to?", a: "Nuclear spin" },
+      { q: "Selection rule for E1 transitions?", a: "$\\Delta \\ell = \\pm 1$" },
+      { q: "Effective potential includes?", a: "Centrifugal $\\ell(\\ell+1)\\hbar^2/(2mr^2)$" }
+    ]
+  },
+  {
+    id: "perturbation-theory",
+    title: "Perturbation Theory",
+    level: "advanced",
+    summary: "Small corrections to known solutions: time-independent and time-dependent.",
+    examples: [
+      { title: "Example 1 — First-order energy", prompt: "$H = H_0 + \\lambda H'$.", steps: [
+        { label: "Result", body: "$E_n^{(1)} = \\langle n | H' | n \\rangle$." }
+      ], answer: "$\\langle n | H' | n \\rangle$" },
+      { title: "Example 2 — First-order state", prompt: "Correction to $|n\\rangle$.", steps: [
+        { label: "Result", body: "$|n^{(1)}\\rangle = \\sum_{m \\neq n} |m\\rangle \\dfrac{\\langle m | H' | n \\rangle}{E_n - E_m}$." }
+      ], answer: "Sum over other states" },
+      { title: "Example 3 — Fermi's golden rule", prompt: "Transition rate.", steps: [
+        { label: "Formula", body: "$\\Gamma = \\tfrac{2\\pi}{\\hbar} |\\langle f | H' | i \\rangle|^2 \\rho(E_f)$." }
+      ], answer: "$\\propto |\\text{matrix element}|^2 \\rho$" },
+      { title: "Example 4 — Degenerate case", prompt: "Approach.", steps: [
+        { label: "Method", body: "Diagonalize $H'$ in the degenerate subspace first." }
+      ], answer: "Degenerate perturbation theory" }
+    ],
+    tasks: [
+      { q: "Perturbation parameter $\\lambda$ small?", a: "Yes (controls expansion)" },
+      { q: "Second-order energy?", a: "$\\sum_{m \\neq n} |H'_{mn}|^2/(E_n - E_m)$" },
+      { q: "Stark effect: H atom in E field?", a: "Quadratic for ground state" },
+      { q: "Zeeman: H atom in B field?", a: "Linear in $B$" },
+      { q: "Time-dependent: result for harmonic perturbation?", a: "Rabi-like" },
+      { q: "Adiabatic theorem assumes?", a: "Slow change" },
+      { q: "Sudden approximation: state?", a: "Unchanged" },
+      { q: "Variational principle gives?", a: "Upper bound on ground state" },
+      { q: "Brillouin-Wigner vs Rayleigh-Schrödinger differ?", a: "Treatment of denominators" },
+      { q: "Convergence of series usually?", a: "Asymptotic" }
+    ]
+  },
+  {
+    id: "identical-particles",
+    title: "Identical Particles",
+    level: "advanced",
+    summary: "Bosons (symmetric) vs fermions (antisymmetric); Pauli exclusion; exchange.",
+    examples: [
+      { title: "Example 1 — Two fermions", prompt: "Two-particle wavefunction.", steps: [
+        { label: "Antisymmetric", body: "$\\psi(1,2) = -\\psi(2,1)$. Slater determinant of single-particle orbitals." }
+      ], answer: "Slater det" },
+      { title: "Example 2 — Two bosons", prompt: "Symmetric form.", steps: [
+        { label: "Symmetric", body: "$\\psi(1,2) = +\\psi(2,1)$." }
+      ], answer: "Symmetric" },
+      { title: "Example 3 — Pauli exclusion", prompt: "Consequence for fermions in same state.", steps: [
+        { label: "Result", body: "Vanishing wavefunction → forbidden." }
+      ], answer: "Forbidden" },
+      { title: "Example 4 — Helium ground state", prompt: "Two electrons.", steps: [
+        { label: "Configuration", body: "$1s^2$ — both spatial $1s$, spins antiparallel (singlet)." }
+      ], answer: "$1s^2$ singlet" }
+    ],
+    tasks: [
+      { q: "Fermions have spin?", a: "Half-integer" },
+      { q: "Bosons have spin?", a: "Integer" },
+      { q: "Spin-statistics theorem?", a: "Fermion ↔ antisym, boson ↔ sym" },
+      { q: "Pauli exclusion ⇒ periodic table?", a: "Yes" },
+      { q: "Bose-Einstein condensation in identical bosons?", a: "Yes, at low $T$" },
+      { q: "Fermi-Dirac distribution applies to?", a: "Fermions" },
+      { q: "Pauli pressure stabilizes?", a: "White dwarfs" },
+      { q: "Exchange energy in helium splits?", a: "Singlet vs triplet" },
+      { q: "Identical particles can be?", a: "Distinguished only by quantum state" },
+      { q: "Composite bosons from fermions?", a: "Yes (pairs)" }
+    ]
+  },
+  {
+    id: "scattering-theory",
+    title: "Scattering Theory",
+    level: "advanced",
+    summary: "Differential cross sections, Born approximation, partial waves.",
+    examples: [
+      { title: "Example 1 — Cross section", prompt: "Definition.", steps: [
+        { label: "Form", body: "$d\\sigma/d\\Omega = |f(\\theta)|^2$." }
+      ], answer: "$|f|^2$" },
+      { title: "Example 2 — Born approximation", prompt: "Weak potential.", steps: [
+        { label: "Result", body: "$f(\\theta) = -(m/2\\pi\\hbar^2) \\int e^{-i\\vec q \\cdot \\vec r} V(\\vec r)\\,d^3 r$." }
+      ], answer: "Fourier transform of $V$" },
+      { title: "Example 3 — Partial waves", prompt: "Expansion.", steps: [
+        { label: "Form", body: "$f = (1/k) \\sum_\\ell (2\\ell+1) e^{i\\delta_\\ell} \\sin\\delta_\\ell \\, P_\\ell(\\cos\\theta)$." }
+      ], answer: "Phase-shift series" },
+      { title: "Example 4 — Optical theorem", prompt: "Total cross section.", steps: [
+        { label: "Form", body: "$\\sigma_{tot} = (4\\pi/k) \\text{Im}\\,f(0)$." }
+      ], answer: "$\\sigma \\propto \\text{Im}\\,f(0)$" }
+    ],
+    tasks: [
+      { q: "Born series valid for?", a: "Weak potentials" },
+      { q: "Low-energy s-wave only (often)?", a: "Yes for short-range" },
+      { q: "Hard sphere cross section (low $E$)?", a: "$4\\pi a^2$" },
+      { q: "Resonance ⇒ rapid phase shift change?", a: "Through $\\pi/2$" },
+      { q: "Coulomb scattering: Rutherford formula?", a: "Yes" },
+      { q: "Differential cross section units?", a: "Area / steradian" },
+      { q: "Scattering amplitude units?", a: "Length" },
+      { q: "Identical particles modify cross section by?", a: "Symmetrization" },
+      { q: "Mean free path $\\sim$?", a: "$1/(n\\sigma)$" },
+      { q: "Inelastic vs elastic: distinguishable how?", a: "Final state energy" }
+    ]
+  },
+  {
+    id: "density-matrices",
+    title: "Density Matrices & Open Systems",
+    level: "advanced",
+    summary: "Mixed states, partial trace, decoherence, Lindblad evolution.",
+    examples: [
+      { title: "Example 1 — Pure state $\\rho$", prompt: "$|\\psi\\rangle$.", steps: [
+        { label: "Form", body: "$\\rho = |\\psi\\rangle\\langle\\psi|$." }
+      ], answer: "$\\rho = |\\psi\\rangle\\langle\\psi|$" },
+      { title: "Example 2 — Mixed", prompt: "$\\rho = \\sum p_i |\\psi_i\\rangle\\langle\\psi_i|$.", steps: [
+        { label: "Properties", body: "$\\text{tr}\\rho = 1$, $\\rho^2 \\neq \\rho$." }
+      ], answer: "Mixed" },
+      { title: "Example 3 — Partial trace", prompt: "Reduce subsystem.", steps: [
+        { label: "Trace over $B$", body: "$\\rho_A = \\text{tr}_B(\\rho_{AB})$." }
+      ], answer: "$\\rho_A$" },
+      { title: "Example 4 — Lindblad evolution", prompt: "Markovian open system.", steps: [
+        { label: "Form", body: "$\\dot\\rho = -i[H,\\rho]/\\hbar + \\sum (L\\rho L^\\dagger - \\tfrac{1}{2}\\{L^\\dagger L, \\rho\\})$." }
+      ], answer: "Lindblad equation" }
+    ],
+    tasks: [
+      { q: "$\\rho$ Hermitian?", a: "Yes" },
+      { q: "$\\rho$ positive semi-definite?", a: "Yes" },
+      { q: "Trace of $\\rho$?", a: "$1$" },
+      { q: "Pure iff $\\rho^2 = \\rho$?", a: "Yes" },
+      { q: "Decoherence: $\\rho$ off-diagonal terms?", a: "Decay" },
+      { q: "Von Neumann entropy?", a: "$-\\text{tr}(\\rho \\ln \\rho)$" },
+      { q: "Maximally mixed state on $n$ levels?", a: "$I/n$" },
+      { q: "Schmidt decomposition for entangled?", a: "$\\sum \\sqrt{\\lambda_i} |i\\rangle_A |i\\rangle_B$" },
+      { q: "Decoherence time vs relaxation time?", a: "$T_2 \\leq 2T_1$" },
+      { q: "Master equation = ?", a: "Density matrix evolution" }
+    ]
+  },
+  {
+    id: "path-integrals",
+    title: "Path Integrals",
+    level: "advanced",
+    summary: "Feynman's sum over histories; propagator; classical limit.",
+    examples: [
+      { title: "Example 1 — Amplitude", prompt: "Definition.", steps: [
+        { label: "Form", body: "$\\langle x_f | e^{-iHt/\\hbar} | x_i \\rangle = \\int \\mathcal{D}x\\, e^{iS[x]/\\hbar}$." }
+      ], answer: "Sum over paths" },
+      { title: "Example 2 — Classical limit", prompt: "Stationary phase.", steps: [
+        { label: "Why classical wins", body: "Action stationary on classical path; nearby paths interfere destructively elsewhere." }
+      ], answer: "Classical = stationary action" },
+      { title: "Example 3 — Free propagator", prompt: "Result.", steps: [
+        { label: "Form", body: "$K(x_f, t; x_i, 0) = \\sqrt{m/(2\\pi i\\hbar t)}\\, e^{im(x_f-x_i)^2/(2\\hbar t)}$." }
+      ], answer: "Gaussian" },
+      { title: "Example 4 — Double slit", prompt: "Pictorial.", steps: [
+        { label: "Interpretation", body: "Sum two leading paths through each slit; their phases interfere." }
+      ], answer: "Interference" }
+    ],
+    tasks: [
+      { q: "$\\hbar \\to 0$ limit selects?", a: "Classical path" },
+      { q: "Action units?", a: "$\\hbar$" },
+      { q: "Wick rotation $t \\to -i\\tau$ gives?", a: "Euclidean path integral" },
+      { q: "Euclidean PI computes?", a: "Partition function" },
+      { q: "Lattice gauge theory uses?", a: "Discrete PI" },
+      { q: "Path integral over which?", a: "All paths between endpoints" },
+      { q: "Schrödinger equation from PI?", a: "Yes, via short-time" },
+      { q: "Functional integral measure $\\mathcal{D}x$?", a: "Formal" },
+      { q: "Feynman diagram = ?", a: "Perturbative PI term" },
+      { q: "Renormalization handles?", a: "Loop divergences" }
+    ]
+  },
+  {
+    id: "quantum-information",
+    title: "Quantum Information",
+    level: "advanced",
+    summary: "Qubits, entanglement, gates, Bell inequalities, teleportation.",
+    examples: [
+      { title: "Example 1 — Qubit", prompt: "General state.", steps: [
+        { label: "Form", body: "$|\\psi\\rangle = \\alpha|0\\rangle + \\beta|1\\rangle$, $|\\alpha|^2 + |\\beta|^2 = 1$." }
+      ], answer: "Bloch sphere" },
+      { title: "Example 2 — Bell state", prompt: "Maximally entangled.", steps: [
+        { label: "Form", body: "$|\\Phi^+\\rangle = (|00\\rangle + |11\\rangle)/\\sqrt 2$." }
+      ], answer: "Bell state" },
+      { title: "Example 3 — CNOT", prompt: "Action.", steps: [
+        { label: "Logic", body: "Flip target iff control is $|1\\rangle$." }
+      ], answer: "CNOT" },
+      { title: "Example 4 — No-cloning", prompt: "Statement.", steps: [
+        { label: "Why", body: "Linearity + unitarity preclude $|\\psi\\rangle \\to |\\psi\\rangle|\\psi\\rangle$." }
+      ], answer: "Can't copy arbitrary states" }
+    ],
+    tasks: [
+      { q: "Number of qubits in $n$ dimensions?", a: "$\\log_2 n$" },
+      { q: "Hadamard gate $H|0\\rangle$?", a: "$(|0\\rangle + |1\\rangle)/\\sqrt 2$" },
+      { q: "Entanglement entropy of Bell state?", a: "$1$ bit ($\\ln 2$ nat)" },
+      { q: "Teleportation requires?", a: "Bell pair + 2 classical bits" },
+      { q: "Quantum supremacy demonstrated by?", a: "Sycamore (Google, 2019)" },
+      { q: "Shor's algorithm factors in?", a: "Polynomial time" },
+      { q: "Grover's search speedup?", a: "Quadratic" },
+      { q: "Quantum error correction needs?", a: "Redundancy across qubits" },
+      { q: "Bell inequality violation rules out?", a: "Local hidden variables" },
+      { q: "Quantum key distribution example?", a: "BB84" }
+    ]
+  },
+  {
+    id: "symmetries-noether",
+    title: "Symmetries & Noether's Theorem",
+    level: "advanced",
+    summary: "Every continuous symmetry of an action gives a conserved current.",
+    examples: [
+      { title: "Example 1 — Translation", prompt: "Symmetry ⇒ ?", steps: [
+        { label: "Result", body: "Momentum conserved." }
+      ], answer: "Momentum" },
+      { title: "Example 2 — Rotation", prompt: "Symmetry ⇒ ?", steps: [
+        { label: "Result", body: "Angular momentum conserved." }
+      ], answer: "Angular momentum" },
+      { title: "Example 3 — Time translation", prompt: "Symmetry ⇒ ?", steps: [
+        { label: "Result", body: "Energy conserved." }
+      ], answer: "Energy" },
+      { title: "Example 4 — Gauge", prompt: "Internal U(1) symmetry ⇒?", steps: [
+        { label: "Result", body: "Electric charge conserved." }
+      ], answer: "Charge" }
+    ],
+    tasks: [
+      { q: "Noether's theorem connects?", a: "Symmetries ↔ conservation laws" },
+      { q: "Discrete symmetries also have conservation laws?", a: "Yes (parities)" },
+      { q: "Lorentz symmetry ⇒?", a: "Stress-energy tensor conservation" },
+      { q: "Spontaneous symmetry breaking ⇒?", a: "Goldstone bosons (continuous)" },
+      { q: "Higgs mechanism for gauged broken symmetry ⇒?", a: "Massive gauge bosons" },
+      { q: "Global vs gauge symmetry?", a: "Gauge = local" },
+      { q: "Conserved current $\\partial_\\mu j^\\mu = ?$", a: "$0$" },
+      { q: "Symmetry of $L$ vs $S$?", a: "Action — total derivatives don't matter" },
+      { q: "Internal symmetry of QCD?", a: "$SU(3)_{\\text{color}}$" },
+      { q: "Approximate symmetries lead to?", a: "Approximate conservation" }
+    ]
+  },
+  {
+    id: "classical-field-theory",
+    title: "Classical Field Theory",
+    level: "advanced",
+    summary: "Lagrangian densities, Klein-Gordon, Dirac, electromagnetism as fields.",
+    examples: [
+      { title: "Example 1 — Scalar field Lagrangian", prompt: "Free real scalar.", steps: [
+        { label: "Form", body: "$\\mathcal{L} = \\tfrac{1}{2}(\\partial_\\mu\\phi)^2 - \\tfrac{1}{2}m^2\\phi^2$." }
+      ], answer: "Free scalar" },
+      { title: "Example 2 — Klein-Gordon", prompt: "Equation of motion.", steps: [
+        { label: "Result", body: "$(\\Box + m^2)\\phi = 0$." }
+      ], answer: "$(\\Box + m^2)\\phi = 0$" },
+      { title: "Example 3 — Dirac", prompt: "Equation.", steps: [
+        { label: "Form", body: "$(i\\gamma^\\mu \\partial_\\mu - m)\\psi = 0$." }
+      ], answer: "Dirac equation" },
+      { title: "Example 4 — EM as field", prompt: "Lagrangian.", steps: [
+        { label: "Form", body: "$\\mathcal{L} = -\\tfrac{1}{4} F_{\\mu\\nu} F^{\\mu\\nu}$." }
+      ], answer: "$-\\tfrac{1}{4}F^2$" }
+    ],
+    tasks: [
+      { q: "Field has degrees of freedom per?", a: "Spacetime point" },
+      { q: "Lagrangian density units (natural)?", a: "$(\\text{mass})^4$" },
+      { q: "Action $S = $?", a: "$\\int d^4 x\\, \\mathcal{L}$" },
+      { q: "Stress-energy tensor symbol?", a: "$T^{\\mu\\nu}$" },
+      { q: "Gauge potential symbol?", a: "$A_\\mu$" },
+      { q: "$F_{\\mu\\nu} = ?$", a: "$\\partial_\\mu A_\\nu - \\partial_\\nu A_\\mu$" },
+      { q: "Spinor field describes?", a: "Spin-$1/2$ matter" },
+      { q: "Vector field describes?", a: "Spin-$1$" },
+      { q: "Higgs field is?", a: "Scalar" },
+      { q: "Graviton spin?", a: "$2$" }
+    ]
+  },
+  {
+    id: "qft",
+    title: "Quantum Field Theory",
+    level: "advanced",
+    summary: "Canonical quantization, creation/annihilation, Feynman diagrams, QED.",
+    examples: [
+      { title: "Example 1 — Field quantization", prompt: "Promote $\\phi(x)$ to operator.", steps: [
+        { label: "Expand", body: "$\\phi(x) = \\int \\tfrac{d^3 k}{(2\\pi)^3 \\sqrt{2\\omega_k}}(a_k e^{-ikx} + a_k^\\dagger e^{ikx})$." }
+      ], answer: "Operator field" },
+      { title: "Example 2 — Particle creation", prompt: "$a_k^\\dagger$ does what?", steps: [
+        { label: "Action", body: "Adds a quantum with momentum $k$." }
+      ], answer: "Adds a particle" },
+      { title: "Example 3 — Feynman diagram", prompt: "QED vertex.", steps: [
+        { label: "Vertex factor", body: "$-ie\\gamma^\\mu$." }
+      ], answer: "Vertex $\\propto e$" },
+      { title: "Example 4 — Cross section example", prompt: "$e^+ e^- \\to \\mu^+ \\mu^-$ at high energy.", steps: [
+        { label: "Result", body: "$\\sigma \\propto \\alpha^2 / s$." }
+      ], answer: "$\\sigma \\propto \\alpha^2/s$" }
+    ],
+    tasks: [
+      { q: "QED coupling constant value?", a: "$\\alpha \\approx 1/137$" },
+      { q: "Quanta of EM field?", a: "Photons" },
+      { q: "Anti-particles in QFT come from?", a: "Negative-frequency modes" },
+      { q: "Vacuum has?", a: "Zero-point fluctuations" },
+      { q: "Number of QED vertices in tree-level $e^- e^- \\to e^- e^-$?", a: "$2$" },
+      { q: "Casimir effect uses?", a: "Vacuum energy difference" },
+      { q: "Renormalization needed because?", a: "Loop integrals diverge" },
+      { q: "QCD coupling at high energy?", a: "Asymptotically free" },
+      { q: "Wightman axioms formalize?", a: "QFT axioms" },
+      { q: "Spin-statistics theorem proved in?", a: "Lorentz-invariant QFT" }
+    ]
+  },
+  {
+    id: "renormalization",
+    title: "Renormalization",
+    level: "advanced",
+    summary: "Loop divergences, regularization, running couplings, renormalization group.",
+    examples: [
+      { title: "Example 1 — Bare vs renormalized", prompt: "Idea.", steps: [
+        { label: "Strategy", body: "Absorb infinities into redefined parameters." }
+      ], answer: "Bare → physical" },
+      { title: "Example 2 — Running coupling", prompt: "QED.", steps: [
+        { label: "Behavior", body: "$\\alpha$ grows logarithmically with energy." }
+      ], answer: "$\\alpha$ grows with $E$" },
+      { title: "Example 3 — Beta function", prompt: "Definition.", steps: [
+        { label: "Form", body: "$\\beta(g) = \\mu \\partial g/\\partial \\mu$." }
+      ], answer: "Coupling flow rate" },
+      { title: "Example 4 — Asymptotic freedom", prompt: "QCD.", steps: [
+        { label: "Behavior", body: "$\\alpha_s \\to 0$ at high $E$. Negative $\\beta$ near origin." }
+      ], answer: "QCD coupling shrinks at high $E$" }
+    ],
+    tasks: [
+      { q: "Cutoff regularization introduces?", a: "$\\Lambda$ scale" },
+      { q: "Dimensional regularization uses?", a: "$D = 4 - \\varepsilon$" },
+      { q: "Renormalizable theories: divergences absorbable into?", a: "Finite # of parameters" },
+      { q: "QED renormalizable?", a: "Yes" },
+      { q: "Gravity (GR) renormalizable?", a: "No (perturbatively)" },
+      { q: "Wilsonian RG flows toward?", a: "Fixed points / phases" },
+      { q: "Effective field theory's validity?", a: "Below cutoff" },
+      { q: "Standard Model is?", a: "Renormalizable EFT" },
+      { q: "Asymptotic safety?", a: "Possibility for gravity" },
+      { q: "Mass renormalization?", a: "Yes (e.g., electron self-energy)" }
+    ]
+  },
+  {
+    id: "radiation-theory",
+    title: "Radiation Theory",
+    level: "advanced",
+    summary: "Larmor formula, dipole radiation, multipoles, retarded potentials.",
+    examples: [
+      { title: "Example 1 — Larmor", prompt: "Power radiated by accelerating charge.", steps: [
+        { label: "Formula", body: "$P = q^2 a^2/(6\\pi\\varepsilon_0 c^3)$." }
+      ], answer: "$\\propto a^2$" },
+      { title: "Example 2 — Dipole radiation", prompt: "Power.", steps: [
+        { label: "Form", body: "$P = \\omega^4 p_0^2/(12\\pi\\varepsilon_0 c^3)$." }
+      ], answer: "$\\propto \\omega^4$" },
+      { title: "Example 3 — Retarded potentials", prompt: "Concept.", steps: [
+        { label: "Idea", body: "Field at $(\\vec r, t)$ depends on charge state at retarded time $t' = t - |\\vec r - \\vec r'|/c$." }
+      ], answer: "Causality built in" },
+      { title: "Example 4 — Multipole expansion", prompt: "Leading terms.", steps: [
+        { label: "Form", body: "Monopole, dipole, quadrupole, …" }
+      ], answer: "Series in $1/r$" }
+    ],
+    tasks: [
+      { q: "Why sky blue?", a: "Rayleigh $\\propto \\omega^4$" },
+      { q: "Sunset red?", a: "Blue scattered out" },
+      { q: "Antenna radiates if?", a: "Currents oscillate" },
+      { q: "Cyclotron radiation?", a: "From circular motion in $B$" },
+      { q: "Synchrotron at relativistic speeds?", a: "Forward-focused beam" },
+      { q: "Bremsstrahlung from?", a: "Decelerating charge" },
+      { q: "Magnetic monopoles in standard EM?", a: "Absent" },
+      { q: "Radiation reaction force = ?", a: "Abraham-Lorentz" },
+      { q: "Black-body relates to?", a: "Quantized EM radiation" },
+      { q: "Coulomb gauge: $\\nabla \\cdot \\vec A = ?$", a: "$0$" }
+    ]
+  },
+  {
+    id: "em-waves-matter",
+    title: "EM Waves in Matter",
+    level: "advanced",
+    summary: "Dispersion, dielectric and magnetic response, group velocity.",
+    examples: [
+      { title: "Example 1 — Refractive index", prompt: "In linear medium.", steps: [
+        { label: "Form", body: "$n = \\sqrt{\\varepsilon_r \\mu_r}$." }
+      ], answer: "$n = \\sqrt{\\varepsilon_r \\mu_r}$" },
+      { title: "Example 2 — Phase vs group velocity", prompt: "Definitions.", steps: [
+        { label: "Forms", body: "$v_p = \\omega/k$, $v_g = d\\omega/dk$." }
+      ], answer: "Different in dispersive media" },
+      { title: "Example 3 — Dispersion", prompt: "Visible light in glass.", steps: [
+        { label: "Result", body: "$n$ varies with $\\lambda$ — prism separates colors." }
+      ], answer: "Color separation" },
+      { title: "Example 4 — Kramers-Kronig", prompt: "Statement.", steps: [
+        { label: "Idea", body: "Real and imaginary parts of $\\varepsilon(\\omega)$ are related via Hilbert transforms (causality)." }
+      ], answer: "$\\varepsilon_1$ and $\\varepsilon_2$ linked" }
+    ],
+    tasks: [
+      { q: "$n$ for vacuum?", a: "$1$" },
+      { q: "$n$ for water?", a: "$\\approx 1.33$" },
+      { q: "Wavelength shortens in?", a: "Denser medium" },
+      { q: "Speed slows in?", a: "Denser medium" },
+      { q: "$v_g > c$ possible (anomalous dispersion)?", a: "Yes (no info > $c$)" },
+      { q: "Plasma reflects below?", a: "Plasma frequency" },
+      { q: "Skin depth in conductor?", a: "$\\delta = \\sqrt{2/(\\mu\\sigma\\omega)}$" },
+      { q: "Brewster angle: reflected light?", a: "Fully polarized" },
+      { q: "Permittivity tensor in anisotropic media?", a: "Yes" },
+      { q: "Photonic crystal: band gaps in?", a: "Optical frequencies" }
+    ]
+  },
+  {
+    id: "lasers",
+    title: "Lasers & Coherent Optics",
+    level: "advanced",
+    summary: "Stimulated emission, population inversion, threshold, gain.",
+    examples: [
+      { title: "Example 1 — Einstein A and B", prompt: "Relations.", steps: [
+        { label: "Form", body: "$A_{21}$: spontaneous; $B_{12}, B_{21}$: stimulated." }
+      ], answer: "Spontaneous + stimulated" },
+      { title: "Example 2 — Population inversion", prompt: "Condition.", steps: [
+        { label: "Required", body: "$N_2 > N_1$ for net gain." }
+      ], answer: "$N_2 > N_1$" },
+      { title: "Example 3 — Laser threshold", prompt: "Idea.", steps: [
+        { label: "Condition", body: "Round-trip gain = losses." }
+      ], answer: "Gain = loss" },
+      { title: "Example 4 — Coherence length", prompt: "Definition.", steps: [
+        { label: "Form", body: "$L_c = c\\tau_c \\sim c/\\Delta\\nu$." }
+      ], answer: "$c/\\Delta\\nu$" }
+    ],
+    tasks: [
+      { q: "Laser stands for?", a: "Light Amplification by Stimulated Emission of Radiation" },
+      { q: "He-Ne laser wavelength?", a: "$632.8$ nm" },
+      { q: "CO$_2$ laser wavelength?", a: "$10.6$ μm" },
+      { q: "Mode-locked laser produces?", a: "Short pulses" },
+      { q: "Q-switched laser produces?", a: "High peak power" },
+      { q: "Fabry-Pérot cavity defines?", a: "Modes" },
+      { q: "Three- vs four-level systems: easier inversion?", a: "Four-level" },
+      { q: "Optical pumping uses?", a: "Light or current" },
+      { q: "Diode lasers based on?", a: "p-n junction" },
+      { q: "Spectroscopy benefits from laser?", a: "Narrow linewidth" }
+    ]
+  },
+  {
+    id: "quantum-optics",
+    title: "Quantum Optics",
+    level: "advanced",
+    summary: "Coherent states, photon statistics, Jaynes-Cummings, squeezed light.",
+    examples: [
+      { title: "Example 1 — Coherent state", prompt: "Definition.", steps: [
+        { label: "Eigenvalue", body: "$\\hat a |\\alpha\\rangle = \\alpha |\\alpha\\rangle$." },
+        { label: "Photons", body: "Poisson distribution." }
+      ], answer: "$|\\alpha\\rangle$" },
+      { title: "Example 2 — Jaynes-Cummings", prompt: "Rabi oscillations.", steps: [
+        { label: "Coupling", body: "Single atom + single cavity mode → vacuum Rabi." }
+      ], answer: "Rabi oscillation" },
+      { title: "Example 3 — Antibunching", prompt: "Non-classical light.", steps: [
+        { label: "$g^{(2)}(0)$", body: "$< 1$ — sub-Poissonian." }
+      ], answer: "Non-classical" },
+      { title: "Example 4 — Squeezed", prompt: "Reduced fluctuations.", steps: [
+        { label: "Form", body: "One quadrature has less noise than vacuum at cost of the other." }
+      ], answer: "Below shot noise" }
+    ],
+    tasks: [
+      { q: "Photon number variance for coherent state?", a: "Equal to mean" },
+      { q: "Number state $|n\\rangle$: photon variance?", a: "$0$" },
+      { q: "Thermal state photon statistics?", a: "Bose-Einstein" },
+      { q: "HBT experiment measures?", a: "$g^{(2)}$" },
+      { q: "Single photon source: $g^{(2)}(0) = ?$", a: "$0$" },
+      { q: "Squeezed light used in?", a: "LIGO" },
+      { q: "Optical parametric oscillator generates?", a: "Squeezed/entangled photons" },
+      { q: "Cavity QED studies?", a: "Strong matter-light coupling" },
+      { q: "EIT?", a: "Electromagnetically induced transparency" },
+      { q: "Boson sampling problem?", a: "Quantum advantage candidate" }
+    ]
+  },
+  {
+    id: "amo",
+    title: "Atomic, Molecular & Optical Physics",
+    level: "advanced",
+    summary: "Laser cooling, magneto-optical traps, BEC, ultracold matter.",
+    examples: [
+      { title: "Example 1 — Doppler cooling", prompt: "Mechanism.", steps: [
+        { label: "Idea", body: "Counter-propagating lasers slightly red-detuned: moving atoms see Doppler-shifted photons resonantly, get cooled." }
+      ], answer: "Red-detuned counter-prop" },
+      { title: "Example 2 — Doppler limit", prompt: "Lowest temperature.", steps: [
+        { label: "Form", body: "$T_D = \\hbar\\Gamma/(2 k_B)$." }
+      ], answer: "$\\hbar\\Gamma/(2 k_B)$" },
+      { title: "Example 3 — Magnetic trap", prompt: "Idea.", steps: [
+        { label: "Mechanism", body: "Magnetic gradient creates potential well for atoms in low-field-seeking state." }
+      ], answer: "Field minimum traps" },
+      { title: "Example 4 — BEC critical T", prompt: "Form.", steps: [
+        { label: "Result", body: "$T_c \\propto n^{2/3} \\hbar^2/(m k_B)$." }
+      ], answer: "$T_c \\propto n^{2/3}$" }
+    ],
+    tasks: [
+      { q: "Sub-Doppler cooling reaches?", a: "Below $T_D$" },
+      { q: "Recoil limit?", a: "$T_R = \\hbar^2 k^2/(m k_B)$" },
+      { q: "MOT acronym?", a: "Magneto-optical trap" },
+      { q: "Optical lattice formed by?", a: "Interfering lasers" },
+      { q: "BEC first observed?", a: "$1995$" },
+      { q: "Fermionic superfluidity in atoms?", a: "Yes (Cooper-paired cold atoms)" },
+      { q: "Feshbach resonance tunes?", a: "Interaction strength" },
+      { q: "Atomic clock based on?", a: "Optical transition" },
+      { q: "Cs clock SI second defined since?", a: "$1967$" },
+      { q: "Rydberg atoms are?", a: "High-$n$ excited states" }
+    ]
+  },
+  {
+    id: "phase-transitions",
+    title: "Phase Transitions & Critical Phenomena",
+    level: "advanced",
+    summary: "Landau theory, Ising, order parameter, scaling exponents, universality.",
+    examples: [
+      { title: "Example 1 — Curie point", prompt: "Ferromagnet.", steps: [
+        { label: "Behavior", body: "Spontaneous magnetization vanishes at $T_c$." }
+      ], answer: "$T_c$" },
+      { title: "Example 2 — Landau expansion", prompt: "Free energy.", steps: [
+        { label: "Form", body: "$F = a(T - T_c) m^2 + b m^4 + \\ldots$" }
+      ], answer: "$F(m, T)$" },
+      { title: "Example 3 — Mean-field $T_c$ (Ising)", prompt: "Result.", steps: [
+        { label: "Value", body: "$k_B T_c = z J$ in mean field ($z =$ coordination number)." }
+      ], answer: "Mean-field $T_c$" },
+      { title: "Example 4 — Critical exponents", prompt: "Order parameter.", steps: [
+        { label: "Form", body: "$m \\propto (T_c - T)^\\beta$, $\\beta \\approx 1/8$ in 2D Ising." }
+      ], answer: "$m \\propto |T - T_c|^\\beta$" }
+    ],
+    tasks: [
+      { q: "Universality class depends on?", a: "Dimension + symmetry" },
+      { q: "First-order transition: latent heat?", a: "Yes" },
+      { q: "Second-order transition: latent heat?", a: "No" },
+      { q: "Susceptibility diverges at?", a: "Critical point" },
+      { q: "Correlation length at $T_c$?", a: "Diverges" },
+      { q: "Renormalization group fixed point ↔ ?", a: "Critical point" },
+      { q: "Upper critical dimension Ising?", a: "$4$" },
+      { q: "Liquid-gas critical point: universality?", a: "Ising 3D" },
+      { q: "Mean-field predicts $\\beta$ = ?", a: "$1/2$" },
+      { q: "Onsager solved exactly?", a: "$2$D Ising" }
+    ]
+  },
+  {
+    id: "nonequilibrium-statmech",
+    title: "Non-equilibrium Statistical Mechanics",
+    level: "advanced",
+    summary: "Boltzmann equation, transport coefficients, fluctuation-dissipation.",
+    examples: [
+      { title: "Example 1 — Boltzmann equation", prompt: "Form.", steps: [
+        { label: "Form", body: "$(\\partial_t + \\vec v \\cdot \\nabla_x + \\vec F \\cdot \\nabla_v) f = (\\partial f/\\partial t)_{coll}$." }
+      ], answer: "Distribution evolution" },
+      { title: "Example 2 — Relaxation time", prompt: "Approx.", steps: [
+        { label: "Form", body: "$(\\partial f/\\partial t)_{coll} \\approx -(f - f_0)/\\tau$." }
+      ], answer: "Relaxation approx" },
+      { title: "Example 3 — Thermal conductivity", prompt: "Kinetic theory.", steps: [
+        { label: "Order", body: "$\\kappa \\sim n v \\lambda c_V/m$." }
+      ], answer: "$\\kappa$" },
+      { title: "Example 4 — Fluctuation-dissipation", prompt: "Statement.", steps: [
+        { label: "Idea", body: "Linear response $\\chi(\\omega)$ related to equilibrium fluctuations." }
+      ], answer: "FDT" }
+    ],
+    tasks: [
+      { q: "Boltzmann H-theorem: entropy?", a: "Non-decreasing" },
+      { q: "Onsager reciprocal relations?", a: "$L_{ij} = L_{ji}$" },
+      { q: "Drude conductivity?", a: "$\\sigma = ne^2 \\tau/m$" },
+      { q: "Einstein-Smoluchowski (mobility-diffusion)?", a: "$D = \\mu k_B T$" },
+      { q: "Wiedemann-Franz (metals)?", a: "$\\kappa/(\\sigma T) = L_0$" },
+      { q: "Mean free path symbol?", a: "$\\lambda$" },
+      { q: "Master equation for Markovian?", a: "Yes" },
+      { q: "Detailed balance: equilibrium condition?", a: "Yes" },
+      { q: "Fokker-Planck describes?", a: "Probability density of stochastic dynamics" },
+      { q: "Jarzynski equality: $\\langle e^{-\\beta W} \\rangle = ?$", a: "$e^{-\\beta \\Delta F}$" }
+    ]
+  },
+  {
+    id: "superconductivity",
+    title: "Superconductivity",
+    level: "advanced",
+    summary: "Meissner, Cooper pairs, BCS gap, Josephson effect.",
+    examples: [
+      { title: "Example 1 — Meissner effect", prompt: "Below $T_c$.", steps: [
+        { label: "Result", body: "Expulsion of magnetic field (perfect diamagnet)." }
+      ], answer: "$B = 0$ inside" },
+      { title: "Example 2 — Coherence length", prompt: "Order parameter scale.", steps: [
+        { label: "Order", body: "$\\xi \\sim \\hbar v_F / (\\pi \\Delta)$." }
+      ], answer: "$\\sim 100$ nm in conventional SC" },
+      { title: "Example 3 — BCS gap", prompt: "Cooper pair binding.", steps: [
+        { label: "Order", body: "$2\\Delta(0) \\approx 3.5\\, k_B T_c$." }
+      ], answer: "$\\sim 3.5 k_B T_c$" },
+      { title: "Example 4 — Josephson freq", prompt: "Junction with DC voltage $V$.", steps: [
+        { label: "AC current", body: "$\\omega = 2eV/\\hbar$." }
+      ], answer: "$\\omega = 2eV/\\hbar$" }
+    ],
+    tasks: [
+      { q: "Superconducting transition: discovered by?", a: "Onnes (1911)" },
+      { q: "BCS theory year?", a: "$1957$" },
+      { q: "Cooper pair charge?", a: "$2e$" },
+      { q: "London penetration depth: typical?", a: "$\\sim 100$ nm" },
+      { q: "Type-II SC allows?", a: "Magnetic vortices" },
+      { q: "High-$T_c$ cuprates: typical $T_c$?", a: "$> 77$ K (LN$_2$)" },
+      { q: "Iron-based SCs?", a: "Discovered $2008$" },
+      { q: "Magnetic levitation uses?", a: "Meissner" },
+      { q: "SQUID measures?", a: "Tiny magnetic fields" },
+      { q: "Josephson DC effect: zero-voltage current up to?", a: "Critical current" }
+    ]
+  },
+  {
+    id: "quantum-hall-topological",
+    title: "Quantum Hall & Topological Phases",
+    level: "advanced",
+    summary: "Integer and fractional QH, Landau levels, topological invariants.",
+    examples: [
+      { title: "Example 1 — Hall conductance", prompt: "Quantization.", steps: [
+        { label: "Result", body: "$\\sigma_{xy} = \\nu e^2/h$, $\\nu$ integer (IQHE)." }
+      ], answer: "Quantized" },
+      { title: "Example 2 — Filling factor", prompt: "Definition.", steps: [
+        { label: "Form", body: "$\\nu = n h/(eB)$." }
+      ], answer: "$\\nu$" },
+      { title: "Example 3 — Landau levels", prompt: "Energies.", steps: [
+        { label: "Form", body: "$E_n = \\hbar\\omega_c(n + 1/2)$, $\\omega_c = eB/m$." }
+      ], answer: "Discrete levels" },
+      { title: "Example 4 — Topological invariant", prompt: "Chern number.", steps: [
+        { label: "Idea", body: "Integer characterizing Berry curvature, robust to perturbations." }
+      ], answer: "Chern number" }
+    ],
+    tasks: [
+      { q: "FQHE filling $\\nu = 1/3$ discovered by?", a: "Tsui-Stormer ($1982$)" },
+      { q: "Anyons exist where?", a: "FQHE edges/quasiparticles" },
+      { q: "Topological insulator surface states?", a: "Conducting (bulk insulating)" },
+      { q: "Quantum spin Hall effect: edge?", a: "Spin-momentum locked" },
+      { q: "Berry phase generalizes?", a: "Geometric phase" },
+      { q: "Chern insulator vs $\\mathbb{Z}_2$ insulator?", a: "Time-reversal symmetry" },
+      { q: "Topological order: ground-state degeneracy on?", a: "Genus" },
+      { q: "Majorana fermion in?", a: "Topological superconductor" },
+      { q: "Weyl semimetal: nodes?", a: "Linear band crossings in 3D" },
+      { q: "Nobel for topological phases?", a: "Thouless-Haldane-Kosterlitz ($2016$)" }
+    ]
+  },
+  {
+    id: "phonons",
+    title: "Phonons & Lattice Dynamics",
+    level: "advanced",
+    summary: "Lattice vibrations, dispersion, Debye and Einstein models.",
+    examples: [
+      { title: "Example 1 — 1D chain dispersion", prompt: "Mass-spring chain.", steps: [
+        { label: "Result", body: "$\\omega(q) = 2\\sqrt{K/m}|\\sin(qa/2)|$." }
+      ], answer: "Sinusoidal" },
+      { title: "Example 2 — Sound speed", prompt: "Long wavelength.", steps: [
+        { label: "Result", body: "$v_s = a\\sqrt{K/m}$." }
+      ], answer: "$a\\sqrt{K/m}$" },
+      { title: "Example 3 — Debye temperature", prompt: "Order in metals.", steps: [
+        { label: "Range", body: "$\\Theta_D \\sim 100$–$1000$ K depending on material." }
+      ], answer: "$\\Theta_D$" },
+      { title: "Example 4 — Specific heat (low T)", prompt: "Debye prediction.", steps: [
+        { label: "Form", body: "$C_V \\propto T^3$ for $T \\ll \\Theta_D$." }
+      ], answer: "$\\propto T^3$" }
+    ],
+    tasks: [
+      { q: "Acoustic vs optical branches: differ at?", a: "$q \\to 0$" },
+      { q: "Acoustic branch frequency at $q = 0$?", a: "$0$" },
+      { q: "Optical branch frequency at $q = 0$?", a: "Finite" },
+      { q: "Brillouin zone is?", a: "Wigner-Seitz of reciprocal lattice" },
+      { q: "Bose-Einstein for phonons?", a: "Yes" },
+      { q: "Phonons are?", a: "Quanta of lattice vibrations" },
+      { q: "Anharmonicity gives?", a: "Thermal expansion" },
+      { q: "Umklapp scattering?", a: "Phonon momentum + $\\vec G$" },
+      { q: "Sound speed in steel?", a: "$\\sim 5000$ m/s" },
+      { q: "Cooper pairs from electron-phonon coupling?", a: "Yes (BCS)" }
+    ]
+  },
+  {
+    id: "stellar-evolution",
+    title: "Stellar Structure & Evolution",
+    level: "advanced",
+    summary: "Main sequence, HR diagram, red giants, white dwarfs.",
+    examples: [
+      { title: "Example 1 — Main-sequence lifetime", prompt: "Scaling.", steps: [
+        { label: "Result", body: "$t \\propto M/L \\propto M^{-2.5}$ for $L \\propto M^{3.5}$." }
+      ], answer: "$\\propto M^{-2.5}$" },
+      { title: "Example 2 — HR diagram", prompt: "Axes.", steps: [
+        { label: "Setup", body: "$\\log L$ vs $T_{eff}$ (or color)." }
+      ], answer: "Luminosity vs temperature" },
+      { title: "Example 3 — Sun's fate", prompt: "Trajectory.", steps: [
+        { label: "Sequence", body: "Main seq → red giant → planetary nebula → white dwarf." }
+      ], answer: "Eventually WD" },
+      { title: "Example 4 — Massive star end", prompt: "Sequence.", steps: [
+        { label: "Trajectory", body: "Red supergiant → core-collapse SN → neutron star or BH." }
+      ], answer: "Supernova" }
+    ],
+    tasks: [
+      { q: "Main-sequence H burning to?", a: "He" },
+      { q: "Sun's age?", a: "$\\sim 4.6$ Gyr" },
+      { q: "Sun's main-sequence lifetime?", a: "$\\sim 10$ Gyr" },
+      { q: "Heavier stars burn faster?", a: "Yes" },
+      { q: "Type II supernova: collapse of?", a: "Iron core" },
+      { q: "Type Ia: explosion of?", a: "White dwarf (Chandrasekhar)" },
+      { q: "Schönberg-Chandrasekhar limit?", a: "Inert core mass fraction" },
+      { q: "Helium flash occurs at?", a: "RGB tip (low-mass stars)" },
+      { q: "Brown dwarfs vs stars?", a: "Don't sustain H fusion" },
+      { q: "Globular cluster ages from?", a: "MS turnoff" }
+    ]
+  },
+  {
+    id: "stellar-nucleosynthesis",
+    title: "Stellar Nucleosynthesis",
+    level: "advanced",
+    summary: "pp chain, CNO cycle, s-process, r-process, origin of heavy elements.",
+    examples: [
+      { title: "Example 1 — pp chain", prompt: "Net reaction.", steps: [
+        { label: "Net", body: "$4\\,{}^1\\text{H} \\to {}^4\\text{He} + 2 e^+ + 2 \\nu + 26.7$ MeV." }
+      ], answer: "$26.7$ MeV" },
+      { title: "Example 2 — CNO temperature", prompt: "Dominant above.", steps: [
+        { label: "Threshold", body: "$T \\gtrsim 2 \\times 10^7$ K (heavier stars)." }
+      ], answer: "$\\gtrsim 17$ MK" },
+      { title: "Example 3 — r-process", prompt: "Site.", steps: [
+        { label: "Where", body: "Neutron star mergers (and core-collapse SNe)." }
+      ], answer: "NS mergers" },
+      { title: "Example 4 — Iron peak", prompt: "Why elements pile up.", steps: [
+        { label: "Reason", body: "$^{56}$Fe is most tightly bound — endpoint of stellar fusion." }
+      ], answer: "Most bound nucleus" }
+    ],
+    tasks: [
+      { q: "Helium produced in?", a: "Big Bang + stars" },
+      { q: "Carbon produced by?", a: "Triple-alpha" },
+      { q: "Oxygen produced via?", a: "Alpha capture on C" },
+      { q: "s-process: slow neutron capture in?", a: "AGB stars" },
+      { q: "Heaviest naturally occurring?", a: "U (and trace heavier)" },
+      { q: "Solar neutrino problem solved by?", a: "Neutrino oscillations" },
+      { q: "Sun's energy from?", a: "pp chain primarily" },
+      { q: "Gold synthesis?", a: "Mostly r-process (NS mergers)" },
+      { q: "BBN produces?", a: "H, He, traces of Li" },
+      { q: "Metals in astronomy mean?", a: "Anything heavier than He" }
+    ]
+  },
+  {
+    id: "compact-objects",
+    title: "Compact Objects",
+    level: "advanced",
+    summary: "White dwarfs, neutron stars, black holes — physics of extremes.",
+    examples: [
+      { title: "Example 1 — Chandrasekhar mass", prompt: "WD max mass.", steps: [
+        { label: "Value", body: "$\\approx 1.4\\, M_\\odot$." }
+      ], answer: "$1.4 M_\\odot$" },
+      { title: "Example 2 — NS density", prompt: "Order.", steps: [
+        { label: "Value", body: "$\\sim 10^{17}$ kg/m³ (nuclear density)." }
+      ], answer: "Nuclear density" },
+      { title: "Example 3 — Hawking temperature", prompt: "BH of mass $M$.", steps: [
+        { label: "Form", body: "$T = \\hbar c^3 / (8\\pi G M k_B)$." }
+      ], answer: "$T \\propto 1/M$" },
+      { title: "Example 4 — BH entropy", prompt: "Bekenstein-Hawking.", steps: [
+        { label: "Form", body: "$S = k_B A/(4 \\ell_P^2)$." }
+      ], answer: "$S \\propto A$" }
+    ],
+    tasks: [
+      { q: "WD supported by?", a: "Electron degeneracy" },
+      { q: "NS supported by?", a: "Neutron degeneracy + strong force" },
+      { q: "TOV limit (NS max)?", a: "$\\sim 2$–$3 M_\\odot$" },
+      { q: "Stellar BH minimum mass?", a: "$\\sim 3 M_\\odot$" },
+      { q: "Supermassive BH at galaxy center?", a: "Yes" },
+      { q: "Sgr A* mass?", a: "$\\sim 4 \\times 10^6 M_\\odot$" },
+      { q: "Pulsar = rotating?", a: "Neutron star" },
+      { q: "Magnetar?", a: "Highly magnetic NS" },
+      { q: "BH no-hair theorem?", a: "Mass, charge, spin only" },
+      { q: "Penrose process extracts energy from?", a: "Rotating BH ergosphere" }
+    ]
+  },
+  {
+    id: "galactic-dynamics",
+    title: "Galactic Dynamics",
+    level: "advanced",
+    summary: "Rotation curves, density-wave theory, virial mass, dark matter.",
+    examples: [
+      { title: "Example 1 — Rotation curve", prompt: "Outer galaxies.", steps: [
+        { label: "Result", body: "Flat (not Keplerian), implying dark matter halo." }
+      ], answer: "Flat → dark matter" },
+      { title: "Example 2 — Virial theorem", prompt: "$\\langle T \\rangle = -\\tfrac{1}{2}\\langle V \\rangle$.", steps: [
+        { label: "Use", body: "Estimate cluster masses." }
+      ], answer: "Mass estimator" },
+      { title: "Example 3 — Spiral arms", prompt: "Density-wave theory.", steps: [
+        { label: "Idea", body: "Arms are wave patterns, not material structures." }
+      ], answer: "Waves, not material" },
+      { title: "Example 4 — Halo mass", prompt: "From rotation $v$.", steps: [
+        { label: "Estimate", body: "$M(r) \\sim v^2 r/G$." }
+      ], answer: "$\\sim v^2 r/G$" }
+    ],
+    tasks: [
+      { q: "Milky Way DM fraction?", a: "Majority of mass" },
+      { q: "Local group dominant galaxies?", a: "Milky Way + Andromeda" },
+      { q: "Hubble sequence: spiral vs?", a: "Elliptical, irregular" },
+      { q: "AGN powered by?", a: "Accretion onto SMBH" },
+      { q: "Tully-Fisher: $L \\propto$?", a: "$v^4$ (spirals)" },
+      { q: "Faber-Jackson: $\\sigma$ for ellipticals?", a: "Velocity dispersion" },
+      { q: "MOND alternative to?", a: "Dark matter" },
+      { q: "Bullet Cluster shows?", a: "Mass-light offset → DM" },
+      { q: "Globular clusters orbit?", a: "Galactic halo" },
+      { q: "Galaxy merger product example?", a: "Antennae" }
+    ]
+  },
+  {
+    id: "bbn-cmb-inflation",
+    title: "BBN, CMB & Inflation",
+    level: "advanced",
+    summary: "Big Bang nucleosynthesis, cosmic microwave background, inflationary cosmology.",
+    examples: [
+      { title: "Example 1 — BBN ratio", prompt: "Primordial He/H.", steps: [
+        { label: "Value", body: "$Y_p \\approx 0.245$ by mass." }
+      ], answer: "$\\sim 25\\%$ He" },
+      { title: "Example 2 — CMB temperature", prompt: "Today.", steps: [
+        { label: "Value", body: "$\\approx 2.725$ K." }
+      ], answer: "$2.725$ K" },
+      { title: "Example 3 — Acoustic peaks", prompt: "Origin.", steps: [
+        { label: "Cause", body: "Sound waves in photon-baryon plasma before recombination." }
+      ], answer: "Plasma oscillations" },
+      { title: "Example 4 — Inflation e-folds", prompt: "Typical number.", steps: [
+        { label: "Order", body: "$\\sim 60$ e-folds to solve horizon and flatness." }
+      ], answer: "$\\sim 60$" }
+    ],
+    tasks: [
+      { q: "BBN occurred at?", a: "$\\sim 3$ min after Big Bang" },
+      { q: "Recombination at?", a: "$z \\sim 1100$, $T \\sim 3000$ K" },
+      { q: "CMB discovered by?", a: "Penzias-Wilson ($1965$)" },
+      { q: "CMB anisotropy at level?", a: "$\\sim 10^{-5}$" },
+      { q: "Inflation solves problems?", a: "Horizon, flatness, monopole" },
+      { q: "Slow-roll: $\\epsilon, \\eta$ small means?", a: "Quasi-de Sitter" },
+      { q: "Quantum fluctuations seed?", a: "Structure" },
+      { q: "Lithium problem?", a: "$^7$Li abundance" },
+      { q: "Reionization at $z \\sim$?", a: "$6$–$10$" },
+      { q: "Sachs-Wolfe effect causes?", a: "Large-scale CMB anisotropy" }
+    ]
+  },
+  {
+    id: "gravitational-waves",
+    title: "Gravitational Waves",
+    level: "advanced",
+    summary: "Quadrupole formula, binary mergers, LIGO detection.",
+    examples: [
+      { title: "Example 1 — Strain", prompt: "Definition.", steps: [
+        { label: "Form", body: "$h \\sim \\Delta L/L$, tiny: $\\sim 10^{-21}$." }
+      ], answer: "$10^{-21}$" },
+      { title: "Example 2 — Quadrupole power", prompt: "Form.", steps: [
+        { label: "Form", body: "$P = (G/5c^5) \\langle \\dddot Q_{ij} \\dddot Q^{ij} \\rangle$." }
+      ], answer: "Quadrupole formula" },
+      { title: "Example 3 — Chirp", prompt: "Binary inspiral.", steps: [
+        { label: "Frequency", body: "Increases as $f \\propto (t_c - t)^{-3/8}$ before merger." }
+      ], answer: "Chirp signal" },
+      { title: "Example 4 — Energy", prompt: "GW150914 emitted energy.", steps: [
+        { label: "Order", body: "$\\sim 3 M_\\odot c^2$ over $\\sim 0.2$ s." }
+      ], answer: "$\\sim 3 M_\\odot c^2$" }
+    ],
+    tasks: [
+      { q: "GW travel speed?", a: "$c$" },
+      { q: "First direct detection?", a: "$2015$ (GW150914)" },
+      { q: "LIGO uses?", a: "Michelson interferometer" },
+      { q: "Polarization states of GW?", a: "$2$ ($+, \\times$)" },
+      { q: "Source frequency band for LIGO?", a: "$\\sim 10$–$1000$ Hz" },
+      { q: "LISA targets?", a: "mHz band (space)" },
+      { q: "Pulsar timing arrays target?", a: "nHz (supermassive BH)" },
+      { q: "Binary NS merger seen with EM?", a: "GW170817" },
+      { q: "Stochastic background sources?", a: "Inflation, cosmic strings, mergers" },
+      { q: "Nobel for GW detection?", a: "$2017$" }
+    ]
+  },
+  {
+    id: "high-energy-astrophysics",
+    title: "High-Energy Astrophysics",
+    level: "advanced",
+    summary: "AGN, jets, gamma-ray bursts, cosmic rays.",
+    examples: [
+      { title: "Example 1 — GRB total energy", prompt: "Beamed energy.", steps: [
+        { label: "Order", body: "$\\sim 10^{52}$ erg (isotropic), $\\sim 10^{50}$ beamed." }
+      ], answer: "$\\sim 10^{52}$ erg iso" },
+      { title: "Example 2 — Cosmic ray spectrum", prompt: "Power law.", steps: [
+        { label: "Form", body: "$N(E) \\propto E^{-2.7}$ up to knee." }
+      ], answer: "$\\propto E^{-2.7}$" },
+      { title: "Example 3 — Relativistic jet", prompt: "AGN/blazar.", steps: [
+        { label: "Cause", body: "Magnetically accelerated outflow from accreting BH." }
+      ], answer: "Magnetic" },
+      { title: "Example 4 — Synchrotron", prompt: "Charged particles in $B$.", steps: [
+        { label: "Spectrum", body: "Power-law radiation peaking $\\propto \\gamma^2 B$." }
+      ], answer: "Synchrotron emission" }
+    ],
+    tasks: [
+      { q: "AGN luminosity range?", a: "Up to $10^{47}$ erg/s" },
+      { q: "Blazar: jet pointed at?", a: "Observer" },
+      { q: "GRBs (long): collapsars from?", a: "Massive star collapse" },
+      { q: "GRBs (short): mergers of?", a: "Compact binaries" },
+      { q: "UHECR origin?", a: "Extragalactic (likely AGN)" },
+      { q: "GZK cutoff at?", a: "$\\sim 5 \\times 10^{19}$ eV" },
+      { q: "TeV gamma rays from?", a: "Pulsars, AGN, SNRs" },
+      { q: "X-ray binaries: NS or BH?", a: "Either" },
+      { q: "Active galaxies host?", a: "Accreting SMBH" },
+      { q: "IceCube detects?", a: "TeV-PeV neutrinos" }
+    ]
+  },
+  {
+    id: "math-methods-physics",
+    title: "Mathematical Methods for Physics",
+    level: "advanced",
+    summary: "Special functions, Green's functions, contour integration, asymptotic methods.",
+    examples: [
+      { title: "Example 1 — Bessel functions", prompt: "Where they appear.", steps: [
+        { label: "Use", body: "Radial part of wave/heat equation in cylindrical coords." }
+      ], answer: "Cylindrical solutions" },
+      { title: "Example 2 — Green's function", prompt: "Heat equation 1D.", steps: [
+        { label: "Form", body: "$G(x, t) = (4\\pi D t)^{-1/2} e^{-x^2/(4Dt)}$." }
+      ], answer: "Gaussian kernel" },
+      { title: "Example 3 — Contour integral", prompt: "$\\int_{-\\infty}^\\infty \\dfrac{dx}{1 + x^2}$.", steps: [
+        { label: "Close upper", body: "Residue at $x = i$ gives $\\pi$." }
+      ], answer: "$\\pi$" },
+      { title: "Example 4 — Saddle point", prompt: "Method.", steps: [
+        { label: "Idea", body: "Approximate $\\int e^{i S(x)/\\hbar}$ around stationary $S$." }
+      ], answer: "Stationary phase" }
+    ],
+    tasks: [
+      { q: "Legendre polynomials orthogonal on?", a: "$[-1, 1]$" },
+      { q: "Hermite polynomials appear in?", a: "QM harmonic oscillator" },
+      { q: "Laguerre polynomials in?", a: "Hydrogen radial part" },
+      { q: "Spherical harmonics orthogonal on?", a: "Sphere" },
+      { q: "Sturm-Liouville theory: eigenvalues?", a: "Discrete, real" },
+      { q: "Method of images: applies to?", a: "Boundary-value problems" },
+      { q: "Dimensional analysis: 3 variables, 2 dimensions ⇒?", a: "$1$ dimensionless group" },
+      { q: "WKB approximation valid for?", a: "Slowly varying potential" },
+      { q: "Variational principle bounds?", a: "Ground state above" },
+      { q: "Laplace transform $\\mathcal{L}\\{e^{at}\\}$?", a: "$1/(s - a)$" }
+    ]
+  },
+  {
+    id: "group-theory-physics",
+    title: "Group Theory in Physics",
+    level: "advanced",
+    summary: "Continuous and discrete symmetry groups in physical applications.",
+    examples: [
+      { title: "Example 1 — SU(2) generators", prompt: "Pauli matrices.", steps: [
+        { label: "Generators", body: "$T_i = \\sigma_i/2$." }
+      ], answer: "$\\sigma_i/2$" },
+      { title: "Example 2 — SU(3) Gell-Mann", prompt: "Number of generators.", steps: [
+        { label: "Count", body: "$3^2 - 1 = 8$." }
+      ], answer: "$8$ (Gell-Mann)" },
+      { title: "Example 3 — Character table", prompt: "Use.", steps: [
+        { label: "Purpose", body: "Decompose representations of finite groups." }
+      ], answer: "Decomposition tool" },
+      { title: "Example 4 — Selection rules", prompt: "QM transitions.", steps: [
+        { label: "Idea", body: "Symmetry forbids transitions whose matrix element vanishes by group theory." }
+      ], answer: "Symmetry forbids transitions" }
+    ],
+    tasks: [
+      { q: "Symmetry group of equilateral triangle?", a: "$D_3$" },
+      { q: "Symmetry group of cube (rotations)?", a: "$S_4$ (order $24$)" },
+      { q: "Crystallographic point groups in 3D?", a: "$32$" },
+      { q: "Bravais lattices in 3D?", a: "$14$" },
+      { q: "Space groups in 3D?", a: "$230$" },
+      { q: "$SO(3)$ irreducible reps labeled by?", a: "Integer $\\ell$" },
+      { q: "$SU(2)$ irreducible reps labeled by?", a: "Half-integer $j$" },
+      { q: "Standard Model gauge group?", a: "$SU(3) \\times SU(2) \\times U(1)$" },
+      { q: "GUT example?", a: "$SU(5)$" },
+      { q: "Lorentz group double cover?", a: "$SL(2, \\mathbb{C})$" }
+    ]
+  },
+  {
+    id: "computational-physics",
+    title: "Computational Physics",
+    level: "advanced",
+    summary: "Monte Carlo, molecular dynamics, lattice methods.",
+    examples: [
+      { title: "Example 1 — MC integration", prompt: "Estimate $\\int f$ by random samples.", steps: [
+        { label: "Idea", body: "Sample $x_i$ uniformly, $\\int f \\approx \\bar f \\cdot V$." }
+      ], answer: "Random sampling" },
+      { title: "Example 2 — Metropolis", prompt: "Sampling Boltzmann distribution.", steps: [
+        { label: "Step", body: "Propose, accept w/ probability $\\min(1, e^{-\\beta \\Delta E})$." }
+      ], answer: "Metropolis-Hastings" },
+      { title: "Example 3 — MD step", prompt: "Verlet update.", steps: [
+        { label: "Form", body: "$x_{n+1} = 2x_n - x_{n-1} + (\\Delta t)^2 a_n$." }
+      ], answer: "Verlet" },
+      { title: "Example 4 — Lattice spacing", prompt: "Why discretize?", steps: [
+        { label: "Trade-off", body: "Smaller $a$: more accurate, more compute." }
+      ], answer: "$a$ vs cost" }
+    ],
+    tasks: [
+      { q: "Monte Carlo error scales as?", a: "$1/\\sqrt N$" },
+      { q: "Symplectic integrators preserve?", a: "Phase volume" },
+      { q: "Runge-Kutta-4 error?", a: "$O(h^4)$" },
+      { q: "FFT complexity?", a: "$O(N \\log N)$" },
+      { q: "Lattice QCD computes?", a: "Hadron properties" },
+      { q: "Importance sampling reduces?", a: "Variance" },
+      { q: "Detailed balance ensures?", a: "Correct equilibrium" },
+      { q: "Multigrid methods speed up?", a: "Elliptic PDE solvers" },
+      { q: "DFT in chemistry/physics?", a: "Density Functional Theory" },
+      { q: "Tensor networks useful for?", a: "Many-body QM" }
+    ]
+  },
+  {
+    id: "soft-matter-biophysics",
+    title: "Soft Matter & Biophysics",
+    level: "advanced",
+    summary: "Polymers, membranes, motors, protein folding.",
+    examples: [
+      { title: "Example 1 — Polymer size", prompt: "Random walk model.", steps: [
+        { label: "RMS end-to-end", body: "$\\langle R^2 \\rangle = N b^2$." }
+      ], answer: "$\\propto \\sqrt N$" },
+      { title: "Example 2 — Membrane bending", prompt: "Helfrich energy.", steps: [
+        { label: "Form", body: "$E = \\tfrac{\\kappa}{2} \\int (2H)^2\\,dA$." }
+      ], answer: "Curvature elastic" },
+      { title: "Example 3 — Motor force", prompt: "Kinesin step.", steps: [
+        { label: "Order", body: "$\\sim 5$ pN over $8$ nm." }
+      ], answer: "$\\sim 5$ pN" },
+      { title: "Example 4 — Protein folding", prompt: "Levinthal paradox.", steps: [
+        { label: "Resolution", body: "Energy landscape funnels to native state, not random search." }
+      ], answer: "Funneled landscape" }
+    ],
+    tasks: [
+      { q: "Persistence length for DNA?", a: "$\\sim 50$ nm" },
+      { q: "Worm-like chain model used for?", a: "Stiff polymers" },
+      { q: "Flory exponent in good solvent?", a: "$\\nu \\approx 3/5$" },
+      { q: "$\\theta$-solvent: $\\nu$?", a: "$1/2$" },
+      { q: "Cell membranes are?", a: "Lipid bilayers" },
+      { q: "ATP hydrolysis energy?", a: "$\\sim 0.5$ eV" },
+      { q: "Brownian ratchet?", a: "Asymmetric noise → directed motion" },
+      { q: "Glass transition: crystallizes?", a: "No (frozen liquid)" },
+      { q: "Liquid crystals have orientational order?", a: "Yes" },
+      { q: "Active matter: energy injection at?", a: "Microscopic scale" }
+    ]
   }
 ];
