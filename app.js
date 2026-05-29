@@ -187,6 +187,14 @@
     ]);
     app.appendChild(head);
 
+    // Encyclopedia article — extended prose, render right after the head
+    const article = (window.ENCYCLOPEDIA_ARTICLE || {})[topic.id];
+    if (article) {
+      app.appendChild(el("h3", { class: "section-head" }, "Encyclopedia Article"));
+      const articleCard = el("div", { class: "article-card", html: article });
+      app.appendChild(articleCard);
+    }
+
     const intro = (window.INTROS || {})[topic.id];
     if (intro) {
       const introCard = el("section", { class: "intro" }, [
@@ -473,6 +481,65 @@
           feedbackDiv,
           answerDiv,
           sourceDiv
+        ]);
+        app.appendChild(taskDiv);
+      });
+    }
+
+    // Encyclopedia Problems — extra problem set per topic
+    const encyclProblems = (window.ENCYCLOPEDIA_PROBLEMS || {})[topic.id];
+    if (encyclProblems && encyclProblems.length) {
+      app.appendChild(el("h3", { class: "section-head" }, "Encyclopedia Problems"));
+      app.appendChild(el("p", { class: "section-sub" }, "Additional drilling on the core ideas of this topic — same try-first, check-second pattern."));
+      encyclProblems.forEach((ep, i) => {
+        const epIdx = "ep-" + i;
+        const alreadyCorrect = progress[topic.id]?.correct?.[epIdx];
+        const alreadyAttempted = progress[topic.id]?.attempted?.[epIdx];
+
+        const feedbackDiv = el("div", { class: "task-feedback" });
+        feedbackDiv.hidden = true;
+        const answerDiv = el("div", { class: "task-answer", html: ep.a });
+        answerDiv.hidden = true;
+
+        const input = el("input", {
+          class: "task-input", type: "text", placeholder: "Your answer…",
+          autocomplete: "off", spellcheck: "false"
+        });
+        const checkBtn = el("button", { class: "task-check-btn" }, "Check");
+        const revealBtn = el("button", { class: "show-answer-btn task-reveal-btn" }, "Show answer");
+
+        const showAns = () => { answerDiv.hidden = false; revealBtn.textContent = "Hide answer"; };
+        const hideAns = () => { answerDiv.hidden = true; revealBtn.textContent = "Show answer"; };
+
+        const doCheck = () => {
+          const v = input.value;
+          if (!v.trim()) return;
+          const ok = answersMatch(v, ep.a);
+          recordAttempt(topic.id, epIdx, ok);
+          feedbackDiv.hidden = false;
+          if (ok) {
+            feedbackDiv.className = "task-feedback correct";
+            feedbackDiv.innerHTML = "✓ Correct!";
+            showAns();
+          } else {
+            feedbackDiv.className = "task-feedback wrong";
+            feedbackDiv.innerHTML = "✗ Not quite. Try again, or click <em>Show answer</em>.";
+          }
+        };
+        checkBtn.addEventListener("click", doCheck);
+        input.addEventListener("keydown", (e) => { if (e.key === "Enter") doCheck(); });
+        revealBtn.addEventListener("click", () => answerDiv.hidden ? showAns() : hideAns());
+
+        const inputRow = el("div", { class: "task-input-row" }, [input, checkBtn, revealBtn]);
+        const taskClass = alreadyCorrect ? "task task-encyc task-solved"
+                       : alreadyAttempted ? "task task-encyc task-tried"
+                       : "task task-encyc";
+        const taskDiv = el("div", { class: taskClass }, [
+          el("div", { class: "task-num" }, "Encyclopedia Problem " + (i + 1) + (alreadyCorrect ? " · ✓ solved" : alreadyAttempted ? " · attempted" : "")),
+          el("div", { class: "task-q", html: ep.q }),
+          inputRow,
+          feedbackDiv,
+          answerDiv
         ]);
         app.appendChild(taskDiv);
       });

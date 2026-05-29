@@ -468,6 +468,28 @@ main {
   .miscon-row { grid-template-columns: 1fr; gap: 4px; }
 }
 
+/* Encyclopedia article */
+.article-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--math);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin: 6px 0 16px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text);
+}
+.article-card p { margin: 0 0 12px; }
+.article-card p:last-child { margin-bottom: 0; }
+.article-card strong { color: var(--accent); }
+.article-card em { color: var(--accent-2); font-style: italic; }
+
+/* Encyclopedia problem cards */
+.task-encyc {
+  border-left: 3px solid var(--math);
+}
+
 /* Recommended Reading */
 .books-card {
   background: var(--surface);
