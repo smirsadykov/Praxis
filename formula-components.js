@@ -2291,4 +2291,474 @@
     "$n$ = positive integer. $\\sqrt[n]{x}$ = the $n$-th root of $x$. CONSISTENT with exponent laws: $(x^{1/n})^n = x$. WORKED EXAMPLE: $8^{1/3} = \\sqrt[3]{8} = 2$. $16^{1/4} = 2$.");
   W("exponents-roots", "$\\sqrt{ab}",
     "$a, b \\geq 0$. SQUARE ROOT distributes over multiplication. WARNING: does NOT distribute over addition ($\\sqrt{a + b} \\neq \\sqrt a + \\sqrt b$). WORKED EXAMPLE: $\\sqrt{72} = \\sqrt{36 \\cdot 2} = 6\\sqrt 2$ — standard surd simplification.");
+
+  // ============================================================
+  // BATCH 5 — advanced physics and remaining math
+  // ============================================================
+
+  // ----- GENERAL RELATIVITY -----
+  W("general-relativity", "$G_{\\mu\\nu} = \\dfrac{8\\pi",
+    "$G_{\\mu\\nu}$ = Einstein tensor (a $4\\times 4$ symmetric tensor encoding spacetime curvature). $T_{\\mu\\nu}$ = stress-energy tensor (encoding the local distribution of matter and energy). $G \\approx 6.67\\times10^{-11}$ N·m²/kg² (Newton's gravitational constant). $c \\approx 3\\times10^8$ m/s. 10 coupled nonlinear PDEs. WORKED EXAMPLE: for a perfect fluid at rest, $T^{00} = \\rho c^2$ and Einstein's equation in the weak-field limit recovers Newton's $\\nabla^2\\Phi = 4\\pi G\\rho$.");
+  W("general-relativity", "$G_{\\mu\\nu} = R_{\\mu\\nu}",
+    "$G_{\\mu\\nu}$ = Einstein tensor. $R_{\\mu\\nu}$ = Ricci tensor (contraction of Riemann curvature). $R = g^{\\mu\\nu}R_{\\mu\\nu}$ = Ricci scalar. $g_{\\mu\\nu}$ = metric tensor. CONSTRUCTED to be divergence-free, ensuring local conservation of energy-momentum. WORKED EXAMPLE: Schwarzschild solution has $R_{\\mu\\nu} = 0$ (vacuum) and the Einstein tensor automatically vanishes.");
+  W("general-relativity", "$r_s = 2GM/c^2",
+    "$r_s$ = Schwarzschild radius (m). $G$ = Newton's gravitational constant. $M$ = mass of the gravitating object (kg). $c$ = speed of light. AT $r = r_s$: event horizon of a non-rotating black hole. WORKED EXAMPLES: Sun ($M = 2\\times10^{30}$ kg) → $r_s \\approx 3$ km. Earth → $r_s \\approx 9$ mm. A 1 kg object → $r_s \\approx 1.5\\times10^{-27}$ m.");
+  W("general-relativity", "$d\\tau",
+    "$d\\tau$ = proper time interval (time measured by a stationary clock at radius $r$). $dt$ = coordinate time (time measured far from the mass). $G, M, r, c$ as above. CONSEQUENCE: clocks deeper in a gravitational well tick slower. WORKED EXAMPLE: GPS satellites at altitude $\\sim 20{,}000$ km tick faster than Earth-surface clocks by $\\sim 38$ μs/day — without GR correction, GPS would drift by 10 km/day.");
+  W("general-relativity", "$v = H_0",
+    "$v$ = recession velocity of distant galaxy (km/s). $H_0$ = Hubble constant ($\\approx 70$ km/s/Mpc). $d$ = proper distance (Mpc). HUBBLE's law: the universe is expanding uniformly. WORKED EXAMPLE: a galaxy at $d = 100$ Mpc recedes at $\\sim 7000$ km/s. Doesn't apply at very large distances (cosmological complications).");
+  W("general-relativity", "$H_0 \\approx",
+    "$H_0$ = Hubble constant ≈ 67-73 km/s/Mpc (current measurement tension). $1/H_0 \\approx 14$ Gyr = Hubble time, roughly the age of the universe. Mpc = megaparsec = $3.086\\times10^{22}$ m.");
+
+  // ----- QFT -----
+  W("qft", "$\\phi(x) = \\int",
+    "$\\phi(x)$ = quantum scalar field operator at spacetime point $x$. $a_k$ = annihilation operator removing a particle of momentum $k$. $a_k^\\dagger$ = creation operator adding one. $\\omega_k = \\sqrt{|\\mathbf k|^2 + m^2}$ = relativistic mode frequency. $d^3k/(2\\pi)^3$ = Lorentz-invariant momentum-space measure. The field is a sum of all possible particle creations and annihilations.");
+  W("qft", "$[a_k, a_{k'}^\\dagger]",
+    "$a_k, a_k^\\dagger$ = creation/annihilation operators. $\\delta(k - k')$ = Dirac delta in continuous momentum space. BOSON commutator (with anti-commutator for fermions: $\\{b_k, b_{k'}^\\dagger\\} = (2\\pi)^3\\delta(k - k')$). Encodes that bosons can pile into the same state; fermions cannot (Pauli).");
+  W("qft", "Propagator:",
+    "Feynman propagator for a scalar field. $p$ = 4-momentum (energy + 3-momentum). $m$ = particle mass. $i\\epsilon$ = small positive imaginary part (Feynman's $i\\epsilon$ prescription for causality). VIRTUAL particle propagation amplitude. WORKED EXAMPLE: pole at $p^2 = m^2$ corresponds to an on-shell particle (real, not virtual).");
+  W("qft", "QED vertex:",
+    "QED interaction vertex. $-ie$ = coupling (proportional to electron charge). $\\gamma^\\mu$ = Dirac gamma matrix (4×4). EVERY interaction in QED is built from this single 3-leg vertex (electron-positron-photon). WORKED EXAMPLE: $e^+ e^- \\to \\mu^+ \\mu^-$ scattering has 2 vertices and 1 photon propagator at tree level. Result: cross section $\\propto \\alpha^2$.");
+  W("qft", "$\\alpha = e^2",
+    "$\\alpha$ = fine-structure constant (dimensionless). $e \\approx 1.6\\times10^{-19}$ C = elementary charge. $\\epsilon_0$ = vacuum permittivity. $\\hbar$ = reduced Planck constant. $c$ = speed of light. PROFOUND: a pure dimensionless number ≈ 1/137.036. Same in all unit systems. SMALL → perturbation theory in QED works extraordinarily well.");
+  W("qft", "Vacuum energy:",
+    "$\\hbar\\omega_k/2$ = zero-point energy per mode (from harmonic-oscillator quantization). SUM over all modes is FORMALLY infinite. RENORMALIZED away in flat space (only differences matter). PUZZLE: GR couples to absolute energy → predicted cosmological constant exceeds observed by factor $\\sim 10^{120}$. Cosmological constant problem.");
+  W("qft", "Compton wavelength:",
+    "$\\lambda_C$ = Compton wavelength (m). $h$ = Planck constant. $m$ = particle mass. $c$ = speed of light. SETS the length scale below which relativistic QFT effects (particle creation) matter. WORKED EXAMPLES: electron $\\lambda_C \\approx 2.43\\times10^{-12}$ m. Proton $\\lambda_C \\approx 1.32\\times10^{-15}$ m (fm scale — nuclear physics).");
+
+  // ----- CLASSICAL FIELD THEORY -----
+  W("classical-field-theory", "$\\mathcal{L}$ — Lagrangian",
+    "$\\mathcal L$ = Lagrangian density (energy per unit spatial volume, units J/m³). Function of the field $\\phi$ and its derivatives $\\partial_\\mu \\phi$ (covariant derivatives in 4D). LORENTZ-invariant scalar in relativistic field theory. WORKED EXAMPLE: free real scalar $\\mathcal L = \\tfrac{1}{2}(\\partial_\\mu\\phi)(\\partial^\\mu\\phi) - \\tfrac{1}{2}m^2\\phi^2$. Mass term breaks scale invariance.");
+  W("classical-field-theory", "$S = \\int d^4 x",
+    "$S$ = action (units of $\\hbar$, J·s). $d^4 x = dt\\,dx\\,dy\\,dz$ = 4D spacetime volume element. $\\mathcal L$ = Lagrangian density. EXTREMIZING $S$ gives the field equations of motion. WORKED EXAMPLE: action of free EM field is $-\\frac{1}{4}\\int F_{\\mu\\nu}F^{\\mu\\nu}d^4x$ — Lorentz-invariant and gauge-invariant.");
+  W("classical-field-theory", "$\\partial_\\mu \\dfrac{\\partial \\mathcal{L}}",
+    "FIELD-theory Euler-Lagrange equation. $\\phi$ = field. $\\partial_\\mu \\phi$ = field derivatives. NECESSARY condition for $\\phi$ to extremize $\\int \\mathcal L\\,d^4 x$. WORKED EXAMPLE: free scalar $\\mathcal L = \\tfrac{1}{2}(\\partial\\phi)^2 - \\tfrac{1}{2}m^2\\phi^2$ gives $(\\partial^2 + m^2)\\phi = 0$ — Klein-Gordon equation.");
+  W("classical-field-theory", "Klein-Gordon:",
+    "$\\Box = \\partial_\\mu \\partial^\\mu = (1/c^2)\\partial_t^2 - \\nabla^2$ = d'Alembertian (wave operator). $m$ = particle mass. $\\phi$ = scalar field (real or complex). RELATIVISTIC wave equation for spin-0 particles. WORKED EXAMPLE: plane-wave solutions $\\phi \\propto e^{-ip\\cdot x/\\hbar}$ with $p^2 = m^2 c^2$ — relativistic energy-momentum dispersion.");
+  W("classical-field-theory", "Dirac:",
+    "$\\gamma^\\mu$ = Dirac gamma matrices (4×4, satisfying $\\{\\gamma^\\mu, \\gamma^\\nu\\} = 2\\eta^{\\mu\\nu}$). $\\psi$ = Dirac spinor (4-component complex field). $m$ = particle mass. ORIGIN: Dirac (1928) sought a first-order relativistic equation; required spinors and predicted antimatter (positron). Solutions describe spin-1/2 particles.");
+  W("classical-field-theory", "$F_{\\mu\\nu} = \\partial_\\mu",
+    "$F_{\\mu\\nu}$ = electromagnetic field strength tensor (antisymmetric, 6 independent components). $A_\\mu = (\\phi/c, \\vec A)$ = electromagnetic 4-potential. Components encode $\\vec E$ and $\\vec B$. WORKED EXAMPLE: $F_{0i} = -E_i/c$, $F_{ij} = -\\epsilon_{ijk}B_k$. Gauge invariant under $A_\\mu \\to A_\\mu + \\partial_\\mu \\Lambda$.");
+  W("classical-field-theory", "$\\mathcal{L}_{\\text{EM}}",
+    "$\\mathcal L_\\text{EM}$ = electromagnetic Lagrangian density. $F_{\\mu\\nu}$ = field strength. $F^{\\mu\\nu} = g^{\\mu\\alpha}g^{\\nu\\beta}F_{\\alpha\\beta}$ = with raised indices. THE simplest Lorentz- and gauge-invariant Lagrangian. Variation gives Maxwell's equations.");
+
+  // ----- SYMMETRIES-NOETHER -----
+  W("symmetries-noether", "Translation $\\Rightarrow$",
+    "TRANSLATIONAL symmetry: physics is the same if you shift the origin. Noether → linear momentum conservation. WORKED EXAMPLE: an isolated rocket's total momentum is conserved because empty space looks the same everywhere (translational invariance). Exhaust gas and rocket body acquire equal-and-opposite momentum.");
+  W("symmetries-noether", "Rotation $\\Rightarrow$",
+    "ROTATIONAL symmetry: physics is the same in all directions. Noether → angular momentum conservation. WORKED EXAMPLE: planetary orbits stay in a plane because the gravitational force is rotationally symmetric about the Sun. A figure skater spinning faster as she pulls her arms in: $L = I\\omega$ stays constant, so smaller $I$ means larger $\\omega$.");
+  W("symmetries-noether", "Time translation",
+    "TIME translation symmetry: physics is the same now as it was yesterday. Noether → energy conservation. WORKED EXAMPLE: in cosmology, the expanding universe BREAKS time-translation symmetry — and photon energy redshifts (no longer conserved in the usual sense). For lab experiments, time invariance is exact.");
+  W("symmetries-noether", "Global $U(1)",
+    "$U(1)$ = abelian Lie group of complex phase rotations $\\psi \\to e^{i\\theta}\\psi$. GLOBAL: $\\theta$ is constant in spacetime. Noether → electric charge conservation. CONSERVED current $j^\\mu = i(\\psi^*\\partial^\\mu\\psi - \\psi\\partial^\\mu\\psi^*)$. WORKED EXAMPLE: in QM, $\\rho = |\\psi|^2$ and $\\vec j = (\\hbar/m)\\text{Im}(\\psi^*\\nabla\\psi)$ satisfy continuity $\\partial_t\\rho + \\nabla\\cdot\\vec j = 0$.");
+  W("symmetries-noether", "Lorentz $\\Rightarrow$",
+    "LORENTZ symmetry: physics is the same in all inertial frames (rotations + boosts). Noether → conservation of stress-energy tensor $\\partial_\\mu T^{\\mu\\nu} = 0$. ENCODES both energy AND momentum conservation. WORKED EXAMPLE: in GR, $T^{\\mu\\nu}$ sources spacetime curvature in Einstein's equations; its conservation is automatic (Bianchi identity).");
+  W("symmetries-noether", "Gauge symmetry",
+    "LOCAL (gauge) symmetry: $\\theta$ varies with spacetime point. Noether's SECOND theorem → identity, not new conservation law. INSTEAD, forces gauge bosons (photon, gluons) to be massless (broken by Higgs in electroweak theory). KEY structural principle of the Standard Model.");
+
+  // ----- IDENTICAL PARTICLES -----
+  W("identical-particles", "Bosons: symmetric",
+    "BOSON: a particle whose multi-particle wavefunction is SYMMETRIC under exchange of any two identical particles: $\\Psi(\\ldots, i, \\ldots, j, \\ldots) = +\\Psi(\\ldots, j, \\ldots, i, \\ldots)$. INTEGER spin ($0, 1, 2, \\ldots$). EXAMPLES: photon, gluon, W$^\\pm$, Z, Higgs, $^4$He nucleus. CONSEQUENCE: many bosons can occupy the same quantum state — basis of lasers, BEC, superfluid helium-4.");
+  W("identical-particles", "Fermions: antisymmetric",
+    "FERMION: wavefunction picks up a minus sign under particle exchange: $\\Psi(\\ldots, i, \\ldots, j, \\ldots) = -\\Psi(\\ldots, j, \\ldots, i, \\ldots)$. HALF-INTEGER spin ($1/2, 3/2, \\ldots$). EXAMPLES: electron, quark, neutrino, proton, neutron, $^3$He nucleus. CONSEQUENCE: PAULI exclusion — no two fermions in the same state. WORKED EXAMPLE: two electrons cannot share both the same spatial orbital AND spin state — basis of atomic shell structure.");
+  W("identical-particles", "Bose-Einstein:",
+    "$n(E)$ = average occupation of a single-particle state at energy $E$ in thermal equilibrium. $\\mu$ = chemical potential (energy cost of adding one boson). $k_B$ = Boltzmann constant. $T$ = absolute temperature. DIVERGES as $E \\to \\mu$ — basis of Bose-Einstein condensation. WORKED EXAMPLE: photons in a cavity at temperature $T$ obey BE with $\\mu = 0$ → Planck blackbody distribution.");
+  W("identical-particles", "Fermi-Dirac:",
+    "$n(E)$ = average occupation. $\\mu$ = chemical potential = Fermi energy at $T = 0$. $k_B, T$ = Boltzmann, temperature. BOUNDED in $[0, 1]$ — Pauli. AT $T = 0$: step function (filled below $\\mu$, empty above). WORKED EXAMPLE: electrons in copper at room temperature have $\\mu \\approx 7$ eV, much greater than $k_B T \\approx 0.026$ eV → essentially the $T=0$ step function with thin thermal tail. Explains metallic conductivity, specific heat.");
+  W("identical-particles", "Spin-statistics theorem",
+    "PAULI 1940. In relativistic QFT: integer-spin particles MUST obey Bose statistics; half-integer MUST obey Fermi. PROOF requires causality + positive energy. Otherwise: instabilities or violations of causality. WORKED EXAMPLE: photon (spin 1) is a boson — lasers possible. Electron (spin 1/2) is a fermion — atomic structure possible. Can't be otherwise.");
+
+  // ----- PERTURBATION THEORY -----
+  W("perturbation-theory", "$H = H_0",
+    "$H$ = total Hamiltonian. $H_0$ = unperturbed Hamiltonian (you know its eigenstates and eigenvalues). $H'$ = perturbation. $\\lambda$ = bookkeeping parameter (often set to 1 at the end). EXPAND eigenstates and eigenvalues as power series in $\\lambda$. WORKED EXAMPLE: hydrogen in weak external electric field $\\vec E$ — $H_0$ is the Coulomb Hamiltonian, $H' = -e\\vec E \\cdot \\vec r$ is the Stark perturbation.");
+  W("perturbation-theory", "$E_n^{(1)}",
+    "$E_n^{(1)}$ = first-order energy correction for state $n$. $|n\\rangle$ = unperturbed eigenstate of $H_0$. $H'$ = perturbation. JUST the expectation value of the perturbation in the unperturbed state. WORKED EXAMPLE: hydrogen $|1s\\rangle$ ground state in uniform field $\\vec E$: $E_1^{(1)} = \\langle 1s| -eEz|1s\\rangle = 0$ by symmetry (1s is spherical, $z$ is odd). So no linear Stark effect for ground state.");
+  W("perturbation-theory", "$|n^{(1)}\\rangle",
+    "$|n^{(1)}\\rangle$ = first-order wavefunction correction. SUM mixes in OTHER unperturbed states with weight given by matrix element / energy gap. WORKED EXAMPLE: ground state of harmonic oscillator with cubic perturbation $\\lambda x^3$ — mixes in mostly $|1\\rangle$ (allowed by selection rules), giving energy shift only at 2nd order.");
+  W("perturbation-theory", "$E_n^{(2)}",
+    "$E_n^{(2)}$ = second-order energy correction. $H'_{mn} = \\langle m | H' | n \\rangle$ = matrix element. SUM over all other unperturbed states. ALWAYS NEGATIVE for ground state (level repulsion). WORKED EXAMPLE: quadratic Stark effect in hydrogen ground state has $E^{(2)} \\propto -|\\vec E|^2$ — polarizability of hydrogen.");
+  W("perturbation-theory", "Degenerate:",
+    "DEGENERATE perturbation theory. When multiple unperturbed states share an energy, naive PT fails (small denominators). FIX: diagonalize $H'$ within the degenerate subspace first. The eigenvalues become first-order corrections. WORKED EXAMPLE: linear Stark effect in hydrogen $n=2$ — 4 degenerate states (2s, 2p_x, 2p_y, 2p_z) split into 4 levels in an electric field due to 2s-2p mixing.");
+
+  // ----- SCATTERING THEORY -----
+  W("scattering-theory", "$d\\sigma/d\\Omega",
+    "$d\\sigma/d\\Omega$ = differential cross section (area per solid angle, units m²/sr). $f(\\theta)$ = scattering amplitude (complex-valued). $\\theta$ = scattering angle from incoming beam direction. WORKED EXAMPLE: in a typical experiment, count detector events per second per area, divide by incident beam flux and target density.");
+  W("scattering-theory", "Rutherford:",
+    "RUTHERFORD scattering: Coulomb potential between point charges. $\\theta$ = scattering angle. $1/\\sin^4(\\theta/2)$ singularity at small angles (large impact parameters). ORIGIN: Rutherford 1911, used $\\alpha$ particles on gold foil to discover the atomic nucleus. WORKED EXAMPLE: backward scattering ($\\theta = \\pi$) of $\\alpha$ from atomic electrons would be impossible classically — but possible from a tiny massive nucleus.");
+  W("scattering-theory", "Partial waves:",
+    "PARTIAL wave expansion. $\\ell = 0, 1, 2, \\ldots$ = orbital angular momentum quantum number. $\\delta_\\ell$ = phase shift in $\\ell$ channel. $P_\\ell$ = Legendre polynomial. $k$ = wavenumber. USEFUL at low energies or short-range potentials, where only a few partial waves contribute. WORKED EXAMPLE: hard-sphere scattering at low energy is dominated by s-wave ($\\ell = 0$). $\\delta_0 \\to -ka$ where $a$ = scattering length.");
+  W("scattering-theory", "Mean free path:",
+    "$\\lambda$ = mean free path (m). $n$ = number density of scatterers (m$^{-3}$). $\\sigma$ = scattering cross section (m²). AVERAGE distance traveled between scatterings. WORKED EXAMPLE: photon in the Sun's core: $n \\sim 10^{32}$ m$^{-3}$, $\\sigma \\sim 10^{-29}$ m² → $\\lambda \\sim 10^{-3}$ m. Photon takes $\\sim 10^5$ years random-walking to escape from the Sun.");
+
+  // ----- DENSITY MATRICES -----
+  W("density-matrices", "$\\rho = |\\psi\\rangle",
+    "$\\rho$ = density matrix (Hermitian, positive semidefinite, trace 1). $|\\psi\\rangle$ = a pure state (state vector). FOR pure states: $\\rho^2 = \\rho$ (idempotent). WORKED EXAMPLE: $|\\psi\\rangle = (1/\\sqrt 2)(|0\\rangle + |1\\rangle)$ gives $\\rho = (1/2)\\begin{pmatrix}1 & 1\\\\1 & 1\\end{pmatrix}$ — off-diagonal coherence terms.");
+  W("density-matrices", "$\\rho = \\sum p_i",
+    "$\\rho$ = mixed-state density matrix. $p_i$ = classical probabilities (nonnegative, sum to 1). $|\\psi_i\\rangle$ = pure states (not necessarily orthogonal). ARISES from: classical statistical mixture, or tracing out an environment from a larger entangled state. WORKED EXAMPLE: 50/50 mixture of $|0\\rangle$ and $|1\\rangle$ gives $\\rho = (I/2)$ — maximally mixed; off-diagonal terms zero (no coherence).");
+  W("density-matrices", "$\\text{tr}(\\rho)",
+    "$\\text{tr}(\\rho) = 1$: probabilities sum to 1. $\\rho \\succeq 0$: positive semidefinite (all eigenvalues $\\geq 0$, so probabilities are non-negative). DEFINES the convex set of valid density matrices.");
+  W("density-matrices", "Pure iff",
+    "$\\rho^2 = \\rho$ characterizes pure states; equivalent to $\\text{tr}(\\rho^2) = 1$. The quantity $\\text{tr}(\\rho^2) \\in [1/d, 1]$ is called PURITY ($d$ = Hilbert space dim). WORKED EXAMPLE: maximally mixed qubit $\\rho = I/2$ has $\\text{tr}(\\rho^2) = 1/2$ (lower bound for 2D).");
+  W("density-matrices", "$\\rho_A = \\text{tr}_B",
+    "$\\rho_{AB}$ = density matrix of composite system $A \\otimes B$. $\\rho_A$ = REDUCED density matrix for subsystem $A$, obtained by PARTIAL TRACE over $B$. WORKED EXAMPLE: Bell state $|\\Phi^+\\rangle = (|00\\rangle + |11\\rangle)/\\sqrt 2$ is PURE on $AB$, but tracing out $B$ gives $\\rho_A = I/2$ — maximally mixed. Source of entanglement entropy.");
+  W("density-matrices", "Lindblad:",
+    "LINDBLAD master equation: most general MARKOVIAN dynamics consistent with positivity and trace preservation. $H$ = Hamiltonian (coherent dynamics). $L_k$ = Lindblad jump operators (dissipative dynamics, like spontaneous emission). USED in quantum optics (cavity decay), quantum information (decoherence), open quantum systems generally.");
+
+  // ----- PATH INTEGRALS -----
+  W("path-integrals", "$\\langle x_f |",
+    "Quantum-mechanical amplitude to propagate from $x_i$ to $x_f$ in time $t$. $H$ = Hamiltonian. $\\hbar$ = reduced Planck. $\\mathcal D x$ = formal measure over all paths $x(\\tau)$ with $x(0) = x_i, x(t) = x_f$. $S[x]$ = classical action along path. WEIGHT each path by $e^{iS/\\hbar}$ and integrate. ORIGIN: Feynman PhD thesis (1942-48).");
+  W("path-integrals", "$S = \\int L\\,dt$",
+    "$S$ = action (J·s). $L = T - V$ = Lagrangian (kinetic minus potential energy). Same definition as in classical mechanics. WORKED EXAMPLE: free particle from origin to $x$ in time $t$: classical path is straight line at speed $v = x/t$, action $S_\\text{cl} = mx^2/(2t)$.");
+  W("path-integrals", "Classical limit:",
+    "When $S \\gg \\hbar$: stationary-phase approximation. Only paths with $\\delta S = 0$ (classical paths) contribute coherently; others cancel by destructive interference. RECOVERS Euler-Lagrange equations. WORKED EXAMPLE: a baseball follows a parabolic trajectory because the action of any other path is enormously larger than $\\hbar$ → quantum interference exponentially suppresses them.");
+  W("path-integrals", "Free particle:",
+    "$K(x_f, x_i; t)$ = free-particle propagator. $m$ = mass. $\\hbar$ = reduced Planck. $t$ = propagation time. EXACTLY computable: the integral is Gaussian. PHASE depends only on the classical action; magnitude depends only on $t$. WORKED EXAMPLE: $|K|^2 = m/(2\\pi\\hbar t)$ — uniform in $x_f - x_i$ (free particles spread).");
+  W("path-integrals", "Euclidean (Wick):",
+    "WICK rotation: $t \\to -i\\tau$ (imaginary time). $e^{iS/\\hbar} \\to e^{-S_E/\\hbar}$ where $S_E$ = Euclidean action (positive). CONNECTS quantum mechanics in real time to statistical mechanics at temperature $T = \\hbar/(k_B \\tau)$. BASIS of lattice QFT computations.");
+  W("path-integrals", "Functional integral",
+    "$\\mathcal D x$ = heuristic 'sum over all paths' measure. RIGOROUSLY defined via lattice discretization (chop $[0, t]$ into $N$ steps, integrate over $x$ at each step, take $N \\to \\infty$). In QM: well-defined for many cases. In QFT: requires renormalization.");
+
+  // ----- QUANTUM INFORMATION -----
+  W("quantum-information", "$|\\psi\\rangle = \\alpha|0\\rangle",
+    "$|\\psi\\rangle$ = arbitrary qubit state. $|0\\rangle, |1\\rangle$ = computational basis states (e.g., spin-down/up or two atomic levels). $\\alpha, \\beta$ = complex amplitudes. NORMALIZATION condition. UNLIKE classical bit: arbitrary superposition possible. WORKED EXAMPLE: $|+\\rangle = (|0\\rangle + |1\\rangle)/\\sqrt 2$ — equal superposition.");
+  W("quantum-information", "Bloch sphere:",
+    "Parametrization of pure qubit states on a 2-sphere. $\\theta \\in [0, \\pi]$ = polar angle. $\\phi \\in [0, 2\\pi)$ = azimuthal angle. NORTH pole ($\\theta = 0$): $|0\\rangle$. SOUTH pole: $|1\\rangle$. EQUATOR: equal superpositions. WORKED EXAMPLE: $|+\\rangle$ at $(\\theta = \\pi/2, \\phi = 0)$; $|-\\rangle$ at $(\\pi/2, \\pi)$.");
+  W("quantum-information", "Bell:",
+    "FOUR Bell states form a basis of maximally entangled two-qubit states. $|\\Phi^\\pm\\rangle = (|00\\rangle \\pm |11\\rangle)/\\sqrt 2$. $|\\Psi^\\pm\\rangle = (|01\\rangle \\pm |10\\rangle)/\\sqrt 2$. CANNOT be written as products of single-qubit states — quantum entanglement.");
+  W("quantum-information", "Hadamard:",
+    "$H$ = Hadamard gate, $H = (1/\\sqrt 2)\\begin{pmatrix}1 & 1\\\\1 & -1\\end{pmatrix}$. CREATES superposition from a basis state. KEY ingredient in most quantum algorithms (Shor, Grover, etc.). WORKED EXAMPLE: $H|0\\rangle = |+\\rangle$, $H|1\\rangle = |-\\rangle$. $H \\otimes H \\otimes \\ldots \\otimes H$ applied to $|00\\ldots0\\rangle$ gives uniform superposition over all $2^n$ basis states.");
+  W("quantum-information", "CNOT:",
+    "CNOT (Controlled-NOT) gate. $|c\\rangle$ = control qubit. $|t\\rangle$ = target qubit. $\\oplus$ = XOR. FLIPS target iff control is $|1\\rangle$. UNIVERSAL: $H$, T (phase $\\pi/4$), and CNOT generate any quantum circuit. WORKED EXAMPLE: $|10\\rangle \\to |11\\rangle$. Acting on $(|0\\rangle + |1\\rangle) \\otimes |0\\rangle / \\sqrt 2 \\to (|00\\rangle + |11\\rangle)/\\sqrt 2$ — creates a Bell state.");
+  W("quantum-information", "Shor's",
+    "SHOR's algorithm factors $n$-digit integers in time polynomial in $n$. CLASSICAL best known: exponential in $n^{1/3}$. THREAT to RSA cryptography. WORKED EXAMPLE: factoring a 2048-bit RSA modulus would take far longer than the age of the universe classically, but polynomially fast on a quantum computer.");
+  W("quantum-information", "Grover:",
+    "GROVER's algorithm searches an unstructured database of $N$ items in $O(\\sqrt N)$ queries. CLASSICAL: $O(N)$. QUADRATIC speedup (not exponential). WORKED EXAMPLE: search $10^9$ items: $\\sim 3\\times10^4$ quantum queries vs $5\\times10^8$ classical (on average).");
+
+  // ----- RENORMALIZATION -----
+  W("renormalization", "$g_{\\text{bare}}",
+    "$g_\\text{bare}$ = bare coupling (infinite in original Lagrangian). $g_R$ = renormalized (physical, finite) coupling. $\\delta g$ = counterterm absorbing the infinity. CONCEPT: rewrite the divergent theory in terms of physical (measured) couplings, which are finite. WORKED EXAMPLE: in QED, bare electron charge is infinite; physical charge $e \\approx 1.6\\times10^{-19}$ C is measured.");
+  W("renormalization", "$\\beta(g)",
+    "$\\beta(g)$ = beta function — how the renormalized coupling changes with energy scale. $\\mu$ = renormalization scale (energy). DIFFERENTIAL equation describing the RUNNING coupling. WORKED EXAMPLE: QED $\\beta(\\alpha) = +2\\alpha^2/(3\\pi)$ at one loop — coupling grows with energy.");
+  W("renormalization", "QED: $\\beta > 0",
+    "QED beta function is POSITIVE → coupling $\\alpha$ GROWS at high energies. PHYSICAL: vacuum polarization (virtual e$^+$e$^-$ pairs) screens the bare charge. WORKED EXAMPLE: $\\alpha$ at low energy is $1/137.036$; at the Z boson mass (91 GeV), $\\alpha \\approx 1/128$ — measurably bigger.");
+  W("renormalization", "QCD: $\\beta < 0",
+    "QCD beta function is NEGATIVE → coupling SHRINKS at high energies. CALLED asymptotic freedom. WORKED EXAMPLE: at high energies (e.g., deep inelastic scattering), quarks behave almost as free particles ($\\alpha_s$ small); at low energies, $\\alpha_s$ blows up → confinement. NOBEL 2004 to Gross, Wilczek, Politzer.");
+  W("renormalization", "Wilsonian RG:",
+    "WILSONIAN renormalization group. Integrate out high-momentum (short-distance) modes; track how effective Lagrangian flows. CONCEPTUAL revolution: renormalization is COARSE-GRAINING, not hiding infinities. UNIFIES critical phenomena with QFT (Wilson, Nobel 1982).");
+  W("renormalization", "Fixed points:",
+    "Couplings at which $\\beta(g^*) = 0$ — the theory is SCALE INVARIANT. UV fixed points (asymptotic freedom) and IR fixed points (low-energy attractors). WORKED EXAMPLES: free theory $g = 0$ is a Gaussian fixed point. Wilson-Fisher fixed point describes 3D Ising universality class.");
+
+  // ----- RADIATION THEORY -----
+  W("radiation-theory", "Synchrotron:",
+    "RELATIVISTIC charged particle moving in a magnetic field radiates SYNCHROTRON light. $\\gamma = 1/\\sqrt{1 - v^2/c^2}$ = Lorentz factor. CHARACTERISTIC frequency $\\omega_c \\sim \\gamma^3 \\omega_B$ where $\\omega_B = eB/m$. BEAMED into a cone of opening angle $\\sim 1/\\gamma$. WORKED EXAMPLE: 1 GeV electron ($\\gamma \\sim 2000$) in $B = 1$ T radiates in keV X-ray range, in a beam of $\\sim 0.03°$ opening.");
+  W("radiation-theory", "Retarded time:",
+    "$t$ = observation time. $t'$ = retarded time (when the radiation was emitted). $r$ = distance from source to observer at retarded time. $c$ = speed of light. CAUSALITY: radiation observed now was emitted earlier by light-travel time $r/c$. WORKED EXAMPLE: sunlight you see now left the Sun 8 minutes ago; $r = 1$ AU, $r/c = 500$ s.");
+  W("radiation-theory", "Multipole expansion:",
+    "Far-field radiation pattern decomposed by angular momentum $\\ell$. Each $\\ell$-multipole falls as $1/r$ at large distance, but is suppressed by $(\\omega R/c)^\\ell$ for source of size $R$. WORKED EXAMPLE: atomic dipole transition ($\\ell = 1$) is dominant; quadrupole ($\\ell = 2$) is $\\sim (\\omega R/c)^2 \\sim 10^{-6}$ times weaker for visible light from atoms.");
+  W("radiation-theory", "Abraham-Lorentz:",
+    "$F_\\text{rad}$ = radiation reaction force on an accelerating charge (N). $q$ = charge. $\\epsilon_0$ = vacuum permittivity. $c$ = light speed. $\\dot{\\vec a}$ = derivative of acceleration (jerk). PROBLEMATIC: predicts pre-acceleration and runaway solutions — sign of incompleteness. RESOLVED in modern relativistic treatments. RELEVANT for very strong fields and synchrotrons.");
+
+  // ----- EM WAVES IN MATTER -----
+  W("em-waves-matter", "$n = \\sqrt{\\varepsilon_r",
+    "$n$ = refractive index of medium (dimensionless, $\\geq 1$ for ordinary materials). $\\epsilon_r$ = relative permittivity (dielectric constant). $\\mu_r$ = relative permeability ($\\approx 1$ for non-magnetic materials). $v_\\text{light in medium} = c/n$. WORKED EXAMPLES: water $n \\approx 1.33$; glass $n \\approx 1.5$; diamond $n \\approx 2.42$.");
+  W("em-waves-matter", "$v_p = \\omega/k",
+    "$v_p$ = phase velocity (speed of wavefronts). $\\omega$ = angular frequency (rad/s). $k$ = wavenumber (rad/m). NOT necessarily the speed of energy or information transport. WORKED EXAMPLE: in a waveguide above cutoff, $v_p > c$ — but no causality violation (it's just the speed of wavefronts).");
+  W("em-waves-matter", "$v_g = d\\omega/dk",
+    "$v_g$ = group velocity (speed of a wave-packet envelope). $\\omega(k)$ = dispersion relation. CARRIES energy and information. WORKED EXAMPLE: pulses of light in optical fibers travel at $v_g$, which depends on wavelength → dispersion limits data rate.");
+  W("em-waves-matter", "Plasma frequency:",
+    "$\\omega_p$ = plasma frequency (rad/s) = $\\sqrt{ne^2/(m\\epsilon_0)}$. BELOW $\\omega_p$: EM waves are reflected (medium 'opaque'). ABOVE: waves propagate (medium 'transparent'). WORKED EXAMPLE: Earth's ionosphere has $\\omega_p \\sim 2\\pi \\times 10$ MHz. AM radio (1 MHz) reflects → long-distance propagation. FM radio (100 MHz) passes through → line-of-sight only.");
+
+  // ----- LASERS -----
+  W("lasers", "$A_{21}, B_{12}",
+    "EINSTEIN coefficients (1916). $A_{21}$ = spontaneous emission rate from upper level 2 to lower level 1 (1/s). $B_{12}$ = stimulated absorption coefficient. $B_{21}$ = stimulated emission coefficient. $g_1, g_2$ = degeneracies. $h\\nu^3/c^3$ ratio derived from detailed balance with blackbody radiation. WORKED EXAMPLE: laser-grade transitions have small $A_{21}$ (long-lived upper states) so population inversion is achievable.");
+  W("lasers", "$L_c",
+    "$L_c$ = coherence length (m). $c$ = speed of light. $\\Delta\\nu$ = laser linewidth (Hz). $L_c$ = INVERSE of linewidth (in spatial terms). MAXIMUM path-length difference over which laser light can still interfere with itself. WORKED EXAMPLE: HeNe laser $\\Delta\\nu \\sim 1$ MHz → $L_c \\sim 300$ m. Stabilized lasers reach $L_c \\sim 10^6$ km (used in LIGO).");
+  W("lasers", "He-Ne:",
+    "$632.8$ nm = wavelength of the red HeNe laser line. The TRANSITION is in NEON; HELIUM is a pump (electron impact excites He metastable states, energy then transfers to Ne). FIRST gas laser (1961). Used in alignment, holography, supermarket barcode scanners (historically).");
+  W("lasers", "Cavity modes:",
+    "$\\nu_n$ = $n$-th cavity mode frequency. $n$ = positive integer. $c$ = speed of light. $L$ = optical length of cavity. CAVITY supports only frequencies where round-trip phase is multiple of $2\\pi$. SPACING $c/(2L)$ between adjacent modes. WORKED EXAMPLE: $L = 1$ m → mode spacing 150 MHz. Laser may oscillate on many modes unless mode-selection (etalon) is used.");
+  W("lasers", "Q-switched",
+    "Q-SWITCHING: spoil cavity Q to build up large inversion, then suddenly increase Q → giant ns pulse. MODE-LOCKING: phase-lock many longitudinal modes → fs pulse train (1 / mode spacing apart). WORKED EXAMPLE: Q-switched YAG laser delivers $\\sim 10$ ns, $\\sim 100$ mJ pulses; Ti:sapphire mode-locked laser delivers $\\sim 10$ fs pulses at $\\sim 80$ MHz repetition rate.");
+
+  // ----- QUANTUM OPTICS -----
+  W("quantum-optics", "$|\\alpha\\rangle =",
+    "$|\\alpha\\rangle$ = coherent state, eigenstate of annihilation operator $\\hat a$ with eigenvalue $\\alpha$. $\\alpha$ = complex amplitude. $|n\\rangle$ = number (Fock) states. WORKED EXAMPLE: laser output is well-approximated by a coherent state. $|\\alpha|^2$ = mean photon number; Poisson statistics in photon counting.");
+  W("quantum-optics", "Poisson statistics",
+    "$\\langle n\\rangle = |\\alpha|^2$ = mean photon number. $\\text{Var}(n) = |\\alpha|^2$ = variance EQUALS mean. SHOT-noise limit. CLASSICAL light. WORKED EXAMPLE: laser beam delivering 1 photon per μs (on average) shows Poisson variance — detection times are uncorrelated.");
+  W("quantum-optics", "$g^{(2)}(0)",
+    "$g^{(2)}(0)$ = second-order correlation at zero delay (intensity correlation). $g^{(2)}(0) = 2$: thermal/chaotic light (bunched). $g^{(2)}(0) = 1$: coherent (Poisson). $g^{(2)}(0) < 1$: antibunched (non-classical). WORKED EXAMPLE: single-atom fluorescence has $g^{(2)}(0) = 0$ — a single atom can emit only one photon at a time, then must re-excite.");
+  W("quantum-optics", "Squeezed:",
+    "$\\Delta x, \\Delta p$ = quadrature uncertainties (units of $\\hbar^{1/2}$). HEISENBERG bound $\\Delta x \\Delta p \\geq \\hbar/2$ saturated, but $\\Delta x$ reduced below shot-noise at cost of larger $\\Delta p$. WORKED EXAMPLE: LIGO injects squeezed light to reduce shot noise → factor-of-2 improvement in gravitational-wave sensitivity at high frequencies.");
+  W("quantum-optics", "Jaynes-Cummings:",
+    "JAYNES-CUMMINGS model: simplest cavity QED system, two-level atom coupled to a single cavity-mode field. $\\omega$ = atomic frequency = cavity frequency (resonance). $\\hat a, \\hat a^\\dagger$ = cavity-mode ladder operators. $\\hat\\sigma_\\pm$ = atomic raising/lowering operators. $g$ = coupling strength. EXHIBITS Rabi oscillations between atomic and photonic excitation.");
+
+  // ----- AMO -----
+  W("amo", "MOT:",
+    "MAGNETO-OPTICAL TRAP. 6 counter-propagating red-detuned laser beams (3 pairs along Cartesian axes) + quadrupole magnetic field gradient. ATOMS scatter more photons from the beam they move toward → velocity damping. Magnetic gradient makes scattering POSITION-dependent → spatial confinement. WORKED EXAMPLE: rubidium MOT routinely traps $10^8 - 10^{10}$ atoms at $\\sim 100$ μK.");
+  W("amo", "$T_c^{\\text{BEC}}",
+    "$T_c$ = critical temperature for Bose-Einstein condensation. $n$ = atomic density. $\\hbar$ = reduced Planck. $m$ = atomic mass. $k_B$ = Boltzmann. PROPORTIONALITY constant is $\\sim 3.31$. WORKED EXAMPLE: $^{87}$Rb at $n = 10^{14}$ cm$^{-3}$ → $T_c \\sim 100$ nK. NOBEL 2001 to Cornell, Wieman, Ketterle for first BEC (1995).");
+  W("amo", "$\\lambda_{dB}",
+    "$\\lambda_{dB}$ = de Broglie wavelength of atoms (m). $h$ = Planck constant. $m$ = mass. $v$ = velocity (typically thermal). SETS scale of quantum coherence. WORKED EXAMPLE: rubidium at 1 μK has $v \\sim 1$ cm/s, $\\lambda_{dB} \\sim 0.6$ μm — already comparable to inter-particle spacing in typical traps. Quantum identical-particle effects dominate.");
+  W("amo", "BEC when",
+    "BEC criterion: phase-space density $n\\lambda_{dB}^3 \\gtrsim 2.612$ (numerical factor from Bose distribution). PHYSICAL: de Broglie wavelengths start to overlap. WORKED EXAMPLE: at $T \\sim T_c$, $n\\lambda_{dB}^3 \\sim 2.6$ — onset of condensation.");
+  W("amo", "Atomic clock:",
+    "$f_\\text{Cs} = 9{,}192{,}631{,}770$ Hz EXACTLY (definition of the second since 1967). CESIUM-133 hyperfine ground-state transition. MODERN optical clocks (Sr, Yb, Al$^+$) reach fractional accuracy $\\sim 10^{-18}$ — equivalent to losing 1 second in the age of the universe.");
+
+  // ----- NONEQUILIBRIUM STATMECH -----
+  W("nonequilibrium-statmech", "Boltzmann eq:",
+    "BOLTZMANN equation. $f(\\vec x, \\vec v, t)$ = single-particle distribution function in phase space. $\\vec F$ = external force. RHS = collision integral describing scattering. EVOLUTION of a dilute classical gas out of equilibrium. WORKED EXAMPLE: derive Navier-Stokes equations as approximate moments of Boltzmann (Chapman-Enskog expansion).");
+  W("nonequilibrium-statmech", "Relaxation:",
+    "BHATNAGAR-GROSS-KROOK (1954) relaxation-time approximation. $f_0$ = local equilibrium distribution. $\\tau$ = relaxation time. SIMPLEST closure of the collision integral. WORKED EXAMPLE: in lattice Boltzmann methods, the relaxation form makes simulation tractable.");
+  W("nonequilibrium-statmech", "H-theorem:",
+    "BOLTZMANN's H-theorem (1872). $H = \\int f \\ln f\\,d^3 v\\,d^3 x$. SHOWS that $H$ decreases monotonically (equivalent to entropy increasing) for any process described by the Boltzmann equation with Stosszahlansatz. EXPLAINS the second law from microscopic dynamics — but introduces irreversibility via assumption of molecular chaos.");
+  W("nonequilibrium-statmech", "FDT:",
+    "FLUCTUATION-DISSIPATION theorem. $\\chi''(\\omega)$ = imaginary part of response function (dissipative). $S(\\omega)$ = spectrum of equilibrium fluctuations. $\\beta = 1/(k_BT)$. RELATES equilibrium fluctuations to non-equilibrium response. WORKED EXAMPLE: Johnson-Nyquist noise in resistor $\\langle V^2\\rangle = 4k_BT R \\Delta f$ — thermal voltage fluctuations from dissipation.");
+
+  // ----- SUPERCONDUCTIVITY -----
+  W("superconductivity", "$T_c$:",
+    "$T_c$ = critical temperature (K). BELOW $T_c$: zero resistance, perfect diamagnetism (Meissner effect). WORKED EXAMPLES: Hg 4.15 K (1911 Onnes); Nb 9.3 K; MgB$_2$ 39 K; YBa$_2$Cu$_3$O$_7$ (YBCO) 92 K (above LN$_2$ at 77 K); H$_3$S 203 K at 155 GPa pressure.");
+  W("superconductivity", "Meissner:",
+    "MEISSNER effect (1933): superconductor expels magnetic flux from its interior below $T_c$. NOT just perfect conductivity — even if field is applied BEFORE cooling, it's expelled at $T_c$. WORKED EXAMPLE: magnet levitates above superconductor; image currents in the SC repel the magnet.");
+  W("superconductivity", "$\\lambda_L$",
+    "$\\lambda_L$ = London penetration depth (m). DEPTH over which magnetic field penetrates the superconductor before being screened. WORKED EXAMPLES: pure metals $\\lambda_L \\sim 100$ nm. Cuprates: shorter. Field decays exponentially with depth.");
+  W("superconductivity", "$\\xi$:",
+    "$\\xi$ = coherence length (m). SCALE over which the superconducting order parameter varies. WORKED EXAMPLES: Al $\\xi \\sim 1.6$ μm. Nb $\\xi \\sim 40$ nm. Cuprates: $\\xi \\sim 1$ nm (extremely short — sign of strong correlations). $\\kappa = \\lambda_L/\\xi$ distinguishes type I ($\\kappa < 1/\\sqrt 2$) from type II.");
+  W("superconductivity", "$2\\Delta(0)",
+    "$2\\Delta(0)$ = energy gap at $T = 0$ (J). $k_B T_c$ = thermal energy at critical temperature. UNIVERSAL BCS ratio 3.5. WORKED EXAMPLE: Nb $T_c = 9.3$ K → $\\Delta \\approx 1.4$ meV. Tunneling spectroscopy measures the gap directly.");
+  W("superconductivity", "Josephson AC:",
+    "$\\omega$ = AC Josephson frequency (rad/s). $e$ = electron charge. $V$ = DC voltage across Josephson junction. $\\hbar$ = reduced Planck. APPLY DC voltage → AC current at frequency proportional to voltage. WORKED EXAMPLE: 1 μV across a junction → 484 MHz. Used to define the volt and as ultra-precise frequency-voltage standard.");
+  W("superconductivity", "Flux quantum:",
+    "$\\Phi_0 = h/(2e) \\approx 2.07 \\times 10^{-15}$ Wb. MAGNETIC flux through superconducting loops is QUANTIZED in units of $\\Phi_0$. The factor of 2 reflects Cooper-pair charge $2e$. WORKED EXAMPLE: SQUID (superconducting quantum interference device) detects flux changes to $\\Phi_0/10^6$ — most sensitive magnetometer.");
+
+  // ----- QUANTUM HALL / TOPOLOGICAL -----
+  W("quantum-hall-topological", "$\\sigma_{xy}",
+    "$\\sigma_{xy}$ = Hall conductivity (S = $\\Omega^{-1}$). $\\nu$ = filling factor (integer or fraction). $e, h$ = elementary charge, Planck constant. QUANTIZED. WORKED EXAMPLE: at $\\nu = 1$, $\\sigma_{xy} = e^2/h$, $R_{xy} = h/e^2 \\approx 25813$ Ω (von Klitzing constant) — measured to better than 1 part in $10^9$, used as resistance standard.");
+  W("quantum-hall-topological", "$\\nu = nh/(eB)",
+    "$\\nu$ = filling factor. $n$ = electron density (1/m²). $h, e$ = Planck, electron charge. $B$ = magnetic field (T). RATIO of electron density to magnetic flux density per Landau level. WORKED EXAMPLE: $n = 2.4\\times10^{15}$ m$^{-2}$, $B = 10$ T → $\\nu = 1$. Adjust $B$ to sweep through plateaus.");
+  W("quantum-hall-topological", "FQHE:",
+    "FRACTIONAL Quantum Hall Effect. LAUGHLIN states at $\\nu = 1/m$ ($m$ odd integer). Strongly interacting many-body state with quasiparticles of FRACTIONAL charge $e/m$. NOBEL 1998 to Tsui, Stormer, Laughlin. WORKED EXAMPLE: $\\nu = 1/3$ state — quasiparticles carry charge $e/3$, obey anyonic exchange statistics.");
+  W("quantum-hall-topological", "Chern",
+    "CHERN number = topological invariant of a band (integer). Computed as integral of Berry curvature over Brillouin zone. PROTECTED: doesn't change under smooth deformations. WORKED EXAMPLE: integer QH conductance $\\sigma_{xy} = (e^2/h) \\times$ (total Chern number of filled bands). Why QH plateaus are so flat.");
+  W("quantum-hall-topological", "Topological insulator:",
+    "TOPOLOGICAL insulator: bulk is INSULATING (gapped), edges/surfaces are CONDUCTING (gapless). EDGE states protected by symmetry (typically time-reversal). WORKED EXAMPLES: HgTe quantum wells, Bi$_2$Se$_3$, Bi$_2$Te$_3$. Used as platforms for spintronics and proposed Majorana qubits.");
+
+  // ----- PHONONS -----
+  W("phonons", "1D chain:",
+    "1D chain of $N$ identical atoms, mass $m$, connected by springs of constant $K$, spacing $a$. $q$ = wavenumber in first Brillouin zone $[-\\pi/a, \\pi/a]$. $\\omega(q)$ = phonon dispersion. WORKED EXAMPLE: at $q = 0$, $\\omega = 0$ (uniform translation, no restoring force). At $q = \\pi/a$ (zone boundary): $\\omega = 2\\sqrt{K/m}$ — maximum frequency; neighbors move opposite directions.");
+  W("phonons", "Phonon = quantum",
+    "PHONON = quantum of lattice vibrations. Just as photons are quanta of EM waves, phonons are quanta of acoustic waves in crystals. EACH phonon carries energy $\\hbar\\omega$ and crystal momentum $\\hbar \\mathbf k$. BOSE statistics. WORKED EXAMPLE: thermal phonons populate modes with $\\hbar\\omega \\lesssim k_BT$; this is the basis of specific heat in solids.");
+  W("phonons", "Acoustic vs optical",
+    "Crystals with $p$ atoms in the basis have $3p$ phonon branches per polarization (3 acoustic + $3p - 3$ optical). ACOUSTIC: $\\omega \\to 0$ at $\\mathbf k = 0$ (translation symmetry). OPTICAL: finite $\\omega$ at $\\mathbf k = 0$ (neighboring atoms move oppositely). WORKED EXAMPLE: NaCl has 1 transverse-acoustic + 1 longitudinal-acoustic + 1 LO + 2 TO branches. LO at $\\sim 25$ THz drives IR absorption.");
+  W("phonons", "Brillouin zone:",
+    "BRILLOUIN zone = Wigner-Seitz unit cell of the reciprocal lattice. PERIODICITY: all physics is periodic in $\\mathbf k$ with the reciprocal lattice — only the first BZ is independent. WORKED EXAMPLES: 1D chain BZ is $[-\\pi/a, \\pi/a]$. 2D square lattice BZ is a square. FCC BZ is the truncated octahedron.");
+
+  // ----- STELLAR EVOLUTION -----
+  W("stellar-evolution", "MS lifetime",
+    "MAIN-SEQUENCE lifetime $\\propto M^{-2.5}$. $M$ = stellar mass in solar units. DERIVATION: lifetime $\\sim $ fuel/luminosity. Fuel $\\propto M$. Luminosity $L \\propto M^{3.5}$ (mass-luminosity relation). WORKED EXAMPLES: 10 $M_\\odot$ star: $\\sim 30$ Myr. Sun: $\\sim 10$ Gyr. 0.5 $M_\\odot$ star: $\\sim 50$ Gyr (longer than universe age — these K and M dwarfs have all survived).");
+  W("stellar-evolution", "Hayashi track",
+    "HAYASHI track: pre-main-sequence contraction phase. Protostar is fully convective and follows a nearly vertical line in the HR diagram at $T_\\text{surface} \\sim 4000$ K. WORKED EXAMPLE: Sun spent $\\sim 30$ Myr on the Hayashi track contracting before reaching the main sequence. T Tauri stars are observed today on this track.");
+  W("stellar-evolution", "Sun's age:",
+    "$\\sim 4.6$ Gyr = Sun's current age (from meteorite radiometric dating). $\\sim 10$ Gyr = total main-sequence lifetime (stellar models). The Sun is roughly HALFWAY through its hydrogen-burning phase. WORKED EXAMPLE: in $\\sim 5$ Gyr, the Sun will become a red giant, engulfing Mercury and possibly Venus.");
+  W("stellar-evolution", "Main sequence:",
+    "MAIN sequence: phase where the star fuses hydrogen into helium in its core via either the pp chain (low-mass) or the CNO cycle (high-mass). LONGEST phase of stellar life. WORKED EXAMPLE: 90% of stars in our galaxy are currently on the main sequence — including the Sun.");
+
+  // ----- STELLAR NUCLEOSYNTHESIS -----
+  W("stellar-nucleosynthesis", "CNO:",
+    "CNO cycle: hydrogen → helium catalyzed by C, N, O nuclei. $T \\gtrsim 2\\times10^7$ K threshold. DOMINANT in stars more massive than $\\sim 1.3 M_\\odot$. WORKED EXAMPLE: Sun (core $T \\sim 1.5\\times10^7$ K) gets most energy from pp chain; CNO contributes only $\\sim 1\\%$. Stars of $1.5 M_\\odot$+: CNO dominates.");
+  W("stellar-nucleosynthesis", "Triple-α:",
+    "TRIPLE-alpha process: 3 $^4$He → $^{12}$C + 7.27 MeV. REQUIRES $T \\gtrsim 10^8$ K (red-giant cores). RESONANT through Hoyle state — predicted by Hoyle (1953) and later observed, a triumph of anthropic reasoning. WORKED EXAMPLE: all carbon in the universe (and hence all life) came from triple-α in red giant interiors.");
+  W("stellar-nucleosynthesis", "r-process:",
+    "RAPID neutron capture process. Neutrons captured FASTER than $\\beta^-$ decay. PRODUCES neutron-rich nuclei up to actinides (uranium, etc.). SITES: neutron star mergers (CONFIRMED in 2017 by GW170817 kilonova observations); possibly core-collapse supernovae. RESPONSIBLE for ~half of nuclei heavier than iron.");
+  W("stellar-nucleosynthesis", "s-process:",
+    "SLOW neutron capture process. Neutron capture rate much slower than $\\beta^-$ decay → walk up valley of stability. SITES: AGB stars (asymptotic giant branch). PRODUCES nuclei up to $^{209}$Bi. RESPONSIBLE for the other half of nuclei heavier than iron.");
+  W("stellar-nucleosynthesis", "Solar metallicity:",
+    "$Z_\\odot \\approx 0.014$ = fraction of solar mass in elements heavier than helium. REFERENCE value. POPULATION I stars: similar to solar (young, metal-rich). Pop II: $Z \\sim 10^{-3}$ to $10^{-4}$ (old, metal-poor). Pop III: hypothetical first stars with $Z = 0$.");
+
+  // ----- COMPACT OBJECTS -----
+  W("compact-objects", "$M_{Ch}",
+    "$M_\\text{Ch} \\approx 1.44 M_\\odot$ = CHANDRASEKHAR mass. UPPER limit for white dwarf mass — above this, relativistic electron degeneracy can't support against gravity. ORIGIN: Chandrasekhar (1930, on the boat from India to England) — Nobel 1983. WORKED EXAMPLE: a WD accreting from a companion that reaches $M_\\text{Ch}$ explodes as a Type Ia supernova — standard candle for cosmology.");
+  W("compact-objects", "NS radius:",
+    "NEUTRON star radius $\\sim 10-12$ km. Mass $\\sim 1.4-2 M_\\odot$. DENSITY $\\sim 10^{17}$ kg/m³ — comparable to nuclear matter. SURFACE gravity $\\sim 10^{12} g_\\text{Earth}$. WORKED EXAMPLE: a teaspoon of neutron star matter would weigh $\\sim 10^{12}$ kg — more than Mt. Everest.");
+  W("compact-objects", "$r_s = 2GM/c^2",
+    "$r_s$ = Schwarzschild radius. $G$ = Newton's constant. $M$ = mass. $c$ = speed of light. BOUNDARY of a non-rotating black hole (event horizon). WORKED EXAMPLES: 1 $M_\\odot$: 3 km. 10 $M_\\odot$ stellar BH: 30 km. Sgr A* ($4\\times10^6 M_\\odot$): 0.08 AU. M87* ($6.5\\times10^9 M_\\odot$): 130 AU.");
+  W("compact-objects", "$T_H",
+    "$T_H$ = HAWKING temperature of black hole (K). $\\hbar, c, G, k_B$ = fundamental constants. $M$ = BH mass. WORKED EXAMPLES: 1 $M_\\odot$: $T_H \\sim 60$ nK (utterly undetectable). Primordial BH of $10^{12}$ kg: $T_H \\sim 10^{11}$ K — would emit gamma rays. UNOBSERVED in any astrophysical BH (overwhelmed by CMB).");
+  W("compact-objects", "$S_{BH}",
+    "$S_\\text{BH}$ = Bekenstein-Hawking entropy. $k_B$ = Boltzmann. $A$ = event horizon area. $\\ell_P = \\sqrt{\\hbar G/c^3} \\approx 1.6\\times10^{-35}$ m = Planck length. PROFOUND: entropy proportional to AREA, not volume → holographic principle. WORKED EXAMPLE: 1 $M_\\odot$ BH entropy $\\sim 10^{77} k_B$ — astronomically large.");
+  W("compact-objects", "Sgr A* mass:",
+    "SAGITTARIUS A* = supermassive black hole at center of Milky Way. Mass $\\approx 4.15\\times10^6 M_\\odot$ — measured by tracking orbits of nearby stars (S2, S0-2) over decades. Distance $\\approx 26{,}000$ ly. NOBEL 2020 to Genzel and Ghez. IMAGED by Event Horizon Telescope in 2022.");
+
+  // ----- GALACTIC DYNAMICS -----
+  W("galactic-dynamics", "Rotation curves:",
+    "ORBITAL velocity $v(r)$ in disk galaxies stays nearly CONSTANT at large radii instead of falling as Kepler $v \\propto 1/\\sqrt r$. ORIGIN: Rubin et al. (1970s). CONCLUSION: massive dark matter halos extending far beyond visible disk. WORKED EXAMPLE: Milky Way rotation curve flat at $\\sim 220$ km/s out to $\\sim 50$ kpc, well beyond visible stellar disk at $\\sim 15$ kpc.");
+  W("galactic-dynamics", "$M(r)",
+    "$M(r)$ = total mass enclosed within radius $r$ (kg or $M_\\odot$). $v$ = circular orbital velocity at radius $r$. $G$ = Newton's constant. FROM Newtonian dynamics of circular orbit: $v^2/r = GM(r)/r^2$. WORKED EXAMPLE: at Sun's radius (8 kpc, $v = 220$ km/s): $M(<8\\text{ kpc}) \\sim 9\\times10^{10} M_\\odot$. At 100 kpc: $\\sim 10^{12} M_\\odot$ — most dark.");
+  W("galactic-dynamics", "Faber-Jackson:",
+    "FABER-JACKSON relation for elliptical galaxies. $L$ = luminosity. $\\sigma$ = central velocity dispersion. ORIGIN: Faber and Jackson (1976). REFINED to fundamental plane (3-parameter). PHYSICAL basis: virial relation + uniform mass-to-light ratio. WORKED EXAMPLE: massive elliptical with $\\sigma = 300$ km/s has $L \\sim 10^{11} L_\\odot$.");
+  W("galactic-dynamics", "MW DM halo mass:",
+    "Milky Way total mass within virial radius (~250 kpc) $\\sim 10^{12} M_\\odot$. ONLY a few percent is visible stars and gas; rest is dark. WORKED EXAMPLE: estimated from tracer dynamics — high-velocity stars, satellite galaxy orbits (LMC, Sagittarius dwarf), Gaia stellar kinematics — all converge.");
+  W("galactic-dynamics", "Density wave theory:",
+    "LIN-SHU (1964) density wave theory. SPIRAL ARMS are NOT material structures; they are density waves that propagate through the disk. STARS and gas pass through; the WAVE persists. EXPLAINS why arms are not wound up by differential rotation. WORKED EXAMPLE: in the Milky Way, the pattern speed of the spirals is $\\sim 25$ km/s/kpc — slower than disk rotation at 8 kpc.");
+
+  // ----- BBN / CMB / INFLATION -----
+  W("bbn-cmb-inflation", "Primordial He fraction:",
+    "$Y_p \\approx 0.245$ = mass fraction of helium-4 produced in BBN (first $\\sim 3$ minutes after Big Bang). PREDICTED from baryon density, neutron lifetime, expansion rate. MATCHES observations in old metal-poor stars and primordial gas clouds. PILLAR of Big Bang cosmology.");
+  W("bbn-cmb-inflation", "$T_{\\text{CMB}}",
+    "$T_\\text{CMB} \\approx 2.725$ K = current CMB temperature. DISCOVERED 1965 by Penzias and Wilson — Nobel 1978. ORIGINATED at recombination ($z \\sim 1100$, $T \\sim 3000$ K); cooled by expansion factor of $\\sim 1100$. PERFECT blackbody — pre-Planck experiment.");
+  W("bbn-cmb-inflation", "Recombination:",
+    "$z \\sim 1100$ = redshift of recombination, $T \\sim 3000$ K. At this epoch, electrons combined with protons to form neutral hydrogen; universe became transparent. CMB photons last scattered HERE. UNIVERSE was $\\sim 380{,}000$ years old.");
+  W("bbn-cmb-inflation", "Inflation:",
+    "$\\sim 60$ e-folds = typical amount of inflationary expansion needed to solve horizon and flatness problems. ONE e-fold = factor of $e \\approx 2.72$ in scale factor. 60 e-folds = factor of $e^{60} \\sim 10^{26}$. WORKED EXAMPLE: a region the size of a proton expanded to $\\sim 1$ m in $\\sim 10^{-32}$ s.");
+  W("bbn-cmb-inflation", "Scalar spectral index:",
+    "$n_s \\approx 0.965$ measured by Planck. SPECTRAL TILT of the primordial scalar (density) perturbation spectrum: $P(k) \\propto k^{n_s - 1}$. SLIGHTLY less than 1 (red tilt) — agrees with simplest inflation models. EXACT scale invariance ($n_s = 1$) ruled out at $> 5\\sigma$.");
+  W("bbn-cmb-inflation", "$\\Omega_b h^2",
+    "$\\Omega_b$ = baryon density parameter (fraction of critical density). $h = H_0/100$. $\\Omega_b h^2 \\approx 0.022$ from CMB acoustic peaks AND independently from BBN deuterium abundance. AGREEMENT between two independent probes is a triumph of cosmology. CONSEQUENCE: baryons are only ~5% of universe; the rest is dark matter (~27%) and dark energy (~68%).");
+
+  // ----- GRAVITATIONAL WAVES -----
+  W("gravitational-waves", "$h \\sim",
+    "$h$ = GW strain (dimensionless). $\\Delta L$ = induced change in length. $L$ = unperturbed length. TYPICAL astrophysical strain at Earth $h \\sim 10^{-21}$ — extraordinarily small. WORKED EXAMPLE: LIGO arms 4 km long → strain $h = 10^{-21}$ corresponds to $\\Delta L \\sim 4\\times10^{-18}$ m — smaller than a proton diameter.");
+  W("gravitational-waves", "Quadrupole:",
+    "$P$ = power radiated as GWs (W). $G, c$ = constants. $Q_{ij}$ = mass quadrupole moment tensor. THIRD time derivative — explains why GWs are so faint (high derivative order). DIPOLE radiation forbidden by momentum conservation.");
+  W("gravitational-waves", "Speed: $c$",
+    "GWs travel at the speed of light $c$. CONFIRMED by GW170817: binary neutron star merger, GW arrived 1.7 s before gamma-ray burst, after 130 million-year journey. SPEED deviation constrained to less than 1 part in $10^{15}$ — rules out many modified-gravity theories.");
+  W("gravitational-waves", "Two polarizations:",
+    "GR predicts exactly TWO GW polarization states: 'plus' ($h_+$) and 'cross' ($h_\\times$), differing by 45° rotation. TRANSVERSE: stretches and squeezes space perpendicular to propagation. SCALAR or vector polarizations (predicted by some modified gravity) constrained by LIGO/Virgo to be small.");
+  W("gravitational-waves", "Chirp:",
+    "$f$ = GW frequency. $t_c$ = coalescence time. FREQUENCY rises as $\\sim (t_c - t)^{-3/8}$ during inspiral. CALLED the 'chirp' — characteristic frequency-rising signal. WORKED EXAMPLE: GW150914 spent $\\sim 0.2$ s in LIGO band as frequency swept from $\\sim 35$ to $\\sim 250$ Hz before merger.");
+  W("gravitational-waves", "GW150914:",
+    "GW150914: first direct detection of gravitational waves on September 14, 2015 by LIGO. SOURCE: merger of two black holes of $\\sim 30 M_\\odot$ each, at distance $\\sim 1.3$ Gly. PEAK power $\\sim 3\\times10^{49}$ W — more than the rest of the observable universe combined for $\\sim 0.2$ s. NOBEL 2017 to Weiss, Barish, Thorne.");
+
+  // ----- HIGH-ENERGY ASTROPHYSICS -----
+  W("high-energy-astrophysics", "AGN",
+    "AGN = Active Galactic Nucleus. MAXIMUM luminosity $\\sim 10^{47}$ erg/s = $10^{40}$ W. POWERED by gas accretion onto supermassive black hole ($10^6 - 10^{10} M_\\odot$). WORKED EXAMPLE: quasar 3C 273 visible despite being 2.4 Gly away. Types: quasars, Seyferts, blazars, radio galaxies — different orientations.");
+  W("high-energy-astrophysics", "GRB:",
+    "GRB = Gamma-Ray Burst. Isotropic energy $\\sim 10^{52}$ erg $= 10^{45}$ J (brightest electromagnetic events). DURATION: short ($<2$ s, NS merger origin) or long ($>2$ s, collapsar origin). WORKED EXAMPLE: GRB observed by Vela satellites (1967, classified); cosmological distances confirmed 1997 (afterglow + host galaxy redshift).");
+  W("high-energy-astrophysics", "CR spectrum:",
+    "Cosmic ray flux scales as $E^{-2.7}$ up to the 'knee' at $\\sim 10^{15}$ eV, then steepens to $E^{-3}$. POWER LAW. WORKED EXAMPLE: at 1 GeV: $\\sim 10^4$ particles/m²/s/sr/GeV. At $10^{20}$ eV: $\\sim 1$ particle/km²/century.");
+  W("high-energy-astrophysics", "GZK cutoff:",
+    "GZK (Greisen-Zatsepin-Kuz'min) cutoff at $\\sim 5\\times10^{19}$ eV. ULTRA-high-energy cosmic-ray protons interact with CMB photons via photo-pion production ($p + \\gamma_\\text{CMB} \\to p/n + \\pi$), losing energy. CONSEQUENCE: UHECRs above the cutoff must come from within $\\sim 50$ Mpc. CONFIRMED by Pierre Auger Observatory.");
+  W("high-energy-astrophysics", "Synchrotron:",
+    "Synchrotron power $\\propto B^2 \\gamma^2$. $B$ = magnetic field strength (T). $\\gamma$ = Lorentz factor of charged particle (typically electrons). DOMINATES astrophysical radio emission. WORKED EXAMPLE: Crab Nebula radio synchrotron from $\\gamma \\sim 10^4$ electrons in $\\mu$G fields; X-ray synchrotron from $\\gamma \\sim 10^9$ electrons.");
+  W("high-energy-astrophysics", "Inverse Compton:",
+    "INVERSE Compton: high-energy electron ($\\gamma$ Lorentz factor) up-scatters a low-frequency photon to higher energy by factor $\\sim \\gamma^2$. WORKED EXAMPLE: AGN: CMB photons inverse-Compton-scattered to gamma rays. Cluster gas hot electrons: CMB photons up-scattered → Sunyaev-Zel'dovich effect (used to identify and weigh galaxy clusters).");
+  W("high-energy-astrophysics", "Eddington for SMBH:",
+    "$L_E$ = Eddington luminosity for a supermassive BH. $M$ = mass in solar units. NUMERICAL value: $L_E \\approx 1.3\\times10^{38}(M/M_\\odot)$ erg/s. UPPER limit for steady accretion luminosity. WORKED EXAMPLE: $10^9 M_\\odot$ SMBH: $L_E \\sim 10^{47}$ erg/s — matches brightest quasars.");
+
+  // ----- MATH METHODS FOR PHYSICS -----
+  W("math-methods-physics", "Legendre, Bessel",
+    "Four families of orthogonal SPECIAL functions arising as Sturm-Liouville eigenfunctions. LEGENDRE polynomials $P_\\ell(x)$ on $[-1, 1]$: spherical harmonics, multipole expansion. BESSEL functions $J_\\nu(x)$: cylindrical problems (drum modes, optical fibers). HERMITE $H_n(x)$: quantum harmonic oscillator. LAGUERRE $L_n(x)$: hydrogen radial wavefunctions. WORKED EXAMPLE: $P_2(x) = (3x^2 - 1)/2$, $H_2(x) = 4x^2 - 2$.");
+  W("math-methods-physics", "Green's function:",
+    "$G(\\vec r, \\vec r')$ = response of a linear PDE to a unit point source at $\\vec r'$. SATISFIES $\\mathcal L G = \\delta(\\vec r - \\vec r')$ where $\\mathcal L$ is the PDE operator. SOLVES forced equation via convolution: $u(\\vec r) = \\int G(\\vec r, \\vec r') f(\\vec r')\\,d^3 r'$. WORKED EXAMPLE: Poisson equation $\\nabla^2 \\phi = -\\rho/\\epsilon_0$ has Green's function $G = 1/(4\\pi|\\vec r - \\vec r'|)$ — Coulomb potential.");
+  W("math-methods-physics", "Heat:",
+    "$G(x, t)$ = Green's function for 1D heat equation. $\\alpha$ = thermal diffusivity (m²/s). $x, t$ = position, time. GAUSSIAN that spreads with width $\\sqrt{4\\alpha t}$. WORKED EXAMPLE: drop a hot droplet at $x = 0, t = 0$; after $t = 1$ s in copper ($\\alpha \\sim 10^{-4}$ m²/s), temperature distribution has width $\\sim 2$ cm.");
+  W("math-methods-physics", "Contour integral",
+    "RESIDUE theorem. $\\oint_C f(z)\\,dz = 2\\pi i \\sum \\text{Res}$ where the sum is over poles enclosed by $C$. PROVIDES powerful method for real definite integrals. WORKED EXAMPLE: $\\int_{-\\infty}^\\infty 1/(1 + x^2)\\,dx$ — close in upper half-plane, encloses pole at $i$ with residue $1/(2i)$, integral = $\\pi$.");
+  W("math-methods-physics", "Saddle point:",
+    "SADDLE-POINT (Laplace's) approximation. $N$ = large parameter. $f(x)$ = function with a maximum at $x_0$ in the interior. $f''(x_0) < 0$ (local max). APPROXIMATE integral by Gaussian around the maximum. WORKED EXAMPLE: Stirling's formula $n! \\sim \\sqrt{2\\pi n}(n/e)^n$ derived from $\\int x^n e^{-x}\\,dx = n!$ via saddle point.");
+  W("math-methods-physics", "Sturm-Liouville:",
+    "STURM-LIOUVILLE form $(py')' + (q + \\lambda w)y = 0$ on an interval. $p, q, w$ = given functions. $\\lambda$ = eigenvalue. PROPERTIES: real discrete eigenvalues, orthogonal eigenfunctions with respect to weight $w$. FOUNDATION of quantum-mechanical bound-state problems and many PDE solution methods.");
+  W("math-methods-physics", "WKB:",
+    "WKB (Wentzel-Kramers-Brillouin) semiclassical approximation. $\\psi(x)$ = wavefunction. $p(x) = \\sqrt{2m(E - V(x))}$ = classical momentum. $\\hbar$ = reduced Planck. VALID when wavelength $\\lambda = h/p$ varies slowly. WORKED EXAMPLE: tunneling through a barrier: $T \\sim e^{-2\\int\\sqrt{2m(V-E)}/\\hbar\\,dx}$ — explains alpha decay (Gamow 1928).");
+
+  // ----- GROUP THEORY IN PHYSICS -----
+  W("group-theory-physics", "$SU(2)$ generators:",
+    "Three generators of SU(2) Lie group: $J_i = \\sigma_i/2$ for $i = x, y, z$. $\\sigma_i$ = Pauli matrices (2x2 Hermitian, traceless). ALGEBRA: $[J_i, J_j] = i\\hbar\\epsilon_{ijk}J_k$. WORKED EXAMPLE: rotation by angle $\\theta$ about axis $\\hat n$: $U = e^{-i\\theta\\hat n\\cdot \\vec J/\\hbar}$. Applied to spin states, this rotates the spin direction.");
+  W("group-theory-physics", "$SU(3)$:",
+    "SU(3) gauge group. EIGHT generators = Gell-Mann matrices $\\lambda_a/2$, $a = 1, \\ldots, 8$. UNDERLIES QCD: color $SU(3)$ — quarks carry color, gluons are in the 8-dimensional adjoint representation. Also $SU(3)$ flavor (approximate) gives Eightfold Way classification of hadrons (Gell-Mann, Nobel 1969).");
+  W("group-theory-physics", "Standard Model:",
+    "STANDARD MODEL gauge group $SU(3)_C \\times SU(2)_L \\times U(1)_Y$. THREE forces unified: STRONG ($SU(3)$ color), WEAK ($SU(2)$ left-handed), HYPERCHARGE ($U(1)$). HIGGS mechanism breaks $SU(2) \\times U(1) \\to U(1)_\\text{EM}$, giving masses to W and Z.");
+  W("group-theory-physics", "Lorentz:",
+    "LORENTZ group $SO(3, 1)$: 6 generators (3 rotations + 3 boosts). UNIVERSAL cover $SL(2, \\mathbb C)$ gives rise to spinor representations of half-integer spin. CONSEQUENCE: existence of fermions in nature follows from the spinor representations of the spacetime symmetry group.");
+  W("group-theory-physics", "Crystallographic",
+    "32 crystallographic point groups in 3D. ROTATIONS restricted to $2, 3, 4, 6$-fold (crystallographic theorem; rules out 5-fold lattices, hence quasicrystals require quasi-periodic order). ORIGIN: Hessel (1830), Bravais.");
+  W("group-theory-physics", "Space groups:",
+    "230 SPACE groups in 3D = point group operations combined with translations (including non-primitive screw axes and glide planes). EVERY crystal structure belongs to one. International Tables of Crystallography catalog them.");
+  W("group-theory-physics", "Representations:",
+    "$D^j$ = (2j+1)-dimensional irreducible representation of $SU(2)$. $j = 0, 1/2, 1, 3/2, \\ldots$ = spin quantum number. PHYSICALLY: $D^j$ = the angular-momentum-$j$ multiplet. WORKED EXAMPLE: $j = 1/2$ rep is 2D (spin-up, spin-down). $j = 1$ rep is 3D ($m = -1, 0, +1$).");
+
+  // ----- COMPUTATIONAL PHYSICS -----
+  W("computational-physics", "Verlet:",
+    "VERLET integration. $x_n, x_{n-1}$ = positions at the last two time steps. $a$ = acceleration. $\\Delta t$ = time step. SYMPLECTIC: preserves phase-space volume → stable long-time energy conservation. WORKED EXAMPLE: solar system simulations with Verlet are stable over millions of years; Euler diverges in a few orbits.");
+  W("computational-physics", "RK4:",
+    "RK4 = 4th-order Runge-Kutta method. 4 function evaluations per step. ERROR per step $O(h^5)$; global error $O(h^4)$ for step size $h$. WORKHORSE for non-stiff ODEs. ADAPTIVE variants (RKF45) automatically choose $h$ to maintain tolerance.");
+  W("computational-physics", "FFT:",
+    "FFT = Fast Fourier Transform. Computes DFT of $N$ samples in $O(N\\log N)$ operations (naive: $O(N^2)$). ORIGIN: Cooley-Tukey (1965), with antecedents back to Gauss. WORKED EXAMPLE: 1024-point FFT: $\\sim 10{,}000$ operations vs $\\sim 10^6$ for naive. Enables practical signal processing, spectral PDE methods.");
+  W("computational-physics", "Detailed balance",
+    "DETAILED balance condition for MCMC: $\\pi_i P_{ij} = \\pi_j P_{ji}$. $\\pi$ = target stationary distribution. $P_{ij}$ = transition probability. SUFFICIENT (not necessary) for $\\pi$ to be stationary. ENFORCED by Metropolis acceptance rule.");
+  W("computational-physics", "Multigrid:",
+    "MULTIGRID solver for elliptic PDEs. Relax on fine grid (smooths short-wavelength errors), restrict to coarse grid (smooths long-wavelength errors), solve, prolongate back. RECURSIVE. RUNTIME: $O(N)$ — OPTIMAL. WORKED EXAMPLE: solving 3D Poisson with $N = 10^9$ unknowns: multigrid $\\sim 10^{10}$ ops; naive Gauss-Seidel $\\sim 10^{18}$.");
+
+  // ----- SOFT MATTER / BIOPHYSICS -----
+  W("soft-matter-biophysics", "Persistence length",
+    "$\\ell_p$ = persistence length (m). SCALE over which a polymer 'forgets' its direction due to thermal bending. WORKED EXAMPLES: flexible polymers (rubber) $\\ell_p \\sim$ few monomers ~ 1 nm. DNA $\\ell_p \\approx 50$ nm (about 150 base pairs). Actin $\\ell_p \\sim 10$ μm. Microtubules $\\ell_p \\sim 1$ mm.");
+  W("soft-matter-biophysics", "Membrane:",
+    "HELFRICH membrane bending energy. $\\kappa$ = bending modulus (J or $k_B T$). $H = (\\kappa_1 + \\kappa_2)/2$ = mean curvature. EQUILIBRIUM SHAPES minimize this energy. WORKED EXAMPLE: lipid bilayers $\\kappa \\sim 10-20\\, k_B T$. Red blood cell discocyte shape minimizes bending energy under volume constraint.");
+  W("soft-matter-biophysics", "Motor force:",
+    "MOLECULAR motors (kinesin, myosin, dynein) exert forces $\\sim $ pN over steps $\\sim$ nm. WORKED EXAMPLES: kinesin walks 8 nm per ATP hydrolysis, force up to $\\sim 6$ pN, speed $\\sim 0.5$ μm/s. Power $\\sim 10^{-17}$ W per motor. Cells run on billions of them.");
+
+  // ----- FUNCTION SEQUENCES -----
+  W("function-sequences", "Uniform ⇒ pointwise",
+    "Uniform convergence implies pointwise (specialize the sup to one point); but pointwise does NOT imply uniform. WORKED EXAMPLE: $f_n(x) = x^n$ on $[0, 1]$ converges pointwise but not uniformly to a discontinuous limit. The sup of $|f_n - f|$ stays at 1 (achieved as $x \\to 1^-$).");
+  W("function-sequences", "Uniform limit of",
+    "If $f_n$ are continuous and $f_n \\to f$ uniformly, then $f$ is continuous. PROOF: triangle inequality. CONTRAPOSITIVE: continuous functions cannot uniformly converge to a discontinuous function. WORKED EXAMPLE: $\\sin(nx)/n$ converges uniformly to 0 on $\\mathbb R$ (sup is $1/n \\to 0$), and 0 is continuous ✓.");
+
+  // ----- BAYESIAN STATS -----
+  W("bayesian-statistics", "Normal mean (BS)",
+    "Normal-normal conjugacy. Prior $N(\\mu_0, \\sigma_0^2)$ on the mean. Observe $x \\sim N(\\mu, \\sigma^2)$ with known $\\sigma$. POSTERIOR is normal with mean = precision-weighted average of prior mean and observation. WORKED EXAMPLE: prior $N(0, 1)$ + observation $x = 2, \\sigma = 1$ → posterior $N(1, 0.5)$ — pulled toward prior.");
+  W("bayesian-statistics", "Posterior predictive:",
+    "$y$ = future observation. INTEGRATES likelihood against posterior of $\\theta$. ACCOUNTS for parameter uncertainty. WORKED EXAMPLE: predicting a coin flip after seeing 7 heads in 10 tosses with Beta(2, 2) prior. Posterior Beta(9, 5). Posterior predictive prob of heads = $9/14 \\approx 0.643$ — wider uncertainty than point estimate would suggest.");
+
+  // ----- STOCHASTIC PROCESSES -----
+  W("stochastic-processes", "GBM:",
+    "GBM = Geometric Brownian Motion. $X(t)$ = stock price (always positive). $\\mu$ = drift (expected return). $\\sigma$ = volatility. $W_t$ = standard Brownian motion. SOLUTION: $X(t) = X_0 \\exp((\\mu - \\sigma^2/2)t + \\sigma W_t)$. WORKED EXAMPLE: stock at $\\$100$, drift 8%/yr, volatility 20%/yr. After 1 year: log-normal distribution centered near $\\$108$.");
+
+  // ----- DYNAMICAL SYSTEMS -----
+  W("dynamical-systems", "Feigenbaum:",
+    "FEIGENBAUM constant $\\delta \\approx 4.66920$ — UNIVERSAL ratio of successive period-doubling bifurcation intervals. SAME number for ANY smooth unimodal map (quadratic, sine, etc.). DISCOVERED by Mitchell Feigenbaum 1978 on an HP-65 calculator. WORKED EXAMPLE: logistic map first 4 doublings at $r = 3, 3.449, 3.544, 3.5644, \\ldots$ — ratios approach 4.669.");
+  W("dynamical-systems", "Poincaré section",
+    "POINCARÉ section: take a transverse hyperplane in phase space; record points where the trajectory pierces it. CONTINUOUS flow reduces to DISCRETE map of lower dimension. WORKED EXAMPLE: Lorenz attractor visualized via cross-sections shows its fractal structure. Planetary three-body problem analyzed via surface-of-section (Poincaré, 1890s).");
+
+  // ----- CRYPTOGRAPHY -----
+  W("cryptography", "AES",
+    "AES (Advanced Encryption Standard, 2001). Block size 128 bits. KEY sizes 128/192/256 bits, with 10/12/14 rounds. EACH round: SubBytes (S-box nonlinearity), ShiftRows, MixColumns, AddRoundKey. WORKED EXAMPLE: AES-128 encrypts a 128-bit block in $\\sim 10$ μs on commodity hardware. Best-known cryptanalysis only marginally faster than exhaustive key search.");
+  W("cryptography", "RSA",
+    "RSA (Rivest-Shamir-Adleman, 1977). $n = pq$ = product of two large primes. $e$ = public exponent (often 65537). $d = e^{-1} \\bmod (p-1)(q-1)$ = private exponent. ENCRYPT $m$: $c = m^e \\bmod n$. DECRYPT: $m = c^d \\bmod n$. SECURITY: factoring large $n$ is hard. WORKED EXAMPLE: 2048-bit RSA secures essentially all HTTPS traffic.");
+  W("cryptography", "Diffie-Hellman",
+    "DIFFIE-HELLMAN key exchange (1976). $p$ = large prime. $g$ = generator of $(\\mathbb Z/p)^*$. ALICE picks secret $a$, sends $g^a \\bmod p$. BOB picks secret $b$, sends $g^b \\bmod p$. SHARED secret: $g^{ab} \\bmod p$. EAVESDROPPER must solve discrete log to recover. WORKED EXAMPLE: TLS uses elliptic-curve DH for key agreement before switching to AES for bulk encryption.");
+
+  // ----- COMBINATORICS -----
+  W("combinatorics", "$P(n, k)",
+    "$P(n, k)$ = number of ways to arrange $k$ items chosen from $n$ distinct items, ORDER matters. $= n(n-1)(n-2)\\cdots(n-k+1) = n!/(n-k)!$. WORKED EXAMPLE: how many ways to pick 1st, 2nd, 3rd place from 8 finalists? $P(8, 3) = 8\\cdot 7\\cdot 6 = 336$.");
+
+  // ----- LIE GROUPS -----
+  W("lie-groups", "Angular momentum",
+    "ANGULAR momentum algebra of $\\mathfrak{su}(2)$. $L_x, L_y, L_z$ = three angular-momentum operators. $\\hbar$ = reduced Planck. $\\epsilon_{ijk}$ = Levi-Civita symbol. CONSEQUENCE: can simultaneously know only $L^2$ and ONE component (usually $L_z$). WORKED EXAMPLE: for $\\ell = 1$ multiplet (3 states), $L_z$ takes eigenvalues $-\\hbar, 0, +\\hbar$.");
+
+  // ----- TENSOR CALCULUS -----
+  W("tensor-calculus", "Symmetric tensor",
+    "$n$ = dimension. SYMMETRIC $(0, 2)$ tensor in $n$ dimensions has $n(n+1)/2$ independent components. WORKED EXAMPLE: 3D inertia tensor: $3\\cdot 4/2 = 6$ independent components. 4D stress-energy tensor: $4\\cdot 5/2 = 10$ components. Compare ANTISYMMETRIC: $n(n-1)/2$ — 3 for $F_{\\mu\\nu}$ in 3D, 6 in 4D.");
+
+  // ----- ALGEBRAIC TOPOLOGY (further entries) -----
+  W("algebraic-topology", "$H_n(S^n)",
+    "$S^n$ = $n$-sphere. $H_n$ = $n$-th homology group. $H_n(S^n) = \\mathbb Z$ (fundamental class); other $H_k = 0$ for $0 < k < n$. $H_0 = \\mathbb Z$ since $S^n$ is connected. WORKED EXAMPLE: $S^2$ has $H_0 = H_2 = \\mathbb Z$, $H_1 = 0$. The torus is different: $H_0 = H_2 = \\mathbb Z$, $H_1 = \\mathbb Z^2$.");
+  W("algebraic-topology", "Brouwer",
+    "BROUWER fixed-point theorem. $D^n$ = closed $n$-disk. Every continuous self-map has at least one fixed point. PROOF via algebraic topology (or Sperner's lemma). APPLIES to economics (Nash equilibrium existence), game theory, optimization.");
+
+  // ----- RIEMANNIAN GEOMETRY -----
+  W("riemannian-geometry", "Killing",
+    "$K^\\mu$ = Killing vector field. $\\nabla_\\mu$ = covariant derivative. SYMMETRIZATION over $\\mu\\nu$. INFINITESIMAL generator of isometry (metric-preserving transformation). WORKED EXAMPLE: Minkowski has 10 Killing vectors (4 translations + 3 rotations + 3 boosts). Schwarzschild has 4 (time translation + 3 rotations).");
+
+  // ----- DIFFERENTIAL GEOMETRY -----
+  W("differential-geometry", "Arc length:",
+    "$L$ = arc length (m). $\\vec r(t)$ = parametrized curve. $|\\vec r'(t)|$ = speed. $[a, b]$ = parameter interval. INVARIANT under reparametrization. WORKED EXAMPLE: unit circle parametrized as $\\vec r(t) = (\\cos t, \\sin t)$, $t \\in [0, 2\\pi]$. Speed = 1 everywhere. Length = $\\int_0^{2\\pi} 1\\,dt = 2\\pi$ ✓.");
+  W("differential-geometry", "Curvature:",
+    "$\\kappa$ = curvature of a space curve (1/m). $\\vec r'$ = tangent. $\\vec r''$ = derivative of tangent. RECIPROCAL = radius of osculating circle (best-fitting circle at that point). WORKED EXAMPLE: circle of radius $R$ has $\\kappa = 1/R$ everywhere. Straight line: $\\kappa = 0$.");
+  W("differential-geometry", "Frenet-Serret:",
+    "FRENET-SERRET frame: orthonormal triad $(\\vec T, \\vec N, \\vec B)$ along a 3D curve. $\\vec T$ = unit tangent. $\\vec N$ = principal normal. $\\vec B = \\vec T \\times \\vec N$ = binormal. EVOLUTION: $\\vec T' = \\kappa \\vec N$, $\\vec N' = -\\kappa\\vec T + \\tau\\vec B$, $\\vec B' = -\\tau\\vec N$. UNIQUELY determine curve from $\\kappa(s), \\tau(s)$.");
+  W("differential-geometry", "Gaussian curvature:",
+    "$K$ = Gaussian curvature of surface. $\\kappa_1, \\kappa_2$ = principal curvatures (max and min curvatures of normal sections). WORKED EXAMPLES: unit sphere: $K = +1$. Cylinder: $K = 0$ (one principal curvature is zero). Saddle: $K < 0$. INTRINSIC by Theorema Egregium.");
+
+  // ----- MEASURE THEORY (further) -----
+  W("measure-theory", "Fatou",
+    "FATOU's lemma. $f_n$ = sequence of non-negative measurable functions. $\\liminf$ = limit inferior (always exists). ONE-SIDED inequality: liminf goes inside integral. NO assumption of monotonicity or dominating function — the most general convergence inequality.");
 })();
