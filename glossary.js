@@ -225,40 +225,56 @@ window.GLOSSARY = {
   ],
 
   "limits": [
-    { term: "Limit", def: "The value a function approaches as its input nears some point — even if the function isn't defined there." },
-    { term: "$\\varepsilon$-$\\delta$ definition", def: "Formal limit definition: for any output tolerance $\\varepsilon$, there's an input window $\\delta$ keeping outputs within $\\varepsilon$ of the limit." },
-    { term: "Continuous", def: "A function with no breaks, jumps, or holes — $\\lim_{x \\to a} f(x) = f(a)$ at every point." },
-    { term: "Indeterminate form", def: "$\\tfrac{0}{0}$, $\\tfrac{\\infty}{\\infty}$, $0 \\cdot \\infty$, etc. — no answer without further work." },
-    { term: "L'Hôpital's rule", def: "For $\\tfrac{0}{0}$ or $\\tfrac{\\infty}{\\infty}$, take derivatives of top and bottom separately." }
+    { term: "Limit", def: "The value a function APPROACHES as its input nears some point. Crucially, the limit can exist even when $f(a)$ itself is undefined — the limit cares about the function's behavior NEAR $a$, not AT $a$." },
+    { term: "$\\varepsilon$-$\\delta$ definition", def: "Formal limit definition: for ANY output tolerance $\\varepsilon$, there exists an input window $\\delta$ around $a$ such that all inputs in that window produce outputs within $\\varepsilon$ of the limit. Makes 'gets close' mathematically precise." },
+    { term: "Continuous", def: "A function with no breaks, jumps, or holes at a point — formally, $\\lim_{x \\to a} f(x) = f(a)$. Continuous everywhere means you can draw the graph without lifting your pencil." },
+    { term: "Discontinuity", def: "A point where a function fails to be continuous. Types: removable (hole), jump (graph leaps), infinite (vertical asymptote)." },
+    { term: "One-sided limit", def: "Limit from the left ($x \\to a^-$) or right ($x \\to a^+$) only. The two-sided limit exists iff both one-sided limits exist and are equal." },
+    { term: "Indeterminate form", def: "Expressions like $\\tfrac{0}{0}$, $\\tfrac{\\infty}{\\infty}$, $0 \\cdot \\infty$, $\\infty - \\infty$. The limit MIGHT exist, but you can't tell without more work. Different functions giving the same indeterminate form can have very different limits." },
+    { term: "L'Hôpital's rule", def: "For limits of $\\tfrac{0}{0}$ or $\\tfrac{\\infty}{\\infty}$ form, take derivatives of top and bottom SEPARATELY, then try the limit again. Repeat if still indeterminate." },
+    { term: "Squeeze theorem", def: "If $g(x) \\leq f(x) \\leq h(x)$ near $a$ and $\\lim g = \\lim h = L$, then $\\lim f = L$. Sandwich anything tricky between two known limits." }
   ],
 
   "derivatives": [
-    { term: "Derivative", def: "The instantaneous rate of change of a function — the slope of its tangent line at a point." },
+    { term: "Derivative", def: "The instantaneous rate of change of a function — the slope of its tangent line at a point. Written $f'(x)$ or $df/dx$." },
     { term: "Tangent line", def: "The straight line that 'just touches' a curve at a single point, matching its slope there." },
-    { term: "Differentiable", def: "Having a derivative at a point. Differentiable implies continuous, but not vice versa." },
-    { term: "Chain rule", def: "Rule for differentiating composed functions: $\\frac{d}{dx} f(g(x)) = f'(g(x)) g'(x)$." },
-    { term: "Critical point", def: "Where the derivative is zero or undefined — possible site of a maximum or minimum." },
-    { term: "Concave up", def: "Curve shaped like a smile — second derivative positive." },
-    { term: "Concave down", def: "Curve shaped like a frown — second derivative negative." }
+    { term: "Differentiable", def: "Having a derivative at a point. A function with a sharp corner (like $|x|$ at 0) is not differentiable there. Differentiable implies continuous, but not vice versa." },
+    { term: "Chain rule", def: "Rule for differentiating composed functions: $\\frac{d}{dx} f(g(x)) = f'(g(x)) g'(x)$. Differentiate outer keeping inner intact, then multiply by inner's derivative." },
+    { term: "Critical point", def: "A value $x = c$ where $f'(c) = 0$ OR $f'(c)$ doesn't exist. These are the ONLY places a smooth function can have a local maximum or minimum — that's why they matter. To find them: compute the derivative, set it to zero, solve. Example: $f(x) = x^3 - 3x$ has $f'(x) = 3x^2 - 3 = 0$, giving $x = \\pm 1$ as critical points." },
+    { term: "Local maximum", def: "A point where $f$ is bigger than at all nearby points (a hilltop). Found among critical points. Test: $f'$ changes from $+$ to $-$, or $f''(c) < 0$." },
+    { term: "Local minimum", def: "A point where $f$ is smaller than at all nearby points (a valley). Found among critical points. Test: $f'$ changes from $-$ to $+$, or $f''(c) > 0$." },
+    { term: "Saddle point", def: "A critical point that's neither a max nor a min — slope is zero but you go up in some directions and down in others. Common in functions of multiple variables." },
+    { term: "Inflection point", def: "Where the curvature changes — from concave up to concave down or vice versa. Found where $f''(x) = 0$ AND the sign of $f''$ actually flips there." },
+    { term: "Concave up", def: "Curve shaped like a smile — second derivative positive. Tangent lines lie BELOW the curve." },
+    { term: "Concave down", def: "Curve shaped like a frown — second derivative negative. Tangent lines lie ABOVE the curve." },
+    { term: "Higher-order derivative", def: "The derivative of the derivative (etc.). $f''(x)$ is the rate of change of $f'(x)$; tells you about acceleration of $f$, or curvature." },
+    { term: "Increasing", def: "Function is going up: $f'(x) > 0$ on an interval." },
+    { term: "Decreasing", def: "Function is going down: $f'(x) < 0$ on an interval." }
   ],
 
   "integrals": [
-    { term: "Integral", def: "The accumulation of a function — area under the curve. Reverses differentiation." },
-    { term: "Antiderivative", def: "A function whose derivative is the given function. Found by integrating." },
-    { term: "Definite integral", def: "$\\int_a^b f(x)\\,dx$ — produces a number (signed area)." },
-    { term: "Indefinite integral", def: "$\\int f(x)\\,dx$ — produces a family of functions (antiderivative $+ C$)." },
-    { term: "Constant of integration $C$", def: "Added to any indefinite integral because any constant has derivative zero." },
-    { term: "u-substitution", def: "Technique that reverses the chain rule by substituting a new variable $u$ for an inner function." },
-    { term: "Integration by parts", def: "Technique reversing the product rule: $\\int u\\,dv = uv - \\int v\\,du$." }
+    { term: "Integral", def: "Accumulates a function over an interval — geometrically, the (signed) area between the curve and the x-axis. The inverse of differentiation." },
+    { term: "Antiderivative", def: "A function $F$ whose derivative is the given function $f$: $F'(x) = f(x)$. Found by integrating. Many antiderivatives exist (differ by a constant)." },
+    { term: "Definite integral", def: "$\\int_a^b f(x)\\,dx$ — produces a single NUMBER. Equals signed area between $f$ and the x-axis from $x = a$ to $x = b$. Areas above the axis count positive; below, negative." },
+    { term: "Indefinite integral", def: "$\\int f(x)\\,dx$ — produces a family of FUNCTIONS (antiderivatives plus constant $C$). Notation reflects that integration 'undoes' differentiation." },
+    { term: "Constant of integration $C$", def: "An arbitrary constant added to any indefinite integral. Needed because constants have derivative zero — so any antiderivative is only known up to a constant. Initial conditions pin it down." },
+    { term: "Riemann sum", def: "Approximation of an integral as a sum of thin rectangles: $\\sum f(x_i) \\Delta x$. As rectangle width → 0, this becomes the integral." },
+    { term: "Fundamental theorem of calculus", def: "Connects derivatives and integrals: $\\int_a^b f'(x)\\,dx = f(b) - f(a)$. Means integration and differentiation are inverse operations." },
+    { term: "u-substitution", def: "Technique that reverses the chain rule. Spot a function $g(x)$ AND its derivative $g'(x)$ in the integrand; let $u = g(x)$ to simplify." },
+    { term: "Integration by parts", def: "Reverses the product rule: $\\int u\\,dv = uv - \\int v\\,du$. Use when integrand is a PRODUCT where one factor simplifies on differentiation, the other on integration." },
+    { term: "Improper integral", def: "An integral with infinite limits ($\\int_a^\\infty$) or an unbounded integrand. May converge to a finite value or diverge." }
   ],
 
   "multivariable-calculus": [
-    { term: "Partial derivative", def: "Derivative with respect to ONE variable, treating others as constants. Written $\\partial f/\\partial x$." },
-    { term: "Gradient ($\\nabla f$)", def: "Vector of all partial derivatives. Points in the direction of steepest increase." },
-    { term: "Hessian", def: "Matrix of second partial derivatives — tells you if a critical point is a max, min, or saddle." },
-    { term: "Multiple integral", def: "Integral over a 2D or 3D region. Done by iterating 1D integrals." },
-    { term: "Saddle point", def: "A critical point that's a max in one direction and a min in another — like the middle of a Pringle." },
-    { term: "Lagrange multiplier", def: "Method for optimizing a function subject to a constraint. Uses $\\nabla f = \\lambda \\nabla g$." }
+    { term: "Partial derivative", def: "Derivative with respect to ONE variable while treating all others as constants. Written $\\partial f/\\partial x$. Tells you how $f$ changes if you move only in the $x$ direction." },
+    { term: "Gradient ($\\nabla f$)", def: "Vector whose components are the partial derivatives. Points in the direction $f$ increases fastest; its magnitude is the maximum slope. The 'compass for steepest uphill.'" },
+    { term: "Directional derivative", def: "Rate of change of $f$ in a specified direction $\\hat u$: $D_{\\hat u} f = \\nabla f \\cdot \\hat u$. Maximum when $\\hat u$ aligns with $\\nabla f$." },
+    { term: "Critical point (multivariable)", def: "Where ALL partial derivatives are zero — i.e., $\\nabla f = \\vec 0$. Possible site of a max, min, or saddle. The multivariable analog of $f'(x) = 0$." },
+    { term: "Hessian", def: "Matrix of all second partial derivatives. At a critical point: positive-definite → local min, negative-definite → local max, indefinite → saddle. The multivariable second-derivative test." },
+    { term: "Saddle point", def: "A critical point that's a max in one direction and a min in another — shaped like a Pringles chip or a horse saddle. Common: $f(x, y) = x^2 - y^2$ at the origin." },
+    { term: "Multiple integral", def: "Integral over a 2D region (double) or 3D region (triple). Done by iterating 1D integrals — integrate over one variable, then the next." },
+    { term: "Fubini's theorem", def: "Lets you swap the order of integration in a multiple integral (under mild conditions). Crucial for evaluation strategies." },
+    { term: "Lagrange multiplier", def: "Method for optimizing $f$ subject to a constraint $g = 0$. At the optimum, $\\nabla f = \\lambda \\nabla g$ — gradients are parallel. Auxiliary variable $\\lambda$ handles the constraint." }
   ],
 
   "vector-calculus": [
