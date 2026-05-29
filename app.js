@@ -297,6 +297,31 @@
       });
     }
 
+    // EXTRA worked examples — drawn from canonical textbooks.
+    // Each example carries its own explain + step-level details.
+    const extras = (window.EXTRA_EXAMPLES || {})[topic.id];
+    if (extras && extras.length) {
+      app.appendChild(el("h3", { class: "section-head" }, "More Worked Examples"));
+      app.appendChild(el("p", { class: "section-sub" }, "Additional walk-throughs drawn from canonical textbooks. Same pattern — try to follow each step, then read why it works."));
+      extras.forEach((ex) => {
+        const exDiv = el("div", { class: "example" });
+        exDiv.appendChild(el("h4", {}, ex.title));
+        exDiv.appendChild(el("p", { class: "prompt", html: ex.prompt }));
+        if (ex.explain) {
+          exDiv.appendChild(el("div", { class: "explain", html: ex.explain }));
+        }
+        ex.steps.forEach((step) => {
+          const stepDiv = el("div", { class: "step" }, [
+            el("div", { class: "label" }, step.label),
+            el("div", { class: "body", html: step.body })
+          ]);
+          exDiv.appendChild(stepDiv);
+        });
+        exDiv.appendChild(el("div", { class: "answer", html: ex.answer }));
+        app.appendChild(exDiv);
+      });
+    }
+
     // Recommended Reading — render before practice problems
     const books = (window.BOOKS || {})[topic.id];
     if (books && books.length) {
