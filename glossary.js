@@ -208,11 +208,20 @@ window.GLOSSARY = {
     { term: "Matrix", def: "A rectangular grid of numbers. Used to represent linear transformations and systems of equations." },
     { term: "Vector space", def: "A set where vectors can be added and scaled — like $\\mathbb{R}^n$." },
     { term: "Linear transformation", def: "A function that preserves vector addition and scalar multiplication." },
+    { term: "Identity matrix ($I$)", def: "Square matrix with $1$s on the diagonal and $0$s elsewhere. $IA = AI = A$ — leaves anything unchanged." },
+    { term: "Inverse matrix ($A^{-1}$)", def: "Matrix that undoes $A$: $AA^{-1} = I$. Exists iff $\\det A \\neq 0$." },
+    { term: "Singular matrix", def: "A square matrix with $\\det = 0$ — has no inverse." },
+    { term: "Invertible", def: "Same as 'non-singular' — has an inverse, equivalently $\\det \\neq 0$." },
     { term: "Determinant", def: "A number computed from a square matrix. Zero means non-invertible. Geometrically: signed volume scale factor." },
     { term: "Eigenvalue ($\\lambda$)", def: "A scalar such that $A\\vec v = \\lambda \\vec v$ — directions the matrix only stretches." },
     { term: "Eigenvector", def: "A nonzero vector that gets only scaled (not rotated) by the matrix." },
     { term: "Rank", def: "Number of independent rows (or columns) of a matrix." },
-    { term: "Trace", def: "Sum of diagonal entries of a square matrix." }
+    { term: "Linearly independent", def: "A set of vectors where none is a sum of multiples of the others. Each contributes a new direction." },
+    { term: "Basis", def: "A linearly independent set that spans the space — every vector is a unique combination of basis vectors." },
+    { term: "Null space", def: "All vectors $\\vec v$ such that $A\\vec v = \\vec 0$. Bigger null space = more solutions to $A\\vec v = \\vec 0$." },
+    { term: "Nullity", def: "Dimension of the null space." },
+    { term: "Trace", def: "Sum of diagonal entries of a square matrix." },
+    { term: "Transpose ($A^T$)", def: "Flip the matrix across its diagonal — rows become columns." }
   ],
 
   "limits": [
@@ -574,11 +583,14 @@ window.GLOSSARY = {
   "kinematics": [
     { term: "Position", def: "Where an object is — its location at a given time." },
     { term: "Displacement", def: "Change in position. A vector pointing from start to end." },
+    { term: "Distance", def: "Total path length traveled (always positive). Different from displacement." },
     { term: "Velocity", def: "Rate of change of position. Vector — includes direction." },
     { term: "Speed", def: "Magnitude of velocity — how fast, ignoring direction." },
     { term: "Acceleration", def: "Rate of change of velocity. Equal to $g = 9.8$ m/s² for free fall on Earth." },
+    { term: "Free fall", def: "Motion under gravity alone — no air resistance. Constant downward acceleration $g$." },
     { term: "Projectile", def: "An object thrown or launched, then moving under gravity alone." },
-    { term: "Range", def: "Horizontal distance covered by a projectile before landing." }
+    { term: "Range", def: "Horizontal distance covered by a projectile before landing." },
+    { term: "Trajectory", def: "The path an object follows through space. Projectiles trace parabolas." }
   ],
 
   "vectors-physics": [
@@ -592,22 +604,31 @@ window.GLOSSARY = {
 
   "newtons-laws": [
     { term: "Force", def: "A push or pull. Measured in newtons (N). $1$ N accelerates $1$ kg at $1$ m/s²." },
+    { term: "Net force", def: "The vector sum of all forces acting on an object. Newton's 2nd law: net force $= ma$." },
     { term: "Mass", def: "Amount of matter — measures inertia (resistance to acceleration)." },
     { term: "Inertia", def: "Tendency of objects to keep doing what they're doing — at rest or in uniform motion." },
     { term: "Weight", def: "Force of gravity on an object: $W = mg$. Different from mass." },
     { term: "Normal force", def: "Force a surface exerts perpendicular to itself, preventing penetration." },
     { term: "Friction", def: "Force opposing relative motion between surfaces in contact." },
+    { term: "Static friction", def: "Friction on a non-moving object — adjusts to prevent motion, up to a limit $\\mu_s N$." },
+    { term: "Kinetic friction", def: "Friction once an object is sliding — fixed magnitude $\\mu_k N$, opposes motion." },
+    { term: "Coefficient of friction ($\\mu$)", def: "A dimensionless number that scales the friction force. Depends on the two surfaces in contact." },
     { term: "Tension", def: "Force transmitted through a rope, string, or cable." },
+    { term: "Equilibrium", def: "Zero net force (and zero net torque, for rotational equilibrium). Object stays at rest or moves at constant velocity." },
     { term: "Free-body diagram", def: "A picture showing ALL forces acting on a single object as arrows." }
   ],
 
   "momentum-impulse": [
     { term: "Momentum", def: "Mass times velocity: $\\vec p = m\\vec v$. Measures 'how hard to stop.'" },
     { term: "Impulse", def: "Change in momentum, equal to force times time over which it acts." },
+    { term: "Isolated system", def: "A system with NO external forces acting on it — the parts can push each other, but nothing outside pushes in. In an isolated system, total momentum is conserved." },
+    { term: "Closed system", def: "A system that doesn't exchange matter with its surroundings. Often used interchangeably with 'isolated' in mechanics." },
+    { term: "External force", def: "A force from OUTSIDE the system (like gravity from the Earth on a ball in flight). Internal forces (objects pushing each other) don't change total momentum." },
+    { term: "Conservation", def: "A quantity that doesn't change over time. Momentum is conserved when no external force acts." },
     { term: "Elastic collision", def: "Collision where kinetic energy is also conserved (bouncy)." },
     { term: "Inelastic collision", def: "Collision where some KE is lost to heat, sound, deformation." },
     { term: "Perfectly inelastic", def: "Objects stick together after collision." },
-    { term: "Center of mass", def: "Mass-weighted average position. Moves smoothly even when individual parts collide." }
+    { term: "Center of mass", def: "Mass-weighted average position of all parts. Moves smoothly even when individual parts collide. In an isolated system, moves at CONSTANT velocity." }
   ],
 
   "energy-work": [
@@ -616,7 +637,11 @@ window.GLOSSARY = {
     { term: "Kinetic energy (KE)", def: "Energy of motion: $\\tfrac{1}{2} m v^2$." },
     { term: "Potential energy (PE)", def: "Stored energy from position (gravitational, elastic, etc.)." },
     { term: "Conservative force", def: "A force where work depends only on endpoints, not path (gravity, springs). Has a potential energy." },
+    { term: "Non-conservative force", def: "A force whose work depends on the path taken (friction, air resistance). Dissipates mechanical energy to heat." },
+    { term: "Conservation of energy", def: "Total energy (kinetic + potential + heat + ...) is constant — never created or destroyed, just converted between forms." },
     { term: "Power", def: "Rate of doing work — energy per unit time. Watts (W) = J/s." },
+    { term: "Joule (J)", def: "SI unit of energy. $1$ J = $1$ N·m. A small chocolate bar holds about $10^6$ J." },
+    { term: "Watt (W)", def: "SI unit of power. $1$ W = $1$ J/s. A standard LED bulb is about $10$ W." },
     { term: "Efficiency", def: "Useful output energy divided by input energy. Always less than 1." }
   ],
 
@@ -624,40 +649,62 @@ window.GLOSSARY = {
     { term: "Centripetal force", def: "Net force pointing TOWARD the center of a circular path. Required to bend motion into a circle." },
     { term: "Centripetal acceleration", def: "Acceleration toward the center: $a_c = v^2/r$." },
     { term: "Centrifugal force", def: "Fictitious 'outward' force that only appears in a rotating frame. Not a real force." },
+    { term: "Orbit", def: "The closed path of one body around another under their mutual gravity." },
     { term: "Orbital velocity", def: "Speed needed to maintain a circular orbit at a given radius: $v = \\sqrt{GM/r}$." },
     { term: "Escape velocity", def: "Minimum speed to escape gravity to infinity: $v_{esc} = \\sqrt{2GM/r}$." },
+    { term: "Geostationary orbit", def: "Orbit where the period matches Earth's rotation (24 h) — satellite stays above the same point on the equator." },
+    { term: "Period ($T$)", def: "Time for one complete orbit (or oscillation)." },
     { term: "Gravitational constant ($G$)", def: "$6.67 \\times 10^{-11}$ N·m²/kg². Sets the strength of Newtonian gravity." },
+    { term: "Banking angle", def: "Tilt of a curved road that lets cars turn using normal force instead of friction." },
     { term: "Kepler's laws", def: "Three laws describing planetary orbits: elliptical orbits, equal areas in equal times, $T^2 \\propto a^3$." }
   ],
 
   "shm": [
     { term: "Simple harmonic motion (SHM)", def: "Oscillation where restoring force is proportional to displacement: $F = -kx$." },
+    { term: "Restoring force", def: "A force pushing an object back toward equilibrium. Pulls harder the further away you go." },
+    { term: "Equilibrium position", def: "Where the net force is zero — the 'rest' point of the oscillation." },
+    { term: "Spring constant ($k$)", def: "Stiffness of a spring. Big $k$ = stiff (small displacement per force). Small $k$ = floppy." },
+    { term: "Hooke's law", def: "$F = -kx$ — the restoring force is proportional to displacement. Defines a harmonic oscillator." },
     { term: "Amplitude ($A$)", def: "Maximum displacement from equilibrium." },
     { term: "Period ($T$)", def: "Time for one complete cycle." },
     { term: "Frequency ($f$)", def: "Cycles per second: $f = 1/T$. Units: hertz (Hz)." },
     { term: "Angular frequency ($\\omega$)", def: "$2\\pi f$. Convenient for trig formulas." },
     { term: "Phase", def: "Where in the cycle the oscillation is. $x = A\\cos(\\omega t + \\phi)$ — $\\phi$ is the phase." },
     { term: "Damping", def: "Force that slows oscillations over time, like air resistance or friction." },
-    { term: "Resonance", def: "Large response when a driving force matches the natural frequency." }
+    { term: "Underdamped", def: "Damping weak enough that oscillation still occurs (just with decaying amplitude)." },
+    { term: "Overdamped", def: "Damping strong enough that no oscillation — system slides back to equilibrium." },
+    { term: "Critical damping", def: "Boundary case ($\\gamma = \\omega_0$) — fastest return to equilibrium with no oscillation." },
+    { term: "Resonance", def: "Large response when a driving force matches the natural frequency." },
+    { term: "Pendulum", def: "Mass on a string/rod swinging under gravity. Period $T = 2\\pi\\sqrt{L/g}$ for small angles." }
   ],
 
   "rotational": [
     { term: "Angular velocity ($\\omega$)", def: "How fast something rotates, in radians per second." },
     { term: "Angular acceleration ($\\alpha$)", def: "Rate of change of angular velocity." },
+    { term: "Axis of rotation", def: "The fixed line around which an object rotates." },
     { term: "Torque ($\\tau$)", def: "Rotational analog of force — twist. $\\tau = rF\\sin\\theta$." },
     { term: "Moment of inertia ($I$)", def: "Rotational analog of mass — depends on how mass is distributed around the axis." },
     { term: "Angular momentum ($L$)", def: "Rotational analog of momentum: $L = I\\omega$. Conserved if no external torque." },
+    { term: "Parallel axis theorem", def: "If $I_{cm}$ is the moment of inertia about the center of mass, the moment about a parallel axis distance $d$ away is $I_{cm} + Md^2$." },
+    { term: "Radian", def: "Angle measure where the full circle is $2\\pi$ rad. $360° = 2\\pi$ rad." },
     { term: "Rolling without slipping", def: "Wheel rolls so contact point momentarily stationary: $v = \\omega R$." }
   ],
 
   "fluids": [
+    { term: "Fluid", def: "A substance that flows — liquids and gases. Cannot resist shear indefinitely (solids can)." },
     { term: "Density ($\\rho$)", def: "Mass per unit volume. Water: $1000$ kg/m³." },
     { term: "Pressure ($P$)", def: "Force per unit area. Pascals (Pa) = N/m²." },
+    { term: "Atmosphere (atm)", def: "Standard atmospheric pressure at sea level. $1$ atm $\\approx 101325$ Pa." },
     { term: "Buoyancy", def: "Upward force on a submerged object equal to the weight of fluid displaced (Archimedes)." },
+    { term: "Archimedes' principle", def: "An object in a fluid feels an upward buoyant force equal to the weight of fluid it displaces." },
     { term: "Hydrostatic", def: "Relating to fluids at rest." },
+    { term: "Gauge pressure", def: "Pressure ABOVE atmospheric. Tire gauges read gauge pressure (zero when tire is flat in air)." },
+    { term: "Incompressible", def: "Density doesn't change under pressure (good approximation for liquids)." },
     { term: "Continuity equation", def: "$A_1 v_1 = A_2 v_2$ — flow rate constant in an incompressible pipe." },
     { term: "Bernoulli's principle", def: "Faster flow = lower pressure. Why airplanes lift and curveballs curve." },
-    { term: "Viscosity", def: "Resistance to flow. Honey: high viscosity. Water: low." }
+    { term: "Streamline", def: "An imaginary line in a flowing fluid such that velocity is tangent to it at every point." },
+    { term: "Viscosity", def: "Resistance to flow. Honey: high viscosity. Water: low." },
+    { term: "Pascal's principle", def: "Pressure applied to a confined fluid transmits undiminished to every point. The basis of hydraulics." }
   ],
 
   "kinetic-theory": [
@@ -671,25 +718,41 @@ window.GLOSSARY = {
   ],
 
   "thermodynamics": [
+    { term: "System", def: "The part of the universe you're studying. Surroundings = everything else." },
+    { term: "Isolated system", def: "Neither energy nor matter crosses the system boundary." },
+    { term: "Closed system", def: "Energy can cross, but matter can't." },
+    { term: "Open system", def: "Both energy and matter can cross the boundary." },
     { term: "Temperature ($T$)", def: "Measure of average molecular kinetic energy. Always positive on the absolute (kelvin) scale." },
+    { term: "Kelvin (K)", def: "SI temperature scale. $0$ K = absolute zero ≈ $-273.15°$C. No degree symbol." },
     { term: "Heat ($Q$)", def: "Energy transferred due to temperature difference. NOT a stored substance." },
     { term: "Internal energy ($U$)", def: "Total microscopic kinetic + potential energy of a system." },
     { term: "Entropy ($S$)", def: "Measure of microscopic disorder, or equivalently of the number of microstates consistent with the macrostate." },
     { term: "Specific heat ($c$)", def: "Heat needed per kilogram to raise temperature by 1 K." },
     { term: "Adiabatic", def: "No heat exchange with surroundings. $Q = 0$." },
     { term: "Isothermal", def: "Constant temperature." },
+    { term: "Isobaric", def: "Constant pressure." },
+    { term: "Isochoric", def: "Constant volume." },
+    { term: "Reversible", def: "Idealized process that can be run backwards without any net change. Maximum efficiency processes are reversible." },
     { term: "Carnot engine", def: "Idealized reversible heat engine with maximum possible efficiency." }
   ],
 
   "waves": [
+    { term: "Wave", def: "A disturbance that propagates through space, carrying energy but not matter." },
     { term: "Wavelength ($\\lambda$)", def: "Distance between successive crests of a wave." },
     { term: "Frequency ($f$)", def: "Cycles per second. Hertz (Hz)." },
     { term: "Amplitude", def: "Height of a wave from rest level to peak." },
     { term: "Wave speed ($v$)", def: "How fast a wave travels: $v = f\\lambda$." },
+    { term: "Period ($T$)", def: "Time for one complete cycle: $T = 1/f$." },
+    { term: "Wavenumber ($k$)", def: "Spatial frequency: $k = 2\\pi/\\lambda$." },
+    { term: "Crest", def: "Highest point of a wave. Opposite: trough (lowest)." },
+    { term: "Node", def: "Point of zero displacement in a standing wave. Antinode: maximum displacement." },
+    { term: "Standing wave", def: "A wave that doesn't travel — looks stationary with fixed nodes." },
     { term: "Transverse wave", def: "Oscillation perpendicular to direction of propagation. Light, string waves." },
     { term: "Longitudinal wave", def: "Oscillation along direction of propagation. Sound." },
     { term: "Interference", def: "When waves overlap, they add (or partially cancel) — constructive or destructive." },
-    { term: "Doppler effect", def: "Apparent frequency shift due to relative motion between source and observer." }
+    { term: "Beat frequency", def: "Slow pulsing in amplitude when two close-frequency waves overlap. $f_{beat} = |f_1 - f_2|$." },
+    { term: "Doppler effect", def: "Apparent frequency shift due to relative motion between source and observer." },
+    { term: "Decibel (dB)", def: "Logarithmic measure of sound intensity. $+10$ dB = $10\\times$ intensity." }
   ],
 
   "optics-geometric": [
@@ -716,22 +779,39 @@ window.GLOSSARY = {
   "electrostatics": [
     { term: "Charge ($q$)", def: "Property of particles that determines electric force. Two types: positive and negative." },
     { term: "Coulomb (C)", def: "Unit of charge. Electron has charge $-1.6 \\times 10^{-19}$ C." },
+    { term: "Coulomb's law", def: "Force between charges: $F = kq_1 q_2/r^2$. Same sign repels, opposite attracts." },
+    { term: "Coulomb constant ($k$)", def: "$k = 1/(4\\pi\\varepsilon_0) \\approx 9 \\times 10^9$ N·m²/C². Sets EM force strength." },
     { term: "Electric field ($\\vec E$)", def: "Force per unit positive test charge — describes the influence around a charge." },
+    { term: "Field line", def: "A line tangent to $\\vec E$ at every point. Visualization tool — points from $+$ to $-$." },
     { term: "Electric potential ($V$)", def: "Potential energy per unit charge. Measured in volts." },
     { term: "Voltage", def: "Difference in electric potential between two points." },
+    { term: "Volt (V)", def: "Unit of potential. $1$ V = $1$ J/C." },
+    { term: "Equipotential", def: "Surface where the potential is the same everywhere. Always perpendicular to $\\vec E$." },
     { term: "Conductor", def: "Material where charges move freely (metals)." },
     { term: "Insulator", def: "Material where charges don't move easily (plastic, glass)." },
-    { term: "Capacitor", def: "Device that stores energy in an electric field between two conductors." }
+    { term: "Dielectric", def: "Insulating material that polarizes in an electric field. Reduces field strength inside." },
+    { term: "Capacitor", def: "Device that stores energy in an electric field between two conductors." },
+    { term: "Gauss's law", def: "Total electric flux through any closed surface = enclosed charge $/ \\varepsilon_0$. Powerful for symmetric distributions." },
+    { term: "Flux ($\\Phi$)", def: "How much of a field passes through a surface. For $\\vec E$: $\\Phi = \\int \\vec E \\cdot d\\vec A$." }
   ],
 
   "electric-circuits": [
+    { term: "Circuit", def: "A closed loop allowing current to flow. Need a source (battery) and a path back." },
     { term: "Current ($I$)", def: "Rate of charge flow. Measured in amperes (A) = C/s." },
     { term: "Resistance ($R$)", def: "How much a component opposes current. Ohms ($\\Omega$) = V/A." },
     { term: "Voltage ($V$)", def: "Energy per charge — what pushes current through a circuit." },
     { term: "Ohm's law", def: "$V = IR$ for ohmic materials." },
-    { term: "Series", def: "Components in a single path — same current through all." },
-    { term: "Parallel", def: "Components on separate branches — same voltage across all." },
-    { term: "EMF (electromotive force)", def: "Voltage a battery would supply with no current flowing. Internal resistance reduces actual output." }
+    { term: "Resistor", def: "Circuit component with fixed resistance — dissipates energy as heat." },
+    { term: "Series", def: "Components in a single path — same current through all. Resistances add." },
+    { term: "Parallel", def: "Components on separate branches — same voltage across all. Reciprocal resistances add." },
+    { term: "EMF (electromotive force)", def: "Voltage a battery would supply with no current flowing. Internal resistance reduces actual output." },
+    { term: "Power dissipation", def: "Energy lost as heat per second: $P = VI = I^2R = V^2/R$." },
+    { term: "Internal resistance", def: "Resistance inside a real battery — causes voltage drop under load." },
+    { term: "Conductance", def: "Reciprocal of resistance: $G = 1/R$. Units: siemens (S)." },
+    { term: "Junction", def: "A point where three or more wires meet in a circuit. KCL applies here." },
+    { term: "Loop", def: "A closed path around a circuit. KVL applies to any loop." },
+    { term: "Kirchhoff's current law (KCL)", def: "Total current into a junction equals total current out (charge conservation)." },
+    { term: "Kirchhoff's voltage law (KVL)", def: "Sum of voltages around any closed loop equals zero (energy conservation)." }
   ],
 
   "magnetism-induction": [
@@ -765,14 +845,19 @@ window.GLOSSARY = {
   ],
 
   "special-relativity": [
-    { term: "Inertial frame", def: "A reference frame moving at constant velocity (not accelerating)." },
+    { term: "Reference frame", def: "A coordinate system from which observations are made — like an observer's viewpoint." },
+    { term: "Inertial frame", def: "A reference frame moving at constant velocity (not accelerating). Newton's laws hold in inertial frames." },
+    { term: "Rest frame", def: "An inertial frame where the object in question is stationary." },
     { term: "Lorentz factor ($\\gamma$)", def: "$1/\\sqrt{1 - v^2/c^2}$. Equals 1 at rest, grows as $v \\to c$." },
+    { term: "Lorentz transformation", def: "Equations relating coordinates between two inertial frames at relative velocity $v$." },
     { term: "Time dilation", def: "Moving clocks tick slower as seen from another frame: $\\Delta t = \\gamma \\Delta t_0$." },
     { term: "Length contraction", def: "Moving objects shorten along the direction of motion: $L = L_0/\\gamma$." },
-    { term: "Proper time", def: "Time measured by a clock at rest with the event." },
-    { term: "Proper length", def: "Length measured by a frame at rest with the object." },
+    { term: "Proper time ($\\Delta t_0$)", def: "Time measured by a clock at rest with the event — the smallest possible $\\Delta t$." },
+    { term: "Proper length ($L_0$)", def: "Length measured by a frame at rest with the object — the largest possible $L$." },
+    { term: "Rest mass ($m$)", def: "Mass measured in the object's rest frame. An invariant quantity in modern usage." },
     { term: "Spacetime", def: "Unified 4D structure: 3 space dimensions + 1 time dimension. Relativity treats them together." },
-    { term: "Light cone", def: "Region of spacetime causally connected to an event. Past inside, future inside." }
+    { term: "Light cone", def: "Region of spacetime causally connected to an event. Past and future inside; 'elsewhere' is causally disconnected." },
+    { term: "Invariant", def: "A quantity all observers agree on, regardless of their frame. E.g., spacetime interval and rest mass." }
   ],
 
   "general-relativity": [
@@ -806,12 +891,18 @@ window.GLOSSARY = {
 
   "qm-foundations": [
     { term: "Wavefunction ($\\psi$)", def: "Complex-valued function whose squared modulus gives the probability density." },
+    { term: "Normalized", def: "Total probability $\\int |\\psi|^2 dx = 1$. Required for a valid wavefunction." },
     { term: "Schrödinger equation", def: "Fundamental QM equation: $i\\hbar \\partial_t \\psi = \\hat H \\psi$." },
+    { term: "Hamiltonian ($\\hat H$)", def: "Total energy operator — kinetic + potential. Governs time evolution." },
     { term: "Operator", def: "QM observable — a Hermitian object acting on wavefunctions. Eigenvalues are possible measurement results." },
+    { term: "Hermitian", def: "An operator equal to its own conjugate transpose. Hermitian operators have real eigenvalues — required for observables." },
     { term: "Observable", def: "Anything you can measure (position, momentum, energy)." },
+    { term: "Expectation value", def: "Average measurement result: $\\langle \\hat O \\rangle = \\int \\psi^* \\hat O \\psi\\,dx$." },
     { term: "Eigenstate", def: "A state where measuring an observable gives a definite value with certainty." },
+    { term: "Eigenvalue", def: "The number an operator returns when acting on its eigenstate: $\\hat O |\\psi\\rangle = a |\\psi\\rangle$, $a$ is the eigenvalue." },
     { term: "Superposition", def: "A linear combination of eigenstates — the cat-half-alive-half-dead phenomenon." },
     { term: "Commutator", def: "$[A, B] = AB - BA$. Nonzero ⇒ can't simultaneously measure both observables sharply." },
+    { term: "Bra-ket notation", def: "Dirac's notation: $|\\psi\\rangle$ is a state vector (ket), $\\langle\\psi|$ its dual (bra). $\\langle\\phi|\\psi\\rangle$ is an inner product." },
     { term: "$\\hbar$ (h-bar)", def: "Reduced Planck constant, $\\approx 1.055 \\times 10^{-34}$ J·s. Sets the quantum scale." }
   ],
 
