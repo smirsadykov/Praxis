@@ -3375,4 +3375,292 @@
     "GROUND state wavefunction (1s). $a_0 \\approx 0.529$ Å = Bohr radius. EXPONENTIALLY decaying, spherically symmetric. WORKED EXAMPLE: $|\\psi|^2$ peaks at $r = 0$. But RADIAL probability $4\\pi r^2|\\psi|^2$ peaks at $r = a_0$ — most likely place to find electron.");
   W("qm-3d-hydrogen", "$a_0 \\approx",
     "$a_0 \\approx 5.29 \\times 10^{-11}$ m = 0.529 Å. ATOMIC length scale. EXPRESSION: $a_0 = 4\\pi\\epsilon_0\\hbar^2/(m_e e^2)$. EVERY atomic length scale (covalent bond lengths, lattice constants) is a few $a_0$.");
+
+  // ============================================================
+  // BATCH 8 — final sweep
+  // ============================================================
+
+  // ----- QM FOUNDATIONS (remaining) -----
+  W("qm-foundations", "$\\hat H = \\hat p^2",
+    "HAMILTONIAN operator (total energy). $\\hat p$ = momentum operator. $m$ = mass. $V(x)$ = potential energy. SAME structure as classical $H = p^2/(2m) + V$ but operators not numbers. EIGENVALUES are allowed energy levels. WORKED EXAMPLE: free particle has $V = 0$ — momentum eigenstates are also energy eigenstates.");
+  W("qm-foundations", "$\\hat p =",
+    "MOMENTUM operator in position representation. $\\hat p = -i\\hbar\\partial_x$. $i$ = imaginary unit. $\\hbar$ = reduced Planck constant. $\\partial_x$ = partial derivative with respect to position. WORKED EXAMPLE: $\\hat p\\,e^{ikx} = \\hbar k e^{ikx}$ — plane waves are eigenstates with eigenvalue $\\hbar k$.");
+  W("qm-foundations", "$|\\psi|^2$",
+    "$|\\psi(x)|^2$ = probability density of finding the particle at position $x$. $\\psi$ = wavefunction (complex). NORMALIZATION: $\\int |\\psi|^2\\,dx = 1$. WORKED EXAMPLE: $\\psi = e^{-x^2/2}/\\pi^{1/4}$ — Gaussian; $|\\psi|^2 = e^{-x^2}/\\sqrt\\pi$. Most likely position: $x = 0$.");
+  W("qm-foundations", "$\\langle \\hat O",
+    "EXPECTATION value of observable $\\hat O$ in state $\\psi$. AVERAGE result if you measured many copies of the same state. WORKED EXAMPLE: Gaussian state $\\psi = e^{-x^2/2}/\\pi^{1/4}$. $\\langle\\hat x\\rangle = 0$ (symmetric). $\\langle\\hat x^2\\rangle = 1/2$ → $\\Delta x = 1/\\sqrt 2$.");
+  W("qm-foundations", "$\\sigma_x \\sigma_p",
+    "HEISENBERG uncertainty. $\\sigma_x$ = standard deviation of position measurements. $\\sigma_p$ = standard deviation of momentum. $\\hbar$ = reduced Planck. EQUALITY at GAUSSIAN states (minimum uncertainty). WORKED EXAMPLE: precision $\\sigma_x = 10^{-9}$ m → $\\sigma_p \\geq 5 \\times 10^{-26}$ kg·m/s. For electron: $\\sigma_v \\geq 5.8 \\times 10^4$ m/s.");
+  W("qm-foundations", "$\\hbar = 1.055",
+    "$\\hbar \\approx 1.055 \\times 10^{-34}$ J·s = REDUCED Planck constant = $h/(2\\pi)$. FUNDAMENTAL physical constant — sets quantum scale. WORKED EXAMPLE: angular momentum of an electron in an atom is quantized in units of $\\hbar$.");
+
+  // ----- COMBINATORICS -----
+  W("combinatorics", "$\\binom{n}{k} = \\binom{n-1}{k-1}",
+    "PASCAL's rule. RECURSIVE relation for binomial coefficients. WHY: to choose $k$ from $n$, either INCLUDE last element (then choose $k-1$ from remaining $n-1$) or EXCLUDE it (choose $k$ from remaining $n-1$). WORKED EXAMPLE: $\\binom{5}{2} = \\binom{4}{1} + \\binom{4}{2} = 4 + 6 = 10$.");
+
+  // ----- GALACTIC DYNAMICS -----
+  W("galactic-dynamics", "Density wave theory",
+    "DENSITY wave theory (Lin & Shu, 1964). Spiral arms in disk galaxies are not material structures but DENSITY waves propagating through the disk. Stars and gas pass through; the wave pattern persists. EXPLAINS why arms don't wind up by differential rotation.");
+
+  // ----- INEQUALITIES -----
+  W("inequalities", "$|x| < a",
+    "$a > 0$. ABSOLUTE-value inequality converts to a sandwich. WORKED EXAMPLE: $|2x - 1| < 7$ → $-7 < 2x - 1 < 7$ → $-3 < x < 4$. Always express as $-A < \\ldots < A$ form first.");
+  W("inequalities", "$|x| > a",
+    "$a > 0$. ABSOLUTE-value inequality with the OUTSIDE form. WORKED EXAMPLE: $|3x + 2| > 8$ → $3x + 2 < -8$ or $3x + 2 > 8$ → $x < -10/3$ or $x > 2$. Two disjoint rays.");
+
+  // ----- KINETIC THEORY -----
+  W("kinetic-theory", "$k_B = R/N_A",
+    "$k_B = 1.38 \\times 10^{-23}$ J/K = Boltzmann constant. $R = 8.314$ J/(mol·K) = universal gas constant. $N_A = 6.022 \\times 10^{23}$ /mol = Avogadro's number. ALL fundamental constants. WORKED EXAMPLE: $k_B T$ at room T (300 K) is about 0.026 eV — the basic energy scale for thermal phenomena.");
+
+  // ----- LIE GROUPS -----
+  W("lie-groups", "$[L_i, L_j] = i \\hbar",
+    "ANGULAR-momentum algebra (Lie algebra of $SU(2)$ scaled by $\\hbar$). $L_i$ = angular momentum operators. $\\epsilon_{ijk}$ = Levi-Civita symbol. SAME structure for orbital, spin, or total angular momentum. CONSEQUENCE: cannot simultaneously know all three components.");
+
+  // ----- MOMENTUM IMPULSE -----
+  W("momentum-impulse", "$\\vec p = m \\vec v",
+    "MOMENTUM. $\\vec p$ = momentum vector (kg·m/s). $m$ = mass (kg). $\\vec v$ = velocity (m/s). A VECTOR. Relativistic: $\\vec p = \\gamma m \\vec v$. WORKED EXAMPLE: 1500 kg car at 20 m/s east: $\\vec p = 30000$ kg·m/s east.");
+
+  // ----- RATIOS-PROPORTIONS -----
+  W("ratios-proportions", "$\\dfrac{a}{b} = \\dfrac{c}{d}",
+    "$a, b, c, d$ = numbers with $b, d \\neq 0$. CROSS-MULTIPLICATION is equivalent. WORKED EXAMPLE: $2/3 = 6/9$ ⟺ $2 \\cdot 9 = 18 = 3 \\cdot 6$ ✓.");
+  W("ratios-proportions", "$y \\propto x",
+    "$y$ DIRECTLY proportional to $x$. $k$ = constant of proportionality. DOUBLING $x$ doubles $y$. GRAPH: line through origin with slope $k$. WORKED EXAMPLE: distance = speed × time (at constant speed): $d = vt$.");
+  W("ratios-proportions", "$y \\propto \\dfrac{1}{x}",
+    "$y$ INVERSELY proportional to $x$. $k$ = constant. DOUBLING $x$ HALVES $y$. GRAPH: hyperbola. WORKED EXAMPLE: time × workers = constant (more workers, less time): $t = k/n$.");
+  W("ratios-proportions", "speed $=",
+    "SPEED. UNITS: m/s, km/h, mph. AVERAGE speed = total distance / total time. WORKED EXAMPLE: drive 240 km in 3 hours: avg speed 80 km/h.");
+  W("ratios-proportions", "$C_{\\text{mix}}",
+    "MIXTURE concentration (averaged). $C_1, V_1$ = concentration and volume of mixture 1. $C_2, V_2$ = same for mixture 2. WORKED EXAMPLE: mix 2 L at 10% with 3 L at 20%: $C = (10\\cdot 2 + 20\\cdot 3)/(2+3) = 80/5 = 16\\%$.");
+
+  // ----- RECURRENCE-GENERATING -----
+  W("recurrence-generating", "Linear:",
+    "LINEAR recurrence. $a_n$ = sequence term. $c_1, \\ldots, c_k$ = constant coefficients. ORDER = $k$. WORKED EXAMPLE: Fibonacci $F_n = F_{n-1} + F_{n-2}$: $k = 2$, $c_1 = c_2 = 1$. Characteristic polynomial $x^2 - x - 1 = 0$ has roots $\\varphi = (1+\\sqrt 5)/2$ (golden ratio) and $\\hat\\varphi = (1-\\sqrt 5)/2$.");
+  W("recurrence-generating", "$F_n = \\dfrac{\\varphi^n",
+    "BINET's formula for Fibonacci numbers. $\\varphi = (1+\\sqrt 5)/2 \\approx 1.618$ = golden ratio. $\\hat\\varphi = (1-\\sqrt 5)/2 \\approx -0.618$. WORKED EXAMPLE: $F_{10} = (\\varphi^{10} - \\hat\\varphi^{10})/\\sqrt 5 = 55$. Since $|\\hat\\varphi| < 1$, large $n$: $F_n \\approx \\varphi^n/\\sqrt 5$.");
+  W("recurrence-generating", "$\\sum x^n",
+    "GEOMETRIC series. $|x| < 1$. ENCODES the constant sequence $1, 1, 1, \\ldots$ as a generating function. WORKED EXAMPLE: $1/(1-x)$ Taylor-expanded around 0 gives $1 + x + x^2 + \\ldots$. At $x = 1/2$: sum is 2.");
+  W("recurrence-generating", "$\\sum \\dfrac{x^n}{n!}",
+    "EXPONENTIAL generating function for the sequence $1, 1, 1, \\ldots$. ALSO the Taylor series of $e^x$. WORKED EXAMPLE: differentiate both sides: $\\sum x^{n-1}/(n-1)! = e^x$ — the function equals its own derivative.");
+  W("recurrence-generating", "$\\sum \\binom{n}{k}",
+    "BINOMIAL theorem as a generating function. $n$ fixed; $x$ variable. EXPANDS power of binomial. WORKED EXAMPLE: $(1+1)^n = 2^n = \\sum \\binom{n}{k}$ — number of subsets of $n$-element set.");
+  W("recurrence-generating", "Convolution:",
+    "MULTIPLYING power series CONVOLVES the coefficient sequences. $c_n = \\sum_k a_k b_{n-k}$ = CAUCHY product. WORKED EXAMPLE: two dice — generating function for sum is $(x + x^2 + \\ldots + x^6)^2$; coefficient of $x^n$ counts ways to get sum $n$.");
+
+  // ----- RIEMANNIAN GEOMETRY -----
+  W("riemannian-geometry", "$ds^2 = g_{ij}",
+    "RIEMANNIAN line element. $ds^2$ = infinitesimal squared distance. $g_{ij}$ = metric tensor (symmetric, positive-definite). EINSTEIN summation over $i, j$. WORKED EXAMPLE: Euclidean $g = \\text{diag}(1, 1, 1)$ gives $ds^2 = dx^2 + dy^2 + dz^2$. Sphere of radius $R$: $ds^2 = R^2 d\\theta^2 + R^2\\sin^2\\theta\\,d\\phi^2$.");
+  W("riemannian-geometry", "Geodesic:",
+    "GEODESIC equation. $x^\\mu(t)$ = curve parametrized by proper time (or affine parameter). $\\Gamma^\\mu_{\\alpha\\beta}$ = Christoffel symbols (from metric). GENERALIZES 'straight line' to curved manifolds. WORKED EXAMPLE: in $\\mathbb R^n$, all Christoffels vanish → $\\ddot x = 0$ → straight lines. On a sphere: great circles.");
+  W("riemannian-geometry", "$R_{\\mu\\nu}",
+    "RICCI tensor. CONTRACT Riemann curvature on first and third indices. $R^\\alpha_{\\;\\mu\\alpha\\nu}$ = full Riemann tensor. WORKED EXAMPLE: in 4D, Ricci has 10 independent components (symmetric). In vacuum GR: $R_{\\mu\\nu} = 0$ (e.g., Schwarzschild metric).");
+  W("riemannian-geometry", "$R = g^{\\mu\\nu}",
+    "RICCI scalar (also called scalar curvature). CONTRACT Ricci tensor with inverse metric. SINGLE number at each point of manifold. WORKED EXAMPLES: flat space: $R = 0$. Unit sphere ($S^2$): $R = 2$. Unit hyperbolic plane: $R = -2$.");
+
+  // ----- ROOT LOCUS -----
+  W("root-locus", "Asymptote centroid",
+    "$\\sigma$ = asymptote intersection on real axis. $p_i$ = open-loop poles. $z_j$ = open-loop zeros. $n, m$ = number of poles and zeros. WORKED EXAMPLE: $G(s) = K/[s(s+2)(s+4)]$ has poles 0, $-2$, $-4$, no zeros. Centroid $= (0 + (-2) + (-4))/3 = -2$.");
+  W("root-locus", "Number of branches",
+    "$n - m$ branches go to infinity along asymptotes. $n$ = number of open-loop poles. $m$ = number of zeros. EQUIVALENTLY: $m$ branches end at finite zeros. WORKED EXAMPLE: $n - m = 3$: 3 branches escape to infinity along 3 equally-spaced asymptotes at $60°, 180°, 300°$.");
+
+  // ----- ROOT LOCUS DESIGN -----
+  W("root-locus-design", "PD:",
+    "PD compensator = proportional + derivative. $K, z$ = gain and zero location. ADDS a single zero at $s = -z$. WORKED EXAMPLE: plant $1/(s(s+2))$. Adding PD with $z = 3$ pulls locus left → faster, more damped closed-loop poles.");
+  W("root-locus-design", "Lead:",
+    "LEAD compensator. $z < p$ — zero at LOWER frequency than pole. PROVIDES phase boost between $z$ and $p$ (max boost at $\\sqrt{zp}$). REALIZABLE version of PD (PD's pole at infinity moved to finite $p$). WORKED EXAMPLE: $z = 1, p = 10$: phase boost peaks near $\\omega \\approx 3.16$ rad/s.");
+  W("root-locus-design", "Lag:",
+    "LAG compensator. $z > p$ — pole at LOWER frequency than zero. BOOSTS DC gain by factor $z/p$ (reduces steady-state error). LITTLE phase change at higher frequencies. WORKED EXAMPLE: $z = 1, p = 0.1$: 10× DC gain boost → 10× reduction in steady-state error.");
+
+  // ----- ROTATIONAL (remaining) -----
+  W("rotational", "$\\theta, \\omega",
+    "ROTATIONAL kinematics. $\\theta$ = angular position (rad). $\\omega = d\\theta/dt$ = angular velocity (rad/s). $\\alpha = d\\omega/dt$ = angular acceleration (rad/s²). ANALOGY: position-velocity-acceleration of linear motion.");
+  W("rotational", "$v = \\omega r",
+    "LINEAR-angular relations for a point at distance $r$ from rotation axis. $v$ = tangential speed (m/s). $a_t$ = tangential acceleration. PERPENDICULAR to the radius. WORKED EXAMPLE: 10 cm wheel spinning at $\\omega = 100$ rad/s: rim speed $v = 10$ m/s.");
+  W("rotational", "$\\tau = r F",
+    "TORQUE. $r$ = lever arm (distance from axis to force application point). $F$ = force magnitude. $\\theta$ = angle between $\\vec r$ and $\\vec F$. $I$ = moment of inertia. $\\alpha$ = angular acceleration. ROTATIONAL Newton's 2nd law. WORKED EXAMPLE: 10 N force at 0.5 m perpendicular: torque = 5 N·m.");
+  W("rotational", "$I = \\sum m_i",
+    "MOMENT of inertia. $m_i, r_i$ = masses and distances from rotation axis. CONTINUOUS body: $I = \\int r^2\\,dm$. UNITS: kg·m². WORKED EXAMPLES: solid disk (mass $M$, radius $R$): $I = MR^2/2$. Hoop: $I = MR^2$. Solid sphere: $(2/5)MR^2$.");
+  W("rotational", "$KE_{\\text{rot}}",
+    "$KE_\\text{rot}$ = rotational kinetic energy (J). $I$ = moment of inertia. $\\omega$ = angular velocity. ANALOGOUS to $\\tfrac{1}{2}mv^2$. For rolling: add to translational $\\tfrac{1}{2}Mv_\\text{CM}^2$.");
+  W("rotational", "$L = I\\omega",
+    "ANGULAR momentum magnitude. $L$ = angular momentum (kg·m²/s). $I$ = moment of inertia. $\\omega$ = angular velocity. CONSERVED when no external torque. WORKED EXAMPLE: figure skater pulls arms in — $I$ drops 4x, so $\\omega$ rises 4x.");
+
+  // ----- ROUTH HURWITZ -----
+  W("routh-hurwitz", "Routh array sign-change",
+    "ROUTH-HURWITZ stability criterion. Build Routh array from coefficients of characteristic polynomial. COUNT sign changes in the LEFTMOST column. EACH change corresponds to ONE pole in the right-half plane (unstable). WORKED EXAMPLE: $s^3 + 2s^2 + 3s + 6$: build array, first column gives $1, 2, 0, 6$ — borderline (zero element), needs special handling.");
+  W("routh-hurwitz", "Necessary:",
+    "NECESSARY (but NOT sufficient) condition for stability: all coefficients of characteristic polynomial must be the SAME SIGN (and none zero). FAILURE means definite instability. PASSING this test doesn't guarantee stability — still need to build Routh array. WORKED EXAMPLE: $s^3 - s^2 + 3s + 6$: coefficients $1, -1, 3, 6$ have mixed signs → unstable immediately.");
+
+  // ----- SHM -----
+  W("shm", "$F = -kx$",
+    "HOOKE's law / restoring force. $F$ = restoring force (N). $k$ = spring constant (N/m). $x$ = displacement from equilibrium (m). MINUS sign: force opposes displacement. WORKED EXAMPLE: spring with $k = 100$ N/m stretched 10 cm: $F = -10$ N (pulling back).");
+  W("shm", "$\\omega = \\sqrt{k/m}",
+    "ANGULAR frequency of mass-spring oscillator. $\\omega$ = angular frequency (rad/s). $k$ = spring constant (N/m). $m$ = mass (kg). WORKED EXAMPLE: 0.5 kg on $k = 200$ N/m spring: $\\omega = 20$ rad/s. Frequency: $f = \\omega/(2\\pi) \\approx 3.18$ Hz.");
+  W("shm", "$T = 2\\pi/\\omega",
+    "PERIOD of oscillation (s). $\\omega$ = angular frequency. $T$ = time for one complete cycle. WORKED EXAMPLE: same 0.5 kg, $k = 200$ N/m: $T \\approx 0.314$ s. INDEPENDENT of amplitude (in simple harmonic limit).");
+  W("shm", "$x(t)",
+    "POSITION as a function of time for simple harmonic motion. $A$ = amplitude (m). $\\omega$ = angular frequency. $\\phi$ = phase offset (rad). DETERMINED by initial conditions. WORKED EXAMPLE: released from rest at $x = 0.1$ m with $\\omega = 10$ rad/s: $x(t) = 0.1\\cos(10 t)$.");
+  W("shm", "$E_{\\text{SHM}}",
+    "TOTAL energy of harmonic oscillator. $k$ = spring constant. $A$ = amplitude. ENERGY oscillates between KE and PE, but total stays constant. WORKED EXAMPLE: $k = 200$ N/m, $A = 0.05$ m: $E = 0.25$ J. Max KE: 0.25 J at $x = 0$. Max PE: 0.25 J at $x = \\pm A$.");
+  W("shm", "Damped:",
+    "DAMPED oscillator equation. $\\gamma$ = damping rate (1/s). $\\omega_0$ = undamped natural frequency. THREE regimes: UNDERDAMPED ($\\gamma < \\omega_0$, oscillates with decaying envelope), CRITICAL ($\\gamma = \\omega_0$), OVERDAMPED ($\\gamma > \\omega_0$, no oscillation).");
+
+  // ----- SIGNAL FLOW MASON -----
+  W("signal-flow-mason", "$T = \\dfrac{\\sum_k P_k",
+    "MASON's gain formula. $T$ = transfer function from source to sink. $P_k$ = $k$-th forward-path gain (product of branch gains). $\\Delta$ = determinant of graph. $\\Delta_k$ = cofactor for path $k$. WORKED EXAMPLE: single feedback loop with forward $G$ and feedback $-H$. One forward path: $P_1 = G$. One loop: $L_1 = -GH$. $\\Delta = 1 + GH$. $\\Delta_1 = 1$ (loop touches path). $T = G/(1+GH)$.");
+  W("signal-flow-mason", "$\\Delta = 1",
+    "GRAPH determinant. $L_i$ = individual loop gains. $L_iL_j$ = products of NON-TOUCHING loop pairs. $\\sum$ proceeds with alternating signs over triples, quadruples, etc. WORKED EXAMPLE: 3 non-touching loops: $\\Delta = 1 - (L_1 + L_2 + L_3) + (L_1L_2 + L_1L_3 + L_2L_3) - L_1L_2L_3$.");
+  W("signal-flow-mason", "Total transfer",
+    "SAME as Mason formula, applied to graphs with multiple forward paths and loops. EACH path has its own cofactor. INTERPRETATION: contribution of each path, weighted by the determinant of the graph with loops touching that path removed.");
+  W("signal-flow-mason", "Loop touching",
+    "TWO loops TOUCH if they share at least one node (or branch). NON-TOUCHING loops contribute product terms (with alternating signs) to determinant $\\Delta$. WORKED EXAMPLE: a forward path that passes through every node 'touches' all loops in the graph — so its cofactor $\\Delta_k = 1$.");
+
+  // ----- SOFT MATTER -----
+  W("soft-matter-biophysics", "Polymer end-to-end:",
+    "RANDOM-walk polymer. $\\langle R^2\\rangle$ = mean-square end-to-end distance. $N$ = number of monomer segments. $b$ = segment length (m). IDEAL chain (no excluded volume). WORKED EXAMPLE: polymer with $N = 10000$ segments of $b = 0.15$ nm: $R_\\text{rms} = b\\sqrt N = 15$ nm. Compare to contour length $Nb = 1500$ nm — polymer is huge and coiled, not extended.");
+  W("soft-matter-biophysics", "DNA $\\ell_p",
+    "DNA PERSISTENCE length $\\ell_p \\approx 50$ nm ≈ 150 base pairs. SETS the bending stiffness scale. CONSEQUENCE: a human chromosome ~10 cm contour wraps into a ~1 μm bundle. Also relevant for nucleosome packaging (~80 bp).");
+
+  // ----- SOLID GEOMETRY -----
+  W("solid-geometry", "Cube:",
+    "CUBE with side length $s$. $V$ = volume (m³). $SA$ = surface area (m²) — 6 congruent squares. WORKED EXAMPLE: $s = 4$ → $V = 64$, $SA = 96$.");
+  W("solid-geometry", "Rectangular box:",
+    "RECTANGULAR box (right rectangular prism). $\\ell, w, h$ = length, width, height. WORKED EXAMPLE: $3 \\times 4 \\times 12$ box: $V = 144$. Diagonal: $\\sqrt{9 + 16 + 144} = 13$.");
+  W("solid-geometry", "Sphere:",
+    "SPHERE of radius $r$. $V$ = volume. $SA$ = surface area. ARCHIMEDES proved both. WORKED EXAMPLE: $r = 3$ → $V = 36\\pi \\approx 113$. $SA = 36\\pi \\approx 113$. (Coincidence at $r = 3$.)");
+  W("solid-geometry", "Cylinder:",
+    "CYLINDER of radius $r$, height $h$. $V$ = base area × height. $SA$ = lateral surface ($2\\pi r h$) + two caps ($2\\pi r^2$). WORKED EXAMPLE: $r = 2, h = 5$: $V = 20\\pi$. $SA = 2\\pi \\cdot 2 \\cdot 7 = 28\\pi$.");
+  W("solid-geometry", "Cone:",
+    "CONE of radius $r$, height $h$. Factor $1/3$ from integration. WORKED EXAMPLE: $r = 3, h = 4$: $V = 12\\pi$. Slant length: $\\sqrt{9+16} = 5$. Lateral surface: $\\pi r \\ell = 15\\pi$.");
+  W("solid-geometry", "Pyramid:",
+    "PYRAMID with base area $B$ and height $h$ (apex to base). $V$ = $Bh/3$. FACTOR 1/3 same as cone (from integrating cross-section that shrinks linearly). WORKED EXAMPLE: square pyramid with base $6 \\times 6$ and height 10: $V = 120$.");
+
+  // ----- SOLID STATE (remaining) -----
+  W("solid-state", "$14$ Bravais",
+    "14 BRAVAIS lattices in 3D. CLASSIFY all possible crystalline arrangements. WORKED EXAMPLES: simple cubic (only $\\alpha$-Po), body-centered cubic (Fe, W), face-centered cubic (Cu, Al, Au), hexagonal close-packed (Mg, Zn). RESTRICTED to 2-, 3-, 4-, 6-fold symmetry (crystallographic theorem).");
+  W("solid-state", "$E_F",
+    "FERMI energy of 3D free electron gas. $\\hbar$ = reduced Planck. $n$ = electron density (1/m³). $m$ = electron mass. WORKED EXAMPLE: copper ($n \\approx 8.5 \\times 10^{28}$ /m³): $E_F \\approx 7$ eV. Much larger than $k_BT$ at room T (0.026 eV) → highly degenerate.");
+  W("solid-state", "Si gap:",
+    "SILICON band gap $\\approx 1.12$ eV at 300 K. INTRINSIC semiconductor. WAVELENGTH equivalent: 1100 nm (near-IR). EXPLAINS Si photodiodes don't respond to long wavelengths. Doping creates n-type or p-type for transistors.");
+  W("solid-state", "Wiedemann-Franz:",
+    "WIEDEMANN-FRANZ law. $\\kappa$ = thermal conductivity. $\\sigma$ = electrical conductivity. $T$ = absolute temperature. $L_0 = \\pi^2 k_B^2/(3e^2) \\approx 2.44 \\times 10^{-8}$ W·Ω/K² = Lorenz number (UNIVERSAL constant). EXPLANATION: same electrons carry both heat and charge.");
+  W("solid-state", "Debye specific heat",
+    "DEBYE model at low T. Phonon specific heat scales as $T^3$. SOURCE: number of accessible phonon modes ($\\hbar\\omega \\leq k_BT$) grows as $T^3$ in 3D with linear dispersion. WORKED EXAMPLE: explains famous low-T heat capacity of solids — Einstein's 1907 model was earlier but Debye's $T^3$ is correct.");
+
+  // ----- SPECIAL RELATIVITY (remaining) -----
+  W("special-relativity", "$p = \\gamma m v",
+    "RELATIVISTIC momentum. $\\gamma = 1/\\sqrt{1 - v^2/c^2}$ = Lorentz factor. $m$ = rest mass. $v$ = speed. REDUCES to $mv$ at non-relativistic speeds. WORKED EXAMPLE: electron at $v = 0.9c$: $\\gamma \\approx 2.29$, momentum 2.29 times the Newtonian estimate.");
+  W("special-relativity", "$ds^2",
+    "SPACETIME interval (Minkowski metric). $ds^2$ = invariant interval. $c$ = speed of light. $dt, dx, dy, dz$ = coordinate differences. INVARIANT under Lorentz transformations. SIGN: timelike if $ds^2 < 0$ (here), spacelike if $> 0$, lightlike if $= 0$. (Sign conventions vary.) WORKED EXAMPLE: light ray has $ds^2 = 0$ (lightlike).");
+
+  // ----- STATE OBSERVERS -----
+  W("state-observers", "$\\dot{\\hat{\\mathbf x}}",
+    "LUENBERGER observer (state estimator). $\\hat{\\mathbf x}$ = state estimate. $A, B, C$ = state-space matrices of the plant. $u$ = control input. $y$ = measured output. $L$ = observer gain matrix. THE term $L(y - C\\hat{\\mathbf x})$ is the CORRECTION based on the 'innovation' (gap between measured and predicted output).");
+  W("state-observers", "Observability matrix",
+    "OBSERVABILITY matrix. $C$ = output matrix. $A$ = system matrix. STACK $C, CA, CA^2, \\ldots, CA^{n-1}$ as rows. FULL RANK (= n) ⟺ observable, meaning the state can be reconstructed from output history. WORKED EXAMPLE: $A = \\begin{pmatrix}0&1\\\\0&0\\end{pmatrix}$, $C = (1\\ 0)$: $\\mathcal O = \\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}$ — identity, full rank → observable.");
+  W("state-observers", "Estimator-controller",
+    "COMBINED estimator-controller. SEPARATION principle: closed-loop poles are union of pole-placement design poles and observer design poles. Total order: $2n$ (state dimension doubled). USED in most modern control implementations.");
+
+  // ----- STATE-SPACE DESIGN -----
+  W("state-space-design", "$u = -K\\mathbf x",
+    "FULL-STATE feedback. $u$ = control input. $K$ = feedback gain matrix. $\\mathbf x$ = state vector. $A, B$ = system and input matrices. CLOSED-LOOP dynamics: $\\dot{\\mathbf x} = (A - BK)\\mathbf x$. EIGENVALUES of $A - BK$ are the closed-loop poles. CHOOSE $K$ to place them anywhere (if controllable).");
+  W("state-space-design", "Controllability matrix",
+    "CONTROLLABILITY matrix $\\mathcal C$. $B$ = input matrix. $A$ = system matrix. $n$ = state dimension. STACK $B, AB, A^2 B, \\ldots, A^{n-1}B$ as COLUMNS. FULL RANK ⟺ controllable, meaning state can be driven to any desired value via the input. WORKED EXAMPLE: $A = [0, 1; -2, -3]$, $B = [0; 1]$: $\\mathcal C = [B, AB] = [[0, 1], [1, -3]]$, determinant $-1$, full rank.");
+  W("state-space-design", "Ackermann:",
+    "ACKERMANN's formula for pole-placement gain. $K$ = feedback gain. $\\mathcal C$ = controllability matrix. $\\alpha_d(s)$ = desired characteristic polynomial. $\\alpha_d(A)$ = matrix polynomial. SOLVES pole placement in closed form. USED by MATLAB's `acker` function.");
+
+  // ----- STATISTICAL MECHANICS -----
+  W("statistical-mechanics", "$Z = \\sum_i",
+    "PARTITION function. $E_i$ = energy of microstate $i$. $\\beta = 1/(k_BT)$. NORMALIZES Boltzmann distribution. ALL thermodynamic quantities follow from $Z$. WORKED EXAMPLE: two-level system with $E_0 = 0, E_1 = \\epsilon$: $Z = 1 + e^{-\\beta\\epsilon}$.");
+  W("statistical-mechanics", "$P_i = e^{-\\beta E_i}",
+    "BOLTZMANN distribution. $P_i$ = probability of microstate $i$ in thermal equilibrium. $\\beta = 1/(k_BT)$. $E_i$ = energy. WORKED EXAMPLE: state with energy $k_BT$ has probability $\\sim e^{-1}/Z$ of being occupied — about $1/e$ as likely as ground state.");
+  W("statistical-mechanics", "$\\langle E \\rangle",
+    "AVERAGE energy. $Z$ = partition function. $\\beta = 1/(k_BT)$. ELEGANT formula derives many thermodynamic quantities. WORKED EXAMPLE: two-level $Z = 1 + e^{-\\beta\\epsilon}$. $\\langle E\\rangle = \\epsilon/(1 + e^{\\beta\\epsilon})$ — approaches $\\epsilon/2$ at high T (both states equally occupied).");
+  W("statistical-mechanics", "$F = -k_B T",
+    "HELMHOLTZ free energy. $F$ = free energy (J). $k_B$ = Boltzmann. $T$ = temperature. $Z$ = partition function. MINIMIZED at equilibrium at fixed $T, V, N$. CONNECTS statistical mechanics to thermodynamics.");
+  W("statistical-mechanics", "$S = k_B \\ln W",
+    "BOLTZMANN's entropy formula (on his tombstone). $S$ = entropy. $k_B$ = Boltzmann constant. $W$ = number of microstates compatible with the macrostate. WORKED EXAMPLE: classical ideal gas: $W$ counts position-momentum configurations → $S$ = Sackur-Tetrode expression with translational and configurational pieces.");
+  W("statistical-mechanics", "Equipartition:",
+    "EQUIPARTITION theorem. EACH quadratic degree of freedom in the Hamiltonian contributes $k_BT/2$ to the average energy. CLASSICAL only — fails when $\\hbar\\omega \\gtrsim k_BT$ (quantum freeze-out). WORKED EXAMPLE: diatomic ideal gas at room T: 3 translation + 2 rotation = 5 quadratic DOFs → $C_V = 5R/2$ per mole. Vibrational mode frozen out below $\\sim 1000$ K.");
+
+  // ----- STEADY-STATE ERRORS -----
+  W("steady-state-errors", "$e_{ss} = \\dfrac{1}{1 + K_p}",
+    "STEADY-state error for a TYPE-0 system tracking a STEP input. $K_p = \\lim_{s\\to 0} G(s)$ = position error constant (= DC gain of open-loop). LARGER $K_p$ = smaller error. WORKED EXAMPLE: $K_p = 9$ → $e_{ss} = 0.1$ (10% off).");
+  W("steady-state-errors", "$e_{ss} = 1/K_v",
+    "STEADY-state error for a TYPE-1 system tracking a RAMP input. $K_v = \\lim_{s\\to 0} sG(s)$ = velocity error constant. WORKED EXAMPLE: $K_v = 10$ → $e_{ss} = 0.1$ (lag of 0.1 sec on a ramp). Type-0 system: $K_v = 0$ → infinite ramp error.");
+  W("steady-state-errors", "$e_{ss} = 1/K_a",
+    "STEADY-state error for a TYPE-2 system tracking a PARABOLIC input. $K_a = \\lim_{s\\to 0} s^2 G(s)$ = acceleration error constant. WORKED EXAMPLE: missile guidance system tracking an accelerating target needs type-2 (two integrators) for finite tracking error.");
+
+  // ----- STOCHASTIC PROCESSES -----
+  W("stochastic-processes", "Markov:",
+    "MARKOV property: future depends on present, not past. $X_n$ = state at time $n$. MEMORYLESS. WORKED EXAMPLE: random walk on integers — next position depends only on current, not entire history. SIMPLIFIES probability calculations enormously.");
+  W("stochastic-processes", "Stationary:",
+    "STATIONARY distribution $\\pi$. $P$ = transition matrix (rows are conditional distributions). $\\pi$ = row vector. UNIQUE for irreducible aperiodic chains. WORKED EXAMPLE: 2-state chain with $P = \\begin{pmatrix}0.7 & 0.3\\\\0.4 & 0.6\\end{pmatrix}$: stationary $\\pi = (4/7, 3/7)$.");
+  W("stochastic-processes", "Itô:",
+    "ITÔ's quadratic variation. $W$ = Brownian motion. $dW^2 = dt$ — Brownian motion's squared increment is NOT zero, it equals time increment. BASIS of stochastic calculus. WORKED EXAMPLE: Itô's formula: $df(W) = f'(W)\\,dW + \\tfrac{1}{2}f''(W)\\,dt$ — the second term is the Itô correction.");
+
+  // ----- SYSTEMS OF EQUATIONS -----
+  W("systems-of-equations", "$\\begin{pmatrix}a",
+    "MATRIX form of a 2x2 linear system. $a, b, c, d$ = coefficients. $x, y$ = unknowns. $p, q$ = right-hand side. ALSO written as $A\\vec x = \\vec b$. WORKED EXAMPLE: $\\begin{cases}2x + y = 5\\\\x - y = 1\\end{cases}$ has matrix form $\\begin{pmatrix}2 & 1\\\\1 & -1\\end{pmatrix}\\begin{pmatrix}x\\\\y\\end{pmatrix} = \\begin{pmatrix}5\\\\1\\end{pmatrix}$.");
+  W("systems-of-equations", "$x = \\dfrac{dp - bq}",
+    "CRAMER's rule for 2x2 system. $\\det = ad - bc$. SOLUTION via determinants. WORKS for $\\det \\neq 0$. WORKED EXAMPLE: $2x + y = 5, x - y = 1$. $\\det = -3$. $x = (-1 \\cdot 5 - 1 \\cdot 1)/(-3) = 2$. $y = (2 \\cdot 1 - 1 \\cdot 5)/(-3) = 1$. Check: $2(2) + 1 = 5$ ✓.");
+  W("systems-of-equations", "$\\det \\neq 0$",
+    "NONZERO determinant ⟺ matrix is INVERTIBLE ⟺ system has UNIQUE solution. WORKED EXAMPLE: $\\det\\begin{pmatrix}2 & 1\\\\1 & -1\\end{pmatrix} = -3 \\neq 0$ → unique solution.");
+  W("systems-of-equations", "$\\det = 0, \\text{consistent}",
+    "$\\det = 0$: matrix is SINGULAR. ROWS are proportional. CONSISTENT case: RHS matches the proportionality → INFINITELY many solutions. WORKED EXAMPLE: $x + 2y = 3$, $2x + 4y = 6$ (second is twice first). Solution set: any $(x, y)$ on the line.");
+  W("systems-of-equations", "$\\det = 0, \\text{inconsistent}",
+    "$\\det = 0$: singular matrix. INCONSISTENT case: rows proportional but RHS doesn't match → NO solutions. WORKED EXAMPLE: $x + 2y = 3$, $2x + 4y = 8$ (not 6). The two lines are parallel but distinct — no intersection.");
+
+  // ----- TENSOR CALCULUS -----
+  W("tensor-calculus", "Metric:",
+    "METRIC tensor $g_{\\mu\\nu}$. $ds^2$ = infinitesimal squared distance. $dx^\\mu$ = coordinate differentials. EINSTEIN summation over $\\mu, \\nu$ implied. WORKED EXAMPLE: Minkowski $g = \\text{diag}(-1, 1, 1, 1)$ (or $(+, -, -, -)$ depending on convention). Schwarzschild metric — encodes spacetime curvature.");
+  W("tensor-calculus", "Riemann:",
+    "RIEMANN curvature tensor $R^\\rho_{\\;\\sigma\\mu\\nu}$. 4 indices, $n^4$ components a priori. SYMMETRIES reduce to $n^2(n^2-1)/12$ independent components. IN 4D: 20 components. WORKED EXAMPLE: contractions give Ricci tensor (10 components), Ricci scalar (1). Rest goes into Weyl tensor (free gravitational waves).");
+
+  // ----- TOPOLOGY -----
+  W("topology", "Topology axioms",
+    "TOPOLOGY on set $X$: a collection $\\tau$ of subsets of $X$ called OPEN sets. AXIOMS: $\\emptyset, X \\in \\tau$; arbitrary unions of open sets are open; FINITE intersections of open sets are open. WORKED EXAMPLE: $\\mathbb R$ with usual topology — open sets are unions of open intervals.");
+  W("topology", "Continuous:",
+    "FUNCTION $f: X \\to Y$ between topological spaces. CONTINUOUS iff PREIMAGE of every open set in $Y$ is open in $X$. EQUIVALENT to $\\epsilon$-$\\delta$ definition for metric spaces. WORKED EXAMPLE: any polynomial $\\mathbb R \\to \\mathbb R$ is continuous.");
+  W("topology", "Heine-Borel:",
+    "HEINE-BOREL theorem. In $\\mathbb R^n$ (NOT in general spaces): COMPACT ⟺ CLOSED AND BOUNDED. WORKED EXAMPLE: $[0, 1]$ is compact (closed, bounded). $(0, 1)$ is bounded but not closed → not compact. $[0, \\infty)$ is closed but not bounded → not compact.");
+
+  // ----- TRANSFER FUNCTIONS -----
+  W("transfer-functions", "Initial slope from",
+    "INITIAL slope of step response. $\\dot y(0^+) = \\lim_{s\\to\\infty} s G(s)$ for unit step. TELLS you whether the response starts moving immediately (strictly proper plant) or has a discontinuous jump (proper but not strictly proper — direct feedthrough). WORKED EXAMPLE: $G(s) = 1/(s+1)$: initial slope = $\\lim sG(s) = 1$, so $y$ rises at rate 1 from rest.");
+
+  // ----- UNITS-MEASUREMENT -----
+  W("units-measurement", "$1$ km/h",
+    "$1$ km/h = $1000/3600$ m/s = $5/18$ m/s. CONVERSION factor. WORKED EXAMPLE: 72 km/h = $72 \\cdot 5/18 = 20$ m/s. CONVENIENT mental math: divide km/h by 3.6 to get m/s.");
+  W("units-measurement", "$[F]",
+    "DIMENSIONS of force. $[F]$ = kg·m/s² = newton (N). WORKED EXAMPLE: a force of 100 N could be 10 kg × 10 m/s² or 1 kg × 100 m/s² — same dimensions.");
+  W("units-measurement", "$[E]",
+    "DIMENSIONS of energy. $[E]$ = kg·m²/s² = joule (J) = N·m. SAME as work. WORKED EXAMPLE: 1 kg moving at 1 m/s has KE = 0.5 J. 100 W lightbulb for 1 hour: 360{,}000 J = 360 kJ.");
+  W("units-measurement", "$[P]",
+    "POWER. $[P]$ = W = J/s. WORKED EXAMPLE: 1 horsepower ≈ 746 W. Tesla Model S motor peak ≈ 500 hp ≈ 370 kW. Human at rest: ~100 W (food energy → heat).");
+  W("units-measurement", "Sig figs in add",
+    "SIG FIGS in addition: result has the FEWEST DECIMAL places of inputs. WORKED EXAMPLE: $2.34 + 1.7 = 4.04$ — but report as 4.0 (1.7 has only one decimal). DIFFERENT rule from multiplication, which uses fewest significant figures.");
+
+  // ----- VECTORS PHYSICS -----
+  W("vectors-physics", "$|\\vec v|",
+    "MAGNITUDE of 2D vector. $\\vec v$ = vector with components $v_x, v_y$. PYTHAGORAS. WORKED EXAMPLE: velocity $\\vec v = (3, 4)$ m/s. Speed: 5 m/s.");
+  W("vectors-physics", "$\\theta",
+    "ANGLE of 2D vector from positive x-axis. $\\theta$ = $\\arctan(v_y/v_x)$ — be careful with quadrant. WORKED EXAMPLE: $\\vec v = (3, 4)$: $\\theta \\approx 53°$ above horizontal.");
+  W("vectors-physics", "$\\vec A + \\vec B",
+    "VECTOR addition by components. $A_x, B_x, A_y, B_y$ = components. WORKED EXAMPLE: $\\vec A = (1, 2)$, $\\vec B = (3, -1)$. $\\vec A + \\vec B = (4, 1)$. GEOMETRIC: head-to-tail (parallelogram law).");
+  W("vectors-physics", "$F_x",
+    "DECOMPOSING a force into components. $F$ = magnitude. $\\theta$ = angle from x-axis. WORKED EXAMPLE: 100 N force at 60° above horizontal: $F_x = 50$ N, $F_y \\approx 86.6$ N.");
+  W("vectors-physics", "$\\vec a - \\vec b",
+    "VECTOR subtraction = adding the negative. $-\\vec b$ = vector with reversed components. WORKED EXAMPLE: $\\vec a = (4, 5)$, $\\vec b = (1, 3)$: $\\vec a - \\vec b = (3, 2)$.");
+  W("vectors-physics", "$\\hat u",
+    "UNIT vector. $\\hat u$ = vector of magnitude 1 in same direction as $\\vec v$. NORMALIZE by dividing by magnitude. WORKED EXAMPLE: $\\vec v = (3, 4)$, $|\\vec v| = 5$. $\\hat v = (0.6, 0.8)$. Check: $|\\hat v| = 1$ ✓.");
+
+  // ----- WAVES (remaining) -----
+  W("waves", "$T = 1/f",
+    "WAVE periodicity. $T$ = period (s). $f$ = frequency (Hz). $\\omega = 2\\pi f$ = angular frequency (rad/s). $T$ and $f$ are reciprocals. WORKED EXAMPLE: middle C piano string vibrates at 261.6 Hz → $T \\approx 3.8$ ms, $\\omega \\approx 1644$ rad/s.");
+  W("waves", "$k = 2\\pi/\\lambda",
+    "WAVENUMBER. $\\lambda$ = wavelength (m). $k$ = spatial angular frequency (rad/m). $k$ is to space what $\\omega$ is to time. WORKED EXAMPLE: green light $\\lambda = 500$ nm → $k = 4\\pi/(500\\text{ nm}) \\approx 1.26 \\times 10^7$ /m.");
+  W("waves", "Speed in string:",
+    "WAVE speed on a stretched string. $T$ = tension (N). $\\mu$ = linear mass density (kg/m). WORKED EXAMPLE: guitar string under 80 N tension, $\\mu = 5 \\times 10^{-4}$ kg/m → $v = 400$ m/s. Fundamental on a 64 cm string: $f = v/(2L) \\approx 312$ Hz (about E above middle C).");
+  W("waves", "Sound in air:",
+    "$v_\\text{sound}$ in air at 20°C ≈ 343 m/s. INCREASES with temperature ($v \\propto \\sqrt T$). At 0°C: 331 m/s. At 100°C: 387 m/s. AT high altitude with thinner air, sound speed depends only on temperature, not pressure.");
 })();

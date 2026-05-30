@@ -9,7 +9,7 @@
 //   - CDN assets (KaTeX): cache-first — they're versioned URLs and
 //     never change for a given version.
 
-const CACHE = "praxis-v38";
+const CACHE = "praxis-v39";
 
 const PRECACHE_ASSETS = [
   "./",
