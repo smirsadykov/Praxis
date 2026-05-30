@@ -122,7 +122,19 @@
       el("button", {
         class: `tab control ${state.subject === "control" ? "active" : ""}`,
         onclick: () => { state.subject = "control"; renderHome(); }
-      }, "Control Systems")
+      }, "Control"),
+      el("button", {
+        class: `tab ee ${state.subject === "ee" ? "active" : ""}`,
+        onclick: () => { state.subject = "ee"; renderHome(); }
+      }, "Electrical"),
+      el("button", {
+        class: `tab me ${state.subject === "me" ? "active" : ""}`,
+        onclick: () => { state.subject = "me"; renderHome(); }
+      }, "Mechanical"),
+      el("button", {
+        class: `tab cs ${state.subject === "cs" ? "active" : ""}`,
+        onclick: () => { state.subject = "cs"; renderHome(); }
+      }, "Computer Sci")
     ]);
 
     const grid = el("div", { class: "grid" });

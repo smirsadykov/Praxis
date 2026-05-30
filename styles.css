@@ -9,6 +9,9 @@
   --math: #5eead4;
   --physics: #fca57a;
   --control: #f8b4d9;
+  --ee: #fde047;
+  --me: #a5b4fc;
+  --cs: #86efac;
   --border: #2a335a;
   --good: #4ade80;
   --shadow: 0 8px 30px rgba(0,0,0,0.35);
@@ -144,6 +147,7 @@ main {
 /* Subject tabs */
 .tabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   margin: 18px 0 14px;
 }
@@ -171,6 +175,18 @@ main {
 .tab.active.control {
   background: linear-gradient(135deg, rgba(248,180,217,0.18), rgba(110,168,255,0.12));
   border-color: rgba(248,180,217,0.5);
+}
+.tab.active.ee {
+  background: linear-gradient(135deg, rgba(253,224,71,0.18), rgba(180,140,255,0.12));
+  border-color: rgba(253,224,71,0.5);
+}
+.tab.active.me {
+  background: linear-gradient(135deg, rgba(165,180,252,0.18), rgba(110,168,255,0.12));
+  border-color: rgba(165,180,252,0.5);
+}
+.tab.active.cs {
+  background: linear-gradient(135deg, rgba(134,239,172,0.18), rgba(110,168,255,0.12));
+  border-color: rgba(134,239,172,0.5);
 }
 
 /* Topic grid */
@@ -218,6 +234,9 @@ main {
 .card.math .stripe { background: linear-gradient(90deg, var(--math), var(--accent)); }
 .card.physics .stripe { background: linear-gradient(90deg, var(--physics), var(--accent-2)); }
 .card.control .stripe { background: linear-gradient(90deg, var(--control), var(--accent)); }
+.card.ee .stripe { background: linear-gradient(90deg, var(--ee), var(--accent-2)); }
+.card.me .stripe { background: linear-gradient(90deg, var(--me), var(--accent)); }
+.card.cs .stripe { background: linear-gradient(90deg, var(--cs), var(--accent)); }
 
 /* Topic view */
 .topic-head {
