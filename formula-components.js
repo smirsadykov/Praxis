@@ -2981,4 +2981,398 @@
   // ----- FIRST-ORDER -----
   W("first-order-response", "$y(t)",
     "FIRST-order step response. $y(t)$ = output. $\\tau$ = time constant (s). $y_\\infty$ = final steady-state value. RISE smoothly from 0 to $y_\\infty$. WORKED EXAMPLE: $\\tau = 0.5$ s. At $t = \\tau$: $y = 0.632 y_\\infty$. At $t = 4\\tau = 2$ s: $y = 0.982 y_\\infty$ (2% settling).");
+
+  // ============================================================
+  // BATCH 7 — continue covering remaining topics
+  // ============================================================
+
+  // ----- ALGEBRAIC TOPOLOGY -----
+  W("algebraic-topology", "$\\pi_1(S^1)",
+    "$\\pi_1$ = fundamental group. $S^1$ = circle. $\\mathbb Z$ = integers under addition. EACH integer corresponds to a loop winding that many times around the circle. WORKED EXAMPLE: a loop going around once represents 1; three times → 3; opposite direction → $-1$. CONCATENATING loops corresponds to adding integers.");
+  W("algebraic-topology", "$\\pi_1(\\text{torus})",
+    "$T^2$ = torus. TWO independent non-contractible loops: one around the donut hole, one through it. $\\mathbb Z^2$ = pairs of integers under componentwise addition. WORKED EXAMPLE: a loop winding 3 times the long way and 2 times the short way is the element $(3, 2)$.");
+  W("algebraic-topology", "$\\chi = V",
+    "EULER characteristic. $V, E, F$ = vertices, edges, faces of a CW structure (e.g., polyhedron). TOPOLOGICAL invariant. WORKED EXAMPLES: tetrahedron $4 - 6 + 4 = 2$; cube $8 - 12 + 6 = 2$; octahedron $6 - 12 + 8 = 2$ — all sphere topology.");
+  W("algebraic-topology", "$\\chi(\\Sigma_g)",
+    "$\\Sigma_g$ = closed orientable surface of genus $g$ (number of handles). WORKED EXAMPLES: sphere $g=0 \\to \\chi = 2$. Torus $g=1 \\to \\chi = 0$. Double torus $g=2 \\to \\chi = -2$. EACH handle drops $\\chi$ by 2.");
+
+  // ----- ANGULAR-MOMENTUM-SPIN -----
+  W("angular-momentum-spin", "$[L_i, L_j]",
+    "ANGULAR momentum commutation relations. $L_i$ = angular momentum operators ($i = x, y, z$). $\\hbar$ = reduced Planck. $\\epsilon_{ijk}$ = Levi-Civita symbol. CONSEQUENCE: can simultaneously know only $L^2$ and ONE component. WORKED EXAMPLE: $[L_x, L_y] = i\\hbar L_z$.");
+  W("angular-momentum-spin", "$L^2 |\\ell, m\\rangle",
+    "$L^2$ = total-angular-momentum-squared operator. $|\\ell, m\\rangle$ = simultaneous eigenstate. $\\ell = 0, 1, 2, \\ldots$ = orbital quantum number. EIGENVALUE $\\hbar^2 \\ell(\\ell+1)$ — NOT $\\hbar^2\\ell^2$. WORKED EXAMPLE: $\\ell = 1$ (p-orbital): $L^2 = 2\\hbar^2$. $\\ell = 2$ (d): $L^2 = 6\\hbar^2$.");
+  W("angular-momentum-spin", "$L_z |\\ell, m\\rangle",
+    "$L_z$ = z-component of angular momentum. $m$ = magnetic quantum number. EIGENVALUES quantized in units of $\\hbar$. WORKED EXAMPLE: $\\ell = 1$ allows $m = -1, 0, +1$. So $L_z$ eigenvalues: $-\\hbar, 0, +\\hbar$.");
+  W("angular-momentum-spin", "$m = -\\ell",
+    "$m$ = magnetic quantum number. RANGE: $-\\ell, -\\ell + 1, \\ldots, +\\ell$. $2\\ell + 1$ values total. WORKED EXAMPLE: $\\ell = 2$ allows $m = -2, -1, 0, 1, 2$ — 5 states. d-shell can hold $2 \\times 5 = 10$ electrons (with spin).");
+  W("angular-momentum-spin", "$L_\\pm",
+    "LADDER operators. $L_+ = L_x + iL_y$ raises $m$ by 1. $L_- = L_x - iL_y$ lowers it. COEFFICIENT contains the upper/lower bound: $L_+|\\ell, \\ell\\rangle = 0$ (can't go higher than $m = \\ell$). USED to derive the angular momentum spectrum algebraically.");
+  W("angular-momentum-spin", "Pauli:",
+    "PAULI matrices: $\\sigma_x = \\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}$, $\\sigma_y = \\begin{pmatrix}0&-i\\\\i&0\\end{pmatrix}$, $\\sigma_z = \\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}$. HERMITIAN, traceless, square to identity. ANTICOMMUTE: $\\{\\sigma_i, \\sigma_j\\} = 2\\delta_{ij}$. SPIN-1/2 operators: $S_i = (\\hbar/2)\\sigma_i$.");
+  W("angular-momentum-spin", "Spin-1/2",
+    "ADDITION of two spin-1/2's gives total angular momentum $j = 0$ (singlet, antisymmetric) or $j = 1$ (triplet, symmetric). WORKED EXAMPLE: singlet $|\\Psi^-\\rangle = (|\\uparrow\\downarrow\\rangle - |\\downarrow\\uparrow\\rangle)/\\sqrt 2$. Triplet: $|\\uparrow\\uparrow\\rangle, (|\\uparrow\\downarrow\\rangle + |\\downarrow\\uparrow\\rangle)/\\sqrt 2, |\\downarrow\\downarrow\\rangle$.");
+
+  // ----- ASTROPHYSICS-COSMOLOGY (remaining) -----
+  W("astrophysics-cosmology", "$L_\\odot",
+    "$L_\\odot \\approx 3.83 \\times 10^{26}$ W = solar luminosity. STANDARD astronomical luminosity unit. WORKED EXAMPLE: Sirius has $L \\approx 25 L_\\odot$. Brightest stars: $\\sim 10^6 L_\\odot$. Quasars: $\\sim 10^{13} L_\\odot$.");
+  W("astrophysics-cosmology", "Chandrasekhar:",
+    "$M_\\text{Ch} \\approx 1.44 M_\\odot$ — maximum mass of a white dwarf. Above this, electron degeneracy pressure can't support against gravity. WORKED EXAMPLE: WD accreting from a companion that reaches $M_\\text{Ch}$ explodes as Type Ia supernova. Used as standard candles to discover dark energy.");
+
+  // ----- ATOMIC PHYSICS (remaining) -----
+  W("atomic-physics", "Pauli:",
+    "PAULI exclusion principle: no two electrons in an atom can have identical quantum numbers $(n, \\ell, m_\\ell, m_s)$. CONSEQUENCES: shells fill up — explains the periodic table, atomic chemistry, all of matter chemistry. WORKED EXAMPLE: $n = 1$ shell has 2 electrons (helium fills it). $n = 2$ has 8 (filled at neon).");
+
+  // ----- COMBINATORICS -----
+  W("combinatorics", "$\\binom{n}{k}",
+    "PASCAL's rule. $\\binom{n}{k}$ = binomial coefficient (count of ways to choose $k$ from $n$). RECURSIVE: each entry in Pascal's triangle is sum of two above. WORKED EXAMPLE: $\\binom{5}{2} = \\binom{4}{1} + \\binom{4}{2} = 4 + 6 = 10$.");
+
+  // ----- CONTINUUM ELASTICITY -----
+  W("continuum-elasticity", "Euler buckling:",
+    "EULER buckling formula. $P_\\text{cr}$ = critical compressive load that triggers buckling (N). $E$ = Young's modulus. $I$ = second moment of area (m⁴). $L$ = effective length of column. WORKED EXAMPLE: steel column $E = 200$ GPa, $I = 10^{-8}$ m⁴, $L = 2$ m → $P_\\text{cr} \\approx 5000$ N. Used for column design in buildings.");
+
+  // ----- COORDINATE GEOMETRY -----
+  W("coordinate-geometry", "Parallel:",
+    "$m_1, m_2$ = slopes of two lines. PARALLEL iff slopes equal. PERPENDICULAR iff product $= -1$ (slopes are negative reciprocals). WORKED EXAMPLE: $y = 2x + 1$ and $y = 2x - 5$ are parallel. $y = 2x + 1$ and $y = -x/2 + 3$ are perpendicular.");
+
+  // ----- FLUID DYNAMICS -----
+  W("fluid-dynamics", "$\\rho(\\partial_t",
+    "NAVIER-STOKES equation (incompressible). $\\rho$ = fluid density (kg/m³). $\\vec v$ = velocity field. $p$ = pressure. $\\mu$ = dynamic viscosity (Pa·s). $\\vec g$ = body force per unit mass. NEWTON's 2nd law applied to a fluid element. ONE of the seven Clay Millennium Prize problems remains UNSOLVED (existence and smoothness).");
+  W("fluid-dynamics", "$\\nabla \\cdot \\vec v",
+    "INCOMPRESSIBILITY condition. $\\vec v$ = velocity field. ZERO divergence means no sources or sinks. VALID approximation for liquids at all speeds and gases at low Mach number (≤ 0.3).");
+  W("fluid-dynamics", "$Re =",
+    "REYNOLDS number. $\\rho$ = density. $v$ = characteristic flow speed. $L$ = characteristic length scale. $\\mu$ = dynamic viscosity. RATIO of inertial to viscous forces. WORKED EXAMPLE: water in 1 cm pipe at 1 m/s: $\\rho = 1000$, $\\mu = 10^{-3}$, $Re = 10^4$ — turbulent.");
+  W("fluid-dynamics", "$Re < 2300$",
+    "$Re < 2300$ in a circular pipe: LAMINAR flow (smooth, predictable). $Re > 4000$: TURBULENT. Between: transitional. WORKED EXAMPLE: blood in capillaries ($v \\sim 1$ mm/s, $d \\sim 10$ μm) has $Re \\sim 10^{-3}$ — strongly laminar.");
+  W("fluid-dynamics", "$\\Gamma",
+    "$\\Gamma$ = CIRCULATION around closed curve $C$. $\\vec v$ = velocity field. $d\\vec r$ = path element. WORKED EXAMPLE: idealized airfoil lift $L = \\rho v \\Gamma$ per unit span (Kutta-Joukowski theorem). Circulation generates lift.");
+  W("fluid-dynamics", "Kolmogorov:",
+    "KOLMOGOROV microscale. $\\eta$ = smallest turbulent eddy size (m). $\\nu$ = kinematic viscosity (m²/s). $\\epsilon$ = energy dissipation rate per unit mass (W/kg = m²/s³). WORKED EXAMPLE: atmosphere $\\eta \\sim 1$ mm. Tea cup $\\eta \\sim 0.1$ mm. Below this scale, viscosity dissipates energy to heat.");
+
+  // ----- FLUIDS -----
+  W("fluids", "$P = \\rho g h$",
+    "HYDROSTATIC pressure at depth $h$ below surface. $\\rho$ = fluid density (kg/m³). $g$ = gravity (9.8 m/s²). $h$ = depth (m). WORKED EXAMPLE: pressure 10 m deep in water: $\\rho g h = 1000 \\cdot 9.8 \\cdot 10 \\approx 98000$ Pa ≈ 1 atm above atmospheric.");
+  W("fluids", "$F_B",
+    "ARCHIMEDES. $F_B$ = buoyant force (N). $\\rho$ = density of displaced fluid (kg/m³). $V$ = volume of fluid displaced (m³). $g$ = gravity. WORKED EXAMPLE: 1 m³ object fully submerged in water: $F_B = 1000 \\cdot 9.8 \\cdot 1 = 9800$ N upward.");
+  W("fluids", "$P = F/A$",
+    "PRESSURE. $P$ = pressure (Pa = N/m²). $F$ = force normal to surface (N). $A$ = area (m²). WORKED EXAMPLE: 700 N person standing on one stiletto heel (1 cm²): $P = 7 \\times 10^6$ Pa — much higher than tire pressure (~$2\\times10^5$ Pa). That's why high heels damage floors.");
+  W("fluids", "$A_1 v_1",
+    "CONTINUITY equation for incompressible flow. $A$ = cross-sectional area (m²). $v$ = average flow speed (m/s). WORKED EXAMPLE: pipe narrows from $A_1 = 0.01$ m² to $A_2 = 0.005$ m². If $v_1 = 1$ m/s, then $v_2 = 2$ m/s.");
+  W("fluids", "$P + \\tfrac{1}{2}\\rho",
+    "BERNOULLI equation along a streamline. $P$ = static pressure. $\\rho v^2/2$ = dynamic pressure. $\\rho g h$ = gravitational head. CONSTANT for steady, incompressible, inviscid flow. WORKED EXAMPLE: airplane wing — air flows faster over curved top, lower pressure → lift.");
+  W("fluids", "$1$ atm",
+    "STANDARD atmospheric pressure ≈ 101325 Pa = 14.7 psi = 760 torr (mmHg) = 1013.25 hPa. CAUSED by weight of air column above. AT 5500 m altitude: about half this.");
+
+  // ----- FRACTIONS PERCENTAGES -----
+  W("fractions-percentages", "$\\dfrac{a}{b} + \\dfrac{c}{d}",
+    "ADDING fractions. $a, b, c, d$ = integers (or any numbers). $b, d \\neq 0$. CROSS-multiply for common denominator. WORKED EXAMPLE: $1/2 + 1/3 = (1\\cdot 3 + 2\\cdot 1)/(2\\cdot 3) = 5/6$.");
+  W("fractions-percentages", "$\\dfrac{a}{b} \\cdot \\dfrac{c}{d}",
+    "MULTIPLYING fractions. Numerators times numerators, denominators times denominators. SIMPLIFY after. WORKED EXAMPLE: $(2/3) \\cdot (9/4) = 18/12 = 3/2$.");
+  W("fractions-percentages", "$\\dfrac{a}{b} \\div \\dfrac{c}{d}",
+    "DIVIDING fractions. FLIP the second fraction and multiply. WORKED EXAMPLE: $(3/5) \\div (4/15) = (3/5) \\cdot (15/4) = 45/20 = 9/4$.");
+  W("fractions-percentages", "$p\\%",
+    "PERCENT means 'per hundred.' $p$ = percentage. CONVERT to fraction by dividing by 100. WORKED EXAMPLE: $25\\% = 0.25 = 1/4$. $7\\% = 0.07$. $150\\% = 1.5$.");
+  W("fractions-percentages", "% change",
+    "PERCENT change = (new − old)/old × 100. WORKED EXAMPLE: price rises from \\$80 to \\$92. Change: $(92 - 80)/80 \\times 100 = 15\\%$ increase.");
+
+  // ----- FUNCTION SEQUENCES -----
+  W("function-sequences", "Pointwise:",
+    "POINTWISE convergence. $f_n$ = sequence of functions. $f$ = limit function. FOR EACH fixed $x$, the numerical sequence $f_n(x)$ converges to $f(x)$. The rate may depend on $x$. WORKED EXAMPLE: $f_n(x) = x^n$ on $[0, 1]$ converges pointwise to 0 on $[0, 1)$ and to 1 at $x = 1$.");
+  W("function-sequences", "Uniform:",
+    "UNIFORM convergence. $\\sup_x |f_n(x) - f(x)| \\to 0$. SAME rate across the whole domain — stronger than pointwise. WORKED EXAMPLE: $f_n(x) = x/n$ on $[0, 1]$ has $\\sup |f_n| = 1/n \\to 0$ → uniformly convergent. Same $f_n$ on $\\mathbb R$ is NOT uniform (sup is $\\infty$).");
+  W("function-sequences", "M-test:",
+    "WEIERSTRASS M-test. $|f_n(x)| \\leq M_n$ uniformly. $\\sum M_n$ finite numerical series. CONCLUSION: $\\sum f_n$ converges uniformly. WORKED EXAMPLE: $\\sum \\sin(nx)/n^2$. Each $|f_n| \\leq 1/n^2$. $\\sum 1/n^2 = \\pi^2/6 < \\infty$. So uniformly convergent.");
+
+  // ----- GAIN-PHASE-MARGINS -----
+  W("gain-phase-margins", "Stability margin",
+    "$M_s$ = peak of $|S(j\\omega)|$ over all $\\omega$, where $S = 1/(1+GH)$ is the sensitivity function. SMALLER $M_s$ = larger robustness margin = farther from $-1$. INDUSTRY target: $M_s \\leq 2$ (= 6 dB). WORKED EXAMPLE: $M_s = 1.5$ → minimum distance from Nyquist plot to $-1$ is $1/M_s = 0.67$.");
+  W("gain-phase-margins", "Margin vs settling",
+    "ROBUSTNESS-performance trade-off. Pushing phase margin up increases damping (lowers overshoot) but typically slows rise time. OPTIMUM around PM ≈ 60°-65° for 'fast but well-damped' design.");
+
+  // ----- GALOIS THEORY -----
+  W("galois-theory", "$[L : K]",
+    "EXTENSION degree. $K \\subseteq L$ = field extension. $[L:K]$ = dimension of $L$ as a vector space over $K$. WORKED EXAMPLES: $[\\mathbb Q(\\sqrt 2) : \\mathbb Q] = 2$ (basis $\\{1, \\sqrt 2\\}$). $[\\mathbb Q(\\sqrt[3] 2) : \\mathbb Q] = 3$ (basis $\\{1, \\sqrt[3]2, \\sqrt[3]4\\}$). $[\\mathbb C : \\mathbb R] = 2$.");
+  W("galois-theory", "$\\text{Gal}(L/K)",
+    "GALOIS group of extension $L/K$. ELEMENTS are field automorphisms of $L$ that fix every element of $K$. FORMS a group under composition. WORKED EXAMPLE: $\\text{Gal}(\\mathbb Q(\\sqrt 2)/\\mathbb Q) = \\{e, \\sigma\\}$ where $\\sigma(\\sqrt 2) = -\\sqrt 2$.");
+  W("galois-theory", "$|\\text{Gal}(L/K)|",
+    "For a GALOIS (normal + separable) extension: order of Galois group equals extension degree. WORKED EXAMPLE: $\\mathbb Q(\\sqrt 2, \\sqrt 3)/\\mathbb Q$ has degree 4, Galois group is Klein 4-group (independent sign flips of $\\sqrt 2$ and $\\sqrt 3$).");
+  W("galois-theory", "Abel-Ruffini",
+    "ABEL-RUFFINI theorem (1799-1824): no general formula in radicals exists for polynomials of degree $\\geq 5$. REASON: Galois group of generic quintic is $S_5$, which is not solvable. Specific quintics may still factor or be solvable.");
+  W("galois-theory", "Fundamental theorem",
+    "FUNDAMENTAL theorem of Galois theory. Inclusion-REVERSING bijection between subfields of $L$ containing $K$ and subgroups of $\\text{Gal}(L/K)$. WORKED EXAMPLE: $\\mathbb Q(\\sqrt 2, \\sqrt 3)$ has 3 intermediate fields ($\\mathbb Q(\\sqrt 2), \\mathbb Q(\\sqrt 3), \\mathbb Q(\\sqrt 6)$), matching 3 index-2 subgroups of the Klein 4-group.");
+
+  // ----- GRAPH THEORY -----
+  W("graph-theory", "$\\sum_v \\deg(v)",
+    "HANDSHAKE lemma. $V, E$ = vertex and edge sets. Each edge has two endpoints → contributes 2 to the degree sum. CONSEQUENCE: number of odd-degree vertices is even. WORKED EXAMPLE: 4 people at a party, each shook hands with all others (= $K_4$). Each has degree 3. Sum $= 12 = 2|E|$ → $|E| = 6$ ✓.");
+  W("graph-theory", "$K_n$",
+    "COMPLETE graph $K_n$: every pair of vertices connected. $\\binom{n}{2}$ edges = $n(n-1)/2$. WORKED EXAMPLE: $K_4$: 6 edges. $K_5$: 10 edges. $K_5$ is the smallest non-planar complete graph (Kuratowski).");
+  W("graph-theory", "Eulerian circuit",
+    "EULERIAN circuit = closed walk traversing every EDGE exactly once. EXISTS iff connected and every vertex has even degree. ORIGIN: Euler's Königsberg bridges (1736). WORKED EXAMPLE: $K_5$ has all degrees 4 (even) → has an Eulerian circuit.");
+  W("graph-theory", "Hamiltonian:",
+    "HAMILTONIAN cycle = visits every VERTEX exactly once (excluding return to start). FINDING one is NP-complete (vs. Eulerian which is easy). WORKED EXAMPLE: every $K_n$ for $n \\geq 3$ has Hamiltonian cycles. Some sparse graphs have none.");
+  W("graph-theory", "Bipartite iff",
+    "BIPARTITE graph: vertices split into two sets, edges only between (not within) sets. CHARACTERIZATION: bipartite ⟺ no odd-length cycle. WORKED EXAMPLE: even cycles $C_4, C_6, \\ldots$ are bipartite. $C_5$ is not.");
+  W("graph-theory", "Four-color",
+    "FOUR-COLOR theorem (Appel-Haken 1976). Every planar graph is 4-colorable (no two adjacent vertices share a color). FIRST major computer-assisted proof. WORKED EXAMPLE: USA map can be colored with 4 colors so no two adjacent states share a color.");
+
+  // ----- GRAVITATIONAL WAVES -----
+  W("gravitational-waves", "Strain:",
+    "$h$ = GW strain (dimensionless). TYPICAL astrophysical sources at Earth: $h \\sim 10^{-21}$. WORKED EXAMPLE: LIGO arms 4 km long → strain $h = 10^{-21}$ corresponds to $\\Delta L \\sim 4 \\times 10^{-18}$ m — smaller than a proton diameter. Detected via laser interferometry.");
+
+  // ----- INEQUALITIES -----
+  W("inequalities", "$a < b, c > 0",
+    "MULTIPLYING (or dividing) an inequality by a POSITIVE number PRESERVES direction. WORKED EXAMPLE: $3 < 5$. Multiply by 2: $6 < 10$ ✓.");
+  W("inequalities", "$a < b, c < 0",
+    "MULTIPLYING by a NEGATIVE number REVERSES direction. SINGLE most forgotten rule in algebra. WORKED EXAMPLE: $3 < 5$. Multiply by $-2$: $-6 > -10$ (NOT $-6 < -10$).");
+  W("inequalities", "$|x| < a$",
+    "$a > 0$. ABSOLUTE-value inequality. EQUIVALENT to a sandwich. WORKED EXAMPLE: $|x - 3| < 4$ → $-4 < x - 3 < 4$ → $-1 < x < 7$. Distance from 3 is less than 4.");
+  W("inequalities", "$|x| > a$",
+    "$a > 0$. ABSOLUTE-value inequality with strict outside form. WORKED EXAMPLE: $|x - 3| > 4$ → $x < -1$ or $x > 7$. Two disjoint rays.");
+  W("inequalities", "AM",
+    "$a, b \\geq 0$. ARITHMETIC mean $\\geq$ geometric mean. EQUALITY iff $a = b$. GENERALIZES to $n$ terms: $(a_1 + \\ldots + a_n)/n \\geq \\sqrt[n]{a_1 \\cdots a_n}$. WORKED EXAMPLE: $a = 4, b = 9$: AM = 6.5, GM = 6. AM ≥ GM ✓.");
+
+  // ----- KINETIC THEORY -----
+  W("kinetic-theory", "$PV = nRT$",
+    "IDEAL gas law. $P$ = pressure (Pa). $V$ = volume (m³). $n$ = number of moles. $R = 8.314$ J/(mol·K) = universal gas constant. $T$ = absolute temperature (K). WORKED EXAMPLE: 1 mol of gas at standard pressure ($10^5$ Pa) and $T = 273$ K occupies $V = nRT/P \\approx 22.7$ L.");
+  W("kinetic-theory", "$\\langle KE \\rangle",
+    "AVERAGE translational kinetic energy per molecule in ideal gas. $k_B = 1.38 \\times 10^{-23}$ J/K = Boltzmann constant. $T$ = absolute temperature (K). 3 from three translational degrees of freedom × $k_BT/2$ each. WORKED EXAMPLE: at room T (300 K): $\\langle KE\\rangle \\approx 6.2 \\times 10^{-21}$ J ≈ 0.039 eV per molecule.");
+  W("kinetic-theory", "$v_{rms}",
+    "ROOT-mean-square molecular speed. $k_B$ = Boltzmann constant. $T$ = temperature (K). $m$ = mass of ONE molecule (kg). WORKED EXAMPLE: $N_2$ ($m = 4.65 \\times 10^{-26}$ kg) at 300 K: $v_\\text{rms} \\approx 517$ m/s — faster than sound (343 m/s)!");
+  W("kinetic-theory", "$P = \\tfrac{1}{3}",
+    "KINETIC theory pressure formula. $P$ = gas pressure. $n$ = number density (1/m³). $m$ = mass per molecule. $\\langle v^2\\rangle$ = mean-square speed. DERIVED from Newtonian mechanics of molecular collisions with container walls.");
+  W("kinetic-theory", "$k_B = R/N_A$",
+    "$k_B = 1.38 \\times 10^{-23}$ J/K = Boltzmann constant. $R = 8.314$ J/(mol·K) = gas constant. $N_A = 6.022 \\times 10^{23}$ /mol = Avogadro's number. UNIVERSAL physical constants.");
+
+  // ----- LAGRANGIAN HAMILTONIAN -----
+  W("lagrangian-hamiltonian", "$\\dfrac{d}{dt}\\dfrac{\\partial L}",
+    "EULER-LAGRANGE equations. $L = L(q, \\dot q, t)$ = Lagrangian. $q$ = generalized coordinate. $\\dot q$ = generalized velocity. EQUIVALENT to Newton's 2nd law via energies. WORKED EXAMPLE: pendulum $L = \\tfrac{1}{2}mL^2\\dot\\theta^2 + mgL\\cos\\theta$. EL gives $\\ddot\\theta = -(g/L)\\sin\\theta$.");
+  W("lagrangian-hamiltonian", "$p = \\partial L",
+    "GENERALIZED (canonical) momentum conjugate to $q$. $L$ = Lagrangian. $\\dot q$ = velocity. WORKED EXAMPLE: free particle $L = \\tfrac{1}{2}m\\dot x^2$ → $p = m\\dot x$ (ordinary linear momentum). Rotation: $L = \\tfrac{1}{2}I\\dot\\theta^2$ → $p_\\theta = I\\dot\\theta$ (angular momentum).");
+  W("lagrangian-hamiltonian", "$\\{f, g\\}",
+    "POISSON bracket. $f, g$ = functions on phase space. CANONICAL relations: $\\{q_i, p_j\\} = \\delta_{ij}$, $\\{q, q\\} = \\{p, p\\} = 0$. EQUATIONS of motion: $\\dot f = \\{f, H\\}$ + explicit time dependence. CLASSICAL analog of quantum commutator $[A, B]/(i\\hbar)$.");
+  W("lagrangian-hamiltonian", "$S = \\int L\\,dt$",
+    "ACTION functional (J·s). $L$ = Lagrangian. INTEGRATED over trajectory. PHYSICAL paths extremize $S$ (Hamilton's principle). WORKED EXAMPLE: free particle from $(0, 0)$ to $(x, T)$. Classical straight path has $S = mx^2/(2T)$. Quantum: weight each path by $e^{iS/\\hbar}$.");
+  W("lagrangian-hamiltonian", "Noether's theorem",
+    "NOETHER's theorem (1918): every continuous symmetry of the Lagrangian (or action) yields a conserved current. WORKED EXAMPLES: time translation → energy. Space translation → linear momentum. Rotation → angular momentum. $U(1)$ phase → electric charge.");
+
+  // ----- LAPLACE TRANSFORMS -----
+  W("laplace-transforms-control", "$\\mathcal{L}\\{\\dot f\\}",
+    "LAPLACE transform of derivative. $f(t)$ = function. $F(s)$ = its Laplace transform. $f(0^-)$ = value at $t = 0$ (initial condition). DERIVATIVE in time becomes MULTIPLICATION by $s$ — turns differential equations into algebra. WORKED EXAMPLE: $\\dot y + 3y = 1$, $y(0) = 0$. Take Laplace: $sY + 3Y = 1/s$ → $Y = 1/(s(s+3))$. Invert: $y = (1 - e^{-3t})/3$.");
+
+  // ----- LEAD-LAG -----
+  W("lead-lag", "$\\sin\\phi_{\\max}",
+    "MAXIMUM phase boost from a single-section lead compensator. $\\alpha = z/p$ where $z$ is zero and $p$ is pole frequency. $\\alpha < 1$ for lead. WORKED EXAMPLE: $\\alpha = 0.1$ → $\\sin\\phi_\\max = 0.9/1.1 = 0.818$ → $\\phi_\\max \\approx 55°$. To get $60°$: need $\\alpha \\approx 0.072$.");
+  W("lead-lag", "$\\omega_m",
+    "FREQUENCY at which lead compensator's phase boost is maximum. $z, p$ = corner frequencies. GEOMETRIC mean. WORKED EXAMPLE: $z = 1$, $p = 10$ → $\\omega_m = \\sqrt{10} \\approx 3.16$ rad/s. Place this at desired gain crossover.");
+  W("lead-lag", "Lag DC gain boost",
+    "$z, p$ = corner frequencies of LAG ($z > p$). RATIO $z/p$ = factor by which DC gain is multiplied above high-frequency gain. CUTS steady-state error by this factor. WORKED EXAMPLE: $z/p = 10$ → 10× DC boost → steady-state error reduced 10×.");
+  W("lead-lag", "PID = lag",
+    "PID controller decomposed: PI part (pole at origin + zero) acts like a lag (low frequencies). PD part (zero + filter pole) acts like a lead. PID = lag + lead structurally — best of both: low-frequency accuracy + mid-frequency stability margin.");
+
+  // ----- LIE GROUPS -----
+  W("lie-groups", "$\\dim SO(n)",
+    "SO(n) = special orthogonal group (rotations in $n$D preserving orientation). $n(n-1)/2$ continuous parameters = number of independent rotation planes. WORKED EXAMPLES: $SO(2)$ dim 1 (one angle). $SO(3)$ dim 3 (Euler angles). $SO(4)$ dim 6. Lorentz $SO(3,1)$ dim 6.");
+  W("lie-groups", "$\\dim SU(n)",
+    "SU(n) = special unitary group ($n \\times n$ unitary matrices with det = 1). $n^2 - 1$ real dimensions. WORKED EXAMPLES: $SU(2)$ dim 3 (same Lie algebra as $SO(3)$). $SU(3)$ dim 8 (QCD's 8 gluons). $SU(5)$ dim 24 (Georgi-Glashow GUT).");
+  W("lie-groups", "$[X, Y]",
+    "LIE bracket = commutator. $X, Y$ = elements of Lie algebra (matrices for matrix groups). MEASURES non-commutativity. WORKED EXAMPLE: angular momentum $[L_x, L_y] = i\\hbar L_z$ — rotation by $x$ then $y$ differs from $y$ then $x$ by an $z$-rotation.");
+  W("lie-groups", "$[X, [Y, Z]]",
+    "JACOBI identity. Cyclic sum of double brackets vanishes. CONSEQUENCE of associativity of group product. EQUIVALENT to: $\\text{ad}_X = [X, \\cdot]$ acts as a derivation on the Lie algebra.");
+  W("lie-groups", "$g(t) = \\exp(tX)",
+    "ONE-parameter subgroup generated by Lie algebra element $X$. $\\exp$ = matrix exponential. $t$ = real parameter. WORKED EXAMPLE: $X = i\\sigma_z$ in $\\mathfrak{su}(2)$ → $\\exp(t i \\sigma_z) = \\begin{pmatrix}e^{it}&0\\\\0&e^{-it}\\end{pmatrix}$ — z-axis rotation.");
+
+  // ----- MAGNETISM -----
+  W("magnetism-induction", "$\\vec F = I",
+    "FORCE on a current-carrying wire in a magnetic field. $I$ = current (A). $\\vec L$ = length vector of wire (along current direction). $\\vec B$ = magnetic field (T). WORKED EXAMPLE: 1 m wire carrying 5 A perpendicular to 0.1 T field: $F = 0.5$ N. Direction by right-hand rule.");
+  W("magnetism-induction", "$\\Phi_B = \\int",
+    "MAGNETIC flux through surface. $\\vec B$ = magnetic field. $d\\vec A$ = oriented area element. UNITS: weber, Wb = T·m². WORKED EXAMPLE: 0.5 T field through 0.02 m² loop: $\\Phi_B = 0.01$ Wb. KEY for Faraday's law.");
+  W("magnetism-induction", "$\\varepsilon = -N",
+    "FARADAY's law of induction. $\\mathcal E$ = induced EMF (V). $N$ = number of turns in coil. $\\Phi_B$ = flux through one turn. MINUS sign = Lenz's law. WORKED EXAMPLE: 100-turn coil with $d\\Phi_B/dt = 0.02$ Wb/s → $\\mathcal E = -2$ V. Drives current $I = \\mathcal E/R$.");
+  W("magnetism-induction", "$B = \\mu_0 I",
+    "Magnetic field at distance $r$ from an infinite straight wire carrying current $I$. $\\mu_0 = 4\\pi \\times 10^{-7}$ T·m/A. Field circles the wire (right-hand rule). WORKED EXAMPLE: 5 A wire at 5 cm distance: $B = 2 \\times 10^{-5}$ T = 0.2 gauss.");
+  W("magnetism-induction", "$B = \\mu_0 n I$",
+    "Field inside long solenoid. $n$ = turns per unit length (1/m). $I$ = current (A). UNIFORM along solenoid axis. WORKED EXAMPLE: solenoid with 1000 turns/m carrying 2 A: $B = 2.5 \\times 10^{-3}$ T inside.");
+  W("magnetism-induction", "$\\mu_0 = 4\\pi",
+    "$\\mu_0 = 4\\pi \\times 10^{-7}$ T·m/A = vacuum permeability. ONE of the fundamental constants of nature. NEW (2019) SI: $\\mu_0$ is now a measured quantity (was exact $4\\pi \\times 10^{-7}$ before).");
+  W("magnetism-induction", "$U_L",
+    "Energy stored in magnetic field of inductor. $L$ = inductance (H). $I$ = current (A). $U_L = LI^2/2$ (J). WORKED EXAMPLE: 1 H inductor with 2 A: $U_L = 2$ J. Compare with capacitor: $U_C = CV^2/2$.");
+
+  // ----- MAXWELL -----
+  W("maxwell-em", "$Z_0",
+    "$Z_0 \\approx 377$ Ω = impedance of free space. $\\mu_0, \\epsilon_0$ = vacuum permeability and permittivity. RATIO of $|\\vec E|/|\\vec B|$ in an EM wave (when expressed in suitable units). USED in antenna design, transmission line matching.");
+  W("maxwell-em", "Radiation pressure:",
+    "$P_\\text{rad}$ = pressure exerted by EM radiation absorbed by a surface (Pa). $I$ = intensity (W/m²). $c$ = speed of light. FOR perfect reflector: pressure is $2I/c$. WORKED EXAMPLE: sunlight at Earth's surface (1000 W/m²): $P_\\text{rad} \\sim 3 \\times 10^{-6}$ Pa — too small to feel but enough for solar sails.");
+
+  // ----- MEASURE THEORY -----
+  W("measure-theory", "$\\sigma$-algebra",
+    "$\\sigma$-ALGEBRA on set $X$: a collection $\\mathcal F$ of subsets containing $\\emptyset$ and $X$, closed under COMPLEMENTS (within $X$) and COUNTABLE unions/intersections. WORKED EXAMPLE: Borel $\\sigma$-algebra on $\\mathbb R$ contains all open intervals and everything you can build from them with countable operations.");
+  W("measure-theory", "$m([a, b])",
+    "LEBESGUE measure of an interval = its length. $b > a$. WORKED EXAMPLES: $m([0, 5]) = 5$. $m(\\{0\\}) = 0$ (single point). $m(\\mathbb Q \\cap [0, 1]) = 0$ (rationals are countable).");
+  W("measure-theory", "$m(\\bigcup A_i) \\leq",
+    "SUBADDITIVITY. $A_i$ = countable collection of measurable sets. MEASURE of union is AT MOST sum of measures. WORKED EXAMPLE: $\\mathbb Q$ = countable union of singletons (each measure 0) → $m(\\mathbb Q) \\leq 0$, so $m(\\mathbb Q) = 0$.");
+  W("measure-theory", "$m(\\bigcup A_i) = \\sum",
+    "COUNTABLE additivity. SAME as subadditivity but with DISJOINT sets — inequality becomes equality. CORE axiom of a measure. WORKED EXAMPLE: $[0, 1] = \\bigcup_n [1/(n+1), 1/n]$ (almost — overlap at endpoints, but those have measure 0). Sum of widths telescopes to 1.");
+  W("measure-theory", "MCT:",
+    "MONOTONE convergence theorem. $f_n$ = non-negative measurable functions, monotonically increasing. $f$ = pointwise limit. SWAP limit and integral. WORKED EXAMPLE: $f_n(x) = \\min(n, 1/\\sqrt x)$ on $(0, 1]$ — increasing to $1/\\sqrt x$. MCT gives $\\int 1/\\sqrt x = 2$.");
+  W("measure-theory", "DCT:",
+    "DOMINATED convergence theorem (Lebesgue). $f_n \\to f$ pointwise. $|f_n| \\leq g$ for some integrable $g$. SWAP limit and integral. THE workhorse theorem. WORKED EXAMPLE: $f_n(x) = \\sin(nx)/n \\to 0$ on $[0, 2\\pi]$, dominated by $1/n \\leq 1$. DCT gives $\\int f_n \\to 0$.");
+
+  // ----- MECHANICAL MODELING -----
+  W("mechanical-modeling-control", "$m\\ddot x",
+    "UNIVERSAL 2nd-order mechanical system. $m$ = mass (kg). $b$ = damping coefficient (N·s/m). $k$ = spring stiffness (N/m). $x$ = displacement (m). $f$ = applied force (N). Captures car suspensions, robot links, MEMS oscillators.");
+  W("mechanical-modeling-control", "$\\omega_n",
+    "NATURAL frequency $\\omega_n = \\sqrt{k/m}$ (rad/s). DAMPING ratio $\\zeta = b/(2\\sqrt{km})$ (dimensionless). EXTRACT from $m\\ddot x + b\\dot x + kx = 0$. WORKED EXAMPLE: car suspension $m = 400$ kg, $k = 10^5$ N/m, $b = 4000$ N·s/m → $\\omega_n = 15.8$ rad/s, $\\zeta = 0.32$ (underdamped — that's why suspensions feel bouncy).");
+  W("mechanical-modeling-control", "$J\\ddot\\theta",
+    "ROTATIONAL analog of mass-spring-damper. $J$ = moment of inertia (kg·m²). $D$ = rotational damping (N·m·s/rad). $K$ = torsional stiffness (N·m/rad). $\\theta$ = angle (rad). $T$ = applied torque (N·m). SAME math as translational case.");
+  W("mechanical-modeling-control", "Force balance:",
+    "FOR multi-body systems: write Newton's 2nd law for EACH body separately. Coupling via spring/damper between bodies appears in equations. WORKED EXAMPLE: two-mass system: $m_1 \\ddot x_1 = -k_1 x_1 + k_2(x_2 - x_1)$, etc. Solve as coupled system.");
+  W("mechanical-modeling-control", "Friction model:",
+    "$F$ = total friction force. $b\\dot x$ = viscous (linear, smooth). $F_c \\text{sgn}(\\dot x)$ = Coulomb (dry) friction — constant magnitude, opposes motion direction. WORKED EXAMPLE: rubber on dry road: large $F_c$. Wet road: small $F_c$, problem. Stick-slip near $\\dot x = 0$ is nonlinear (sgn has discontinuity).");
+
+  // ----- MOMENTUM (remaining) -----
+  W("momentum-impulse", "$\\vec p = m\\vec v",
+    "$\\vec p$ = momentum (kg·m/s). $m$ = mass (kg). $\\vec v$ = velocity (m/s). VECTOR — direction matters. Relativistic: $\\vec p = \\gamma m\\vec v$.");
+  W("momentum-impulse", "$\\sum \\vec p_i",
+    "CONSERVATION of momentum in isolated system (no external forces). Total momentum before = total after. WORKED EXAMPLE: two ice skaters initially at rest push off each other. Total $\\vec p = 0$ before and after; they move in opposite directions with $m_1 v_1 = m_2 v_2$.");
+  W("momentum-impulse", "Equal masses",
+    "1D ELASTIC collision with EQUAL masses. Incoming particle stops; target takes all the velocity. EXAMPLE: Newton's cradle — first ball lifts and drops, last ball jumps out at same speed.");
+
+  // ----- MULTIVARIABLE CALCULUS -----
+  W("multivariable-calculus", "$\\nabla f",
+    "GRADIENT of scalar function $f(x, y, z)$. $\\nabla f$ = vector whose components are partial derivatives. POINTS in direction of steepest increase. MAGNITUDE = rate of steepest increase. WORKED EXAMPLE: $f = x^2 + y^2$, $\\nabla f = (2x, 2y)$ — points radially outward; magnitude $2\\sqrt{x^2+y^2}$.");
+  W("multivariable-calculus", "Critical point:",
+    "$\\vec x^*$ where gradient vanishes. CANDIDATE for local min, max, or saddle. CLASSIFY using Hessian (matrix of 2nd partials). WORKED EXAMPLE: $f = x^2 + y^2$ has critical point at origin (a minimum). $f = x^2 - y^2$ has critical point at origin (a saddle).");
+  W("multivariable-calculus", "$\\iint_R f",
+    "DOUBLE integral of $f$ over region $R$. $dA$ = area element. ITERATED: $\\iint = \\int(\\int f\\,dx)\\,dy$. WORKED EXAMPLE: $\\iint_R x\\,dA$ for $R = [0, 2] \\times [0, 3]$ = $\\int_0^3(\\int_0^2 x\\,dx)\\,dy = \\int_0^3 2\\,dy = 6$.");
+
+  // ----- NONLINEAR CHAOS -----
+  W("nonlinear-chaos-physics", "Logistic:",
+    "LOGISTIC map. $x_n$ = population (normalized, $\\in [0, 1]$). $r$ = control parameter. SIMPLEST chaotic map. WORKED EXAMPLE: $r = 2.5$: stable fixed point. $r = 3.2$: period-2 cycle. $r = 3.83$: stable period-3 (then chaos). $r = 4$: full chaos with Lyapunov exponent $\\ln 2$.");
+  W("nonlinear-chaos-physics", "Chaos onset:",
+    "$r_\\infty \\approx 3.5699$ = accumulation point of period-doubling cascade in the logistic map. BEYOND: chaos with embedded periodic windows. UNIVERSAL: Feigenbaum constants apply to ANY smooth unimodal map.");
+  W("nonlinear-chaos-physics", "KAM theorem",
+    "KOLMOGOROV-Arnold-Moser theorem (1954-1963). In an INTEGRABLE Hamiltonian system perturbed by a small non-integrable term, MOST quasi-periodic orbits survive. EXPLAINS why the solar system is stable over Gyr timescales despite mutual planetary perturbations.");
+
+  // ----- NUCLEAR -----
+  W("nuclear", "$BE",
+    "NUCLEAR binding energy. $Z$ = atomic number (protons). $N$ = neutron count. $m_p, m_n$ = proton, neutron masses. $M$ = actual nuclear mass. $c$ = speed of light. WORKED EXAMPLE: He-4 mass = 4.0026 u, but 2 protons + 2 neutrons = 4.0319 u. Defect = 0.0293 u → BE = 28.3 MeV = 7.07 MeV/nucleon.");
+  W("nuclear", "$A = \\lambda N$",
+    "$A$ = activity (decays per second, becquerels). $\\lambda$ = decay constant (1/s). $N$ = number of nuclei present. WORKED EXAMPLE: 1 gram of Ra-226 ($t_{1/2} = 1600$ y, $\\lambda = 1.37 \\times 10^{-11}$ /s) has $\\sim 2.66 \\times 10^{21}$ nuclei → activity $\\sim 3.7 \\times 10^{10}$ Bq = 1 curie.");
+  W("nuclear", "$r \\approx",
+    "NUCLEAR radius scales as $A^{1/3}$. CONSTANT $\\sim 1.2$ fm. CONSEQUENCE: nuclear density is constant. WORKED EXAMPLES: $r(^4\\text{He}) \\approx 1.9$ fm. $r(^{56}\\text{Fe}) \\approx 4.6$ fm. $r(^{238}\\text{U}) \\approx 7.4$ fm.");
+  W("nuclear", "Most stable:",
+    "BINDING energy per nucleon peaks at Fe-56 ($\\sim 8.8$ MeV). END of energy-releasing fusion. Beyond Fe: fusion costs energy. CONSEQUENCE: stars eventually build up Fe cores and explode (Type II SN).");
+  W("nuclear", "Fission U-235:",
+    "FISSION of $^{235}$U triggered by thermal neutrons releases $\\sim 200$ MeV per event (mostly KE of fission fragments). CHAIN reaction sustains via released neutrons. WORKED EXAMPLE: 1 kg U-235 fully fissioned releases $\\sim 8 \\times 10^{13}$ J — equivalent to 20 kt TNT, about the Hiroshima yield.");
+  W("nuclear", "Magic numbers:",
+    "MAGIC numbers: $2, 8, 20, 28, 50, 82, 126$. NUCLEI with magic $Z$ or $N$ are unusually stable (analogous to noble gases). DOUBLY magic: both. WORKED EXAMPLE: doubly magic $^{208}$Pb ($Z = 82, N = 126$) — exceptionally stable.");
+
+  // ----- NUMERICAL METHODS -----
+  W("numerical-methods", "Newton:",
+    "$x_n$ = current iterate. $f$ = function. $f'$ = derivative. CONVERGES quadratically near a simple root (doubles correct digits each step). WORKED EXAMPLE: find $\\sqrt 2$: $f(x) = x^2 - 2$. From $x_0 = 1.5$: $x_1 = 1.41\\overline{6}$. $x_2 = 1.4142157...$ — 6 correct digits in 2 iterations.");
+  W("numerical-methods", "Trapezoid:",
+    "TRAPEZOIDAL rule. $h$ = step size = $(b-a)/n$. $f_i = f(a + ih)$. APPROXIMATES integral by sum of trapezoid areas. ERROR $O(h^2)$. WORKED EXAMPLE: $\\int_0^1 x^2\\,dx = 1/3$. Trapezoid with $n = 4$ gives 0.34375 — close but biased high (curve is concave up).");
+  W("numerical-methods", "Euler:",
+    "EULER's method for ODE $y' = f(t, y)$. SIMPLEST scheme. ERROR per step $O(h^2)$; global $O(h)$. WORKED EXAMPLE: $y' = -y$, $y(0) = 1$. Step $h = 0.1$: $y_1 = 1 - 0.1 = 0.9$, $y_2 = 0.81$, etc. Exact: $e^{-0.1} \\approx 0.905$. Error grows.");
+  W("numerical-methods", "RK4:",
+    "RUNGE-KUTTA 4. 4 function evaluations per step. ERROR $O(h^5)$ per step; global $O(h^4)$. WORKHORSE for non-stiff ODEs. WORKED EXAMPLE: same problem as Euler, RK4 with $h = 0.1$ gives $y_1 = 0.9048375$ — matches exact to 6 digits.");
+  W("numerical-methods", "Condition number:",
+    "$\\kappa(A)$ = matrix condition number. RATIO of largest to smallest singular value. SENSITIVITY of solution to perturbations. WORKED EXAMPLE: well-conditioned $A$ with $\\kappa \\sim 10$: stable solution. ILL-conditioned $\\kappa \\sim 10^{12}$: tiny input changes cause huge output changes — solution unreliable in finite precision.");
+
+  // ----- NYQUIST -----
+  W("nyquist", "$s = j\\omega$",
+    "NYQUIST contour traverses the imaginary axis ($s = j\\omega$ for $\\omega$ from $-\\infty$ to $\\infty$), closing via an infinite semicircle in the RHP. DETOURS around any RHP poles on the axis. PLOT $G(s)$ as $s$ moves along this contour.");
+  W("nyquist", "Apply to",
+    "NYQUIST procedure: count encirclements of 0 by $1 + GH$ — these equal encirclements of $-1$ by $GH$. THE encirclement count is the number of CLOSED-LOOP poles in the RHP (formula: $Z = N + P$).");
+  W("nyquist", "Use semi-log:",
+    "In practice: plot Bode (magnitude in dB + phase in degrees) instead of the polar Nyquist curve. COUNT phase crossings of $-180°$ — these correspond to negative-real-axis crossings of the Nyquist plot. Stability: enough margin from $-1$.");
+
+  // ----- OPTICS GEOMETRIC -----
+  W("optics-geometric", "$\\theta_i = \\theta_r",
+    "LAW of reflection. $\\theta_i$ = angle of incidence (from normal). $\\theta_r$ = angle of reflection. EQUAL, and both measured from the perpendicular to the surface. WORKED EXAMPLE: ray hits mirror at 30° from normal → reflects at 30° on other side. APPLIES to mirrors, microwave dishes, satellite reflectors.");
+  W("optics-geometric", "$n_1 \\sin\\theta_1",
+    "SNELL's law of refraction. $n_1, n_2$ = refractive indices. $\\theta_1, \\theta_2$ = angles from normal. LIGHT bends TOWARD the normal entering a denser medium. WORKED EXAMPLE: light from air ($n = 1$) into water ($n = 1.33$) at 45° → refracted angle: $\\sin\\theta_2 = \\sin 45°/1.33 \\approx 0.53$ → $\\theta_2 \\approx 32°$.");
+  W("optics-geometric", "$\\sin\\theta_c",
+    "CRITICAL angle for total internal reflection. $n_1 > n_2$. Above $\\theta_c$: light cannot escape from medium 1. WORKED EXAMPLES: water to air: $\\theta_c \\approx 49°$. Glass to air ($n = 1.5$): $\\theta_c \\approx 42°$. Diamond ($n = 2.42$): $\\theta_c \\approx 24°$ — why diamonds sparkle.");
+  W("optics-geometric", "Lensmaker:",
+    "LENSMAKER's equation. $f$ = focal length. $n$ = refractive index of lens material. $R_1, R_2$ = radii of curvature of two surfaces (signed). DETERMINES $f$ from lens shape and material. WORKED EXAMPLE: equi-convex glass lens ($n = 1.5$) with $R_1 = -R_2 = 10$ cm → $f = 10$ cm.");
+  W("optics-geometric", "Power:",
+    "OPTICAL power $P$ = $1/f$. UNITS: diopters (1/m) when $f$ is in meters. WORKED EXAMPLE: $f = 50$ cm → $P = 2$ diopters. Eyeglasses prescriptions are given in diopters. Reading glasses: typically $+1$ to $+3$ diopters (positive = magnifying).");
+
+  // ----- OPTICS WAVE -----
+  W("optics-wave", "Two-slit fringe",
+    "DOUBLE-SLIT interference. $\\Delta y$ = fringe spacing on screen. $\\lambda$ = wavelength. $L$ = distance to screen. $d$ = slit separation. SMALL-angle approximation. WORKED EXAMPLE: $\\lambda = 500$ nm, $L = 2$ m, $d = 0.5$ mm → $\\Delta y = 2$ mm.");
+  W("optics-wave", "Constructive:",
+    "$\\Delta$ = path-length difference between the two interfering rays. $\\lambda$ = wavelength. $m = 0, \\pm 1, \\pm 2, \\ldots$ = order. CONSTRUCTIVE: in-phase, bright. DESTRUCTIVE: opposite phase, dark.");
+  W("optics-wave", "Grating maxima:",
+    "DIFFRACTION grating. $d$ = grating spacing (period). $\\theta$ = angle from normal. $m$ = order (integer). SHARP maxima at these angles. WORKED EXAMPLE: grating with 1000 lines/mm: $d = 10^{-6}$ m. Green light $\\lambda = 500$ nm: first-order maximum at $\\theta = 30°$.");
+  W("optics-wave", "Thin film",
+    "THIN-film interference. $n$ = refractive index of film. $t$ = film thickness. $m$ = order. CONSTRUCTIVE with one phase inversion (e.g., reflection from denser medium). WORKED EXAMPLE: anti-reflective coating $n = 1.38$ (MgF$_2$) for $\\lambda = 550$ nm: minimum reflection at $t = \\lambda/(4n) \\approx 100$ nm.");
+  W("optics-wave", "Bragg:",
+    "BRAGG's law for X-ray diffraction. $d$ = lattice plane spacing. $\\theta$ = grazing angle from the planes. $\\lambda$ = X-ray wavelength. $n$ = integer order. WORKED EXAMPLE: NaCl has $d \\approx 0.282$ nm. Cu K$_\\alpha$ X-rays ($\\lambda \\approx 0.154$ nm). First-order Bragg: $\\theta \\approx 15.9°$.");
+
+  // ----- PARTICLE PHYSICS (remaining) -----
+  W("particle-physics", "Standard Model:",
+    "STANDARD MODEL gauge group: $SU(3)_C \\times SU(2)_L \\times U(1)_Y$. THREE forces unified: strong (color SU(3)), weak (SU(2) — only acts on left-handed fermions), hypercharge (U(1)). Higgs mechanism breaks SU(2) × U(1) → U(1)_EM, giving masses to W, Z, fermions.");
+  W("particle-physics", "Higgs mass:",
+    "$m_H \\approx 125$ GeV. DISCOVERED at LHC by ATLAS and CMS (2012). NOBEL 2013 to Englert and Higgs. ROLE: confirms the Higgs mechanism — vacuum expectation $v \\approx 246$ GeV gives masses to W, Z, fermions.");
+  W("particle-physics", "Proton:",
+    "PROTON quark content: uud (two up + one down). CHARGE: $2/3 + 2/3 - 1/3 = 1$. NEUTRON: udd → charge $2/3 - 1/3 - 1/3 = 0$. Bound by gluon exchange (strong force). HADRONS are quark composites.");
+  W("particle-physics", "$\\alpha \\approx",
+    "$\\alpha \\approx 1/137.036$ at low energy = fine-structure constant. CHARACTERIZES electromagnetic coupling strength. RUNS with energy: at the Z mass (91 GeV), $\\alpha \\approx 1/127$ — measurably larger due to vacuum polarization.");
+
+  // ----- PID -----
+  W("pid-control", "Derivative on",
+    "Implement D term as $-K_d \\dot y$ (negative derivative of MEASUREMENT) instead of $K_d \\dot e$ (derivative of ERROR). AVOIDS 'derivative kick' when reference changes suddenly. INDUSTRY standard practice. SAME steady-state behavior; cleaner transient.");
+
+  // ----- PLANE GEOMETRY -----
+  W("plane-geometry", "$a^2 + b^2",
+    "PYTHAGORAS. $a, b$ = legs of right triangle. $c$ = hypotenuse. WORKED EXAMPLE: 3-4-5, 5-12-13, 8-15-17, 7-24-25 are common Pythagorean triples. Useful for quick distance checks.");
+  W("plane-geometry", "$A_\\triangle",
+    "TRIANGLE area. $b$ = base. $h$ = perpendicular height. WORKS for any triangle if you measure $h$ correctly. WORKED EXAMPLE: triangle with base 6 and height 4: area 12.");
+  W("plane-geometry", "$A_\\text{rect}",
+    "RECTANGLE area. $\\ell$ = length. $w$ = width. SPECIAL case of parallelogram area = base × height. WORKED EXAMPLE: 5 × 3 rectangle has area 15.");
+  W("plane-geometry", "$C = 2\\pi r",
+    "CIRCLE circumference $C$ and area $A$. $r$ = radius. $\\pi \\approx 3.14159$. WORKED EXAMPLE: circle of radius 5: $C = 10\\pi \\approx 31.4$. $A = 25\\pi \\approx 78.5$.");
+  W("plane-geometry", "Triangle angle",
+    "Sum of interior angles of ANY triangle = $180°$. IN Euclidean geometry. (Greater than $180°$ on a sphere, less in hyperbolic geometry.) WORKED EXAMPLE: 60-60-60 (equilateral), 30-60-90, 45-45-90, etc.");
+  W("plane-geometry", "Regular $n$-gon",
+    "REGULAR $n$-sided polygon. INTERIOR angle = $(n-2)\\cdot 180°/n$. WORKED EXAMPLES: triangle (n=3): 60°. Square (n=4): 90°. Pentagon (n=5): 108°. Hexagon (n=6): 120°. Approaches 180° as $n \\to \\infty$ (approximating circle).");
+
+  // ----- PLASMA PHYSICS -----
+  W("plasma-physics", "$\\lambda_D",
+    "DEBYE length (m). $\\epsilon_0$ = vacuum permittivity. $k_B$ = Boltzmann constant. $T$ = plasma temperature (K). $n$ = electron density (1/m³). $e$ = electron charge. SCREENS charges beyond this distance. WORKED EXAMPLE: ionosphere $T \\sim 1000$ K, $n \\sim 10^{12}$/m³: $\\lambda_D \\sim 2$ mm.");
+  W("plasma-physics", "$\\omega_p",
+    "PLASMA frequency (rad/s). $n$ = electron density. $e$ = electron charge. $\\epsilon_0$ = vacuum permittivity. $m_e$ = electron mass. BELOW this frequency: EM waves are reflected. WORKED EXAMPLE: ionosphere $n \\sim 10^{12}$/m³: $f_p = \\omega_p/(2\\pi) \\sim 9$ MHz. EXPLAINS shortwave radio (below $f_p$) reflecting.");
+  W("plasma-physics", "$\\omega_c",
+    "CYCLOTRON frequency for a charged particle in magnetic field. $e$ = charge. $B$ = field magnitude. $m$ = particle mass. WORKED EXAMPLE: electron in 1 T field: $\\omega_c/2\\pi \\approx 28$ GHz (microwave). USED in cyclotron resonance imaging, ECR sources.");
+  W("plasma-physics", "$r_L",
+    "LARMOR (gyro) radius. $m$ = mass. $v_\\perp$ = perpendicular velocity. $q$ = charge. $B$ = magnetic field. RADIUS of circular orbit in $B$. WORKED EXAMPLE: electron with $v_\\perp = 10^7$ m/s in 1 T: $r_L \\approx 6 \\times 10^{-5}$ m. Sets confinement scale in fusion devices.");
+  W("plasma-physics", "Lawson:",
+    "LAWSON criterion for thermonuclear fusion. $n$ = ion density. $\\tau$ = confinement time. $T$ = temperature (in keV). $n\\tau T > 5 \\times 10^{21}$ keV·s/m³ for D-T ignition. WORKED EXAMPLE: ITER targets $n\\sim 10^{20}$/m³, $\\tau \\sim 5$ s, $T \\sim 15$ keV → meets criterion.");
+  W("plasma-physics", "MHD:",
+    "MAGNETOHYDRODYNAMICS. COMBINES fluid equations (Navier-Stokes) with Maxwell's equations. TREATS plasma as a single conducting fluid. USED for: solar convection, magnetospheres, accretion disks, fusion plasmas.");
+  W("plasma-physics", "Alfvén",
+    "ALFVÉN wave speed. $B$ = magnetic field (T). $\\mu_0$ = vacuum permeability. $\\rho$ = mass density (kg/m³). WAVES propagate along magnetic field lines. WORKED EXAMPLE: solar corona $B \\sim 10^{-3}$ T, $\\rho \\sim 10^{-12}$ kg/m³: $v_A \\sim 10^6$ m/s. Drives solar wind, flares.");
+
+  // ----- QM 1D (remaining) -----
+  W("qm-1d", "Infinite well wave",
+    "INFINITE square well. $\\psi_n$ = $n$-th wavefunction. $n = 1, 2, 3, \\ldots$ = quantum number. $L$ = well width. WAVEFUNCTIONS are sines that vanish at the walls. WORKED EXAMPLE: ground state $\\psi_1 = \\sqrt{2/L}\\sin(\\pi x/L)$ has one antinode in the middle. $\\psi_2$ has a node at center.");
+  W("qm-1d", "Zero-point:",
+    "ZERO-point energy. $\\hbar$ = reduced Planck. $\\omega$ = angular frequency of quantum harmonic oscillator. NON-ZERO ground state. SOURCE: uncertainty principle ($\\Delta x, \\Delta p$ can't both vanish). WORKED EXAMPLE: HCl molecule vibration $\\omega/(2\\pi) \\approx 8.7 \\times 10^{13}$ Hz → $E_0 \\approx 0.18$ eV — significant fraction of binding energy.");
+  W("qm-1d", "Free particle:",
+    "FREE-particle relativistic-physics-light dispersion. $E$ = energy. $\\hbar$ = reduced Planck. $k$ = wavenumber (rad/m). $m$ = particle mass. PARABOLIC dispersion. WORKED EXAMPLE: electron with $k = 10^{10}$ /m → $E \\approx 0.38$ eV. Compare to relativistic regime: $\\hbar k c \\sim mc^2$ when $k \\sim$ Compton wavenumber.");
+  W("qm-1d", "Delta well:",
+    "ATTRACTIVE delta-function potential $V(x) = -\\alpha\\delta(x)$ ($\\alpha > 0$). EXACTLY one bound state regardless of $\\alpha$. ENERGY: $E = -m\\alpha^2/(2\\hbar^2)$. PEDAGOGICAL example, also models certain real molecules.");
+
+  // ----- QM 3D / HYDROGEN -----
+  W("qm-3d-hydrogen", "$\\psi = R_{n\\ell}",
+    "HYDROGEN wavefunction in spherical coordinates. $R_{n\\ell}$ = radial part (Laguerre polynomial × exponential). $Y_\\ell^m$ = spherical harmonic. $n, \\ell, m$ = principal, orbital, magnetic quantum numbers. SEPARATION possible due to spherical symmetry of Coulomb potential.");
+  W("qm-3d-hydrogen", "$Y_\\ell^m$:",
+    "SPHERICAL harmonics. $\\theta, \\phi$ = polar and azimuthal angles. SIMULTANEOUS eigenfunctions of $L^2$ (eigenvalue $\\ell(\\ell+1)\\hbar^2$) and $L_z$ (eigenvalue $m\\hbar$). ORTHONORMAL on sphere. WORKED EXAMPLE: $Y_0^0 = 1/\\sqrt{4\\pi}$ (constant, s-orbital angular part).");
+  W("qm-3d-hydrogen", "$E_n = -\\dfrac{13.6}",
+    "HYDROGEN energy levels (eV). $n = 1, 2, 3, \\ldots$ = principal quantum number. DEGENERATE in $\\ell$ and $m$ — accident of Coulomb potential (hidden $SO(4)$ symmetry). WORKED EXAMPLE: $E_2 = -3.4$ eV, $E_3 = -1.51$ eV. Ionization from $n=1$: 13.6 eV.");
+  W("qm-3d-hydrogen", "$\\psi_{100}",
+    "GROUND state wavefunction (1s). $a_0 \\approx 0.529$ Å = Bohr radius. EXPONENTIALLY decaying, spherically symmetric. WORKED EXAMPLE: $|\\psi|^2$ peaks at $r = 0$. But RADIAL probability $4\\pi r^2|\\psi|^2$ peaks at $r = a_0$ — most likely place to find electron.");
+  W("qm-3d-hydrogen", "$a_0 \\approx",
+    "$a_0 \\approx 5.29 \\times 10^{-11}$ m = 0.529 Å. ATOMIC length scale. EXPRESSION: $a_0 = 4\\pi\\epsilon_0\\hbar^2/(m_e e^2)$. EVERY atomic length scale (covalent bond lengths, lattice constants) is a few $a_0$.");
 })();
