@@ -1,0 +1,11 @@
+{
+  "appId": "com.egtech.ergon",
+  "appName": "Ergon",
+  "webDir": "www",
+  "backgroundColor": "#0b1020",
+  "plugins": {
+    "SystemBars": {
+      "style": "DARK"
+    }
+  }
+}

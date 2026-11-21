@@ -1,4 +1,6 @@
-# Praxis — Math & Physics
+# Ergon — Math, Physics & Engineering
+
+(Formerly "Praxis" — renamed because PRAXIS is an ETS trademark.)
 
 A Progressive Web App that teaches math and physics from basic to graduate level — every topic explained in plain language and taught through worked examples and practice problems.
 
@@ -23,27 +25,32 @@ Units & Measurement · Kinematics · Vectors in Physics · Newton's Laws · Mome
 
 ## Run locally
 
-No build, no install. Any static server works:
+Web version (no build):
 
 ```bash
-python3 -m http.server 8766
-# then open http://localhost:8766
+python3 -m http.server 8766 -d www
 ```
+
+Native apps (Capacitor 8, `com.egtech.ergon`):
+
+```bash
+npm install
+node test.mjs        # answer-checker self-test
+npx cap sync         # copy www/ into ios/ and android/
+```
+
+Store texts, screenshots and the support site live in `store/`. Release steps: `~/.config/app-release/ergon/profile.md`.
 
 ## Project layout
 
 ```
-index.html         shell + KaTeX CDN + manifest hookup
-styles.css         dark theme, responsive grid, card / task / intro styling
-app.js             home/topic routing, intro rendering, show-answer toggle, SW registration
-math.js            CONTENT.math — 35 topics × (4 examples + 10 tasks)
-physics.js         CONTENT.physics — 33 topics × (4 examples + 10 tasks)
-intros.js          INTROS — plain-language explanations per topic
-manifest.json      PWA metadata
-service-worker.js  cache-first offline support
-icons/             icon-192.png, icon-512.png
+www/               the app (index.html, app.js, styles.css, content *.js, vendor/katex)
+www/answer-check.js  answer matching for practice problems (tested by test.mjs)
+ios/, android/     Capacitor native shells
+assets/            icon source (icon.svg) and generated icon/splash PNGs
+store/             listing.md, screenshots.mjs, site/ (support + privacy pages)
 ```
 
 ## Extending
 
-Add a new topic by appending to `CONTENT.math` or `CONTENT.physics` in `math.js` / `physics.js`. Add its plain-language intro to `INTROS` in `intros.js`. No other files need to change.
+Add a new topic by appending to `CONTENT.math` or `CONTENT.physics` in `www/math.js` / `www/physics.js`. Add its plain-language intro to `INTROS` in `www/intros.js`.

@@ -1,6 +1,7 @@
-.DS_Store
-Thumbs.db
 *.log
-.vscode/
+.DS_Store
 .idea/
+.vscode/
+Thumbs.db
+build/
 node_modules/
