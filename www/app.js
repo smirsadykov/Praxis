@@ -225,7 +225,9 @@
     // External images from Wikimedia Commons (CC-licensed / public domain)
     const commonsImages = (window.COMMONS_IMAGES || {})[topic.id];
     if (commonsImages && commonsImages.length) {
-      app.appendChild(el("h3", { class: "section-head" }, "Image Gallery"));
+      const galleryHead = el("h3", { class: "section-head" }, "Image Gallery");
+      app.appendChild(galleryHead);
+      let galleryLeft = commonsImages.length;
       commonsImages.forEach((img) => {
         const fileName = img.file;
         const url = "https://commons.wikimedia.org/wiki/Special:FilePath/" + fileName + "?width=720";
@@ -238,14 +240,12 @@
           loading: "lazy",
           referrerpolicy: "no-referrer"
         });
+        // Offline or image gone: drop the whole block (and the heading if nothing is left).
         imgEl.addEventListener("error", () => {
-          imgEl.style.display = "none";
-          fallback.hidden = false;
+          figure.remove();
+          if (--galleryLeft === 0) galleryHead.remove();
         });
         figure.appendChild(imgEl);
-        const fallback = el("div", { class: "commons-fallback" }, "Image temporarily unavailable.");
-        fallback.hidden = true;
-        figure.appendChild(fallback);
         if (img.caption) {
           figure.appendChild(el("figcaption", { class: "commons-caption", html: img.caption }));
         }
